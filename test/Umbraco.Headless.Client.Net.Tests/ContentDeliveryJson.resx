@@ -1,0 +1,3986 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GetAncestors" xml:space="preserve">
+    <value>{
+    "_links": {
+        "self": {
+            "href": "https://cdn.umbraco.io/content/72346384-fc5e-4a6e-a07d-559eec11dcea/ancestors"
+        },
+        "content": [
+            {
+                "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1"
+            }
+        ]
+    },
+    "_embedded": {
+        "content": [
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/blog/",
+                "_writerName": "Administrator",
+                "_hasChildren": true,
+                "_level": 2,
+                "_createDate": "2019-09-13T12:36:12.02Z",
+                "_id": "1d770f10-d1ca-4a26-9d68-071e2c9f7ac1",
+                "_updateDate": "2019-09-13T12:36:27.02Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1"
+                    }
+                },
+                "contentTypeAlias": "blog",
+                "name": "Blog",
+                "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                "sortOrder": 3,
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "pageTitle": "Behind The Scenes",
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": []
+                        }
+                    ]
+                },
+                "howManyPostsShouldBeShown": 2,
+                "disqusShortname": ""
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/",
+                "_writerName": "Administrator",
+                "_hasChildren": true,
+                "_level": 1,
+                "_createDate": "2019-09-13T12:36:10.927Z",
+                "_id": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                "_updateDate": "2019-09-13T12:36:24.763Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1"
+                    },
+                    "heroctalink": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "title": "Products"
+                    },
+                    "footerctalink": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1",
+                        "title": "Blog"
+                    },
+                    "herobackgroundimage": {
+                        "href": "https://cdn.umbraco.io/media/662af6ca-411a-4c93-a6c7-22c4845698e7",
+                        "title": "Umbraco Campari Meeting Room"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content"
+                    }
+                },
+                "contentTypeAlias": "home",
+                "name": "Home",
+                "sortOrder": 0,
+                "heroHeader": "Umbraco Demo",
+                "heroDescription": "Moonfish, steelhead, lamprey southern flounder tadpole fish sculpin bigeye, blue-redstripe danio collared dogfish. Smalleye squaretail goldfish arowana butterflyfish pipefish wolf-herring jewel tetra, shiner; gibberfish red velvetfish. Thornyhead yellowfin pike threadsail ayu cutlassfish.",
+                "heroCTACaption": "Check our products",
+                "HeroCtalink": {
+                    "_creatorName": "Morten Christensen",
+                    "_url": "/home/products/",
+                    "_writerName": "Administrator",
+                    "_hasChildren": true,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:11.093Z",
+                    "_id": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                    "_updateDate": "2019-09-13T12:36:24.967Z",
+                    "_links": {
+                        "featuredproducts": [
+                            {
+                                "href": "https://cdn.umbraco.io/content/262beb70-53a6-49b8-9e98-cfde2e85a78e",
+                                "title": "Biker Jacket"
+                            },
+                            {
+                                "href": "https://cdn.umbraco.io/content/df1eb830-411b-4d41-a343-3917b76d533c",
+                                "title": "Tattoo"
+                            },
+                            {
+                                "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2",
+                                "title": "Unicorn"
+                            },
+                            {
+                                "href": "https://cdn.umbraco.io/content/d390a562-107d-4f02-8df7-57aa86bad752",
+                                "title": "Ping Pong Ball"
+                            },
+                            {
+                                "href": "https://cdn.umbraco.io/content/bb7d5ae0-07ac-40b8-b5b9-18c36947fb56",
+                                "title": "Bowling Ball"
+                            },
+                            {
+                                "href": "https://cdn.umbraco.io/content/202cdc2f-1a45-40f4-a653-a7b321e1c54c",
+                                "title": "Jumpsuit"
+                            },
+                            {
+                                "href": "https://cdn.umbraco.io/content/103171c8-e11c-4002-9bb2-f3404cada22a",
+                                "title": "Banjo"
+                            },
+                            {
+                                "href": "https://cdn.umbraco.io/content/061662b9-b02a-4dcf-af59-92b603e8e3e1",
+                                "title": "Knitted West"
+                            }
+                        ]
+                    },
+                    "contentTypeAlias": "products",
+                    "name": "Products",
+                    "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                    "sortOrder": 0,
+                    "pageTitle": "Our Gorgeous Selection",
+                    "bodyText": {
+                        "name": "1 column layout",
+                        "sections": [
+                            {
+                                "grid": 12,
+                                "allowAll": true,
+                                "rows": []
+                            }
+                        ]
+                    },
+                    "seoMetaDescription": "",
+                    "keywords": [],
+                    "umbracoNavihide": false,
+                    "defaultCurrency": "€",
+                    "featuredProducts": []
+                },
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "rows": [
+                                {
+                                    "name": "Full Width",
+                                    "areas": [
+                                        {
+                                            "grid": 12,
+                                            "allowAll": false,
+                                            "allowed": [
+                                                "media",
+                                                "macro",
+                                                "embed",
+                                                "headline"
+                                            ],
+                                            "hasConfig": false,
+                                            "controls": [
+                                                {
+                                                    "value": {
+                                                        "macroAlias": "latestBlogposts",
+                                                        "macroParamsDictionary": {
+                                                            "numberOfPosts": "3",
+                                                            "startNodeId": "umb://document/1d770f10d1ca4a269d68071e2c9f7ac1"
+                                                        }
+                                                    },
+                                                    "editor": {
+                                                        "name": "Macro",
+                                                        "alias": "macro",
+                                                        "view": "macro",
+                                                        "render": null,
+                                                        "icon": "icon-settings-alt",
+                                                        "config": {}
+                                                    },
+                                                    "active": false
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "hasConfig": false,
+                                    "id": "314cb47b-fbe1-eeb6-f7cc-38db875d0f06"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "footerHeader": "Umbraco Demo",
+                "footerDescription": "Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat",
+                "footerCTACaption": "Read All on the Blog",
+                "FooterCtalink": {
+                    "_creatorName": "Morten Christensen",
+                    "_url": "/home/blog/",
+                    "_writerName": "Administrator",
+                    "_hasChildren": true,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:12.02Z",
+                    "_id": "1d770f10-d1ca-4a26-9d68-071e2c9f7ac1",
+                    "_updateDate": "2019-09-13T12:36:27.02Z",
+                    "_links": null,
+                    "contentTypeAlias": "blog",
+                    "name": "Blog",
+                    "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                    "sortOrder": 3,
+                    "seoMetaDescription": "",
+                    "keywords": [],
+                    "umbracoNavihide": false,
+                    "pageTitle": "Behind The Scenes",
+                    "bodyText": {
+                        "name": "1 column layout",
+                        "sections": [
+                            {
+                                "grid": 12,
+                                "allowAll": true,
+                                "rows": []
+                            }
+                        ]
+                    },
+                    "howManyPostsShouldBeShown": 2,
+                    "disqusShortname": ""
+                },
+                "footerAddress": "Umbraco HQ - Unicorn Square - Haubergsvej 1 - 5000 Odense C - Denmark - +45 70 26 11 62",
+                "HeroBackgroundImage": {
+                    "_creatorName": "Administrator",
+                    "_url": "https://media.umbraco.io/media/662af6ca411a4c93a6c722c4845698e7/00000006000000000000000000000000/16403439029_f500be349b_o.jpg",
+                    "_writerName": "Administrator",
+                    "_hasChildren": false,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:21.59Z",
+                    "_id": "662af6ca-411a-4c93-a6c7-22c4845698e7",
+                    "_updateDate": "2019-09-13T12:36:21.59Z",
+                    "_links": null,
+                    "contentTypeAlias": "Image",
+                    "name": "Umbraco Campari Meeting Room",
+                    "parentId": "b6f11172-373f-4473-af0f-0b0e5aefd21c",
+                    "sortOrder": 0,
+                    "umbracoFile": {
+                        "src": "/media/662af6ca411a4c93a6c722c4845698e7/00000006000000000000000000000000/16403439029_f500be349b_o.jpg",
+                        "focalPoint": null,
+                        "crops": null
+                    },
+                    "umbracoWidth": 0,
+                    "umbracoHeight": 0,
+                    "umbracoBytes": 0,
+                    "umbracoExtension": ""
+                },
+                "font": "serif",
+                "colorTheme": "earth",
+                "sitename": "Umbraco Sample Site",
+                "SiteLogo": null
+            }
+        ]
+    }
+}</value>
+  </data>
+  <data name="GetByUrlHomeProductsUnicorn" xml:space="preserve">
+    <value>{
+    "_creatorName": "Morten Christensen",
+    "_url": "/home/products/unicorn/",
+    "_writerName": "Administrator",
+    "_hasChildren": false,
+    "_level": 3,
+    "_createDate": "2019-09-13T12:36:11.217Z",
+    "_id": "4e96411a-b8e1-435f-9322-2faee30ef5f2",
+    "_updateDate": "2019-09-13T12:36:25.233Z",
+    "_links": {
+        "self": {
+            "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2"
+        },
+        "photos": {
+            "href": "https://cdn.umbraco.io/media/1bc5280b-8658-4027-89d9-58e2576e469b",
+            "title": "Unicorn"
+        },
+        "root": {
+            "href": "https://cdn.umbraco.io/content"
+        },
+        "children": {
+            "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2/children"
+        },
+        "ancestors": {
+            "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2/ancestors"
+        },
+        "descendants": {
+            "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2/descendants"
+        },
+        "parent": {
+            "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+        }
+    },
+    "contentTypeAlias": "product",
+    "name": "Unicorn",
+    "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+    "sortOrder": 1,
+    "productName": "Unicorn",
+    "price": 249,
+    "category": [
+        "animals"
+    ],
+    "description": "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta.",
+    "sku": "UMB-UNICORN",
+    "photos": {
+        "_creatorName": "Administrator",
+        "_url": "https://media.umbraco.io/media/1bc5280b8658402789d958e2576e469b/00000006000000000000000000000000/14272036539_469ca21d5c_h.jpg",
+        "_writerName": "Administrator",
+        "_hasChildren": false,
+        "_level": 2,
+        "_createDate": "2019-09-13T12:36:22.227Z",
+        "_id": "1bc5280b-8658-4027-89d9-58e2576e469b",
+        "_updateDate": "2019-09-13T12:36:22.227Z",
+        "_links": null,
+        "contentTypeAlias": "Image",
+        "name": "Unicorn",
+        "parentId": "6d5bf746-cb82-45c5-bd15-dd3798209b87",
+        "sortOrder": 0,
+        "umbracoFile": {
+            "src": "/media/1bc5280b8658402789d958e2576e469b/00000006000000000000000000000000/14272036539_469ca21d5c_h.jpg",
+            "focalPoint": null,
+            "crops": null
+        },
+        "umbracoWidth": 0,
+        "umbracoHeight": 0,
+        "umbracoBytes": 0,
+        "umbracoExtension": ""
+    },
+    "features": [],
+    "bodyText": {
+        "name": "1 column layout",
+        "sections": [
+            {
+                "grid": 12,
+                "allowAll": true,
+                "rows": []
+            }
+        ]
+    }
+}</value>
+  </data>
+  <data name="GetChildrenByParentId" xml:space="preserve">
+    <value>{
+    "_totalItems": 5,
+    "_totalPages": 1,
+    "_page": 1,
+    "_pageSize": 10,
+    "_links": {
+        "self": {
+            "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/children?page=1"
+        },
+        "page": {
+            "href": "https://cdn.umbraco.io/content/{id}/children{?page,pageSize}",
+            "templated": true
+        },
+        "root": {
+            "href": "https://cdn.umbraco.io/content"
+        },
+        "content": [
+            {
+                "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/3cce2545-e3ac-44ec-bf55-a52cc5965db3"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/4a1f4198-e143-48ba-a0f5-1a7ef2df23aa"
+            }
+        ]
+    },
+    "_embedded": {
+        "content": [
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/products/",
+                "_writerName": "Administrator",
+                "_hasChildren": true,
+                "_level": 2,
+                "_createDate": "2019-09-13T12:36:11.093Z",
+                "_id": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                "_updateDate": "2019-09-13T12:36:24.967Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+                    },
+                    "featuredproducts": [
+                        {
+                            "href": "https://cdn.umbraco.io/content/262beb70-53a6-49b8-9e98-cfde2e85a78e",
+                            "title": "Biker Jacket"
+                        },
+                        {
+                            "href": "https://cdn.umbraco.io/content/df1eb830-411b-4d41-a343-3917b76d533c",
+                            "title": "Tattoo"
+                        },
+                        {
+                            "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2",
+                            "title": "Unicorn"
+                        },
+                        {
+                            "href": "https://cdn.umbraco.io/content/d390a562-107d-4f02-8df7-57aa86bad752",
+                            "title": "Ping Pong Ball"
+                        },
+                        {
+                            "href": "https://cdn.umbraco.io/content/bb7d5ae0-07ac-40b8-b5b9-18c36947fb56",
+                            "title": "Bowling Ball"
+                        },
+                        {
+                            "href": "https://cdn.umbraco.io/content/202cdc2f-1a45-40f4-a653-a7b321e1c54c",
+                            "title": "Jumpsuit"
+                        },
+                        {
+                            "href": "https://cdn.umbraco.io/content/103171c8-e11c-4002-9bb2-f3404cada22a",
+                            "title": "Banjo"
+                        },
+                        {
+                            "href": "https://cdn.umbraco.io/content/061662b9-b02a-4dcf-af59-92b603e8e3e1",
+                            "title": "Knitted West"
+                        }
+                    ],
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1"
+                    }
+                },
+                "contentTypeAlias": "products",
+                "name": "Products",
+                "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                "sortOrder": 0,
+                "pageTitle": "Our Gorgeous Selection",
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": []
+                        }
+                    ]
+                },
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "defaultCurrency": "€",
+                "featuredProducts": [
+                    {
+                        "_creatorName": "Morten Christensen",
+                        "_url": "/home/products/biker-jacket/",
+                        "_writerName": "Administrator",
+                        "_hasChildren": false,
+                        "_level": 3,
+                        "_createDate": "2019-09-13T12:36:11.533Z",
+                        "_id": "262beb70-53a6-49b8-9e98-cfde2e85a78e",
+                        "_updateDate": "2019-09-13T12:36:25.993Z",
+                        "_links": {
+                            "photos": {
+                                "href": "https://cdn.umbraco.io/media/55514845-b8bd-487c-b370-9724852fd6bb",
+                                "title": "Biker Jacket"
+                            }
+                        },
+                        "contentTypeAlias": "product",
+                        "name": "Biker Jacket",
+                        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "sortOrder": 7,
+                        "productName": "Biker Jacket",
+                        "price": 199,
+                        "category": [
+                            "bingo",
+                            "clothing"
+                        ],
+                        "description": "Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.",
+                        "sku": "UMB-BIKER-JACKET",
+                        "photos": null,
+                        "features": [
+                            {
+                                "contentTypeAlias": "feature",
+                                "featureName": "Free shipping",
+                                "featureDetails": "Isn't that awesome - you only pay for the product"
+                            },
+                            {
+                                "contentTypeAlias": "feature",
+                                "featureName": "1 Day return policy",
+                                "featureDetails": "You'll need to make up your mind fast"
+                            },
+                            {
+                                "contentTypeAlias": "feature",
+                                "featureName": "100 Years warranty",
+                                "featureDetails": "But if you're satisfied it'll last a lifetime"
+                            }
+                        ],
+                        "bodyText": {
+                            "name": "1 column layout",
+                            "sections": [
+                                {
+                                    "grid": 12,
+                                    "allowAll": true,
+                                    "rows": []
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "_creatorName": "Morten Christensen",
+                        "_url": "/home/products/tattoo/",
+                        "_writerName": "Administrator",
+                        "_hasChildren": false,
+                        "_level": 3,
+                        "_createDate": "2019-09-13T12:36:11.14Z",
+                        "_id": "df1eb830-411b-4d41-a343-3917b76d533c",
+                        "_updateDate": "2019-09-13T12:36:25.077Z",
+                        "_links": {
+                            "photos": {
+                                "href": "https://cdn.umbraco.io/media/20e3a8ff-ad1b-4fe9-b48c-b8461c46d2d0",
+                                "title": "Tattoo"
+                            }
+                        },
+                        "contentTypeAlias": "product",
+                        "name": "Tattoo",
+                        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "sortOrder": 0,
+                        "productName": "Tattoo",
+                        "price": 499,
+                        "category": [
+                            "tattoo",
+                            "dedication"
+                        ],
+                        "description": "Cras ultricies ligula sed magna dictum porta.",
+                        "sku": "UMB-TATTOO",
+                        "photos": null,
+                        "features": [],
+                        "bodyText": {
+                            "name": "1 column layout",
+                            "sections": [
+                                {
+                                    "grid": 12,
+                                    "allowAll": true,
+                                    "rows": []
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "_creatorName": "Morten Christensen",
+                        "_url": "/home/products/unicorn/",
+                        "_writerName": "Administrator",
+                        "_hasChildren": false,
+                        "_level": 3,
+                        "_createDate": "2019-09-13T12:36:11.217Z",
+                        "_id": "4e96411a-b8e1-435f-9322-2faee30ef5f2",
+                        "_updateDate": "2019-09-13T12:36:25.233Z",
+                        "_links": {
+                            "photos": {
+                                "href": "https://cdn.umbraco.io/media/1bc5280b-8658-4027-89d9-58e2576e469b",
+                                "title": "Unicorn"
+                            }
+                        },
+                        "contentTypeAlias": "product",
+                        "name": "Unicorn",
+                        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "sortOrder": 1,
+                        "productName": "Unicorn",
+                        "price": 249,
+                        "category": [
+                            "animals"
+                        ],
+                        "description": "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta.",
+                        "sku": "UMB-UNICORN",
+                        "photos": null,
+                        "features": [],
+                        "bodyText": {
+                            "name": "1 column layout",
+                            "sections": [
+                                {
+                                    "grid": 12,
+                                    "allowAll": true,
+                                    "rows": []
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "_creatorName": "Morten Christensen",
+                        "_url": "/home/products/ping-pong-ball/",
+                        "_writerName": "Administrator",
+                        "_hasChildren": false,
+                        "_level": 3,
+                        "_createDate": "2019-09-13T12:36:11.253Z",
+                        "_id": "d390a562-107d-4f02-8df7-57aa86bad752",
+                        "_updateDate": "2019-09-13T12:36:25.377Z",
+                        "_links": {
+                            "photos": {
+                                "href": "https://cdn.umbraco.io/media/c09ec77f-08e3-466a-ac58-c979befd3cd6",
+                                "title": "Ping Pong Ball"
+                            }
+                        },
+                        "contentTypeAlias": "product",
+                        "name": "Ping Pong Ball",
+                        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "sortOrder": 2,
+                        "productName": "Ping Pong Ball",
+                        "price": 2,
+                        "category": [
+                            "sports",
+                            "bingo"
+                        ],
+                        "description": "Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ultricies ligula sed magna dictum porta.",
+                        "sku": "UMB-PINGPONG",
+                        "photos": null,
+                        "features": [],
+                        "bodyText": {
+                            "name": "1 column layout",
+                            "sections": [
+                                {
+                                    "grid": 12,
+                                    "allowAll": true,
+                                    "rows": []
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "_creatorName": "Morten Christensen",
+                        "_url": "/home/products/bowling-ball/",
+                        "_writerName": "Administrator",
+                        "_hasChildren": false,
+                        "_level": 3,
+                        "_createDate": "2019-09-13T12:36:11.327Z",
+                        "_id": "bb7d5ae0-07ac-40b8-b5b9-18c36947fb56",
+                        "_updateDate": "2019-09-13T12:36:25.483Z",
+                        "_links": {
+                            "photos": {
+                                "href": "https://cdn.umbraco.io/media/b76ddb4e-e603-4014-9906-6087984740ec",
+                                "title": "Bowling Ball"
+                            }
+                        },
+                        "contentTypeAlias": "product",
+                        "name": "Bowling Ball",
+                        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "sortOrder": 3,
+                        "productName": "Bowling Ball",
+                        "price": 899,
+                        "category": [
+                            "sports",
+                            "bingo"
+                        ],
+                        "description": "Cras ultricies ligula sed magna dictum porta.",
+                        "sku": "UMB-BOWLING",
+                        "photos": null,
+                        "features": [],
+                        "bodyText": {
+                            "name": "1 column layout",
+                            "sections": [
+                                {
+                                    "grid": 12,
+                                    "allowAll": true,
+                                    "rows": []
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "_creatorName": "Morten Christensen",
+                        "_url": "/home/products/jumpsuit/",
+                        "_writerName": "Administrator",
+                        "_hasChildren": false,
+                        "_level": 3,
+                        "_createDate": "2019-09-13T12:36:11.377Z",
+                        "_id": "202cdc2f-1a45-40f4-a653-a7b321e1c54c",
+                        "_updateDate": "2019-09-13T12:36:25.61Z",
+                        "_links": {
+                            "photos": {
+                                "href": "https://cdn.umbraco.io/media/46a025d6-095a-4b14-8b96-1b59ca4e951c",
+                                "title": "Jumpsuit"
+                            }
+                        },
+                        "contentTypeAlias": "product",
+                        "name": "Jumpsuit",
+                        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "sortOrder": 4,
+                        "productName": "Jumpsuit",
+                        "price": 89,
+                        "category": [
+                            "fashion",
+                            "bingo"
+                        ],
+                        "description": "Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta.",
+                        "sku": "UMB-JUMPSUIT",
+                        "photos": null,
+                        "features": [],
+                        "bodyText": {
+                            "name": "1 column layout",
+                            "sections": [
+                                {
+                                    "grid": 12,
+                                    "allowAll": true,
+                                    "rows": []
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "_creatorName": "Morten Christensen",
+                        "_url": "/home/products/banjo/",
+                        "_writerName": "Administrator",
+                        "_hasChildren": false,
+                        "_level": 3,
+                        "_createDate": "2019-09-13T12:36:11.423Z",
+                        "_id": "103171c8-e11c-4002-9bb2-f3404cada22a",
+                        "_updateDate": "2019-09-13T12:36:25.733Z",
+                        "_links": {
+                            "photos": {
+                                "href": "https://cdn.umbraco.io/media/17552d12-081d-4d01-b681-32c495d6576f",
+                                "title": "Banjo"
+                            }
+                        },
+                        "contentTypeAlias": "product",
+                        "name": "Banjo",
+                        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "sortOrder": 5,
+                        "productName": "Banjo",
+                        "price": 399,
+                        "category": [
+                            "bingo",
+                            "music"
+                        ],
+                        "description": "Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Proin eget tortor risus.",
+                        "sku": "UMB-BANJO",
+                        "photos": null,
+                        "features": [],
+                        "bodyText": {
+                            "name": "1 column layout",
+                            "sections": [
+                                {
+                                    "grid": 12,
+                                    "allowAll": true,
+                                    "rows": []
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "_creatorName": "Morten Christensen",
+                        "_url": "/home/products/knitted-west/",
+                        "_writerName": "Administrator",
+                        "_hasChildren": false,
+                        "_level": 3,
+                        "_createDate": "2019-09-13T12:36:11.487Z",
+                        "_id": "061662b9-b02a-4dcf-af59-92b603e8e3e1",
+                        "_updateDate": "2019-09-13T12:36:25.843Z",
+                        "_links": {
+                            "photos": {
+                                "href": "https://cdn.umbraco.io/media/1d0b713a-022a-49c8-b842-a2463c83a553",
+                                "title": "Knitted West"
+                            }
+                        },
+                        "contentTypeAlias": "product",
+                        "name": "Knitted West",
+                        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "sortOrder": 6,
+                        "productName": "Knitted Unicorn West",
+                        "price": 1899,
+                        "category": [
+                            "bingo",
+                            "fashion"
+                        ],
+                        "description": "Knitted Unicorn West",
+                        "sku": "UMB-WEST",
+                        "photos": null,
+                        "features": [],
+                        "bodyText": {
+                            "name": "1 column layout",
+                            "sections": [
+                                {
+                                    "grid": 12,
+                                    "allowAll": true,
+                                    "rows": []
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/people/",
+                "_writerName": "Administrator",
+                "_hasChildren": true,
+                "_level": 2,
+                "_createDate": "2019-09-13T12:36:11.597Z",
+                "_id": "e8ad9b65-cff6-4952-ac5b-efe56a60db62",
+                "_updateDate": "2019-09-13T12:36:26.203Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1"
+                    }
+                },
+                "contentTypeAlias": "people",
+                "name": "People",
+                "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                "sortOrder": 1,
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "pageTitle": "Nice crazy people",
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": []
+                        }
+                    ]
+                },
+                "featuredPeople": null
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/about-us/",
+                "_writerName": "Administrator",
+                "_hasChildren": true,
+                "_level": 2,
+                "_createDate": "2019-09-13T12:36:11.877Z",
+                "_id": "3cce2545-e3ac-44ec-bf55-a52cc5965db3",
+                "_updateDate": "2019-09-13T12:36:26.8Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/3cce2545-e3ac-44ec-bf55-a52cc5965db3"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/3cce2545-e3ac-44ec-bf55-a52cc5965db3/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/3cce2545-e3ac-44ec-bf55-a52cc5965db3/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/3cce2545-e3ac-44ec-bf55-a52cc5965db3/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1"
+                    }
+                },
+                "contentTypeAlias": "contentPage",
+                "name": "About Us",
+                "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                "sortOrder": 2,
+                "pageTitle": "About Us",
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": [
+                                {
+                                    "name": "FullWidth",
+                                    "areas": [
+                                        {
+                                            "grid": 12,
+                                            "allowAll": true,
+                                            "hasConfig": false,
+                                            "controls": [
+                                                {
+                                                    "value": "Oooh la la",
+                                                    "editor": {
+                                                        "name": "Headline",
+                                                        "alias": "headline",
+                                                        "view": "textstring",
+                                                        "render": null,
+                                                        "icon": "icon-coin",
+                                                        "config": {
+                                                            "style": "font-size: 36px; line-height: 45px; font-weight: bold",
+                                                            "markup": "&lt;h1&gt;#value#&lt;/h1&gt;"
+                                                        }
+                                                    },
+                                                    "active": false
+                                                }
+                                            ],
+                                            "active": false
+                                        }
+                                    ],
+                                    "hasConfig": false,
+                                    "id": "f10995f1-918d-3e50-e50d-8c41bbe297ce",
+                                    "active": true
+                                },
+                                {
+                                    "label": "Article",
+                                    "name": "Article",
+                                    "areas": [
+                                        {
+                                            "grid": 4,
+                                            "hasConfig": false,
+                                            "controls": [
+                                                {
+                                                    "value": {
+                                                        "udi": "umb://media/c0969cab13ab4de9819a848619ac2b5d",
+                                                        "image": "/media/c0969cab13ab4de9819a848619ac2b5d/00000006000000000000000000000000/18095416144_44a566a5f4_h.jpg"
+                                                    },
+                                                    "editor": {
+                                                        "name": "Image",
+                                                        "alias": "media",
+                                                        "view": "media",
+                                                        "render": null,
+                                                        "icon": "icon-picture",
+                                                        "config": {}
+                                                    },
+                                                    "active": false
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "grid": 8,
+                                            "hasConfig": false,
+                                            "controls": [
+                                                {
+                                                    "value": "&lt;p&gt;Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Pellentesque in ipsum id orci porta dapibus. Pellentesque in ipsum id orci porta dapibus. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.&lt;/p&gt;\n&lt;p&gt;Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Pellentesque in ipsum id orci porta dapibus. Pellentesque in ipsum id orci porta dapibus. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.&lt;/p&gt;",
+                                                    "editor": {
+                                                        "name": "Rich text editor",
+                                                        "alias": "rte",
+                                                        "view": "rte",
+                                                        "render": null,
+                                                        "icon": "icon-article",
+                                                        "config": {}
+                                                    },
+                                                    "active": false
+                                                },
+                                                {
+                                                    "value": "&lt;iframe width=\"360\" height=\"203\" src=\"https://www.youtube.com/embed/HPgKSCp_Y_U?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen&gt;&lt;/iframe&gt;",
+                                                    "editor": {
+                                                        "name": "Embed",
+                                                        "alias": "embed",
+                                                        "view": "embed",
+                                                        "render": null,
+                                                        "icon": "icon-movie-alt",
+                                                        "config": {}
+                                                    },
+                                                    "active": false
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "hasConfig": false,
+                                    "id": "4d6e2221-e2d9-95bc-8ceb-624bc8df8e3f"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/blog/",
+                "_writerName": "Administrator",
+                "_hasChildren": true,
+                "_level": 2,
+                "_createDate": "2019-09-13T12:36:12.02Z",
+                "_id": "1d770f10-d1ca-4a26-9d68-071e2c9f7ac1",
+                "_updateDate": "2019-09-13T12:36:27.02Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1"
+                    }
+                },
+                "contentTypeAlias": "blog",
+                "name": "Blog",
+                "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                "sortOrder": 3,
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "pageTitle": "Behind The Scenes",
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": []
+                        }
+                    ]
+                },
+                "howManyPostsShouldBeShown": 2,
+                "disqusShortname": ""
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/contact/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 2,
+                "_createDate": "2019-09-13T12:36:12.3Z",
+                "_id": "4a1f4198-e143-48ba-a0f5-1a7ef2df23aa",
+                "_updateDate": "2019-09-13T12:36:27.49Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/4a1f4198-e143-48ba-a0f5-1a7ef2df23aa"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/4a1f4198-e143-48ba-a0f5-1a7ef2df23aa/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/4a1f4198-e143-48ba-a0f5-1a7ef2df23aa/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/4a1f4198-e143-48ba-a0f5-1a7ef2df23aa/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1"
+                    }
+                },
+                "contentTypeAlias": "contact",
+                "name": "Contact",
+                "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                "sortOrder": 4,
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "pageTitle": "Let's have a chat",
+                "contactFormHeader": "Send Us A Message",
+                "contactIntro": "&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget lacinia nisl. Aenean sollicitudin diam vitae enim ultrices, semper euismod magna efficitur.&lt;/p&gt;",
+                "contactForm": "adf160f1-39f5-44c0-b01d-9e2da32bf093",
+                "mapHeader": "You'll find us here",
+                "mapCoordinates": "55.40622012982414,10.388404726982117,18"
+            }
+        ]
+    }
+}</value>
+  </data>
+  <data name="GetContentById" xml:space="preserve">
+    <value>{
+    "_creatorName": "Morten Christensen",
+    "_url": "/home/",
+    "_writerName": "Administrator",
+    "_hasChildren": true,
+    "_level": 1,
+    "_createDate": "2019-09-13T12:36:10.927Z",
+    "_id": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+    "_updateDate": "2019-09-13T12:36:24.763Z",
+    "_links": {
+        "self": {
+            "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1"
+        },
+        "heroctalink": {
+            "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+            "title": "Products"
+        },
+        "footerctalink": {
+            "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1",
+            "title": "Blog"
+        },
+        "herobackgroundimage": {
+            "href": "https://cdn.umbraco.io/media/662af6ca-411a-4c93-a6c7-22c4845698e7",
+            "title": "Umbraco Campari Meeting Room"
+        },
+        "root": {
+            "href": "https://cdn.umbraco.io/content"
+        },
+        "children": {
+            "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/children"
+        },
+        "ancestors": {
+            "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/ancestors"
+        },
+        "descendants": {
+            "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/descendants"
+        },
+        "parent": {
+            "href": "https://cdn.umbraco.io/content"
+        }
+    },
+    "contentTypeAlias": "home",
+    "name": "Home",
+    "sortOrder": 0,
+    "heroHeader": "Umbraco Demo",
+    "heroDescription": "Moonfish, steelhead, lamprey southern flounder tadpole fish sculpin bigeye, blue-redstripe danio collared dogfish. Smalleye squaretail goldfish arowana butterflyfish pipefish wolf-herring jewel tetra, shiner; gibberfish red velvetfish. Thornyhead yellowfin pike threadsail ayu cutlassfish.",
+    "heroCTACaption": "Check our products",
+    "HeroCtalink": {
+        "_creatorName": "Morten Christensen",
+        "_url": "/home/products/",
+        "_writerName": "Administrator",
+        "_hasChildren": true,
+        "_level": 2,
+        "_createDate": "2019-09-13T12:36:11.093Z",
+        "_id": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+        "_updateDate": "2019-09-13T12:36:24.967Z",
+        "_links": {
+            "featuredproducts": [
+                {
+                    "href": "https://cdn.umbraco.io/content/262beb70-53a6-49b8-9e98-cfde2e85a78e",
+                    "title": "Biker Jacket"
+                },
+                {
+                    "href": "https://cdn.umbraco.io/content/df1eb830-411b-4d41-a343-3917b76d533c",
+                    "title": "Tattoo"
+                },
+                {
+                    "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2",
+                    "title": "Unicorn"
+                },
+                {
+                    "href": "https://cdn.umbraco.io/content/d390a562-107d-4f02-8df7-57aa86bad752",
+                    "title": "Ping Pong Ball"
+                },
+                {
+                    "href": "https://cdn.umbraco.io/content/bb7d5ae0-07ac-40b8-b5b9-18c36947fb56",
+                    "title": "Bowling Ball"
+                },
+                {
+                    "href": "https://cdn.umbraco.io/content/202cdc2f-1a45-40f4-a653-a7b321e1c54c",
+                    "title": "Jumpsuit"
+                },
+                {
+                    "href": "https://cdn.umbraco.io/content/103171c8-e11c-4002-9bb2-f3404cada22a",
+                    "title": "Banjo"
+                },
+                {
+                    "href": "https://cdn.umbraco.io/content/061662b9-b02a-4dcf-af59-92b603e8e3e1",
+                    "title": "Knitted West"
+                }
+            ]
+        },
+        "contentTypeAlias": "products",
+        "name": "Products",
+        "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+        "sortOrder": 0,
+        "pageTitle": "Our Gorgeous Selection",
+        "bodyText": {
+            "name": "1 column layout",
+            "sections": [
+                {
+                    "grid": 12,
+                    "allowAll": true,
+                    "rows": []
+                }
+            ]
+        },
+        "seoMetaDescription": "",
+        "keywords": [],
+        "umbracoNavihide": false,
+        "defaultCurrency": "€",
+        "featuredProducts": []
+    },
+    "bodyText": {
+        "name": "1 column layout",
+        "sections": [
+            {
+                "grid": 12,
+                "rows": [
+                    {
+                        "name": "Full Width",
+                        "areas": [
+                            {
+                                "grid": 12,
+                                "allowAll": false,
+                                "allowed": [
+                                    "media",
+                                    "macro",
+                                    "embed",
+                                    "headline"
+                                ],
+                                "hasConfig": false,
+                                "controls": [
+                                    {
+                                        "value": {
+                                            "macroAlias": "latestBlogposts",
+                                            "macroParamsDictionary": {
+                                                "numberOfPosts": "3",
+                                                "startNodeId": "umb://document/1d770f10d1ca4a269d68071e2c9f7ac1"
+                                            }
+                                        },
+                                        "editor": {
+                                            "name": "Macro",
+                                            "alias": "macro",
+                                            "view": "macro",
+                                            "render": null,
+                                            "icon": "icon-settings-alt",
+                                            "config": {}
+                                        },
+                                        "active": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "hasConfig": false,
+                        "id": "314cb47b-fbe1-eeb6-f7cc-38db875d0f06"
+                    }
+                ]
+            }
+        ]
+    },
+    "footerHeader": "Umbraco Demo",
+    "footerDescription": "Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat",
+    "footerCTACaption": "Read All on the Blog",
+    "FooterCtalink": {
+        "_creatorName": "Morten Christensen",
+        "_url": "/home/blog/",
+        "_writerName": "Administrator",
+        "_hasChildren": true,
+        "_level": 2,
+        "_createDate": "2019-09-13T12:36:12.02Z",
+        "_id": "1d770f10-d1ca-4a26-9d68-071e2c9f7ac1",
+        "_updateDate": "2019-09-13T12:36:27.02Z",
+        "_links": null,
+        "contentTypeAlias": "blog",
+        "name": "Blog",
+        "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+        "sortOrder": 3,
+        "seoMetaDescription": "",
+        "keywords": [],
+        "umbracoNavihide": false,
+        "pageTitle": "Behind The Scenes",
+        "bodyText": {
+            "name": "1 column layout",
+            "sections": [
+                {
+                    "grid": 12,
+                    "allowAll": true,
+                    "rows": []
+                }
+            ]
+        },
+        "howManyPostsShouldBeShown": 2,
+        "disqusShortname": ""
+    },
+    "footerAddress": "Umbraco HQ - Unicorn Square - Haubergsvej 1 - 5000 Odense C - Denmark - +45 70 26 11 62",
+    "HeroBackgroundImage": {
+        "_creatorName": "Administrator",
+        "_url": "https://media.umbraco.io/media/662af6ca411a4c93a6c722c4845698e7/00000006000000000000000000000000/16403439029_f500be349b_o.jpg",
+        "_writerName": "Administrator",
+        "_hasChildren": false,
+        "_level": 2,
+        "_createDate": "2019-09-13T12:36:21.59Z",
+        "_id": "662af6ca-411a-4c93-a6c7-22c4845698e7",
+        "_updateDate": "2019-09-13T12:36:21.59Z",
+        "_links": null,
+        "contentTypeAlias": "Image",
+        "name": "Umbraco Campari Meeting Room",
+        "parentId": "b6f11172-373f-4473-af0f-0b0e5aefd21c",
+        "sortOrder": 0,
+        "umbracoFile": {
+            "src": "/media/662af6ca411a4c93a6c722c4845698e7/00000006000000000000000000000000/16403439029_f500be349b_o.jpg",
+            "focalPoint": null,
+            "crops": null
+        },
+        "umbracoWidth": 0,
+        "umbracoHeight": 0,
+        "umbracoBytes": 0,
+        "umbracoExtension": ""
+    },
+    "font": "serif",
+    "colorTheme": "earth",
+    "sitename": "Umbraco Sample Site",
+    "SiteLogo": null
+}</value>
+  </data>
+  <data name="GetDescendantsPageOne" xml:space="preserve">
+    <value>{
+    "_totalItems": 23,
+    "_totalPages": 3,
+    "_page": 1,
+    "_pageSize": 10,
+    "_links": {
+        "self": {
+            "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/descendants?page=1"
+        },
+        "next": {
+            "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/descendants?page=2"
+        },
+        "page": {
+            "href": "https://cdn.umbraco.io/content/{id}/descendants{?page,pageSize}",
+            "templated": true
+        },
+        "root": {
+            "href": "https://cdn.umbraco.io/content"
+        },
+        "content": [
+            {
+                "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/df1eb830-411b-4d41-a343-3917b76d533c"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/d390a562-107d-4f02-8df7-57aa86bad752"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/bb7d5ae0-07ac-40b8-b5b9-18c36947fb56"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/202cdc2f-1a45-40f4-a653-a7b321e1c54c"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/103171c8-e11c-4002-9bb2-f3404cada22a"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/061662b9-b02a-4dcf-af59-92b603e8e3e1"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/262beb70-53a6-49b8-9e98-cfde2e85a78e"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62"
+            }
+        ]
+    },
+    "_embedded": {
+        "content": [
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/products/",
+                "_writerName": "Administrator",
+                "_hasChildren": true,
+                "_level": 2,
+                "_createDate": "2019-09-13T12:36:11.093Z",
+                "_id": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                "_updateDate": "2019-09-13T12:36:24.967Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+                    },
+                    "featuredproducts": [
+                        {
+                            "href": "https://cdn.umbraco.io/content/262beb70-53a6-49b8-9e98-cfde2e85a78e",
+                            "title": "Biker Jacket"
+                        },
+                        {
+                            "href": "https://cdn.umbraco.io/content/df1eb830-411b-4d41-a343-3917b76d533c",
+                            "title": "Tattoo"
+                        },
+                        {
+                            "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2",
+                            "title": "Unicorn"
+                        },
+                        {
+                            "href": "https://cdn.umbraco.io/content/d390a562-107d-4f02-8df7-57aa86bad752",
+                            "title": "Ping Pong Ball"
+                        },
+                        {
+                            "href": "https://cdn.umbraco.io/content/bb7d5ae0-07ac-40b8-b5b9-18c36947fb56",
+                            "title": "Bowling Ball"
+                        },
+                        {
+                            "href": "https://cdn.umbraco.io/content/202cdc2f-1a45-40f4-a653-a7b321e1c54c",
+                            "title": "Jumpsuit"
+                        },
+                        {
+                            "href": "https://cdn.umbraco.io/content/103171c8-e11c-4002-9bb2-f3404cada22a",
+                            "title": "Banjo"
+                        },
+                        {
+                            "href": "https://cdn.umbraco.io/content/061662b9-b02a-4dcf-af59-92b603e8e3e1",
+                            "title": "Knitted West"
+                        }
+                    ],
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1"
+                    }
+                },
+                "contentTypeAlias": "products",
+                "name": "Products",
+                "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                "sortOrder": 0,
+                "pageTitle": "Our Gorgeous Selection",
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": []
+                        }
+                    ]
+                },
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "defaultCurrency": "€",
+                "featuredProducts": [
+                    {
+                        "_creatorName": "Morten Christensen",
+                        "_url": "/home/products/biker-jacket/",
+                        "_writerName": "Administrator",
+                        "_hasChildren": false,
+                        "_level": 3,
+                        "_createDate": "2019-09-13T12:36:11.533Z",
+                        "_id": "262beb70-53a6-49b8-9e98-cfde2e85a78e",
+                        "_updateDate": "2019-09-13T12:36:25.993Z",
+                        "_links": {
+                            "photos": {
+                                "href": "https://cdn.umbraco.io/media/55514845-b8bd-487c-b370-9724852fd6bb",
+                                "title": "Biker Jacket"
+                            }
+                        },
+                        "contentTypeAlias": "product",
+                        "name": "Biker Jacket",
+                        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "sortOrder": 7,
+                        "productName": "Biker Jacket",
+                        "price": 199,
+                        "category": [
+                            "bingo",
+                            "clothing"
+                        ],
+                        "description": "Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.",
+                        "sku": "UMB-BIKER-JACKET",
+                        "photos": null,
+                        "features": [
+                            {
+                                "contentTypeAlias": "feature",
+                                "featureName": "Free shipping",
+                                "featureDetails": "Isn't that awesome - you only pay for the product"
+                            },
+                            {
+                                "contentTypeAlias": "feature",
+                                "featureName": "1 Day return policy",
+                                "featureDetails": "You'll need to make up your mind fast"
+                            },
+                            {
+                                "contentTypeAlias": "feature",
+                                "featureName": "100 Years warranty",
+                                "featureDetails": "But if you're satisfied it'll last a lifetime"
+                            }
+                        ],
+                        "bodyText": {
+                            "name": "1 column layout",
+                            "sections": [
+                                {
+                                    "grid": 12,
+                                    "allowAll": true,
+                                    "rows": []
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "_creatorName": "Morten Christensen",
+                        "_url": "/home/products/tattoo/",
+                        "_writerName": "Administrator",
+                        "_hasChildren": false,
+                        "_level": 3,
+                        "_createDate": "2019-09-13T12:36:11.14Z",
+                        "_id": "df1eb830-411b-4d41-a343-3917b76d533c",
+                        "_updateDate": "2019-09-13T12:36:25.077Z",
+                        "_links": {
+                            "photos": {
+                                "href": "https://cdn.umbraco.io/media/20e3a8ff-ad1b-4fe9-b48c-b8461c46d2d0",
+                                "title": "Tattoo"
+                            }
+                        },
+                        "contentTypeAlias": "product",
+                        "name": "Tattoo",
+                        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "sortOrder": 0,
+                        "productName": "Tattoo",
+                        "price": 499,
+                        "category": [
+                            "tattoo",
+                            "dedication"
+                        ],
+                        "description": "Cras ultricies ligula sed magna dictum porta.",
+                        "sku": "UMB-TATTOO",
+                        "photos": null,
+                        "features": [],
+                        "bodyText": {
+                            "name": "1 column layout",
+                            "sections": [
+                                {
+                                    "grid": 12,
+                                    "allowAll": true,
+                                    "rows": []
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "_creatorName": "Morten Christensen",
+                        "_url": "/home/products/unicorn/",
+                        "_writerName": "Administrator",
+                        "_hasChildren": false,
+                        "_level": 3,
+                        "_createDate": "2019-09-13T12:36:11.217Z",
+                        "_id": "4e96411a-b8e1-435f-9322-2faee30ef5f2",
+                        "_updateDate": "2019-09-13T12:36:25.233Z",
+                        "_links": {
+                            "photos": {
+                                "href": "https://cdn.umbraco.io/media/1bc5280b-8658-4027-89d9-58e2576e469b",
+                                "title": "Unicorn"
+                            }
+                        },
+                        "contentTypeAlias": "product",
+                        "name": "Unicorn",
+                        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "sortOrder": 1,
+                        "productName": "Unicorn",
+                        "price": 249,
+                        "category": [
+                            "animals"
+                        ],
+                        "description": "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta.",
+                        "sku": "UMB-UNICORN",
+                        "photos": null,
+                        "features": [],
+                        "bodyText": {
+                            "name": "1 column layout",
+                            "sections": [
+                                {
+                                    "grid": 12,
+                                    "allowAll": true,
+                                    "rows": []
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "_creatorName": "Morten Christensen",
+                        "_url": "/home/products/ping-pong-ball/",
+                        "_writerName": "Administrator",
+                        "_hasChildren": false,
+                        "_level": 3,
+                        "_createDate": "2019-09-13T12:36:11.253Z",
+                        "_id": "d390a562-107d-4f02-8df7-57aa86bad752",
+                        "_updateDate": "2019-09-13T12:36:25.377Z",
+                        "_links": {
+                            "photos": {
+                                "href": "https://cdn.umbraco.io/media/c09ec77f-08e3-466a-ac58-c979befd3cd6",
+                                "title": "Ping Pong Ball"
+                            }
+                        },
+                        "contentTypeAlias": "product",
+                        "name": "Ping Pong Ball",
+                        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "sortOrder": 2,
+                        "productName": "Ping Pong Ball",
+                        "price": 2,
+                        "category": [
+                            "sports",
+                            "bingo"
+                        ],
+                        "description": "Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ultricies ligula sed magna dictum porta.",
+                        "sku": "UMB-PINGPONG",
+                        "photos": null,
+                        "features": [],
+                        "bodyText": {
+                            "name": "1 column layout",
+                            "sections": [
+                                {
+                                    "grid": 12,
+                                    "allowAll": true,
+                                    "rows": []
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "_creatorName": "Morten Christensen",
+                        "_url": "/home/products/bowling-ball/",
+                        "_writerName": "Administrator",
+                        "_hasChildren": false,
+                        "_level": 3,
+                        "_createDate": "2019-09-13T12:36:11.327Z",
+                        "_id": "bb7d5ae0-07ac-40b8-b5b9-18c36947fb56",
+                        "_updateDate": "2019-09-13T12:36:25.483Z",
+                        "_links": {
+                            "photos": {
+                                "href": "https://cdn.umbraco.io/media/b76ddb4e-e603-4014-9906-6087984740ec",
+                                "title": "Bowling Ball"
+                            }
+                        },
+                        "contentTypeAlias": "product",
+                        "name": "Bowling Ball",
+                        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "sortOrder": 3,
+                        "productName": "Bowling Ball",
+                        "price": 899,
+                        "category": [
+                            "sports",
+                            "bingo"
+                        ],
+                        "description": "Cras ultricies ligula sed magna dictum porta.",
+                        "sku": "UMB-BOWLING",
+                        "photos": null,
+                        "features": [],
+                        "bodyText": {
+                            "name": "1 column layout",
+                            "sections": [
+                                {
+                                    "grid": 12,
+                                    "allowAll": true,
+                                    "rows": []
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "_creatorName": "Morten Christensen",
+                        "_url": "/home/products/jumpsuit/",
+                        "_writerName": "Administrator",
+                        "_hasChildren": false,
+                        "_level": 3,
+                        "_createDate": "2019-09-13T12:36:11.377Z",
+                        "_id": "202cdc2f-1a45-40f4-a653-a7b321e1c54c",
+                        "_updateDate": "2019-09-13T12:36:25.61Z",
+                        "_links": {
+                            "photos": {
+                                "href": "https://cdn.umbraco.io/media/46a025d6-095a-4b14-8b96-1b59ca4e951c",
+                                "title": "Jumpsuit"
+                            }
+                        },
+                        "contentTypeAlias": "product",
+                        "name": "Jumpsuit",
+                        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "sortOrder": 4,
+                        "productName": "Jumpsuit",
+                        "price": 89,
+                        "category": [
+                            "fashion",
+                            "bingo"
+                        ],
+                        "description": "Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta.",
+                        "sku": "UMB-JUMPSUIT",
+                        "photos": null,
+                        "features": [],
+                        "bodyText": {
+                            "name": "1 column layout",
+                            "sections": [
+                                {
+                                    "grid": 12,
+                                    "allowAll": true,
+                                    "rows": []
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "_creatorName": "Morten Christensen",
+                        "_url": "/home/products/banjo/",
+                        "_writerName": "Administrator",
+                        "_hasChildren": false,
+                        "_level": 3,
+                        "_createDate": "2019-09-13T12:36:11.423Z",
+                        "_id": "103171c8-e11c-4002-9bb2-f3404cada22a",
+                        "_updateDate": "2019-09-13T12:36:25.733Z",
+                        "_links": {
+                            "photos": {
+                                "href": "https://cdn.umbraco.io/media/17552d12-081d-4d01-b681-32c495d6576f",
+                                "title": "Banjo"
+                            }
+                        },
+                        "contentTypeAlias": "product",
+                        "name": "Banjo",
+                        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "sortOrder": 5,
+                        "productName": "Banjo",
+                        "price": 399,
+                        "category": [
+                            "bingo",
+                            "music"
+                        ],
+                        "description": "Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Proin eget tortor risus.",
+                        "sku": "UMB-BANJO",
+                        "photos": null,
+                        "features": [],
+                        "bodyText": {
+                            "name": "1 column layout",
+                            "sections": [
+                                {
+                                    "grid": 12,
+                                    "allowAll": true,
+                                    "rows": []
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "_creatorName": "Morten Christensen",
+                        "_url": "/home/products/knitted-west/",
+                        "_writerName": "Administrator",
+                        "_hasChildren": false,
+                        "_level": 3,
+                        "_createDate": "2019-09-13T12:36:11.487Z",
+                        "_id": "061662b9-b02a-4dcf-af59-92b603e8e3e1",
+                        "_updateDate": "2019-09-13T12:36:25.843Z",
+                        "_links": {
+                            "photos": {
+                                "href": "https://cdn.umbraco.io/media/1d0b713a-022a-49c8-b842-a2463c83a553",
+                                "title": "Knitted West"
+                            }
+                        },
+                        "contentTypeAlias": "product",
+                        "name": "Knitted West",
+                        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "sortOrder": 6,
+                        "productName": "Knitted Unicorn West",
+                        "price": 1899,
+                        "category": [
+                            "bingo",
+                            "fashion"
+                        ],
+                        "description": "Knitted Unicorn West",
+                        "sku": "UMB-WEST",
+                        "photos": null,
+                        "features": [],
+                        "bodyText": {
+                            "name": "1 column layout",
+                            "sections": [
+                                {
+                                    "grid": 12,
+                                    "allowAll": true,
+                                    "rows": []
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/products/tattoo/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:11.14Z",
+                "_id": "df1eb830-411b-4d41-a343-3917b76d533c",
+                "_updateDate": "2019-09-13T12:36:25.077Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/df1eb830-411b-4d41-a343-3917b76d533c"
+                    },
+                    "photos": {
+                        "href": "https://cdn.umbraco.io/media/20e3a8ff-ad1b-4fe9-b48c-b8461c46d2d0",
+                        "title": "Tattoo"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/df1eb830-411b-4d41-a343-3917b76d533c/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/df1eb830-411b-4d41-a343-3917b76d533c/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/df1eb830-411b-4d41-a343-3917b76d533c/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+                    }
+                },
+                "contentTypeAlias": "product",
+                "name": "Tattoo",
+                "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                "sortOrder": 0,
+                "productName": "Tattoo",
+                "price": 499,
+                "category": [
+                    "tattoo",
+                    "dedication"
+                ],
+                "description": "Cras ultricies ligula sed magna dictum porta.",
+                "sku": "UMB-TATTOO",
+                "photos": {
+                    "_creatorName": "Administrator",
+                    "_url": "https://media.umbraco.io/media/20e3a8ffad1b4fe9b48cb8461c46d2d0/00000006000000000000000000000000/7371127652_e01b6ab56f_b.jpg",
+                    "_writerName": "Administrator",
+                    "_hasChildren": false,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:22.02Z",
+                    "_id": "20e3a8ff-ad1b-4fe9-b48c-b8461c46d2d0",
+                    "_updateDate": "2019-09-13T12:36:22.02Z",
+                    "_links": null,
+                    "contentTypeAlias": "Image",
+                    "name": "Tattoo",
+                    "parentId": "6d5bf746-cb82-45c5-bd15-dd3798209b87",
+                    "sortOrder": 0,
+                    "umbracoFile": {
+                        "src": "/media/20e3a8ffad1b4fe9b48cb8461c46d2d0/00000006000000000000000000000000/7371127652_e01b6ab56f_b.jpg",
+                        "focalPoint": null,
+                        "crops": null
+                    },
+                    "umbracoWidth": 0,
+                    "umbracoHeight": 0,
+                    "umbracoBytes": 0,
+                    "umbracoExtension": ""
+                },
+                "features": [],
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": []
+                        }
+                    ]
+                }
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/products/unicorn/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:11.217Z",
+                "_id": "4e96411a-b8e1-435f-9322-2faee30ef5f2",
+                "_updateDate": "2019-09-13T12:36:25.233Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2"
+                    },
+                    "photos": {
+                        "href": "https://cdn.umbraco.io/media/1bc5280b-8658-4027-89d9-58e2576e469b",
+                        "title": "Unicorn"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+                    }
+                },
+                "contentTypeAlias": "product",
+                "name": "Unicorn",
+                "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                "sortOrder": 1,
+                "productName": "Unicorn",
+                "price": 249,
+                "category": [
+                    "animals"
+                ],
+                "description": "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta.",
+                "sku": "UMB-UNICORN",
+                "photos": {
+                    "_creatorName": "Administrator",
+                    "_url": "https://media.umbraco.io/media/1bc5280b8658402789d958e2576e469b/00000006000000000000000000000000/14272036539_469ca21d5c_h.jpg",
+                    "_writerName": "Administrator",
+                    "_hasChildren": false,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:22.227Z",
+                    "_id": "1bc5280b-8658-4027-89d9-58e2576e469b",
+                    "_updateDate": "2019-09-13T12:36:22.227Z",
+                    "_links": null,
+                    "contentTypeAlias": "Image",
+                    "name": "Unicorn",
+                    "parentId": "6d5bf746-cb82-45c5-bd15-dd3798209b87",
+                    "sortOrder": 0,
+                    "umbracoFile": {
+                        "src": "/media/1bc5280b8658402789d958e2576e469b/00000006000000000000000000000000/14272036539_469ca21d5c_h.jpg",
+                        "focalPoint": null,
+                        "crops": null
+                    },
+                    "umbracoWidth": 0,
+                    "umbracoHeight": 0,
+                    "umbracoBytes": 0,
+                    "umbracoExtension": ""
+                },
+                "features": [],
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": []
+                        }
+                    ]
+                }
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/products/ping-pong-ball/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:11.253Z",
+                "_id": "d390a562-107d-4f02-8df7-57aa86bad752",
+                "_updateDate": "2019-09-13T12:36:25.377Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/d390a562-107d-4f02-8df7-57aa86bad752"
+                    },
+                    "photos": {
+                        "href": "https://cdn.umbraco.io/media/c09ec77f-08e3-466a-ac58-c979befd3cd6",
+                        "title": "Ping Pong Ball"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/d390a562-107d-4f02-8df7-57aa86bad752/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/d390a562-107d-4f02-8df7-57aa86bad752/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/d390a562-107d-4f02-8df7-57aa86bad752/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+                    }
+                },
+                "contentTypeAlias": "product",
+                "name": "Ping Pong Ball",
+                "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                "sortOrder": 2,
+                "productName": "Ping Pong Ball",
+                "price": 2,
+                "category": [
+                    "sports",
+                    "bingo"
+                ],
+                "description": "Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ultricies ligula sed magna dictum porta.",
+                "sku": "UMB-PINGPONG",
+                "photos": {
+                    "_creatorName": "Administrator",
+                    "_url": "https://media.umbraco.io/media/c09ec77f08e3466aac58c979befd3cd6/00000006000000000000000000000000/5852022211_9028df67c0_b.jpg",
+                    "_writerName": "Administrator",
+                    "_hasChildren": false,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:22.507Z",
+                    "_id": "c09ec77f-08e3-466a-ac58-c979befd3cd6",
+                    "_updateDate": "2019-09-13T12:36:22.507Z",
+                    "_links": null,
+                    "contentTypeAlias": "Image",
+                    "name": "Ping Pong Ball",
+                    "parentId": "6d5bf746-cb82-45c5-bd15-dd3798209b87",
+                    "sortOrder": 0,
+                    "umbracoFile": {
+                        "src": "/media/c09ec77f08e3466aac58c979befd3cd6/00000006000000000000000000000000/5852022211_9028df67c0_b.jpg",
+                        "focalPoint": null,
+                        "crops": null
+                    },
+                    "umbracoWidth": 0,
+                    "umbracoHeight": 0,
+                    "umbracoBytes": 0,
+                    "umbracoExtension": ""
+                },
+                "features": [],
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": []
+                        }
+                    ]
+                }
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/products/bowling-ball/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:11.327Z",
+                "_id": "bb7d5ae0-07ac-40b8-b5b9-18c36947fb56",
+                "_updateDate": "2019-09-13T12:36:25.483Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/bb7d5ae0-07ac-40b8-b5b9-18c36947fb56"
+                    },
+                    "photos": {
+                        "href": "https://cdn.umbraco.io/media/b76ddb4e-e603-4014-9906-6087984740ec",
+                        "title": "Bowling Ball"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/bb7d5ae0-07ac-40b8-b5b9-18c36947fb56/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/bb7d5ae0-07ac-40b8-b5b9-18c36947fb56/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/bb7d5ae0-07ac-40b8-b5b9-18c36947fb56/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+                    }
+                },
+                "contentTypeAlias": "product",
+                "name": "Bowling Ball",
+                "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                "sortOrder": 3,
+                "productName": "Bowling Ball",
+                "price": 899,
+                "category": [
+                    "sports",
+                    "bingo"
+                ],
+                "description": "Cras ultricies ligula sed magna dictum porta.",
+                "sku": "UMB-BOWLING",
+                "photos": {
+                    "_creatorName": "Administrator",
+                    "_url": "https://media.umbraco.io/media/b76ddb4ee603401499066087984740ec/00000006000000000000000000000000/5852022091_87c5d045ab_b.jpg",
+                    "_writerName": "Administrator",
+                    "_hasChildren": false,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:22.727Z",
+                    "_id": "b76ddb4e-e603-4014-9906-6087984740ec",
+                    "_updateDate": "2019-09-13T12:36:22.727Z",
+                    "_links": null,
+                    "contentTypeAlias": "Image",
+                    "name": "Bowling Ball",
+                    "parentId": "6d5bf746-cb82-45c5-bd15-dd3798209b87",
+                    "sortOrder": 0,
+                    "umbracoFile": {
+                        "src": "/media/b76ddb4ee603401499066087984740ec/00000006000000000000000000000000/5852022091_87c5d045ab_b.jpg",
+                        "focalPoint": null,
+                        "crops": null
+                    },
+                    "umbracoWidth": 0,
+                    "umbracoHeight": 0,
+                    "umbracoBytes": 0,
+                    "umbracoExtension": ""
+                },
+                "features": [],
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": []
+                        }
+                    ]
+                }
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/products/jumpsuit/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:11.377Z",
+                "_id": "202cdc2f-1a45-40f4-a653-a7b321e1c54c",
+                "_updateDate": "2019-09-13T12:36:25.61Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/202cdc2f-1a45-40f4-a653-a7b321e1c54c"
+                    },
+                    "photos": {
+                        "href": "https://cdn.umbraco.io/media/46a025d6-095a-4b14-8b96-1b59ca4e951c",
+                        "title": "Jumpsuit"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/202cdc2f-1a45-40f4-a653-a7b321e1c54c/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/202cdc2f-1a45-40f4-a653-a7b321e1c54c/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/202cdc2f-1a45-40f4-a653-a7b321e1c54c/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+                    }
+                },
+                "contentTypeAlias": "product",
+                "name": "Jumpsuit",
+                "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                "sortOrder": 4,
+                "productName": "Jumpsuit",
+                "price": 89,
+                "category": [
+                    "fashion",
+                    "bingo"
+                ],
+                "description": "Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta.",
+                "sku": "UMB-JUMPSUIT",
+                "photos": {
+                    "_creatorName": "Administrator",
+                    "_url": "https://media.umbraco.io/media/46a025d6095a4b148b961b59ca4e951c/00000006000000000000000000000000/7377957524_347859faac_b.jpg",
+                    "_writerName": "Administrator",
+                    "_hasChildren": false,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:22.977Z",
+                    "_id": "46a025d6-095a-4b14-8b96-1b59ca4e951c",
+                    "_updateDate": "2019-09-13T12:36:22.977Z",
+                    "_links": null,
+                    "contentTypeAlias": "Image",
+                    "name": "Jumpsuit",
+                    "parentId": "6d5bf746-cb82-45c5-bd15-dd3798209b87",
+                    "sortOrder": 0,
+                    "umbracoFile": {
+                        "src": "/media/46a025d6095a4b148b961b59ca4e951c/00000006000000000000000000000000/7377957524_347859faac_b.jpg",
+                        "focalPoint": null,
+                        "crops": null
+                    },
+                    "umbracoWidth": 0,
+                    "umbracoHeight": 0,
+                    "umbracoBytes": 0,
+                    "umbracoExtension": ""
+                },
+                "features": [],
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": []
+                        }
+                    ]
+                }
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/products/banjo/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:11.423Z",
+                "_id": "103171c8-e11c-4002-9bb2-f3404cada22a",
+                "_updateDate": "2019-09-13T12:36:25.733Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/103171c8-e11c-4002-9bb2-f3404cada22a"
+                    },
+                    "photos": {
+                        "href": "https://cdn.umbraco.io/media/17552d12-081d-4d01-b681-32c495d6576f",
+                        "title": "Banjo"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/103171c8-e11c-4002-9bb2-f3404cada22a/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/103171c8-e11c-4002-9bb2-f3404cada22a/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/103171c8-e11c-4002-9bb2-f3404cada22a/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+                    }
+                },
+                "contentTypeAlias": "product",
+                "name": "Banjo",
+                "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                "sortOrder": 5,
+                "productName": "Banjo",
+                "price": 399,
+                "category": [
+                    "bingo",
+                    "music"
+                ],
+                "description": "Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Proin eget tortor risus.",
+                "sku": "UMB-BANJO",
+                "photos": {
+                    "_creatorName": "Administrator",
+                    "_url": "https://media.umbraco.io/media/17552d12081d4d01b68132c495d6576f/00000006000000000000000000000000/7373036290_5e8420bf36_b.jpg",
+                    "_writerName": "Administrator",
+                    "_hasChildren": false,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:23.24Z",
+                    "_id": "17552d12-081d-4d01-b681-32c495d6576f",
+                    "_updateDate": "2019-09-13T12:36:23.24Z",
+                    "_links": null,
+                    "contentTypeAlias": "Image",
+                    "name": "Banjo",
+                    "parentId": "6d5bf746-cb82-45c5-bd15-dd3798209b87",
+                    "sortOrder": 0,
+                    "umbracoFile": {
+                        "src": "/media/17552d12081d4d01b68132c495d6576f/00000006000000000000000000000000/7373036290_5e8420bf36_b.jpg",
+                        "focalPoint": null,
+                        "crops": null
+                    },
+                    "umbracoWidth": 0,
+                    "umbracoHeight": 0,
+                    "umbracoBytes": 0,
+                    "umbracoExtension": ""
+                },
+                "features": [],
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": []
+                        }
+                    ]
+                }
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/products/knitted-west/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:11.487Z",
+                "_id": "061662b9-b02a-4dcf-af59-92b603e8e3e1",
+                "_updateDate": "2019-09-13T12:36:25.843Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/061662b9-b02a-4dcf-af59-92b603e8e3e1"
+                    },
+                    "photos": {
+                        "href": "https://cdn.umbraco.io/media/1d0b713a-022a-49c8-b842-a2463c83a553",
+                        "title": "Knitted West"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/061662b9-b02a-4dcf-af59-92b603e8e3e1/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/061662b9-b02a-4dcf-af59-92b603e8e3e1/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/061662b9-b02a-4dcf-af59-92b603e8e3e1/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+                    }
+                },
+                "contentTypeAlias": "product",
+                "name": "Knitted West",
+                "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                "sortOrder": 6,
+                "productName": "Knitted Unicorn West",
+                "price": 1899,
+                "category": [
+                    "bingo",
+                    "fashion"
+                ],
+                "description": "Knitted Unicorn West",
+                "sku": "UMB-WEST",
+                "photos": {
+                    "_creatorName": "Administrator",
+                    "_url": "https://media.umbraco.io/media/1d0b713a022a49c8b842a2463c83a553/00000006000000000000000000000000/7373036208_30257976a0_b.jpg",
+                    "_writerName": "Administrator",
+                    "_hasChildren": false,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:23.49Z",
+                    "_id": "1d0b713a-022a-49c8-b842-a2463c83a553",
+                    "_updateDate": "2019-09-13T12:36:23.49Z",
+                    "_links": null,
+                    "contentTypeAlias": "Image",
+                    "name": "Knitted West",
+                    "parentId": "6d5bf746-cb82-45c5-bd15-dd3798209b87",
+                    "sortOrder": 0,
+                    "umbracoFile": {
+                        "src": "/media/1d0b713a022a49c8b842a2463c83a553/00000006000000000000000000000000/7373036208_30257976a0_b.jpg",
+                        "focalPoint": null,
+                        "crops": null
+                    },
+                    "umbracoWidth": 0,
+                    "umbracoHeight": 0,
+                    "umbracoBytes": 0,
+                    "umbracoExtension": ""
+                },
+                "features": [],
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": []
+                        }
+                    ]
+                }
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/products/biker-jacket/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:11.533Z",
+                "_id": "262beb70-53a6-49b8-9e98-cfde2e85a78e",
+                "_updateDate": "2019-09-13T12:36:25.993Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/262beb70-53a6-49b8-9e98-cfde2e85a78e"
+                    },
+                    "photos": {
+                        "href": "https://cdn.umbraco.io/media/55514845-b8bd-487c-b370-9724852fd6bb",
+                        "title": "Biker Jacket"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+                    }
+                },
+                "contentTypeAlias": "product",
+                "name": "Biker Jacket",
+                "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                "sortOrder": 7,
+                "productName": "Biker Jacket",
+                "price": 199,
+                "category": [
+                    "bingo",
+                    "clothing"
+                ],
+                "description": "Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.",
+                "sku": "UMB-BIKER-JACKET",
+                "photos": {
+                    "_creatorName": "Administrator",
+                    "_url": "https://media.umbraco.io/media/55514845b8bd487cb3709724852fd6bb/00000006000000000000000000000000/4730684907_8a7f8759cb_b.jpg",
+                    "_writerName": "Administrator",
+                    "_hasChildren": false,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:21.83Z",
+                    "_id": "55514845-b8bd-487c-b370-9724852fd6bb",
+                    "_updateDate": "2019-09-13T12:36:21.83Z",
+                    "_links": null,
+                    "contentTypeAlias": "Image",
+                    "name": "Biker Jacket",
+                    "parentId": "6d5bf746-cb82-45c5-bd15-dd3798209b87",
+                    "sortOrder": 0,
+                    "umbracoFile": {
+                        "src": "/media/55514845b8bd487cb3709724852fd6bb/00000006000000000000000000000000/4730684907_8a7f8759cb_b.jpg",
+                        "focalPoint": null,
+                        "crops": null
+                    },
+                    "umbracoWidth": 0,
+                    "umbracoHeight": 0,
+                    "umbracoBytes": 0,
+                    "umbracoExtension": ""
+                },
+                "features": [
+                    {
+                        "contentTypeAlias": "feature",
+                        "featureName": "Free shipping",
+                        "featureDetails": "Isn't that awesome - you only pay for the product"
+                    },
+                    {
+                        "contentTypeAlias": "feature",
+                        "featureName": "1 Day return policy",
+                        "featureDetails": "You'll need to make up your mind fast"
+                    },
+                    {
+                        "contentTypeAlias": "feature",
+                        "featureName": "100 Years warranty",
+                        "featureDetails": "But if you're satisfied it'll last a lifetime"
+                    }
+                ],
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": []
+                        }
+                    ]
+                }
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/people/",
+                "_writerName": "Administrator",
+                "_hasChildren": true,
+                "_level": 2,
+                "_createDate": "2019-09-13T12:36:11.597Z",
+                "_id": "e8ad9b65-cff6-4952-ac5b-efe56a60db62",
+                "_updateDate": "2019-09-13T12:36:26.203Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1"
+                    }
+                },
+                "contentTypeAlias": "people",
+                "name": "People",
+                "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                "sortOrder": 1,
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "pageTitle": "Nice crazy people",
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": []
+                        }
+                    ]
+                },
+                "featuredPeople": null
+            }
+        ]
+    }
+}</value>
+  </data>
+  <data name="GetDescendantsPageThree" xml:space="preserve">
+    <value>{
+    "_totalItems": 23,
+    "_totalPages": 3,
+    "_page": 3,
+    "_pageSize": 10,
+    "_links": {
+        "self": {
+            "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/descendants?page=3"
+        },
+        "prev": {
+            "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/descendants?page=2"
+        },
+        "page": {
+            "href": "https://cdn.umbraco.io/content/{id}/descendants{?page,pageSize}",
+            "templated": true
+        },
+        "root": {
+            "href": "https://cdn.umbraco.io/content"
+        },
+        "content": [
+            {
+                "href": "https://cdn.umbraco.io/content/72346384-fc5e-4a6e-a07d-559eec11dcea"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/bc41a208-5c36-4978-a3e2-7cfcfd581980"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/4a1f4198-e143-48ba-a0f5-1a7ef2df23aa"
+            }
+        ]
+    },
+    "_embedded": {
+        "content": [
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/blog/another-one/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:12.157Z",
+                "_id": "72346384-fc5e-4a6e-a07d-559eec11dcea",
+                "_updateDate": "2019-09-13T12:36:27.273Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/72346384-fc5e-4a6e-a07d-559eec11dcea"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/72346384-fc5e-4a6e-a07d-559eec11dcea/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/72346384-fc5e-4a6e-a07d-559eec11dcea/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/72346384-fc5e-4a6e-a07d-559eec11dcea/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1"
+                    }
+                },
+                "contentTypeAlias": "blogpost",
+                "name": "Another one",
+                "parentId": "1d770f10-d1ca-4a26-9d68-071e2c9f7ac1",
+                "sortOrder": 1,
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "pageTitle": "Now it gets exciting",
+                "categories": [
+                    "cg16",
+                    "codegarden",
+                    "umbraco"
+                ],
+                "excerpt": "Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Sed porttitor lectus nibh.",
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": [
+                                {
+                                    "label": "Article",
+                                    "name": "Article",
+                                    "areas": [
+                                        {
+                                            "grid": 4,
+                                            "hasConfig": false,
+                                            "controls": [
+                                                {
+                                                    "value": {
+                                                        "udi": "umb://media/55514845b8bd487cb3709724852fd6bb",
+                                                        "image": "/media/55514845b8bd487cb3709724852fd6bb/00000006000000000000000000000000/4730684907_8a7f8759cb_b.jpg"
+                                                    },
+                                                    "editor": {
+                                                        "name": "Image",
+                                                        "alias": "media",
+                                                        "view": "media",
+                                                        "render": null,
+                                                        "icon": "icon-picture",
+                                                        "config": {}
+                                                    },
+                                                    "active": false
+                                                }
+                                            ],
+                                            "active": false
+                                        },
+                                        {
+                                            "grid": 8,
+                                            "hasConfig": false,
+                                            "controls": [
+                                                {
+                                                    "value": "&lt;p&gt;Donec sollicitudin molestie malesuada. Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor accumsan tincidunt. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.&lt;/p&gt;\n&lt;p&gt;Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Sed porttitor lectus nibh.&lt;/p&gt;\n&lt;p&gt;Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat.&lt;/p&gt;",
+                                                    "editor": {
+                                                        "name": "Rich text editor",
+                                                        "alias": "rte",
+                                                        "view": "rte",
+                                                        "render": null,
+                                                        "icon": "icon-article",
+                                                        "config": {}
+                                                    },
+                                                    "active": true
+                                                }
+                                            ],
+                                            "active": true
+                                        }
+                                    ],
+                                    "hasConfig": false,
+                                    "id": "011e74f2-b4de-0e4e-1cb9-23b2356b1213",
+                                    "hasActiveChild": true,
+                                    "active": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/blog/this-will-be-great/",
+                "_writerName": "Morten Christensen",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:12.25Z",
+                "_id": "bc41a208-5c36-4978-a3e2-7cfcfd581980",
+                "_updateDate": "2019-09-20T08:35:15.823Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/bc41a208-5c36-4978-a3e2-7cfcfd581980"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/bc41a208-5c36-4978-a3e2-7cfcfd581980/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/bc41a208-5c36-4978-a3e2-7cfcfd581980/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/bc41a208-5c36-4978-a3e2-7cfcfd581980/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1"
+                    }
+                },
+                "contentTypeAlias": "blogpost",
+                "name": "This will be great",
+                "parentId": "1d770f10-d1ca-4a26-9d68-071e2c9f7ac1",
+                "sortOrder": 2,
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "pageTitle": "This will be great",
+                "categories": [
+                    "great",
+                    "umbraco"
+                ],
+                "excerpt": "Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus magna justo, lacinia eget consectetur sed",
+                "bodyText": null
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/contact/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 2,
+                "_createDate": "2019-09-13T12:36:12.3Z",
+                "_id": "4a1f4198-e143-48ba-a0f5-1a7ef2df23aa",
+                "_updateDate": "2019-09-13T12:36:27.49Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/4a1f4198-e143-48ba-a0f5-1a7ef2df23aa"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/4a1f4198-e143-48ba-a0f5-1a7ef2df23aa/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/4a1f4198-e143-48ba-a0f5-1a7ef2df23aa/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/4a1f4198-e143-48ba-a0f5-1a7ef2df23aa/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1"
+                    }
+                },
+                "contentTypeAlias": "contact",
+                "name": "Contact",
+                "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                "sortOrder": 4,
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "pageTitle": "Let's have a chat",
+                "contactFormHeader": "Send Us A Message",
+                "contactIntro": "&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget lacinia nisl. Aenean sollicitudin diam vitae enim ultrices, semper euismod magna efficitur.&lt;/p&gt;",
+                "contactForm": "adf160f1-39f5-44c0-b01d-9e2da32bf093",
+                "mapHeader": "You'll find us here",
+                "mapCoordinates": "55.40622012982414,10.388404726982117,18"
+            }
+        ]
+    }
+}</value>
+  </data>
+  <data name="GetDescendantsPageTwo" xml:space="preserve">
+    <value>{
+    "_totalItems": 23,
+    "_totalPages": 3,
+    "_page": 2,
+    "_pageSize": 10,
+    "_links": {
+        "self": {
+            "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/descendants?page=2"
+        },
+        "prev": {
+            "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/descendants?page=1"
+        },
+        "next": {
+            "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/descendants?page=3"
+        },
+        "page": {
+            "href": "https://cdn.umbraco.io/content/{id}/descendants{?page,pageSize}",
+            "templated": true
+        },
+        "root": {
+            "href": "https://cdn.umbraco.io/content"
+        },
+        "content": [
+            {
+                "href": "https://cdn.umbraco.io/content/616d0f54-b8b0-450e-be0d-2ca4c06672a2"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/eab72f13-b22e-46d5-b270-9c196e49a53b"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/9946f249-0d6e-496c-91b6-64eaf1a3dffd"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/4f0b7052-d854-43b5-bb7c-6c82af4d96d1"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/1301ecb2-beaf-44f3-a12e-48bdbcde6023"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/3cce2545-e3ac-44ec-bf55-a52cc5965db3"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/ee82cba3-a0e7-4063-9ae1-3026a4f72a3d"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/9c1c3a2c-72b0-45e2-a3c3-3c068164a018"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1"
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/782c631b-11e9-4e90-8fc1-6aeff37b488a"
+            }
+        ]
+    },
+    "_embedded": {
+        "content": [
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/people/jan-skovgaard/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:11.643Z",
+                "_id": "616d0f54-b8b0-450e-be0d-2ca4c06672a2",
+                "_updateDate": "2019-09-13T12:36:26.287Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/616d0f54-b8b0-450e-be0d-2ca4c06672a2"
+                    },
+                    "photo": {
+                        "href": "https://cdn.umbraco.io/media/cf1ab8dc-ad0f-4a8e-974b-87b84777b0d6",
+                        "title": "Jan Skovgaard"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/616d0f54-b8b0-450e-be0d-2ca4c06672a2/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/616d0f54-b8b0-450e-be0d-2ca4c06672a2/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/616d0f54-b8b0-450e-be0d-2ca4c06672a2/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62"
+                    }
+                },
+                "contentTypeAlias": "person",
+                "name": "Jan Skovgaard",
+                "parentId": "e8ad9b65-cff6-4952-ac5b-efe56a60db62",
+                "sortOrder": 0,
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "photo": {
+                    "_creatorName": "Administrator",
+                    "_url": "https://media.umbraco.io/media/cf1ab8dcad0f4a8e974b87b84777b0d6/00000006000000000000000000000000/18720470241_ff77768544_h.jpg",
+                    "_writerName": "Administrator",
+                    "_hasChildren": false,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:23.697Z",
+                    "_id": "cf1ab8dc-ad0f-4a8e-974b-87b84777b0d6",
+                    "_updateDate": "2019-09-13T12:36:23.697Z",
+                    "_links": null,
+                    "contentTypeAlias": "Image",
+                    "name": "Jan Skovgaard",
+                    "parentId": "1fd2ecaf-f371-4c00-9306-867fa4585e7a",
+                    "sortOrder": 0,
+                    "umbracoFile": {
+                        "src": "/media/cf1ab8dcad0f4a8e974b87b84777b0d6/00000006000000000000000000000000/18720470241_ff77768544_h.jpg",
+                        "focalPoint": null,
+                        "crops": null
+                    },
+                    "umbracoWidth": 0,
+                    "umbracoHeight": 0,
+                    "umbracoBytes": 0,
+                    "umbracoExtension": ""
+                },
+                "department": [
+                    "mvp",
+                    "Denmark"
+                ],
+                "email": "",
+                "twitterUsername": "",
+                "facebookUsername": "",
+                "linkedInUsername": "",
+                "instagramUsername": ""
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/people/matt-brailsford/",
+                "_writerName": "Morten Christensen",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:11.69Z",
+                "_id": "eab72f13-b22e-46d5-b270-9c196e49a53b",
+                "_updateDate": "2019-09-20T08:35:40.52Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/eab72f13-b22e-46d5-b270-9c196e49a53b"
+                    },
+                    "photo": {
+                        "href": "https://cdn.umbraco.io/media/eee91c05-b2e8-4031-a056-dcd7f28eff89",
+                        "title": "Matt Brailsford"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/eab72f13-b22e-46d5-b270-9c196e49a53b/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/eab72f13-b22e-46d5-b270-9c196e49a53b/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/eab72f13-b22e-46d5-b270-9c196e49a53b/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62"
+                    }
+                },
+                "contentTypeAlias": "person",
+                "name": "Matt Brailsford",
+                "parentId": "e8ad9b65-cff6-4952-ac5b-efe56a60db62",
+                "sortOrder": 1,
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "photo": {
+                    "_creatorName": "Administrator",
+                    "_url": "https://media.umbraco.io/media/eee91c05b2e84031a056dcd7f28eff89/00000006000000000000000000000000/18531852339_981b067419_h.jpg",
+                    "_writerName": "Administrator",
+                    "_hasChildren": false,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:23.897Z",
+                    "_id": "eee91c05-b2e8-4031-a056-dcd7f28eff89",
+                    "_updateDate": "2019-09-13T12:36:23.897Z",
+                    "_links": null,
+                    "contentTypeAlias": "Image",
+                    "name": "Matt Brailsford",
+                    "parentId": "1fd2ecaf-f371-4c00-9306-867fa4585e7a",
+                    "sortOrder": 0,
+                    "umbracoFile": {
+                        "src": "/media/eee91c05b2e84031a056dcd7f28eff89/00000006000000000000000000000000/18531852339_981b067419_h.jpg",
+                        "focalPoint": null,
+                        "crops": null
+                    },
+                    "umbracoWidth": 0,
+                    "umbracoHeight": 0,
+                    "umbracoBytes": 0,
+                    "umbracoExtension": ""
+                },
+                "department": [
+                    "United Kingdom",
+                    "mvp"
+                ],
+                "email": "",
+                "twitterUsername": "mattbrailsford",
+                "facebookUsername": "",
+                "linkedInUsername": "",
+                "instagramUsername": "circuitbeard"
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/people/lee-kelleher/",
+                "_writerName": "Morten Christensen",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:11.737Z",
+                "_id": "9946f249-0d6e-496c-91b6-64eaf1a3dffd",
+                "_updateDate": "2019-09-20T08:43:19.253Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/9946f249-0d6e-496c-91b6-64eaf1a3dffd"
+                    },
+                    "photo": {
+                        "href": "https://cdn.umbraco.io/media/fa763e0d-0ceb-408c-8720-365d57e06e32",
+                        "title": "Lee Kelleher"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/9946f249-0d6e-496c-91b6-64eaf1a3dffd/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/9946f249-0d6e-496c-91b6-64eaf1a3dffd/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/9946f249-0d6e-496c-91b6-64eaf1a3dffd/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62"
+                    }
+                },
+                "contentTypeAlias": "person",
+                "name": "Lee Kelleher",
+                "parentId": "e8ad9b65-cff6-4952-ac5b-efe56a60db62",
+                "sortOrder": 2,
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "photo": {
+                    "_creatorName": "Administrator",
+                    "_url": "https://media.umbraco.io/media/fa763e0d0ceb408c8720365d57e06e32/00000006000000000000000000000000/18531854019_351c579559_h.jpg",
+                    "_writerName": "Administrator",
+                    "_hasChildren": false,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:24.103Z",
+                    "_id": "fa763e0d-0ceb-408c-8720-365d57e06e32",
+                    "_updateDate": "2019-09-13T12:36:24.103Z",
+                    "_links": null,
+                    "contentTypeAlias": "Image",
+                    "name": "Lee Kelleher",
+                    "parentId": "1fd2ecaf-f371-4c00-9306-867fa4585e7a",
+                    "sortOrder": 0,
+                    "umbracoFile": {
+                        "src": "/media/fa763e0d0ceb408c8720365d57e06e32/00000006000000000000000000000000/18531854019_351c579559_h.jpg",
+                        "focalPoint": null,
+                        "crops": null
+                    },
+                    "umbracoWidth": 0,
+                    "umbracoHeight": 0,
+                    "umbracoBytes": 0,
+                    "umbracoExtension": ""
+                },
+                "department": [
+                    "United Kingdom",
+                    "mvp"
+                ],
+                "email": "",
+                "twitterUsername": "https://twitter.com/leekelleher",
+                "facebookUsername": "",
+                "linkedInUsername": "",
+                "instagramUsername": ""
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/people/jeavon-leopold/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:11.783Z",
+                "_id": "4f0b7052-d854-43b5-bb7c-6c82af4d96d1",
+                "_updateDate": "2019-09-13T12:36:26.6Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/4f0b7052-d854-43b5-bb7c-6c82af4d96d1"
+                    },
+                    "photo": {
+                        "href": "https://cdn.umbraco.io/media/c0969cab-13ab-4de9-819a-848619ac2b5d",
+                        "title": "Jeavon Leopold"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/4f0b7052-d854-43b5-bb7c-6c82af4d96d1/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/4f0b7052-d854-43b5-bb7c-6c82af4d96d1/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/4f0b7052-d854-43b5-bb7c-6c82af4d96d1/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62"
+                    }
+                },
+                "contentTypeAlias": "person",
+                "name": "Jeavon Leopold",
+                "parentId": "e8ad9b65-cff6-4952-ac5b-efe56a60db62",
+                "sortOrder": 3,
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "photo": {
+                    "_creatorName": "Administrator",
+                    "_url": "https://media.umbraco.io/media/c0969cab13ab4de9819a848619ac2b5d/00000006000000000000000000000000/18095416144_44a566a5f4_h.jpg",
+                    "_writerName": "Administrator",
+                    "_hasChildren": false,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:24.287Z",
+                    "_id": "c0969cab-13ab-4de9-819a-848619ac2b5d",
+                    "_updateDate": "2019-09-13T12:36:24.287Z",
+                    "_links": null,
+                    "contentTypeAlias": "Image",
+                    "name": "Jeavon Leopold",
+                    "parentId": "1fd2ecaf-f371-4c00-9306-867fa4585e7a",
+                    "sortOrder": 0,
+                    "umbracoFile": {
+                        "src": "/media/c0969cab13ab4de9819a848619ac2b5d/00000006000000000000000000000000/18095416144_44a566a5f4_h.jpg",
+                        "focalPoint": null,
+                        "crops": null
+                    },
+                    "umbracoWidth": 0,
+                    "umbracoHeight": 0,
+                    "umbracoBytes": 0,
+                    "umbracoExtension": ""
+                },
+                "department": [
+                    "United Kingdom",
+                    "mvp"
+                ],
+                "email": "",
+                "twitterUsername": "",
+                "facebookUsername": "",
+                "linkedInUsername": "",
+                "instagramUsername": ""
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/people/jeroen-breuer/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:11.83Z",
+                "_id": "1301ecb2-beaf-44f3-a12e-48bdbcde6023",
+                "_updateDate": "2019-09-13T12:36:26.707Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/1301ecb2-beaf-44f3-a12e-48bdbcde6023"
+                    },
+                    "photo": {
+                        "href": "https://cdn.umbraco.io/media/34371d08-92c8-4015-912e-baacd002c5d0",
+                        "title": "Jeroen Breuer"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/1301ecb2-beaf-44f3-a12e-48bdbcde6023/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/1301ecb2-beaf-44f3-a12e-48bdbcde6023/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/1301ecb2-beaf-44f3-a12e-48bdbcde6023/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62"
+                    }
+                },
+                "contentTypeAlias": "person",
+                "name": "Jeroen Breuer",
+                "parentId": "e8ad9b65-cff6-4952-ac5b-efe56a60db62",
+                "sortOrder": 4,
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "photo": {
+                    "_creatorName": "Administrator",
+                    "_url": "https://media.umbraco.io/media/34371d0892c84015912ebaacd002c5d0/00000006000000000000000000000000/18530280048_459b8b61b2_h.jpg",
+                    "_writerName": "Administrator",
+                    "_hasChildren": false,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:24.483Z",
+                    "_id": "34371d08-92c8-4015-912e-baacd002c5d0",
+                    "_updateDate": "2019-09-13T12:36:24.483Z",
+                    "_links": null,
+                    "contentTypeAlias": "Image",
+                    "name": "Jeroen Breuer",
+                    "parentId": "1fd2ecaf-f371-4c00-9306-867fa4585e7a",
+                    "sortOrder": 0,
+                    "umbracoFile": {
+                        "src": "/media/34371d0892c84015912ebaacd002c5d0/00000006000000000000000000000000/18530280048_459b8b61b2_h.jpg",
+                        "focalPoint": null,
+                        "crops": null
+                    },
+                    "umbracoWidth": 0,
+                    "umbracoHeight": 0,
+                    "umbracoBytes": 0,
+                    "umbracoExtension": ""
+                },
+                "department": [
+                    "Netherlands",
+                    "mvp"
+                ],
+                "email": "",
+                "twitterUsername": "",
+                "facebookUsername": "",
+                "linkedInUsername": "",
+                "instagramUsername": ""
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/about-us/",
+                "_writerName": "Administrator",
+                "_hasChildren": true,
+                "_level": 2,
+                "_createDate": "2019-09-13T12:36:11.877Z",
+                "_id": "3cce2545-e3ac-44ec-bf55-a52cc5965db3",
+                "_updateDate": "2019-09-13T12:36:26.8Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/3cce2545-e3ac-44ec-bf55-a52cc5965db3"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/3cce2545-e3ac-44ec-bf55-a52cc5965db3/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/3cce2545-e3ac-44ec-bf55-a52cc5965db3/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/3cce2545-e3ac-44ec-bf55-a52cc5965db3/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1"
+                    }
+                },
+                "contentTypeAlias": "contentPage",
+                "name": "About Us",
+                "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                "sortOrder": 2,
+                "pageTitle": "About Us",
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": [
+                                {
+                                    "name": "FullWidth",
+                                    "areas": [
+                                        {
+                                            "grid": 12,
+                                            "allowAll": true,
+                                            "hasConfig": false,
+                                            "controls": [
+                                                {
+                                                    "value": "Oooh la la",
+                                                    "editor": {
+                                                        "name": "Headline",
+                                                        "alias": "headline",
+                                                        "view": "textstring",
+                                                        "render": null,
+                                                        "icon": "icon-coin",
+                                                        "config": {
+                                                            "style": "font-size: 36px; line-height: 45px; font-weight: bold",
+                                                            "markup": "&lt;h1&gt;#value#&lt;/h1&gt;"
+                                                        }
+                                                    },
+                                                    "active": false
+                                                }
+                                            ],
+                                            "active": false
+                                        }
+                                    ],
+                                    "hasConfig": false,
+                                    "id": "f10995f1-918d-3e50-e50d-8c41bbe297ce",
+                                    "active": true
+                                },
+                                {
+                                    "label": "Article",
+                                    "name": "Article",
+                                    "areas": [
+                                        {
+                                            "grid": 4,
+                                            "hasConfig": false,
+                                            "controls": [
+                                                {
+                                                    "value": {
+                                                        "udi": "umb://media/c0969cab13ab4de9819a848619ac2b5d",
+                                                        "image": "/media/c0969cab13ab4de9819a848619ac2b5d/00000006000000000000000000000000/18095416144_44a566a5f4_h.jpg"
+                                                    },
+                                                    "editor": {
+                                                        "name": "Image",
+                                                        "alias": "media",
+                                                        "view": "media",
+                                                        "render": null,
+                                                        "icon": "icon-picture",
+                                                        "config": {}
+                                                    },
+                                                    "active": false
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "grid": 8,
+                                            "hasConfig": false,
+                                            "controls": [
+                                                {
+                                                    "value": "&lt;p&gt;Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Pellentesque in ipsum id orci porta dapibus. Pellentesque in ipsum id orci porta dapibus. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.&lt;/p&gt;\n&lt;p&gt;Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Pellentesque in ipsum id orci porta dapibus. Pellentesque in ipsum id orci porta dapibus. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.&lt;/p&gt;",
+                                                    "editor": {
+                                                        "name": "Rich text editor",
+                                                        "alias": "rte",
+                                                        "view": "rte",
+                                                        "render": null,
+                                                        "icon": "icon-article",
+                                                        "config": {}
+                                                    },
+                                                    "active": false
+                                                },
+                                                {
+                                                    "value": "&lt;iframe width=\"360\" height=\"203\" src=\"https://www.youtube.com/embed/HPgKSCp_Y_U?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen&gt;&lt;/iframe&gt;",
+                                                    "editor": {
+                                                        "name": "Embed",
+                                                        "alias": "embed",
+                                                        "view": "embed",
+                                                        "render": null,
+                                                        "icon": "icon-movie-alt",
+                                                        "config": {}
+                                                    },
+                                                    "active": false
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "hasConfig": false,
+                                    "id": "4d6e2221-e2d9-95bc-8ceb-624bc8df8e3f"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/about-us/about-this-starter-kit/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:11.927Z",
+                "_id": "ee82cba3-a0e7-4063-9ae1-3026a4f72a3d",
+                "_updateDate": "2019-09-13T12:36:26.88Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/ee82cba3-a0e7-4063-9ae1-3026a4f72a3d"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/ee82cba3-a0e7-4063-9ae1-3026a4f72a3d/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/ee82cba3-a0e7-4063-9ae1-3026a4f72a3d/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/ee82cba3-a0e7-4063-9ae1-3026a4f72a3d/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/3cce2545-e3ac-44ec-bf55-a52cc5965db3"
+                    }
+                },
+                "contentTypeAlias": "contentPage",
+                "name": "About this Starter Kit",
+                "parentId": "3cce2545-e3ac-44ec-bf55-a52cc5965db3",
+                "sortOrder": 0,
+                "pageTitle": "About this Starter Kit",
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": []
+                        }
+                    ]
+                },
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/about-us/todo-list-for-the-starter-kit/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:11.973Z",
+                "_id": "9c1c3a2c-72b0-45e2-a3c3-3c068164a018",
+                "_updateDate": "2019-09-13T12:36:26.943Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/9c1c3a2c-72b0-45e2-a3c3-3c068164a018"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/9c1c3a2c-72b0-45e2-a3c3-3c068164a018/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/9c1c3a2c-72b0-45e2-a3c3-3c068164a018/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/9c1c3a2c-72b0-45e2-a3c3-3c068164a018/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/3cce2545-e3ac-44ec-bf55-a52cc5965db3"
+                    }
+                },
+                "contentTypeAlias": "contentPage",
+                "name": "Todo list for the Starter Kit",
+                "parentId": "3cce2545-e3ac-44ec-bf55-a52cc5965db3",
+                "sortOrder": 1,
+                "pageTitle": "Things to improve",
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": [
+                                {
+                                    "label": "",
+                                    "name": "Full Width",
+                                    "areas": [
+                                        {
+                                            "grid": 12,
+                                            "allowAll": false,
+                                            "hasConfig": false,
+                                            "controls": [
+                                                {
+                                                    "value": "&lt;p&gt;Here's what could be improved in the Starter Kit so far:&lt;/p&gt;\n&lt;p&gt; &lt;/p&gt;\n&lt;p&gt;For v1:&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Use a custom grid editor for testimonials&lt;/li&gt;\n&lt;li&gt;Integrated Analytics on pages&lt;/li&gt;\n&lt;li&gt;Call To Action Button in the grid (with \"Tag Manager\" integration)&lt;/li&gt;\n&lt;li&gt;Macro for fetching products (with friendly grid preview)&lt;/li&gt;\n&lt;li&gt;Design Review (polish)&lt;/li&gt;\n&lt;li&gt;Verify licenses of photos (Niels)&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;For vNext&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;span style=\"text-decoration: line-through;\"&gt;Swap text with uploaded logo&lt;/span&gt;&lt;/li&gt;\n&lt;li&gt;Nicer pickers of products and employees&lt;/li&gt;\n&lt;li&gt;Custom Listview for products and employees&lt;/li&gt;\n&lt;li&gt;Discus template on blog posts&lt;/li&gt;\n&lt;li&gt;404 template&lt;/li&gt;\n&lt;li&gt;Member Login/Register/Profile/Forgot password&lt;/li&gt;\n&lt;li&gt;Update default styling of grid header&lt;/li&gt;\n&lt;li&gt;On a Blog post -&amp;gt; Share/Social (tweet this / facebook this)&lt;/li&gt;\n&lt;/ul&gt;",
+                                                    "editor": {
+                                                        "name": "Rich text editor",
+                                                        "alias": "rte",
+                                                        "view": "rte",
+                                                        "render": null,
+                                                        "icon": "icon-article",
+                                                        "config": {}
+                                                    },
+                                                    "active": true
+                                                }
+                                            ],
+                                            "active": true,
+                                            "hasActiveChild": true
+                                        }
+                                    ],
+                                    "hasConfig": false,
+                                    "id": "5ea1e364-8406-e5e6-a82c-45985fd6054e",
+                                    "hasActiveChild": true,
+                                    "active": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/blog/",
+                "_writerName": "Administrator",
+                "_hasChildren": true,
+                "_level": 2,
+                "_createDate": "2019-09-13T12:36:12.02Z",
+                "_id": "1d770f10-d1ca-4a26-9d68-071e2c9f7ac1",
+                "_updateDate": "2019-09-13T12:36:27.02Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1"
+                    }
+                },
+                "contentTypeAlias": "blog",
+                "name": "Blog",
+                "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                "sortOrder": 3,
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "pageTitle": "Behind The Scenes",
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": []
+                        }
+                    ]
+                },
+                "howManyPostsShouldBeShown": 2,
+                "disqusShortname": ""
+            },
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/blog/my-blog-post/",
+                "_writerName": "Administrator",
+                "_hasChildren": false,
+                "_level": 3,
+                "_createDate": "2019-09-13T12:36:12.08Z",
+                "_id": "782c631b-11e9-4e90-8fc1-6aeff37b488a",
+                "_updateDate": "2019-09-13T12:36:27.1Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/782c631b-11e9-4e90-8fc1-6aeff37b488a"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/782c631b-11e9-4e90-8fc1-6aeff37b488a/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/782c631b-11e9-4e90-8fc1-6aeff37b488a/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/782c631b-11e9-4e90-8fc1-6aeff37b488a/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1"
+                    }
+                },
+                "contentTypeAlias": "blogpost",
+                "name": "My Blog Post",
+                "parentId": "1d770f10-d1ca-4a26-9d68-071e2c9f7ac1",
+                "sortOrder": 0,
+                "seoMetaDescription": "",
+                "keywords": [],
+                "umbracoNavihide": false,
+                "pageTitle": "My Blog Post",
+                "categories": [
+                    "demo",
+                    "umbraco",
+                    "starter kit"
+                ],
+                "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada.",
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "allowAll": true,
+                            "rows": [
+                                {
+                                    "label": "",
+                                    "name": "Full Width",
+                                    "areas": [
+                                        {
+                                            "grid": 12,
+                                            "allowAll": false,
+                                            "hasConfig": false,
+                                            "controls": [
+                                                {
+                                                    "value": "&lt;p&gt;Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada.&lt;/p&gt;\n&lt;p&gt;Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada.&lt;/p&gt;\n&lt;p&gt;Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada.&lt;/p&gt;",
+                                                    "editor": {
+                                                        "name": "Rich text editor",
+                                                        "alias": "rte",
+                                                        "view": "rte",
+                                                        "render": null,
+                                                        "icon": "icon-article",
+                                                        "config": {}
+                                                    },
+                                                    "active": true
+                                                }
+                                            ],
+                                            "active": true
+                                        }
+                                    ],
+                                    "hasConfig": false,
+                                    "id": "1f96a69f-0cb9-4a00-6a76-f8cec30befec",
+                                    "hasActiveChild": true,
+                                    "active": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}</value>
+  </data>
+  <data name="GetRoot" xml:space="preserve">
+    <value>{
+    "_links": {
+        "self": {
+            "href": "https://cdn.umbraco.io/content"
+        },
+        "ancestors": {
+            "href": "https://cdn.umbraco.io/content/{id}/ancestors",
+            "templated": true
+        },
+        "children": {
+            "href": "https://cdn.umbraco.io/content/{id}/children{?page,pageSize}",
+            "templated": true
+        },
+        "content": [
+            {
+                "href": "https://cdn.umbraco.io/content/{id}{?depth}",
+                "templated": true
+            },
+            {
+                "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1"
+            }
+        ],
+        "descendants": {
+            "href": "https://cdn.umbraco.io/content/{id}/descendants{?page,pageSize}",
+            "templated": true
+        },
+        "url": {
+            "href": "https://cdn.umbraco.io/content/url{?url,depth}",
+            "templated": true
+        }
+    },
+    "_embedded": {
+        "content": [
+            {
+                "_creatorName": "Morten Christensen",
+                "_url": "/home/",
+                "_writerName": "Administrator",
+                "_hasChildren": true,
+                "_level": 1,
+                "_createDate": "2019-09-13T12:36:10.927Z",
+                "_id": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                "_updateDate": "2019-09-13T12:36:24.763Z",
+                "_links": {
+                    "self": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1"
+                    },
+                    "heroctalink": {
+                        "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                        "title": "Products"
+                    },
+                    "footerctalink": {
+                        "href": "https://cdn.umbraco.io/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1",
+                        "title": "Blog"
+                    },
+                    "herobackgroundimage": {
+                        "href": "https://cdn.umbraco.io/media/662af6ca-411a-4c93-a6c7-22c4845698e7",
+                        "title": "Umbraco Campari Meeting Room"
+                    },
+                    "root": {
+                        "href": "https://cdn.umbraco.io/content"
+                    },
+                    "children": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/children"
+                    },
+                    "ancestors": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/ancestors"
+                    },
+                    "descendants": {
+                        "href": "https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/descendants"
+                    },
+                    "parent": {
+                        "href": "https://cdn.umbraco.io/content"
+                    }
+                },
+                "contentTypeAlias": "home",
+                "name": "Home",
+                "sortOrder": 0,
+                "heroHeader": "Umbraco Demo",
+                "heroDescription": "Moonfish, steelhead, lamprey southern flounder tadpole fish sculpin bigeye, blue-redstripe danio collared dogfish. Smalleye squaretail goldfish arowana butterflyfish pipefish wolf-herring jewel tetra, shiner; gibberfish red velvetfish. Thornyhead yellowfin pike threadsail ayu cutlassfish.",
+                "heroCTACaption": "Check our products",
+                "HeroCtalink": {
+                    "_creatorName": "Morten Christensen",
+                    "_url": "/home/products/",
+                    "_writerName": "Administrator",
+                    "_hasChildren": true,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:11.093Z",
+                    "_id": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+                    "_updateDate": "2019-09-13T12:36:24.967Z",
+                    "_links": {
+                        "featuredproducts": [
+                            {
+                                "href": "https://cdn.umbraco.io/content/262beb70-53a6-49b8-9e98-cfde2e85a78e",
+                                "title": "Biker Jacket"
+                            },
+                            {
+                                "href": "https://cdn.umbraco.io/content/df1eb830-411b-4d41-a343-3917b76d533c",
+                                "title": "Tattoo"
+                            },
+                            {
+                                "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2",
+                                "title": "Unicorn"
+                            },
+                            {
+                                "href": "https://cdn.umbraco.io/content/d390a562-107d-4f02-8df7-57aa86bad752",
+                                "title": "Ping Pong Ball"
+                            },
+                            {
+                                "href": "https://cdn.umbraco.io/content/bb7d5ae0-07ac-40b8-b5b9-18c36947fb56",
+                                "title": "Bowling Ball"
+                            },
+                            {
+                                "href": "https://cdn.umbraco.io/content/202cdc2f-1a45-40f4-a653-a7b321e1c54c",
+                                "title": "Jumpsuit"
+                            },
+                            {
+                                "href": "https://cdn.umbraco.io/content/103171c8-e11c-4002-9bb2-f3404cada22a",
+                                "title": "Banjo"
+                            },
+                            {
+                                "href": "https://cdn.umbraco.io/content/061662b9-b02a-4dcf-af59-92b603e8e3e1",
+                                "title": "Knitted West"
+                            }
+                        ]
+                    },
+                    "contentTypeAlias": "products",
+                    "name": "Products",
+                    "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                    "sortOrder": 0,
+                    "pageTitle": "Our Gorgeous Selection",
+                    "bodyText": {
+                        "name": "1 column layout",
+                        "sections": [
+                            {
+                                "grid": 12,
+                                "allowAll": true,
+                                "rows": []
+                            }
+                        ]
+                    },
+                    "seoMetaDescription": "",
+                    "keywords": [],
+                    "umbracoNavihide": false,
+                    "defaultCurrency": "€",
+                    "featuredProducts": []
+                },
+                "bodyText": {
+                    "name": "1 column layout",
+                    "sections": [
+                        {
+                            "grid": 12,
+                            "rows": [
+                                {
+                                    "name": "Full Width",
+                                    "areas": [
+                                        {
+                                            "grid": 12,
+                                            "allowAll": false,
+                                            "allowed": [
+                                                "media",
+                                                "macro",
+                                                "embed",
+                                                "headline"
+                                            ],
+                                            "hasConfig": false,
+                                            "controls": [
+                                                {
+                                                    "value": {
+                                                        "macroAlias": "latestBlogposts",
+                                                        "macroParamsDictionary": {
+                                                            "numberOfPosts": "3",
+                                                            "startNodeId": "umb://document/1d770f10d1ca4a269d68071e2c9f7ac1"
+                                                        }
+                                                    },
+                                                    "editor": {
+                                                        "name": "Macro",
+                                                        "alias": "macro",
+                                                        "view": "macro",
+                                                        "render": null,
+                                                        "icon": "icon-settings-alt",
+                                                        "config": {}
+                                                    },
+                                                    "active": false
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "hasConfig": false,
+                                    "id": "314cb47b-fbe1-eeb6-f7cc-38db875d0f06"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "footerHeader": "Umbraco Demo",
+                "footerDescription": "Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat",
+                "footerCTACaption": "Read All on the Blog",
+                "FooterCtalink": {
+                    "_creatorName": "Morten Christensen",
+                    "_url": "/home/blog/",
+                    "_writerName": "Administrator",
+                    "_hasChildren": true,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:12.02Z",
+                    "_id": "1d770f10-d1ca-4a26-9d68-071e2c9f7ac1",
+                    "_updateDate": "2019-09-13T12:36:27.02Z",
+                    "_links": null,
+                    "contentTypeAlias": "blog",
+                    "name": "Blog",
+                    "parentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+                    "sortOrder": 3,
+                    "seoMetaDescription": "",
+                    "keywords": [],
+                    "umbracoNavihide": false,
+                    "pageTitle": "Behind The Scenes",
+                    "bodyText": {
+                        "name": "1 column layout",
+                        "sections": [
+                            {
+                                "grid": 12,
+                                "allowAll": true,
+                                "rows": []
+                            }
+                        ]
+                    },
+                    "howManyPostsShouldBeShown": 2,
+                    "disqusShortname": ""
+                },
+                "footerAddress": "Umbraco HQ - Unicorn Square - Haubergsvej 1 - 5000 Odense C - Denmark - +45 70 26 11 62",
+                "HeroBackgroundImage": {
+                    "_creatorName": "Administrator",
+                    "_url": "https://media.umbraco.io/media/662af6ca411a4c93a6c722c4845698e7/00000006000000000000000000000000/16403439029_f500be349b_o.jpg",
+                    "_writerName": "Administrator",
+                    "_hasChildren": false,
+                    "_level": 2,
+                    "_createDate": "2019-09-13T12:36:21.59Z",
+                    "_id": "662af6ca-411a-4c93-a6c7-22c4845698e7",
+                    "_updateDate": "2019-09-13T12:36:21.59Z",
+                    "_links": null,
+                    "contentTypeAlias": "Image",
+                    "name": "Umbraco Campari Meeting Room",
+                    "parentId": "b6f11172-373f-4473-af0f-0b0e5aefd21c",
+                    "sortOrder": 0,
+                    "umbracoFile": {
+                        "src": "/media/662af6ca411a4c93a6c722c4845698e7/00000006000000000000000000000000/16403439029_f500be349b_o.jpg",
+                        "focalPoint": null,
+                        "crops": null
+                    },
+                    "umbracoWidth": 0,
+                    "umbracoHeight": 0,
+                    "umbracoBytes": 0,
+                    "umbracoExtension": ""
+                },
+                "font": "serif",
+                "colorTheme": "earth",
+                "sitename": "Umbraco Sample Site",
+                "SiteLogo": null
+            }
+        ]
+    }
+}</value>
+  </data>
+</root>
