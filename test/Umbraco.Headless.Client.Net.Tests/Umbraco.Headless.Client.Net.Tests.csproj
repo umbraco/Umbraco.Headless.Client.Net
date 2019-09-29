@@ -24,12 +24,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ContentDeliveryJson.resx</DependentUpon>
     </Compile>
+    <Compile Update="MediaDeliveryJson.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaDeliveryJson.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="ContentDeliveryJson.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ContentDeliveryJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MediaDeliveryJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MediaDeliveryJson.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
