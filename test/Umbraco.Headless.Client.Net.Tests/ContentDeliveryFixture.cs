@@ -83,7 +83,7 @@ namespace Umbraco.Headless.Client.Net.Tests
                 : (page == 2 ? ContentDeliveryJson.GetDescendantsPageTwo : ContentDeliveryJson.GetDescendantsPageThree);
             var service = new ContentDeliveryService(_configuration,
                 GetMockedHttpClient($"{_contentBaseUrl}/{id}/descendants", json));
-            var descendants = await service.Content.GetDescendants(contentId, page);
+            var descendants = await service.Content.GetDescendants(contentId, page: page);
             Assert.NotNull(descendants);
             Assert.NotNull(descendants.Content);
             Assert.NotEmpty(descendants.Content.Items);

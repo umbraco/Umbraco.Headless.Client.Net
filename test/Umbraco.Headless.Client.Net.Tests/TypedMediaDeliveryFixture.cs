@@ -27,7 +27,7 @@ namespace Umbraco.Headless.Client.Net.Tests
             var mediaId = Guid.Parse(id);
             var service = new ContentDeliveryService(_configuration,
                 GetMockedHttpClient($"{_mediaBaseUrl}/*", MediaDeliveryJson.GetMediaByIdMediaItem));
-            var media = await service.Media.GetById<MediaFile>(mediaId);
+            var media = await service.Media.GetById<Image>(mediaId);
             Assert.NotNull(media);
             Assert.NotNull(media.File);
             Assert.Null(media.File.Crops);

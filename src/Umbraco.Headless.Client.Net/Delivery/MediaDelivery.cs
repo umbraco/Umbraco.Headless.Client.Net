@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Refit;
+using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Delivery.Models;
 
 namespace Umbraco.Headless.Client.Net.Delivery
 {
     internal class MediaDelivery : IMediaDelivery
     {
+        private readonly IHeadlessConfiguration _configuration;
         private readonly HttpClient _httpClient;
-        public MediaDelivery(HttpClient httpClient)
+
+        public MediaDelivery(IHeadlessConfiguration configuration, HttpClient httpClient)
         {
+            _configuration = configuration;
             _httpClient = httpClient;
         }
 
