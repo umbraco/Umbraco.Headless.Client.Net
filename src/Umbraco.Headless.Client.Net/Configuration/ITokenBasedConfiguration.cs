@@ -2,6 +2,6 @@
 {
     public interface ITokenBasedConfiguration : IHeadlessConfiguration
     {
-        
+        string Token { get; }
     }
 }

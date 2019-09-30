@@ -2,6 +2,7 @@
 {
     public interface IPasswordBasedConfiguration : IHeadlessConfiguration
     {
-        
+        string Username { get; }
+        string Password { get; }
     }
 }
