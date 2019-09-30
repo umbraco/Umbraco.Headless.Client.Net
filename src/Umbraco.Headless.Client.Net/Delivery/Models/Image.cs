@@ -5,7 +5,7 @@ namespace Umbraco.Headless.Client.Net.Delivery.Models
     /// <summary>
     /// Default model for "Image" Document Types, which uses the ImageCropper for the "umbracoFile" Property.
     /// </summary>
-    public class MediaFile : ContentBase
+    public class Image : ContentBase
     {
         [JsonProperty("umbracoFile")]
         public ImageCropper File { get; set; }
