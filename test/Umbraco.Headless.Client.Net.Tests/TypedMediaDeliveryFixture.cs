@@ -39,6 +39,23 @@ namespace Umbraco.Headless.Client.Net.Tests
             Assert.Equal(600, media.Height);
         }
 
+        [Fact]
+        public async Task Can_Retrieve_Root_Media_as_Typed_Folders()
+        {
+            // NOTE: One remark here, as we currently don't have a ContentType filter for these types of calls
+            // this will try to deserialize the entire list to the specified type.
+            var service = new ContentDeliveryService(_configuration,
+                GetMockedHttpClient($"{_mediaBaseUrl}", MediaDeliveryJson.GetRoot));
+            var mediaItems = await service.Media.GetRoot<Folder>();
+            Assert.NotNull(mediaItems);
+            Assert.NotEmpty(mediaItems);
+
+            foreach (var folder in mediaItems)
+            {
+                Assert.Equal("Folder", folder.MediaTypeAlias);
+            }
+        }
+
         private HttpClient GetMockedHttpClient(string url, string jsonResponse)
         {
             _mockHttp.When(url).Respond("application/json", jsonResponse);

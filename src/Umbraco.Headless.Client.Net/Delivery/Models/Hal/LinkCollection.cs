@@ -4,6 +4,7 @@ using Umbraco.Headless.Client.Net.Serialization;
 
 namespace Umbraco.Headless.Client.Net.Delivery.Models.Hal
 {
+    [JsonObject("_links")]
     [JsonConverter(typeof(LinksConverter))]
     public class LinkCollection : List<Link>
     {
