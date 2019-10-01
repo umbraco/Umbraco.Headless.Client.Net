@@ -11,6 +11,7 @@ namespace Umbraco.Headless.Client.Net.Security
 {
     /// <summary>
     /// HttpClientHandler which handles retrieving and using an oAuth token
+    /// for use with the Content Delivery and Content Management APIs
     /// </summary>
     public class AuthenticatedHttpClientHandler : HttpClientHandler
     {
@@ -50,7 +51,7 @@ namespace Umbraco.Headless.Client.Net.Security
                 {"password", password}
             };
 
-            var response = await RestService.For<IOAuthEndpoints>(Constants.Urls.BaseApiUrl)
+            var response = await RestService.For<OAuthEndpoints>(Constants.Urls.BaseApiUrl)
                 .GetAuthToken(formData);
 
             _token = response.AccessToken;
