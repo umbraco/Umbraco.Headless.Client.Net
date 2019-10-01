@@ -138,6 +138,33 @@ namespace Umbraco.Headless.Client.Net.Tests {
         
         /// <summary>
         ///   Looks up a localized string similar to {
+        ///    &quot;_totalItems&quot;: 8,
+        ///    &quot;_totalPages&quot;: 1,
+        ///    &quot;_page&quot;: 1,
+        ///    &quot;_pageSize&quot;: 10,
+        ///    &quot;_links&quot;: {
+        ///        &quot;self&quot;: {
+        ///            &quot;href&quot;: &quot;https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324/children?page=1&quot;
+        ///        },
+        ///        &quot;page&quot;: {
+        ///            &quot;href&quot;: &quot;https://cdn.umbraco.io/content/{id}/children{?page,pageSize}&quot;,
+        ///            &quot;templated&quot;: true
+        ///        },
+        ///        &quot;root&quot;: {
+        ///            &quot;href&quot;: &quot;https://cdn.umbraco.io/content&quot;
+        ///        },
+        ///        &quot;content&quot;: [
+        ///            {
+        ///                &quot;h [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string GetChildrenOfProducts {
+            get {
+                return ResourceManager.GetString("GetChildrenOfProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
         ///    &quot;_creatorName&quot;: &quot;Morten Christensen&quot;,
         ///    &quot;_url&quot;: &quot;/home/&quot;,
         ///    &quot;_writerName&quot;: &quot;Administrator&quot;,
@@ -151,7 +178,7 @@ namespace Umbraco.Headless.Client.Net.Tests {
         ///            &quot;href&quot;: &quot;https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1&quot;
         ///        },
         ///        &quot;heroctalink&quot;: {
-        ///            &quot;href&quot;: &quot;https://cdn.umbraco.io/content/ec4aafcc-0 [rest of string was truncated]&quot;;.
+        ///            &quot;href&quot;: &quot;https://cdn.umbraco.io/cont [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string GetContentById {
             get {
