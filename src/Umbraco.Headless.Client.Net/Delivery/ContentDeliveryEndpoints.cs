@@ -45,7 +45,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
         Task<PagedContent<T>> GetDescendants([Header(Constants.Headers.AcceptLanguage)] string culture, Guid id, int page, int pageSize);
     }
 
-    public interface TypedContentDeliveryEndpoints<T> where T : IContentBase
+    interface TypedContentDeliveryEndpoints<T> where T : IContentBase
     {
         [Get("/content/{id}?depth={depth}&hyperlinks=false")]
         Task<T> GetById([Header(Constants.Headers.AcceptLanguage)] string culture, Guid id, int depth);

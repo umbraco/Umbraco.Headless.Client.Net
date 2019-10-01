@@ -29,6 +29,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>MediaDeliveryJson.resx</DependentUpon>
     </Compile>
+    <Compile Update="OAuthJson.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>OAuthJson.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -39,6 +44,10 @@
     <EmbeddedResource Update="MediaDeliveryJson.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MediaDeliveryJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="OAuthJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OAuthJson.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
