@@ -18,14 +18,14 @@
             public const string AcceptLanguage = "accept-language";
             public const string ApiKey = "api-key";
             public const string ApiVersion = "api-version";
-            public const string ProjectName = "umb-project-name";
+            public const string ProjectAlias = "umb-project-alias";
         }
 
         public static class Querystrings
         {
             public const string AcceptLanguage = "culture";
             public const string ApiVersion = "api-version";
-            public const string ProjectName = "umb-project-name";
+            public const string ProjectAlias = "umb-project-alias";
         }
     }
 }

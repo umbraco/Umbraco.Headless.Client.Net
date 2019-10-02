@@ -21,8 +21,8 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// Initializes a new instance of the ContentDeliveryService class
         /// </summary>
         /// <param name="projectAlias">Alias of the Project</param>
-        /// <param name="token">Api Key Token</param>
-        public ContentDeliveryService(string projectAlias, string token) : this(new TokenBasedConfiguration(projectAlias, token))
+        /// <param name="apiKey">Api Key</param>
+        public ContentDeliveryService(string projectAlias, string apiKey) : this(new ApiKeyBasedConfiguration(projectAlias, apiKey))
         { }
 
         /// <summary>
@@ -55,8 +55,8 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <summary>
         /// Initializes a new instance of the ContentDeliveryService class
         /// </summary>
-        /// <param name="configuration">Reference to the <see cref="ITokenBasedConfiguration"/></param>
-        public ContentDeliveryService(ITokenBasedConfiguration configuration)
+        /// <param name="configuration">Reference to the <see cref="IApiKeyBasedConfiguration"/></param>
+        public ContentDeliveryService(IApiKeyBasedConfiguration configuration)
         {
             var httpClient = new HttpClient {BaseAddress = new Uri(Constants.Urls.BaseCdnUrl)};
             httpClient.DefaultRequestHeaders.Add(Constants.Headers.ApiKey, configuration.Token);
