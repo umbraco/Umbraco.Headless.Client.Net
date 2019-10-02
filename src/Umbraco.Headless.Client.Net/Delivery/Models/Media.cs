@@ -10,7 +10,7 @@ namespace Umbraco.Headless.Client.Net.Delivery.Models
             Properties = new Dictionary<string, object>();
         }
 
-        [JsonProperty("contentTypeAlias")]
+        [JsonProperty("mediaTypeAlias")]
         public string MediaTypeAlias { get; set; }
 
 
