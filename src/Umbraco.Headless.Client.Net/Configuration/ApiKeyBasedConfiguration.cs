@@ -1,8 +1,8 @@
 ﻿namespace Umbraco.Headless.Client.Net.Configuration
 {
-    public class TokenBasedConfiguration : ITokenBasedConfiguration
+    public class ApiKeyBasedConfiguration : IApiKeyBasedConfiguration
     {
-        public TokenBasedConfiguration(string projectAlias, string token)
+        public ApiKeyBasedConfiguration(string projectAlias, string token)
         {
             ProjectAlias = projectAlias;
             Token = token;

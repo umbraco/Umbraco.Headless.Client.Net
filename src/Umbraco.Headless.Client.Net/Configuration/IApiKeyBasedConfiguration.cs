@@ -1,6 +1,6 @@
 ﻿namespace Umbraco.Headless.Client.Net.Configuration
 {
-    public interface ITokenBasedConfiguration : IHeadlessConfiguration
+    public interface IApiKeyBasedConfiguration : IHeadlessConfiguration
     {
         string Token { get; }
     }
