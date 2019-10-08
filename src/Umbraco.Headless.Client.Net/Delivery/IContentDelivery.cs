@@ -21,10 +21,10 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <summary>
         /// Gets the root Content items as the specified type
         /// </summary>
-        /// <typeparam name="T">A type that inherits from the <see cref="IContentBase"/> interface</typeparam>
+        /// <typeparam name="T">A type that inherits from the <see cref="IContent"/> interface</typeparam>
         /// <param name="culture">Content Culture (Optional)</param>
         /// <returns><see cref="IEnumerable{T}"/></returns>
-        Task<IEnumerable<T>> GetRoot<T>(string culture = null) where T : IContentBase;
+        Task<IEnumerable<T>> GetRoot<T>(string culture = null) where T : IContent;
 
         /// <summary>
         /// Gets a single Content item by its id
@@ -38,12 +38,12 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <summary>
         /// Gets a single Content item by its id as the specified type
         /// </summary>
-        /// <typeparam name="T">A type that inherits from the <see cref="IContentBase"/> interface</typeparam>
+        /// <typeparam name="T">A type that inherits from the <see cref="IContent"/> interface</typeparam>
         /// <param name="id"><see cref="Guid"/> id of the Content item</param>
         /// <param name="culture">Content Culture (Optional)</param>
         /// <param name="depth">Integer value specifying the number of levels to retrieve</param>
         /// <returns><see cref="Content"/></returns>
-        Task<T> GetById<T>(Guid id, string culture = null, int depth = 1) where T : IContentBase;
+        Task<T> GetById<T>(Guid id, string culture = null, int depth = 1) where T : IContent;
 
         /// <summary>
         /// Gets a single Content item by its Url
@@ -57,12 +57,12 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <summary>
         /// Gets a single Content item by its Url as the specified type
         /// </summary>
-        /// <typeparam name="T">A type that inherits from the <see cref="IContentBase"/> interface</typeparam>
+        /// <typeparam name="T">A type that inherits from the <see cref="IContent"/> interface</typeparam>
         /// <param name="url">Url for the content to retrieve, ie. /home/products</param>
         /// <param name="culture">Content Culture (Optional)</param>
         /// <param name="depth">Integer value specifying the number of levels to retrieve</param>
         /// <returns><see cref="Content"/></returns>
-        Task<T> GetByUrl<T>(string url, string culture = null, int depth = 1) where T : IContentBase;
+        Task<T> GetByUrl<T>(string url, string culture = null, int depth = 1) where T : IContent;
 
         /// <summary>
         /// Gets a paged list of Content items by their Parent Id
@@ -77,13 +77,13 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <summary>
         /// Gets a paged list of Content items by their Parent Id as the specified type
         /// </summary>
-        /// <typeparam name="T">A type that inherits from the <see cref="IContentBase"/> interface</typeparam>
+        /// <typeparam name="T">A type that inherits from the <see cref="IContent"/> interface</typeparam>
         /// <param name="id"><see cref="Guid"/> id of the Parent</param>
         /// <param name="culture">Content Culture (Optional)</param>
         /// <param name="page">Integer specifying the page number (Optional)</param>
         /// <param name="pageSize">Integer specifying the page size (Optional)</param>
         /// <returns><see cref="PagedContent{T}"/></returns>
-        Task<PagedContent<T>> GetChildren<T>(Guid id, string culture = null, int page = 1, int pageSize = 10) where T : IContentBase;
+        Task<PagedContent<T>> GetChildren<T>(Guid id, string culture = null, int page = 1, int pageSize = 10) where T : IContent;
 
         /// <summary>
         /// Gets the descendants of a Content item by its Id
@@ -98,13 +98,13 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <summary>
         /// Gets the descendants of a Content item by its Id as the specified type
         /// </summary>
-        /// <typeparam name="T">A type that inherits from the <see cref="IContentBase"/> interface</typeparam>
+        /// <typeparam name="T">A type that inherits from the <see cref="IContent"/> interface</typeparam>
         /// <param name="id"><see cref="Guid"/> id of the Content to retrieve descendants for</param>
         /// <param name="culture">Content Culture (Optional)</param>
         /// <param name="page">Integer specifying the page number (Optional)</param>
         /// <param name="pageSize">Integer specifying the page size (Optional)</param>
         /// <returns><see cref="PagedContent{T}"/></returns>
-        Task<PagedContent<T>> GetDescendants<T>(Guid id, string culture = null, int page = 1, int pageSize = 10) where T : IContentBase;
+        Task<PagedContent<T>> GetDescendants<T>(Guid id, string culture = null, int page = 1, int pageSize = 10) where T : IContent;
 
         /// <summary>
         /// Gets the ancestors of a Content item by its Id
@@ -117,10 +117,10 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <summary>
         /// Gets the ancestors of a Content item by its Id as the specified type
         /// </summary>
-        /// <typeparam name="T">A type that inherits from the <see cref="IContentBase"/> interface</typeparam>
+        /// <typeparam name="T">A type that inherits from the <see cref="IContent"/> interface</typeparam>
         /// <param name="id"><see cref="Guid"/> id of the Content to retrieve ancestors for</param>
         /// <param name="culture">Content Culture (Optional)</param>
         /// <returns><see cref="IEnumerable{T}"/></returns>
-        Task<IEnumerable<T>> GetAncestors<T>(Guid id, string culture = null) where T : IContentBase;
+        Task<IEnumerable<T>> GetAncestors<T>(Guid id, string culture = null) where T : IContent;
     }
 }

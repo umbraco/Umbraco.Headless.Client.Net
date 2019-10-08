@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Umbraco.Headless.Client.Net.Delivery.Models
 {
-    public class MediaCollection<T> where T : IContentBase
+    public class MediaCollection<T> where T : IMedia
     {
         [JsonProperty("media")]
         public IEnumerable<T> Items { get; set; }

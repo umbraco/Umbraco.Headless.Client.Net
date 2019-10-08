@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Refit;
 using Umbraco.Headless.Client.Net.Delivery.Models;
-using Umbraco.Headless.Client.Net.Delivery.Models.Hal;
+using Umbraco.Headless.Client.Net.Shared.Models;
 
 namespace Umbraco.Headless.Client.Net.Delivery
 {
@@ -27,7 +27,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
         Task<PagedContent> GetDescendants([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, Guid id, int page, int pageSize);
     }
 
-    interface TypedContentRootDeliveryEndpoints<T> where T : IContentBase
+    interface TypedContentRootDeliveryEndpoints<T> where T : IContent
     {
         [Get("/content?hyperlinks=false")]
         Task<RootContent<T>> GetRoot([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture);
@@ -36,7 +36,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
         Task<RootContent<T>> GetAncestors([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, Guid id);
     }
 
-    interface TypedPagedContentDeliveryEndpoints<T> where T : IContentBase
+    interface TypedPagedContentDeliveryEndpoints<T> where T : IContent
     {
         [Get("/content/{id}/children?page={page}&pageSize={pageSize}&hyperlinks=false")]
         Task<PagedContent<T>> GetChildren([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, Guid id, int page, int pageSize);
@@ -45,7 +45,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
         Task<PagedContent<T>> GetDescendants([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, Guid id, int page, int pageSize);
     }
 
-    interface TypedContentDeliveryEndpoints<T> where T : IContentBase
+    interface TypedContentDeliveryEndpoints<T> where T : IContent
     {
         [Get("/content/{id}?depth={depth}&hyperlinks=false")]
         Task<T> GetById([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, Guid id, int depth);
@@ -66,7 +66,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
         Task<PagedMedia> GetChildren([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id, int page, int pageSize);
     }
 
-    interface TypedMediaDeliveryEndpoints<T> where T : IContentBase
+    interface TypedMediaDeliveryEndpoints<T> where T : IMedia
     {
         [Get("/media?hyperlinks=false")]
         Task<RootMedia<T>> GetRoot([Header(Constants.Headers.ProjectAlias)] string projectAlias);

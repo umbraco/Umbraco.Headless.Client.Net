@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using Umbraco.Headless.Client.Net.Serialization;
 
-namespace Umbraco.Headless.Client.Net.Delivery.Models.Hal
+namespace Umbraco.Headless.Client.Net.Shared.Models
 {
     [JsonObject("_links")]
     [JsonConverter(typeof(LinksConverter))]

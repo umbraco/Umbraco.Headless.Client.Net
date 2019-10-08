@@ -26,7 +26,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
             return root.Media.Items;
         }
 
-        public async Task<IEnumerable<T>> GetRoot<T>() where T : IContentBase
+        public async Task<IEnumerable<T>> GetRoot<T>() where T : IMedia
         {
             var service = RestService.For<TypedMediaDeliveryEndpoints<T>>(_httpClient);
             var root = await service.GetRoot(_configuration.ProjectAlias);
@@ -40,7 +40,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
             return content;
         }
 
-        public async Task<T> GetById<T>(Guid id) where T : IContentBase
+        public async Task<T> GetById<T>(Guid id) where T : IMedia
         {
             var service = RestService.For<TypedMediaDeliveryEndpoints<T>>(_httpClient);
             var content = await service.GetById(_configuration.ProjectAlias, id);
@@ -54,7 +54,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
             return content;
         }
 
-        public async Task<PagedMedia<T>> GetChildren<T>(Guid id, int page = 0, int pageSize = 10) where T : IContentBase
+        public async Task<PagedMedia<T>> GetChildren<T>(Guid id, int page = 0, int pageSize = 10) where T : IMedia
         {
             var service = RestService.For<TypedMediaDeliveryEndpoints<T>>(_httpClient);
             var content = await service.GetChildren(_configuration.ProjectAlias, id, page, pageSize);

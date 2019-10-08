@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 
-namespace Umbraco.Headless.Client.Net.Delivery.Models.Hal
+namespace Umbraco.Headless.Client.Net.Shared.Models
 {
-    internal class RootMedia<T> where T : IContentBase
+    public abstract class PagedCollection<T>
     {
         [JsonProperty("totalResults")]
         public int TotalResults { get; set; }
@@ -17,9 +17,6 @@ namespace Umbraco.Headless.Client.Net.Delivery.Models.Hal
         public int PageSize { get; set; }
 
         [JsonProperty("_links")]
-        public Links Links { get; set; }
-
-        [JsonProperty("_embedded")]
-        public MediaCollection<T> Media { get; set; }
+        internal Links Links { get; set; }
     }
 }
