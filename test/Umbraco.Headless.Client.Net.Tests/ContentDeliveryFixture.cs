@@ -28,7 +28,7 @@ namespace Umbraco.Headless.Client.Net.Tests
             var contentItems = await service.Content.GetRoot();
             Assert.NotNull(contentItems);
             Assert.NotEmpty(contentItems);
-            Assert.Equal(1, contentItems.Count());
+            Assert.Single(contentItems);
         }
 
         [Theory]

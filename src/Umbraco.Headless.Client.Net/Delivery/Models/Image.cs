@@ -22,7 +22,7 @@ namespace Umbraco.Headless.Client.Net.Delivery.Models
         [JsonProperty("umbracoExtension")]
         public string Extension { get; set; }
 
-        [JsonProperty("contentTypeAlias")]
+        [JsonProperty("mediaTypeAlias")]
         public string MediaTypeAlias { get; set; }
     }
 }
