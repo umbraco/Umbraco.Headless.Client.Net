@@ -6,7 +6,7 @@ using Umbraco.Headless.Client.Net.Shared.Models;
 
 namespace Umbraco.Headless.Client.Net.Tests.StronglyTypedModels
 {
-    public class StarterkitHome : Content
+    public class StarterkitHome : PublishedContent
     {
         public string HeroHeader { get; set; }
         public string HeroDescription { get; set; }
@@ -32,7 +32,7 @@ namespace Umbraco.Headless.Client.Net.Tests.StronglyTypedModels
         public LinkCollection Links { get; set; }
     }
 
-    public class Product : Content
+    public class Product : PublishedContent
     {
         public string ProductName { get; set; }
         public string Price { get; set; }

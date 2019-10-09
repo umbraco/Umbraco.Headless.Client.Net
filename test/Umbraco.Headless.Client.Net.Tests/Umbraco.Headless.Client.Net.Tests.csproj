@@ -34,6 +34,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>OAuthJson.resx</DependentUpon>
     </Compile>
+    <Compile Update="DocumentTypeServiceJson.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentTypeServiceJson.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -48,6 +53,10 @@
     <EmbeddedResource Update="OAuthJson.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>OAuthJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="DocumentTypeServiceJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DocumentTypeServiceJson.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

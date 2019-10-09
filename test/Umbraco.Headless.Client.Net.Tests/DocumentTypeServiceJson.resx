@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="metadata">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" use="required" type="xsd:string" />
+                            <xsd:attribute name="type" type="xsd:string" />
+                            <xsd:attribute name="mimetype" type="xsd:string" />
+                            <xsd:attribute ref="xml:space" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="assembly">
+                        <xsd:complexType>
+                            <xsd:attribute name="alias" type="xsd:string" />
+                            <xsd:attribute name="name" type="xsd:string" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                            <xsd:attribute ref="xml:space" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" />
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="GetRoot" xml:space="preserve">
+        <value>{
+  "_links": {
+    "self": {
+      "href": "/api/content/type"
+    },
+    "contenttypes": [
+      {
+        "href": "/api/content/type/contentBase"
+      },
+      {
+        "href": "/api/content/type/navigationBase"
+      },
+      {
+        "href": "/api/content/type/products"
+      },
+      {
+        "href": "/api/content/type/product"
+      },
+      {
+        "href": "/api/content/type/person"
+      },
+      {
+        "href": "/api/content/type/people"
+      },
+      {
+        "href": "/api/content/type/feature"
+      },
+      {
+        "href": "/api/content/type/blogpost"
+      },
+      {
+        "href": "/api/content/type/blog"
+      },
+      {
+        "href": "/api/content/type/withUpload"
+      },
+      {
+        "href": "/api/content/type/home"
+      }
+    ]
+  },
+  "_embedded": {
+    "contenttypes": [
+      {
+        "allowCultureVariant": false,
+        "alias": "contentBase",
+        "compositions": [],
+        "groups": [
+          {
+            "name": "Content",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "pageTitle",
+                "description": "The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters",
+                "label": "Page Title",
+                "propertyEditorAlias": "Umbraco.TextBox",
+                "sortOrder": 0,
+                "validation": {
+                  "required": true
+                }
+              }
+            ]
+          }
+        ],
+        "name": "Content Base",
+        "_createDate": "2019-06-17T13:46:22.17Z",
+        "_id": "c58a2bd5-cc59-4423-b62b-1b580edd96f9",
+        "_updateDate": "2019-06-17T13:46:22.17Z",
+        "_links": {
+          "self": {
+            "href": "/api/content/type/contentBase"
+          },
+          "root": {
+            "href": "/api/content/type"
+          }
+        }
+      },
+      {
+        "allowCultureVariant": false,
+        "alias": "navigationBase",
+        "compositions": [],
+        "groups": [
+          {
+            "name": "Navigation &amp; SEO",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "seoMetaDescription",
+                "description": "A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters",
+                "label": "Description",
+                "propertyEditorAlias": "Umbraco.TextArea",
+                "sortOrder": 0,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "keywords",
+                "description": "Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore",
+                "label": "Keywords",
+                "propertyEditorAlias": "Umbraco.Tags",
+                "sortOrder": 1,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "umbracoNavihide",
+                "description": "If you don't want this page to appear in the navigation, check this box",
+                "label": "Hide in Navigation",
+                "propertyEditorAlias": "Umbraco.TrueFalse",
+                "sortOrder": 2,
+                "validation": {
+                  "required": false
+                }
+              }
+            ]
+          }
+        ],
+        "name": "Navigation Base",
+        "_createDate": "2019-06-17T13:46:22.297Z",
+        "_id": "cf26f574-9477-4ee0-83c3-3bd25b375939",
+        "_updateDate": "2019-06-17T13:46:22.297Z",
+        "_links": {
+          "self": {
+            "href": "/api/content/type/navigationBase"
+          },
+          "root": {
+            "href": "/api/content/type"
+          }
+        }
+      },
+      {
+        "allowCultureVariant": false,
+        "alias": "products",
+        "compositions": [
+          "navigationBase",
+          "contentBase"
+        ],
+        "groups": [
+          {
+            "name": "Navigation &amp; SEO",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "seoMetaDescription",
+                "description": "A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters",
+                "label": "Description",
+                "propertyEditorAlias": "Umbraco.TextArea",
+                "sortOrder": 0,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "keywords",
+                "description": "Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore",
+                "label": "Keywords",
+                "propertyEditorAlias": "Umbraco.Tags",
+                "sortOrder": 1,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "umbracoNavihide",
+                "description": "If you don't want this page to appear in the navigation, check this box",
+                "label": "Hide in Navigation",
+                "propertyEditorAlias": "Umbraco.TrueFalse",
+                "sortOrder": 2,
+                "validation": {
+                  "required": false
+                }
+              }
+            ]
+          },
+          {
+            "name": "Content",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "pageTitle",
+                "description": "The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters",
+                "label": "Page Title",
+                "propertyEditorAlias": "Umbraco.TextBox",
+                "sortOrder": 0,
+                "validation": {
+                  "required": true
+                }
+              }
+            ]
+          },
+          {
+            "name": "Shop",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "defaultCurrency",
+                "description": "This is just used to prefix pricing",
+                "label": "Default Currency",
+                "propertyEditorAlias": "Umbraco.DropDown.Flexible",
+                "sortOrder": 0,
+                "validation": {
+                  "required": true
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "featuredProducts",
+                "label": "Featured Products",
+                "propertyEditorAlias": "Umbraco.MultiNodeTreePicker",
+                "sortOrder": 1,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "link",
+                "label": "Link",
+                "propertyEditorAlias": "Umbraco.MultiNodeTreePicker",
+                "sortOrder": 2,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "multiUrl",
+                "label": "Multi url",
+                "propertyEditorAlias": "Umbraco.MultiUrlPicker",
+                "sortOrder": 3,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "mediaPicker",
+                "label": "Media picker",
+                "propertyEditorAlias": "Umbraco.MediaPicker",
+                "sortOrder": 4,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "richText",
+                "label": "Rich text",
+                "propertyEditorAlias": "Umbraco.TinyMCE",
+                "sortOrder": 5,
+                "validation": {
+                  "required": false
+                }
+              }
+            ]
+          }
+        ],
+        "name": "Products",
+        "_createDate": "2019-06-17T13:46:22.327Z",
+        "_id": "500624d1-57b9-4a63-b78c-1b991f3e26a1",
+        "_updateDate": "2019-06-17T13:46:22.327Z",
+        "_links": {
+          "self": {
+            "href": "/api/content/type/products"
+          },
+          "root": {
+            "href": "/api/content/type"
+          }
+        }
+      },
+      {
+        "allowCultureVariant": true,
+        "alias": "product",
+        "compositions": [],
+        "groups": [
+          {
+            "name": "Product Details",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": true,
+                "alias": "productName",
+                "label": "Product Name",
+                "propertyEditorAlias": "Umbraco.TextBox",
+                "sortOrder": 0,
+                "validation": {
+                  "required": true
+                }
+              },
+              {
+                "allowCultureVariant": true,
+                "alias": "price",
+                "label": "Price",
+                "propertyEditorAlias": "Umbraco.Decimal",
+                "sortOrder": 1,
+                "validation": {
+                  "required": true
+                }
+              },
+              {
+                "allowCultureVariant": true,
+                "alias": "description",
+                "label": "Description",
+                "propertyEditorAlias": "Umbraco.TextArea",
+                "sortOrder": 3,
+                "validation": {
+                  "required": true
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "sku",
+                "label": "SKU",
+                "propertyEditorAlias": "Umbraco.TextBox",
+                "sortOrder": 4,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "photos",
+                "label": "Photos",
+                "propertyEditorAlias": "Umbraco.MediaPicker",
+                "sortOrder": 5,
+                "validation": {
+                  "required": true
+                }
+              }
+            ]
+          },
+          {
+            "name": "Features",
+            "sortOrder": 1,
+            "properties": [
+              {
+                "allowCultureVariant": true,
+                "alias": "features",
+                "label": "Features",
+                "propertyEditorAlias": "Umbraco.NestedContent",
+                "sortOrder": 0,
+                "validation": {
+                  "required": false
+                }
+              }
+            ]
+          }
+        ],
+        "name": "Product",
+        "_createDate": "2019-06-17T13:46:22.373Z",
+        "_id": "9a1eb6ec-6176-4186-aefa-898c0f001ccb",
+        "_updateDate": "2019-06-17T13:46:22.373Z",
+        "_links": {
+          "self": {
+            "href": "/api/content/type/product"
+          },
+          "root": {
+            "href": "/api/content/type"
+          }
+        }
+      },
+      {
+        "allowCultureVariant": false,
+        "alias": "person",
+        "compositions": [
+          "navigationBase"
+        ],
+        "groups": [
+          {
+            "name": "Navigation &amp; SEO",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "seoMetaDescription",
+                "description": "A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters",
+                "label": "Description",
+                "propertyEditorAlias": "Umbraco.TextArea",
+                "sortOrder": 0,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "keywords",
+                "description": "Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore",
+                "label": "Keywords",
+                "propertyEditorAlias": "Umbraco.Tags",
+                "sortOrder": 1,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "umbracoNavihide",
+                "description": "If you don't want this page to appear in the navigation, check this box",
+                "label": "Hide in Navigation",
+                "propertyEditorAlias": "Umbraco.TrueFalse",
+                "sortOrder": 2,
+                "validation": {
+                  "required": false
+                }
+              }
+            ]
+          },
+          {
+            "name": "Details",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "photo",
+                "label": "Photo",
+                "propertyEditorAlias": "Umbraco.MediaPicker",
+                "sortOrder": 0,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "department",
+                "label": "Department",
+                "propertyEditorAlias": "Umbraco.Tags",
+                "sortOrder": 1,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "email",
+                "label": "Email",
+                "propertyEditorAlias": "Umbraco.TextBox",
+                "sortOrder": 2,
+                "validation": {
+                  "required": false
+                }
+              }
+            ]
+          },
+          {
+            "name": "Social",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "twitterUsername",
+                "label": "Twitter username",
+                "propertyEditorAlias": "Umbraco.TextBox",
+                "sortOrder": 0,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "facebookUsername",
+                "label": "Facebook username",
+                "propertyEditorAlias": "Umbraco.TextBox",
+                "sortOrder": 1,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "linkedInUsername",
+                "label": "LinkedIn username",
+                "propertyEditorAlias": "Umbraco.TextBox",
+                "sortOrder": 2,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "instagramUsername",
+                "label": "Instagram Username",
+                "propertyEditorAlias": "Umbraco.TextBox",
+                "sortOrder": 3,
+                "validation": {
+                  "required": false
+                }
+              }
+            ]
+          }
+        ],
+        "name": "Person",
+        "_createDate": "2019-06-17T13:46:22.437Z",
+        "_id": "47f11667-0cd4-4bd8-ab27-e4e4ad517802",
+        "_updateDate": "2019-06-17T13:46:22.437Z",
+        "_links": {
+          "self": {
+            "href": "/api/content/type/person"
+          },
+          "root": {
+            "href": "/api/content/type"
+          }
+        }
+      },
+      {
+        "allowCultureVariant": false,
+        "alias": "people",
+        "compositions": [
+          "navigationBase",
+          "contentBase"
+        ],
+        "groups": [
+          {
+            "name": "Navigation &amp; SEO",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "seoMetaDescription",
+                "description": "A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters",
+                "label": "Description",
+                "propertyEditorAlias": "Umbraco.TextArea",
+                "sortOrder": 0,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "keywords",
+                "description": "Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore",
+                "label": "Keywords",
+                "propertyEditorAlias": "Umbraco.Tags",
+                "sortOrder": 1,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "umbracoNavihide",
+                "description": "If you don't want this page to appear in the navigation, check this box",
+                "label": "Hide in Navigation",
+                "propertyEditorAlias": "Umbraco.TrueFalse",
+                "sortOrder": 2,
+                "validation": {
+                  "required": false
+                }
+              }
+            ]
+          },
+          {
+            "name": "Content",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "pageTitle",
+                "description": "The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters",
+                "label": "Page Title",
+                "propertyEditorAlias": "Umbraco.TextBox",
+                "sortOrder": 0,
+                "validation": {
+                  "required": true
+                }
+              }
+            ]
+          },
+          {
+            "name": "Content",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "featuredPeople",
+                "label": "Featured People",
+                "propertyEditorAlias": "Umbraco.MultiNodeTreePicker",
+                "sortOrder": 2,
+                "validation": {
+                  "required": false
+                }
+              }
+            ]
+          }
+        ],
+        "name": "People",
+        "_createDate": "2019-06-17T13:46:22.497Z",
+        "_id": "979e7cbf-89e7-4298-9785-58c27c4967bb",
+        "_updateDate": "2019-06-17T13:46:22.497Z",
+        "_links": {
+          "self": {
+            "href": "/api/content/type/people"
+          },
+          "root": {
+            "href": "/api/content/type"
+          }
+        }
+      },
+      {
+        "allowCultureVariant": false,
+        "alias": "feature",
+        "compositions": [],
+        "groups": [
+          {
+            "name": "Feature",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "featureName",
+                "label": "Name",
+                "propertyEditorAlias": "Umbraco.TextBox",
+                "sortOrder": 0,
+                "validation": {
+                  "required": true
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "featureDetails",
+                "label": "Details",
+                "propertyEditorAlias": "Umbraco.TextArea",
+                "sortOrder": 1,
+                "validation": {
+                  "required": false
+                }
+              }
+            ]
+          }
+        ],
+        "name": "Feature",
+        "_createDate": "2019-06-17T13:46:22.64Z",
+        "_id": "bac42c71-017f-4600-bafb-002a31f676ec",
+        "_updateDate": "2019-06-17T13:46:22.64Z",
+        "_links": {
+          "self": {
+            "href": "/api/content/type/feature"
+          },
+          "root": {
+            "href": "/api/content/type"
+          }
+        }
+      },
+      {
+        "allowCultureVariant": false,
+        "alias": "blogpost",
+        "compositions": [
+          "navigationBase"
+        ],
+        "groups": [
+          {
+            "name": "Navigation &amp; SEO",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "seoMetaDescription",
+                "description": "A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters",
+                "label": "Description",
+                "propertyEditorAlias": "Umbraco.TextArea",
+                "sortOrder": 0,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "keywords",
+                "description": "Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore",
+                "label": "Keywords",
+                "propertyEditorAlias": "Umbraco.Tags",
+                "sortOrder": 1,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "umbracoNavihide",
+                "description": "If you don't want this page to appear in the navigation, check this box",
+                "label": "Hide in Navigation",
+                "propertyEditorAlias": "Umbraco.TrueFalse",
+                "sortOrder": 2,
+                "validation": {
+                  "required": false
+                }
+              }
+            ]
+          },
+          {
+            "name": "Content",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "pageTitle",
+                "description": "The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters",
+                "label": "Page Title",
+                "propertyEditorAlias": "Umbraco.TextBox",
+                "sortOrder": 0,
+                "validation": {
+                  "required": true
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "categories",
+                "label": "Categories (tags)",
+                "propertyEditorAlias": "Umbraco.Tags",
+                "sortOrder": 1,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "excerpt",
+                "description": "Introduction to your blog post. This is also used in the summaries on the front of the blog as well as the homepage",
+                "label": "Excerpt",
+                "propertyEditorAlias": "Umbraco.TextArea",
+                "sortOrder": 2,
+                "validation": {
+                  "required": true
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "bodyText",
+                "label": "Content",
+                "propertyEditorAlias": "Umbraco.Grid",
+                "sortOrder": 3,
+                "validation": {
+                  "required": false
+                }
+              }
+            ]
+          }
+        ],
+        "name": "Blogpost",
+        "_createDate": "2019-06-17T13:46:22.747Z",
+        "_id": "4c30095d-6d10-45ff-a6d4-3ec6e19081db",
+        "_updateDate": "2019-06-17T13:46:22.747Z",
+        "_links": {
+          "self": {
+            "href": "/api/content/type/blogpost"
+          },
+          "root": {
+            "href": "/api/content/type"
+          }
+        }
+      },
+      {
+        "allowCultureVariant": false,
+        "alias": "blog",
+        "compositions": [
+          "navigationBase",
+          "contentBase"
+        ],
+        "groups": [
+          {
+            "name": "Navigation &amp; SEO",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "seoMetaDescription",
+                "description": "A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters",
+                "label": "Description",
+                "propertyEditorAlias": "Umbraco.TextArea",
+                "sortOrder": 0,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "keywords",
+                "description": "Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore",
+                "label": "Keywords",
+                "propertyEditorAlias": "Umbraco.Tags",
+                "sortOrder": 1,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "umbracoNavihide",
+                "description": "If you don't want this page to appear in the navigation, check this box",
+                "label": "Hide in Navigation",
+                "propertyEditorAlias": "Umbraco.TrueFalse",
+                "sortOrder": 2,
+                "validation": {
+                  "required": false
+                }
+              }
+            ]
+          },
+          {
+            "name": "Content",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "pageTitle",
+                "description": "The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters",
+                "label": "Page Title",
+                "propertyEditorAlias": "Umbraco.TextBox",
+                "sortOrder": 0,
+                "validation": {
+                  "required": true
+                }
+              }
+            ]
+          },
+          {
+            "name": "Settings",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": false,
+                "alias": "howManyPostsShouldBeShown",
+                "label": "How many posts should be shown?",
+                "propertyEditorAlias": "Umbraco.Slider",
+                "sortOrder": 0,
+                "validation": {
+                  "required": true
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "disqusShortname",
+                "description": "To use comments, you'll need to sign up for Disqus and enter your shortname here (more info: https://help.disqus.com/customer/portal/articles/472097-universal-embed-code)",
+                "label": "Disqus Shortname",
+                "propertyEditorAlias": "Umbraco.TextBox",
+                "sortOrder": 1,
+                "validation": {
+                  "required": false
+                }
+              }
+            ]
+          }
+        ],
+        "name": "Blog",
+        "_createDate": "2019-06-17T13:46:22.797Z",
+        "_id": "a09be20b-97f1-4241-8a71-004b7701247d",
+        "_updateDate": "2019-06-17T13:46:22.797Z",
+        "_links": {
+          "self": {
+            "href": "/api/content/type/blog"
+          },
+          "root": {
+            "href": "/api/content/type"
+          }
+        }
+      },
+      {
+        "allowCultureVariant": true,
+        "alias": "withUpload",
+        "compositions": [],
+        "groups": [
+          {
+            "name": "Content",
+            "sortOrder": 0,
+            "properties": [
+              {
+                "allowCultureVariant": true,
+                "alias": "fileUpload",
+                "label": "File upload",
+                "propertyEditorAlias": "Umbraco.UploadField",
+                "sortOrder": 0,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": false,
+                "alias": "text",
+                "label": "Text",
+                "propertyEditorAlias": "Umbraco.TextArea",
+                "sortOrder": 1,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "allowCultureVariant": true,
+                "alias": "richText",
+                "label": "Rich Text",
+                "propertyEditorAlias": "Umbraco.TinyMCE",
+                "sortOrder": 2,
+                "validation": {
+                  "required": false
+                }
+              }
+            ]
+          }
+        ],
+        "name": "With Upload",
+        "_createDate": "2019-08-06T08:29:33.78Z",
+        "_id": "0f0ea8c4-61d2-4c52-89d4-cac7a06e9bd4",
+        "_updateDate": "2019-08-06T08:29:33.78Z",
+        "_links": {
+          "self": {
+            "href": "/api/content/type/withUpload"
+          },
+          "root": {
+            "href": "/api/content/type"
+          }
+        }
+      },
+      {
+        "allowCultureVariant": false,
+        "alias": "home",
+        "compositions": [],
+        "groups": [],
+        "name": "Home",
+        "_createDate": "2019-10-04T11:23:36.79Z",
+        "_id": "7d87b7c6-561a-474d-89d6-ddd3889144eb",
+        "_updateDate": "2019-10-04T11:23:36.79Z",
+        "_links": {
+          "self": {
+            "href": "/api/content/type/home"
+          },
+          "root": {
+            "href": "/api/content/type"
+          }
+        }
+      }
+    ]
+  }
+}</value>
+    </data>
+    <data name="ByAlias" xml:space="preserve">
+        <value>{
+  "allowCultureVariant": true,
+  "alias": "products",
+  "compositions": [
+    "navigationBase",
+    "contentBase"
+  ],
+  "groups": [
+    {
+      "name": "Navigation &amp; SEO",
+      "sortOrder": 0,
+      "properties": [
+        {
+          "allowCultureVariant": false,
+          "alias": "seoMetaDescription",
+          "description": "A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters",
+          "label": "Description",
+          "propertyEditorAlias": "Umbraco.TextArea",
+          "sortOrder": 0,
+          "validation": {
+            "required": true
+          }
+        },
+        {
+          "allowCultureVariant": false,
+          "alias": "keywords",
+          "description": "Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore",
+          "label": "Keywords",
+          "propertyEditorAlias": "Umbraco.Tags",
+          "sortOrder": 1,
+          "validation": {
+            "required": false
+          }
+        },
+        {
+          "allowCultureVariant": true,
+          "alias": "umbracoNavihide",
+          "description": "If you don't want this page to appear in the navigation, check this box",
+          "label": "Hide in Navigation",
+          "propertyEditorAlias": "Umbraco.TrueFalse",
+          "sortOrder": 2,
+          "validation": {
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "Content",
+      "sortOrder": 1,
+      "properties": [
+        {
+          "allowCultureVariant": false,
+          "alias": "pageTitle",
+          "description": "The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters",
+          "label": "Page Title",
+          "propertyEditorAlias": "Umbraco.TextBox",
+          "sortOrder": 0,
+          "validation": {
+            "required": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "Shop",
+      "sortOrder": 2,
+      "properties": [
+        {
+          "allowCultureVariant": false,
+          "alias": "defaultCurrency",
+          "description": "This is just used to prefix pricing",
+          "label": "Default Currency",
+          "propertyEditorAlias": "Umbraco.DropDown.Flexible",
+          "sortOrder": 0,
+          "validation": {
+            "required": true
+          }
+        },
+        {
+          "allowCultureVariant": false,
+          "alias": "featuredProducts",
+          "label": "Featured Products",
+          "propertyEditorAlias": "Umbraco.MultiNodeTreePicker",
+          "sortOrder": 1,
+          "validation": {
+            "required": false
+          }
+        },
+        {
+          "allowCultureVariant": false,
+          "alias": "link",
+          "label": "Link",
+          "propertyEditorAlias": "Umbraco.MultiNodeTreePicker",
+          "sortOrder": 2,
+          "validation": {
+            "required": false
+          }
+        },
+        {
+          "allowCultureVariant": false,
+          "alias": "multiUrl",
+          "label": "Multi url",
+          "propertyEditorAlias": "Umbraco.MultiUrlPicker",
+          "sortOrder": 3,
+          "validation": {
+            "required": false
+          }
+        },
+        {
+          "allowCultureVariant": false,
+          "alias": "mediaPicker",
+          "label": "Media picker",
+          "propertyEditorAlias": "Umbraco.MediaPicker",
+          "sortOrder": 4,
+          "validation": {
+            "required": false
+          }
+        },
+        {
+          "allowCultureVariant": false,
+          "alias": "richText",
+          "label": "Rich text",
+          "propertyEditorAlias": "Umbraco.TinyMCE",
+          "sortOrder": 5,
+          "validation": {
+            "required": false
+          }
+        }
+      ]
+    }
+  ],
+  "name": "Products",
+  "_createDate": "2019-06-17T13:46:22.327Z",
+  "_id": "500624d1-57b9-4a63-b78c-1b991f3e26a1",
+  "_updateDate": "2019-06-17T13:46:22.327Z",
+  "_links": {
+    "self": {
+      "href": "/api/content/type/products"
+    },
+    "root": {
+      "href": "/api/content/type"
+    }
+  }
+}</value>
+    </data>
+</root>
