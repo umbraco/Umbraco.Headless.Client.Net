@@ -16,4 +16,13 @@ namespace Umbraco.Headless.Client.Net.Management
         [Get("/content/type/{alias}")]
         Task<DocumentType> ByAlias([Header(Constants.Headers.ProjectAlias)] string projectAlias, string alias);
     }
+
+    interface MediaTypeManagementEndpoints
+    {
+        [Get("/media/type")]
+        Task<RootMediaTypeCollection> GetRoot([Header(Constants.Headers.ProjectAlias)] string projectAlias);
+
+        [Get("/media/type/{alias}")]
+        Task<MediaType> ByAlias([Header(Constants.Headers.ProjectAlias)] string projectAlias, string alias);
+    }
 }
