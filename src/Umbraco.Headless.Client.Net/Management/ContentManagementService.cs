@@ -35,6 +35,7 @@ namespace Umbraco.Headless.Client.Net.Management
                 BaseAddress = new Uri(Constants.Urls.BaseApiUrl)
             };
             DocumentType = new DocumentTypeService(configuration, httpClient);
+            MemberType = new MemberTypeService(configuration, httpClient);
             MediaType = new MediaTypeService(configuration, httpClient);
         }
 
@@ -50,10 +51,12 @@ namespace Umbraco.Headless.Client.Net.Management
                 DefaultRequestHeaders = {{Constants.Headers.ApiKey, configuration.Token}}
             };
             DocumentType = new DocumentTypeService(configuration, httpClient);
+            MemberType = new MemberTypeService(configuration, httpClient);
             MediaType = new MediaTypeService(configuration, httpClient);
         }
 
         public IDocumentTypeService DocumentType { get; }
+        public IMemberTypeService MemberType { get; }
         public MediaTypeService MediaType { get; }
     }
 }

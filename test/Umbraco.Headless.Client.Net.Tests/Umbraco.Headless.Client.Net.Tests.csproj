@@ -39,6 +39,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>DocumentTypeServiceJson.resx</DependentUpon>
     </Compile>
+    <Compile Update="MemberTypeServiceJson.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MemberTypeServiceJson.resx</DependentUpon>
+    </Compile>
     <Compile Update="MediaTypeServiceJson.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -62,6 +67,10 @@
     <EmbeddedResource Update="DocumentTypeServiceJson.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>DocumentTypeServiceJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MemberTypeServiceJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MemberTypeServiceJson.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="MediaTypeServiceJson.resx">
       <Generator>ResXFileCodeGenerator</Generator>
