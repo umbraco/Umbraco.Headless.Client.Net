@@ -66,4 +66,10 @@ namespace Umbraco.Headless.Client.Net.Management
         [Delete("/language/{isoCode}")]
         Task<Language> Delete([Header(Constants.Headers.ProjectAlias)] string projectAlias, string isoCode);
     }
+
+    interface RelationTypeManagementEndpoints
+    {
+        [Get("/relation/type/{alias}")]
+        Task<RelationType> ByAlias([Header(Constants.Headers.ProjectAlias)] string projectAlias, string alias);
+    }
 }
