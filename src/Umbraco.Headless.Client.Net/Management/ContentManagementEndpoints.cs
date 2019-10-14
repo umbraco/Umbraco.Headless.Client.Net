@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Refit;
 using Umbraco.Headless.Client.Net.Management.Models;
 
@@ -45,5 +47,23 @@ namespace Umbraco.Headless.Client.Net.Management
 
         [Delete("/member/group/{name}")]
         Task<MemberGroup> Delete([Header(Constants.Headers.ProjectAlias)] string projectAlias, string name);
+    }
+
+    interface LanguageManagementEndpoints
+    {
+        [Get("/language")]
+        Task<RootLanguageCollection> GetRoot([Header(Constants.Headers.ProjectAlias)] string projectAlias);
+
+        [Get("/language/{isoCode}")]
+        Task<Language> ByIsoCode([Header(Constants.Headers.ProjectAlias)] string projectAlias, string isoCode);
+
+        [Post("/language")]
+        Task<Language> Create([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Body] Language language);
+
+        [Put("/language/{isoCode}")]
+        Task<Language> Update([Header(Constants.Headers.ProjectAlias)] string projectAlias, string isoCode, [Body] Language language);
+
+        [Delete("/language/{isoCode}")]
+        Task<Language> Delete([Header(Constants.Headers.ProjectAlias)] string projectAlias, string isoCode);
     }
 }
