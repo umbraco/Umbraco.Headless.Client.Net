@@ -12,8 +12,5 @@ namespace Umbraco.Headless.Client.Net.Management.Models
         public string Description { get; set; }
         public IEnumerable<ContentTypePropertyGroupInfo<TPropertyInfoType>> Groups { get; set; }
         public string Name { get; set; }
-
-        [JsonProperty("_updateDate")]
-        public DateTime UpdateDate { get; set; }
     }
 }

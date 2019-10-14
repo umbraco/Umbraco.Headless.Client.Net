@@ -34,4 +34,16 @@ namespace Umbraco.Headless.Client.Net.Management
         [Get("/member/type/{alias}")]
         Task<MemberType> ByAlias([Header(Constants.Headers.ProjectAlias)] string projectAlias, string alias);
     }
+
+    interface MemberGroupManagementEndpoints
+    {
+        [Get("/member/group/{name}")]
+        Task<MemberGroup> GetByName([Header(Constants.Headers.ProjectAlias)] string projectAlias, string name);
+
+        [Post("/member/group")]
+        Task<MemberGroup> Create([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Body] MemberGroup group);
+
+        [Delete("/member/group/{name}")]
+        Task<MemberGroup> Delete([Header(Constants.Headers.ProjectAlias)] string projectAlias, string name);
+    }
 }

@@ -20,7 +20,7 @@ namespace Umbraco.Headless.Client.Net.Tests
         }
 
         [Fact]
-        public async Task AtRoot_ReturnsAllDocumentTypes()
+        public async Task AtRoot_ReturnsAllMediaTypes()
         {
             var service = new MediaTypeService(_configuration,
                 GetMockedHttpClient("/media/type", MediaTypeServiceJson.GetRoot));
@@ -32,7 +32,7 @@ namespace Umbraco.Headless.Client.Net.Tests
         }
 
         [Fact]
-        public async Task ByAlias_ReturnsSingleDocumentType()
+        public async Task ByAlias_ReturnsSingleMediaType()
         {
             var service = new MediaTypeService(_configuration,
                 GetMockedHttpClient("/media/type/Image", MediaTypeServiceJson.ByAlias));

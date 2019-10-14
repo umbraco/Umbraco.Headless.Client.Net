@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using RichardSzalay.MockHttp;
@@ -20,7 +19,7 @@ namespace Umbraco.Headless.Client.Net.Tests
         }
 
         [Fact]
-        public async Task AtRoot_ReturnsAllDocumentTypes()
+        public async Task AtRoot_ReturnsAllMemberTypes()
         {
             var service = new MemberTypeService(_configuration,
                 GetMockedHttpClient("/member/type", MemberTypeServiceJson.GetRoot));
@@ -28,18 +27,17 @@ namespace Umbraco.Headless.Client.Net.Tests
             var documentTypes = await service.GetRoot();
 
             Assert.NotNull(documentTypes);
-            Assert.Equal(1, documentTypes.Count());
+            Assert.Single(documentTypes);
         }
 
         [Fact]
-        public async Task ByAlias_ReturnsSingleDocumentType()
+        public async Task ByAlias_ReturnsSingleMemberType()
         {
             var service = new MemberTypeService(_configuration,
                 GetMockedHttpClient("/member/type/Member", MemberTypeServiceJson.ByAlias));
 
             var memberType = await service.GetByAlias("Member");
 
-            Assert.NotNull(memberType);
             Assert.NotNull(memberType);
             Assert.Equal("Member", memberType.Alias);
             Assert.Equal("Member", memberType.Name);
