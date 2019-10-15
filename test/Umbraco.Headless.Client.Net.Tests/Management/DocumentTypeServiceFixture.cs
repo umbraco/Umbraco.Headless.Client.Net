@@ -7,7 +7,7 @@ using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Management;
 using Xunit;
 
-namespace Umbraco.Headless.Client.Net.Tests
+namespace Umbraco.Headless.Client.Net.Tests.Management
 {
     public class DocumentTypeServiceFixture
     {

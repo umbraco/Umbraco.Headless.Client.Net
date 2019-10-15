@@ -15,21 +15,21 @@ namespace Umbraco.Headless.Client.Net.Tests {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class MediaTypeServiceJson {
+    internal class ContentServiceJson {
 
         private static System.Resources.ResourceManager resourceMan;
 
         private static System.Globalization.CultureInfo resourceCulture;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal MediaTypeServiceJson() {
+        internal ContentServiceJson() {
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.Equals(null, resourceMan)) {
-                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("Umbraco.Headless.Client.Net.Tests.MediaTypeServiceJson", typeof(MediaTypeServiceJson).Assembly);
+                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("Umbraco.Headless.Client.Net.Tests.Management.ContentServiceJson", typeof(ContentServiceJson).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -46,15 +46,33 @@ namespace Umbraco.Headless.Client.Net.Tests {
             }
         }
 
-        internal static string GetRoot {
+        internal static string Create {
             get {
-                return ResourceManager.GetString("GetRoot", resourceCulture);
+                return ResourceManager.GetString("Create", resourceCulture);
             }
         }
 
-        internal static string ByAlias {
+        internal static string Delete {
             get {
-                return ResourceManager.GetString("ByAlias", resourceCulture);
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+
+        internal static string ById {
+            get {
+                return ResourceManager.GetString("ById", resourceCulture);
+            }
+        }
+
+        internal static string AtRoot {
+            get {
+                return ResourceManager.GetString("AtRoot", resourceCulture);
+            }
+        }
+
+        internal static string Children {
+            get {
+                return ResourceManager.GetString("Children", resourceCulture);
             }
         }
     }

@@ -34,6 +34,8 @@ namespace Umbraco.Headless.Client.Net.Management
             {
                 BaseAddress = new Uri(Constants.Urls.BaseApiUrl)
             };
+
+            Content = new ContentService(configuration, httpClient);
             DocumentType = new DocumentTypeService(configuration, httpClient);
             Language = new LanguageService(configuration, httpClient);
             MediaType = new MediaTypeService(configuration, httpClient);
@@ -54,6 +56,8 @@ namespace Umbraco.Headless.Client.Net.Management
                 BaseAddress = new Uri(Constants.Urls.BaseApiUrl),
                 DefaultRequestHeaders = {{Constants.Headers.ApiKey, configuration.Token}}
             };
+
+            Content = new ContentService(configuration, httpClient);
             DocumentType = new DocumentTypeService(configuration, httpClient);
             Language = new LanguageService(configuration, httpClient);
             MediaType = new MediaTypeService(configuration, httpClient);
@@ -63,6 +67,7 @@ namespace Umbraco.Headless.Client.Net.Management
             RelationType = new RelationTypeService(configuration, httpClient);
         }
 
+        public ContentService Content { get; }
         public IDocumentTypeService DocumentType { get; }
         public ILanguageService Language { get; }
         public IMediaTypeService MediaType { get; }

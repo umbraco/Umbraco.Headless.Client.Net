@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Create" xml:space="preserve">
+    <value>{
+  "_currentVersionState": {
+    "en-US": "DRAFT",
+    "da": "DRAFT"
+  },
+  "name": {
+    "en-US": "Biker Jacket",
+    "da": "Biker Jakke"
+  },
+  "_updateDate": {
+    "en-US": "2019-09-05T11:00:04.7012116+02:00",
+    "da": "2019-09-05T11:00:04.7012116+02:00"
+  },
+  "_hasChildren": false,
+  "_level": 1,
+  "_createDate": "2019-09-05T09:00:04.6661754Z",
+  "_id": "1a927846-6d11-4188-8966-aa39e5d67db5",
+  "_links": {
+    "self": {
+      "href": "/api/content/1a927846-6d11-4188-8966-aa39e5d67db5"
+    },
+    "root": {
+      "href": "/api/content"
+    },
+    "children": {
+      "href": "/api/content/1a927846-6d11-4188-8966-aa39e5d67db5/children"
+    },
+    "publish": {
+      "href": "/api/content/1a927846-6d11-4188-8966-aa39e5d67db5/publish"
+    },
+    "unpublish": {
+      "href": "/api/content/1a927846-6d11-4188-8966-aa39e5d67db5/unpublish"
+    },
+    "contenttype": {
+      "href": "/api/content/type/product"
+    }
+  },
+  "contentTypeAlias": "product",
+  "sortOrder": 5,
+  "productName": {
+    "en-US": "Biker Jacket",
+    "da": "Biker Jakke"
+  },
+  "price": {
+    "en-US": "199",
+    "da": "1399"
+  },
+  "sku": {
+    "$invariant": "UMB-BIKER-JACKET"
+  }
+}</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>{
+  "_currentVersionState": {
+    "$invariant": "DRAFT"
+  },
+  "name": {
+    "$invariant": "Products"
+  },
+  "_updateDate": {
+    "$invariant": "2019-08-22T14:04:34.333Z"
+  },
+  "_hasChildren": false,
+  "_level": 1,
+  "_createDate": "2019-08-22T14:04:34.333Z",
+  "_id": "05a38d71-0ae8-48d6-8215-e0cb857a31a8",
+  "_deleteDate": "2019-08-22T12:11:34.4136405Z",
+  "_links": {
+    "self": {
+      "href": "/api/content/05a38d71-0ae8-48d6-8215-e0cb857a31a8"
+    },
+    "root": {
+      "href": "/api/content"
+    },
+    "children": {
+      "href": "/api/content/05a38d71-0ae8-48d6-8215-e0cb857a31a8/children"
+    },
+    "publish": {
+      "href": "/api/content/05a38d71-0ae8-48d6-8215-e0cb857a31a8/publish"
+    },
+    "unpublish": {
+      "href": "/api/content/05a38d71-0ae8-48d6-8215-e0cb857a31a8/unpublish"
+    },
+    "contenttype": {
+      "href": "/api/content/type/products"
+    }
+  },
+  "contentTypeAlias": "products",
+  "sortOrder": 29,
+  "seoMetaDescription": {
+    "$invariant": ""
+  },
+  "keywords": {
+    "$invariant": ""
+  },
+  "umbracoNavihide": {
+    "$invariant": ""
+  },
+  "pageTitle": {
+    "$invariant": "test"
+  },
+  "defaultCurrency": {
+    "$invariant": [
+      "$"
+    ]
+  },
+  "featuredProducts": {
+    "$invariant": ""
+  },
+  "link": {
+    "$invariant": ""
+  },
+  "multiUrl": {
+    "$invariant": []
+  }
+}</value>
+  </data>
+  <data name="ById" xml:space="preserve">
+    <value>{
+  "_createDate": "2019-06-17T13:46:24.497Z",
+  "_currentVersionState": {
+    "en-US": "DRAFT",
+    "da": "PUBLISHED"
+  },
+  "name": {
+    "en-US": "Biker Jacket",
+    "da": "Biker Jakke"
+  },
+  "_updateDate": {
+    "en-US": "2019-06-26T22:51:22.48Z",
+    "da": "2019-06-26T22:38:16.617Z"
+  },
+  "_hasChildren": false,
+  "_id": "262beb70-53a6-49b8-9e98-cfde2e85a78e",
+  "_level": 2,
+  "_links": {
+    "self": {
+      "href": "/api/content/262beb70-53a6-49b8-9e98-cfde2e85a78e"
+    },
+    "root": {
+      "href": "/api/content"
+    },
+    "children": {
+      "href": "/api/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/children"
+    },
+    "publish": {
+      "href": "/api/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/publish"
+    },
+    "unpublish": {
+      "href": "/api/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/unpublish"
+    }
+  },
+  "contentTypeAlias": "product",
+  "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+  "sortOrder": 7,
+  "productName": {
+    "en-US": "Biker Jacket",
+    "da": "Biker Jakke"
+  },
+  "price": {
+    "en-US": "199",
+    "da": "1399"
+  },
+  "description": {
+    "en-US": "Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.",
+    "da": "Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat."
+  },
+  "sku": {
+    "$invariant": "UMB-BIKER-JACKET"
+  },
+  "photos": {
+    "$invariant": "umb://media/55514845b8bd487cb3709724852fd6bb"
+  },
+  "features": {
+    "en-US": [
+      {
+        "key": "6a47c043-7699-49c6-a0ed-b335b135ea2b",
+        "name": "Free shipping",
+        "ncContentTypeAlias": "feature",
+        "featureName": "Free shipping",
+        "featureDetails": "Isn't that awesome - you only pay for the product"
+      },
+      {
+        "key": "075c935f-4987-4a46-bed9-3286c27f0121",
+        "name": "1 Day return policy",
+        "ncContentTypeAlias": "feature",
+        "featureName": "1 Day return policy",
+        "featureDetails": "You'll need to make up your mind fast"
+      },
+      {
+        "key": "457e0ee3-c066-46fa-b379-a083b38aaa20",
+        "name": "100 Years warranty",
+        "ncContentTypeAlias": "feature",
+        "featureName": "100 Years warranty",
+        "featureDetails": "But if you're satisfied it'll last a lifetime"
+      }
+    ],
+    "da": ""
+  }
+}</value>
+  </data>
+  <data name="AtRoot" xml:space="preserve">
+    <value>{
+  "_links": {
+    "self": {
+      "href": "http://api.localhost/content"
+    },
+    "content": [
+      {
+        "href": "http://api.localhost/content/{id}",
+        "templated": true
+      },
+      {
+        "href": "http://api.localhost/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62"
+      },
+      {
+        "href": "http://api.localhost/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1"
+      },
+      {
+        "href": "http://api.localhost/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+      }
+    ],
+    "children": {
+      "href": "http://api.localhost/content/{id}/children{?page,pageSize}",
+      "templated": true
+    },
+    "publish": {
+      "href": "http://api.localhost/content/{id}/publish{?culture}",
+      "templated": true
+    },
+    "unpublish": {
+      "href": "http://api.localhost/content/{id}/unpublish{?culture}",
+      "templated": true
+    },
+    "contenttype": {
+      "href": "http://api.localhost/content/type/{alias}",
+      "templated": true
+    }
+  },
+  "_embedded": {
+    "content": [
+      {
+        "_currentVersionState": {
+          "$invariant": "PUBLISHED"
+        },
+        "name": {
+          "$invariant": "People"
+        },
+        "_updateDate": {
+          "$invariant": "2019-06-26T22:10:56.34Z"
+        },
+        "_hasChildren": true,
+        "_level": 1,
+        "_createDate": "2019-06-17T13:46:24.543Z",
+        "_id": "e8ad9b65-cff6-4952-ac5b-efe56a60db62",
+        "_links": {
+          "self": {
+            "href": "http://api.localhost/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62"
+          },
+          "root": {
+            "href": "http://api.localhost/content"
+          },
+          "children": {
+            "href": "http://api.localhost/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62/children"
+          },
+          "publish": {
+            "href": "http://api.localhost/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62/publish"
+          },
+          "unpublish": {
+            "href": "http://api.localhost/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62/unpublish"
+          },
+          "contenttype": {
+            "href": "http://api.localhost/content/type/people"
+          }
+        },
+        "contentTypeAlias": "people",
+        "sortOrder": 1,
+        "seoMetaDescription": {
+          "$invariant": ""
+        },
+        "keywords": {
+          "$invariant": []
+        },
+        "umbracoNavihide": {
+          "$invariant": "0"
+        },
+        "pageTitle": {
+          "$invariant": "Nice crazy people"
+        },
+        "featuredPeople": {
+          "$invariant": ""
+        }
+      },
+      {
+        "_currentVersionState": {
+          "$invariant": "PUBLISHED"
+        },
+        "name": {
+          "$invariant": "Blog"
+        },
+        "_updateDate": {
+          "$invariant": "2019-06-27T12:00:59.86Z"
+        },
+        "_hasChildren": true,
+        "_level": 1,
+        "_createDate": "2019-06-17T13:46:24.937Z",
+        "_id": "1d770f10-d1ca-4a26-9d68-071e2c9f7ac1",
+        "_links": {
+          "self": {
+            "href": "http://api.localhost/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1"
+          },
+          "root": {
+            "href": "http://api.localhost/content"
+          },
+          "children": {
+            "href": "http://api.localhost/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1/children"
+          },
+          "publish": {
+            "href": "http://api.localhost/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1/publish"
+          },
+          "unpublish": {
+            "href": "http://api.localhost/content/1d770f10-d1ca-4a26-9d68-071e2c9f7ac1/unpublish"
+          },
+          "contenttype": {
+            "href": "http://api.localhost/content/type/blog"
+          }
+        },
+        "contentTypeAlias": "blog",
+        "sortOrder": 2,
+        "seoMetaDescription": {
+          "$invariant": ""
+        },
+        "keywords": {
+          "$invariant": []
+        },
+        "umbracoNavihide": {
+          "$invariant": "0"
+        },
+        "pageTitle": {
+          "$invariant": "Behind The Scenes"
+        },
+        "howManyPostsShouldBeShown": {
+          "$invariant": "2"
+        },
+        "disqusShortname": {
+          "$invariant": ""
+        }
+      },
+      {
+        "_currentVersionState": {
+          "$invariant": "PUBLISHED"
+        },
+        "name": {
+          "$invariant": "Products"
+        },
+        "_updateDate": {
+          "$invariant": "2019-09-17T14:43:14.827Z"
+        },
+        "_hasChildren": true,
+        "_level": 1,
+        "_createDate": "2019-06-17T13:46:24.093Z",
+        "_id": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+        "_links": {
+          "self": {
+            "href": "http://api.localhost/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+          },
+          "root": {
+            "href": "http://api.localhost/content"
+          },
+          "children": {
+            "href": "http://api.localhost/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324/children"
+          },
+          "publish": {
+            "href": "http://api.localhost/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324/publish"
+          },
+          "unpublish": {
+            "href": "http://api.localhost/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324/unpublish"
+          },
+          "contenttype": {
+            "href": "http://api.localhost/content/type/products"
+          }
+        },
+        "contentTypeAlias": "products",
+        "sortOrder": 3,
+        "seoMetaDescription": {
+          "$invariant": ""
+        },
+        "keywords": {
+          "$invariant": []
+        },
+        "umbracoNavihide": {
+          "$invariant": "0"
+        },
+        "pageTitle": {
+          "$invariant": "Our Gorgeous Selection"
+        },
+        "defaultCurrency": {
+          "$invariant": [
+            "€"
+          ]
+        },
+        "featuredProducts": {
+          "$invariant": "umb://document/262beb7053a649b89e98cfde2e85a78e,umb://document/df1eb830411b4d41a3433917b76d533c,umb://document/4e96411ab8e1435f93222faee30ef5f2,umb://document/d390a562107d4f028df757aa86bad752,umb://document/bb7d5ae007ac40b8b5b918c36947fb56,umb://document/202cdc2f1a4540f4a653a7b321e1c54c,umb://document/103171c8e11c40029bb2f3404cada22a,umb://document/061662b9b02a4dcfaf5992b603e8e3e1"
+        },
+        "link": {
+          "$invariant": "umb://document/ec4aafcc0c254f25a8fe705bfae1d324"
+        },
+        "multiUrl": {
+          "$invariant": [
+            {
+              "icon": "icon-shopping-basket color-black",
+              "name": "Products",
+              "published": true,
+              "queryString": null,
+              "target": null,
+              "trashed": false,
+              "udi": "umb://document/ec4aafcc0c254f25a8fe705bfae1d324",
+              "url": "/products/"
+            },
+            {
+              "icon": "icon-link",
+              "name": "Google",
+              "published": true,
+              "queryString": "?q=test",
+              "target": "_blank",
+              "trashed": false,
+              "udi": null,
+              "url": "http://www.google.com"
+            }
+          ]
+        },
+        "mediaPicker": {
+          "$invariant": ""
+        },
+        "richText": {
+          "$invariant": null
+        }
+      }
+    ]
+  }
+}</value>
+  </data>
+  <data name="Children" xml:space="preserve">
+    <value>{
+  "_totalItems": 8,
+  "_totalPages": 2,
+  "_page": 2,
+  "_pageSize": 5,
+  "_links": {
+    "self": {
+      "href": "/api/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324/children?page=2"
+    },
+    "content": [
+      {
+        "href": "/api/content/103171c8-e11c-4002-9bb2-f3404cada22a"
+      },
+      {
+        "href": "/api/content/061662b9-b02a-4dcf-af59-92b603e8e3e1"
+      },
+      {
+        "href": "/api/content/262beb70-53a6-49b8-9e98-cfde2e85a78e"
+      }
+    ]
+  },
+  "_embedded": {
+    "content": [
+      {
+        "_currentVersionState": {
+          "en-US": "PUBLISHED",
+          "da": "NOT_CREATED"
+        },
+        "name": {
+          "en-US": "Banjo",
+          "da": null
+        },
+        "_updateDate": {
+          "en-US": "2019-06-26T22:11:06.007Z",
+          "da": null
+        },
+        "_hasChildren": false,
+        "_level": 2,
+        "_createDate": "2019-06-17T13:46:24.403Z",
+        "_id": "103171c8-e11c-4002-9bb2-f3404cada22a",
+        "_links": {
+          "self": {
+            "href": "/api/content/103171c8-e11c-4002-9bb2-f3404cada22a"
+          },
+          "root": {
+            "href": "/api/content"
+          },
+          "children": {
+            "href": "/api/content/103171c8-e11c-4002-9bb2-f3404cada22a/children"
+          },
+          "publish": {
+            "href": "/api/content/103171c8-e11c-4002-9bb2-f3404cada22a/publish"
+          },
+          "unpublish": {
+            "href": "/api/content/103171c8-e11c-4002-9bb2-f3404cada22a/unpublish"
+          },
+          "contenttype": {
+            "href": "/api/content/type/product"
+          }
+        },
+        "contentTypeAlias": "product",
+        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+        "sortOrder": 5,
+        "productName": {
+          "en-US": "Banjo",
+          "da": ""
+        },
+        "price": {
+          "en-US": "399",
+          "da": ""
+        },
+        "description": {
+          "en-US": "Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Proin eget tortor risus.",
+          "da": ""
+        },
+        "sku": {
+          "$invariant": "UMB-BANJO"
+        },
+        "photos": {
+          "$invariant": "umb://media/17552d12081d4d01b68132c495d6576f"
+        },
+        "features": {
+          "en-US": "",
+          "da": ""
+        }
+      },
+      {
+        "_currentVersionState": {
+          "en-US": "DRAFT",
+          "da": "NOT_CREATED"
+        },
+        "name": {
+          "en-US": "Knitted West",
+          "da": null
+        },
+        "_updateDate": {
+          "en-US": "2019-08-21T13:41:10.167Z",
+          "da": null
+        },
+        "_hasChildren": false,
+        "_level": 2,
+        "_createDate": "2019-06-17T13:46:24.45Z",
+        "_id": "061662b9-b02a-4dcf-af59-92b603e8e3e1",
+        "_links": {
+          "self": {
+            "href": "/api/content/061662b9-b02a-4dcf-af59-92b603e8e3e1"
+          },
+          "root": {
+            "href": "/api/content"
+          },
+          "children": {
+            "href": "/api/content/061662b9-b02a-4dcf-af59-92b603e8e3e1/children"
+          },
+          "publish": {
+            "href": "/api/content/061662b9-b02a-4dcf-af59-92b603e8e3e1/publish"
+          },
+          "unpublish": {
+            "href": "/api/content/061662b9-b02a-4dcf-af59-92b603e8e3e1/unpublish"
+          },
+          "contenttype": {
+            "href": "/api/content/type/product"
+          }
+        },
+        "contentTypeAlias": "product",
+        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+        "sortOrder": 6,
+        "productName": {
+          "en-US": "Knitted Unicorn West",
+          "da": ""
+        },
+        "price": {
+          "en-US": "1899",
+          "da": ""
+        },
+        "description": {
+          "en-US": "Knitted Unicorn West",
+          "da": ""
+        },
+        "sku": {
+          "$invariant": "UMB-WEST"
+        },
+        "photos": {
+          "$invariant": "umb://media/1d0b713a022a49c8b842a2463c83a553"
+        },
+        "features": {
+          "en-US": "",
+          "da": ""
+        }
+      },
+      {
+        "_currentVersionState": {
+          "en-US": "DRAFT",
+          "da": "PUBLISHED"
+        },
+        "name": {
+          "en-US": "Biker Jacket",
+          "da": "Biker Jakke"
+        },
+        "_updateDate": {
+          "en-US": "2019-06-26T22:51:22.48Z",
+          "da": "2019-06-26T22:38:16.617Z"
+        },
+        "_hasChildren": false,
+        "_level": 2,
+        "_createDate": "2019-06-17T13:46:24.497Z",
+        "_id": "262beb70-53a6-49b8-9e98-cfde2e85a78e",
+        "_links": {
+          "self": {
+            "href": "/api/content/262beb70-53a6-49b8-9e98-cfde2e85a78e"
+          },
+          "root": {
+            "href": "/api/content"
+          },
+          "children": {
+            "href": "/api/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/children"
+          },
+          "publish": {
+            "href": "/api/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/publish"
+          },
+          "unpublish": {
+            "href": "/api/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/unpublish"
+          },
+          "contenttype": {
+            "href": "/api/content/type/product"
+          }
+        },
+        "contentTypeAlias": "product",
+        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+        "sortOrder": 7,
+        "productName": {
+          "en-US": "Biker Jacket",
+          "da": "Biker Jakke"
+        },
+        "price": {
+          "en-US": "199",
+          "da": "1399"
+        },
+        "description": {
+          "en-US": "Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.",
+          "da": "Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat."
+        },
+        "sku": {
+          "$invariant": "UMB-BIKER-JACKET"
+        },
+        "photos": {
+          "$invariant": "umb://media/55514845b8bd487cb3709724852fd6bb"
+        },
+        "features": {
+          "en-US": [
+            {
+              "key": "6a47c043-7699-49c6-a0ed-b335b135ea2b",
+              "name": "Free shipping",
+              "ncContentTypeAlias": "feature",
+              "featureName": "Free shipping",
+              "featureDetails": "Isn't that awesome - you only pay for the product"
+            },
+            {
+              "key": "075c935f-4987-4a46-bed9-3286c27f0121",
+              "name": "1 Day return policy",
+              "ncContentTypeAlias": "feature",
+              "featureName": "1 Day return policy",
+              "featureDetails": "You'll need to make up your mind fast"
+            },
+            {
+              "key": "457e0ee3-c066-46fa-b379-a083b38aaa20",
+              "name": "100 Years warranty",
+              "ncContentTypeAlias": "feature",
+              "featureName": "100 Years warranty",
+              "featureDetails": "But if you're satisfied it'll last a lifetime"
+            }
+          ],
+          "da": ""
+        }
+      }
+    ]
+  }
+}</value>
+  </data>
+</root>

@@ -68,7 +68,7 @@ namespace Umbraco.Headless.Client.Net.Tests
             Assert.NotNull(children);
             Assert.NotNull(children.Media);
             Assert.NotEmpty(children.Media.Items);
-            Assert.Equal(1, children.TotalResults);
+            Assert.Equal(1, children.TotalItems);
             Assert.Equal(1, children.TotalPages);
             Assert.Equal(1, children.Page);
         }

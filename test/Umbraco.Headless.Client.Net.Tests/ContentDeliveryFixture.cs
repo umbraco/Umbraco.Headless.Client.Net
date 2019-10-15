@@ -66,7 +66,7 @@ namespace Umbraco.Headless.Client.Net.Tests
             Assert.NotNull(children);
             Assert.NotNull(children.Content);
             Assert.NotEmpty(children.Content.Items);
-            Assert.Equal(5, children.TotalResults);
+            Assert.Equal(5, children.TotalItems);
             Assert.Equal(1, children.TotalPages);
             Assert.Equal(1, children.Page);
         }
@@ -89,7 +89,7 @@ namespace Umbraco.Headless.Client.Net.Tests
             Assert.NotEmpty(descendants.Content.Items);
             Assert.Equal(page, descendants.Page);
             Assert.Equal(3, descendants.TotalPages);
-            Assert.Equal(23, descendants.TotalResults);
+            Assert.Equal(23, descendants.TotalItems);
         }
 
         [Theory]

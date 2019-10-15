@@ -1,15 +1,13 @@
 using System;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using RichardSzalay.MockHttp;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Management;
 using Umbraco.Headless.Client.Net.Management.Models;
-using Umbraco.Headless.Client.Net.Shared.Models;
 using Xunit;
 
-namespace Umbraco.Headless.Client.Net.Tests
+namespace Umbraco.Headless.Client.Net.Tests.Management
 {
     public class RelationServiceFixture
     {

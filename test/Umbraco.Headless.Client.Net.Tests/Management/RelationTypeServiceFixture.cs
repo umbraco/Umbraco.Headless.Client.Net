@@ -7,7 +7,7 @@ using Umbraco.Headless.Client.Net.Management;
 using Umbraco.Headless.Client.Net.Shared.Models;
 using Xunit;
 
-namespace Umbraco.Headless.Client.Net.Tests
+namespace Umbraco.Headless.Client.Net.Tests.Management
 {
     public class RelationTypeServiceFixture
     {

@@ -74,7 +74,7 @@ namespace Umbraco.Headless.Client.Net.Tests.StronglyTypedModels
         public JObject BodyText { get; set; }
     }
 
-    public class NavigationBase : ContentBase
+    public class NavigationBase : PublishedContentBase
     {
         public string SeoMetaDescription { get; set; }
         public List<string> Keywords { get; set; }

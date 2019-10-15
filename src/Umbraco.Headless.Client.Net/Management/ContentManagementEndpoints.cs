@@ -7,6 +7,30 @@ namespace Umbraco.Headless.Client.Net.Management
 {
     interface ContentManagementEndpoints
     {
+        [Post("/content")]
+        Task<Content> Create([Header(Constants.Headers.ProjectAlias)] string projectAlias, Content content);
+
+        [Get("/content/{id}/children?page={page}&pageSize={pageSize}")]
+        Task<PagedContent> Children([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias, Guid id, int page, int pageSize);
+
+        [Delete("/content/{id}")]
+        Task<Content> Delete([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id);
+
+        [Get("/content")]
+        Task<RootContentCollection> GetRoot([Header(Constants.Headers.ProjectAlias)] string projectAlias);
+
+        [Get("/content/{id}")]
+        Task<Content> ById([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id);
+
+        [Put("/content/{id}/publish")]
+        Task<Content> Publish([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id, string culture);
+
+        [Put("/content/{id}")]
+        Task<Content> Update([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id, Content content);
+
+        [Put("/content/{id}/unpublish")]
+        Task<Content> Unpublish([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id, string culture);
     }
 
     interface DocumentTypeManagementEndpoints

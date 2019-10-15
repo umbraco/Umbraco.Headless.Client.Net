@@ -4,10 +4,10 @@ using Newtonsoft.Json;
 namespace Umbraco.Headless.Client.Net.Delivery.Models
 {
     /// <summary>
-    /// Base class for Content and Media
+    /// Base class for Published Content and Media
     /// </summary>
     [JsonObject]
-    public abstract class ContentBase : IContentBase
+    public abstract class PublishedContentBase : IPublishedContentBase
     {
         [JsonProperty("_id")]
         public Guid Id { get; set; }

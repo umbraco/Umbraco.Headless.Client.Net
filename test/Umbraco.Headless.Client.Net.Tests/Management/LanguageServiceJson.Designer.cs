@@ -31,7 +31,7 @@ namespace Umbraco.Headless.Client.Net.Tests {
         internal static System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.Equals(null, resourceMan)) {
-                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("Umbraco.Headless.Client.Net.Tests.LanguageServiceJson", typeof(LanguageServiceJson).Assembly);
+                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("Umbraco.Headless.Client.Net.Tests.Management.LanguageServiceJson", typeof(LanguageServiceJson).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

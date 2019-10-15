@@ -15,21 +15,21 @@ namespace Umbraco.Headless.Client.Net.Tests {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RelationServiceJson {
+    internal class DocumentTypeServiceJson {
 
         private static System.Resources.ResourceManager resourceMan;
 
         private static System.Globalization.CultureInfo resourceCulture;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RelationServiceJson() {
+        internal DocumentTypeServiceJson() {
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.Equals(null, resourceMan)) {
-                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("Umbraco.Headless.Client.Net.Tests.RelationServiceJson", typeof(RelationServiceJson).Assembly);
+                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("Umbraco.Headless.Client.Net.Tests.Management.DocumentTypeServiceJson", typeof(DocumentTypeServiceJson).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -46,33 +46,15 @@ namespace Umbraco.Headless.Client.Net.Tests {
             }
         }
 
-        internal static string Create {
+        internal static string GetRoot {
             get {
-                return ResourceManager.GetString("Create", resourceCulture);
+                return ResourceManager.GetString("GetRoot", resourceCulture);
             }
         }
 
         internal static string ByAlias {
             get {
                 return ResourceManager.GetString("ByAlias", resourceCulture);
-            }
-        }
-
-        internal static string ByChildId {
-            get {
-                return ResourceManager.GetString("ByChildId", resourceCulture);
-            }
-        }
-
-        internal static string ById {
-            get {
-                return ResourceManager.GetString("ById", resourceCulture);
-            }
-        }
-
-        internal static string ByParentId {
-            get {
-                return ResourceManager.GetString("ByParentId", resourceCulture);
             }
         }
     }
