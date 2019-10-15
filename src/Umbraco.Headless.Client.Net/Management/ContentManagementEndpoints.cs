@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Refit;
 using Umbraco.Headless.Client.Net.Management.Models;
@@ -71,5 +70,26 @@ namespace Umbraco.Headless.Client.Net.Management
     {
         [Get("/relation/type/{alias}")]
         Task<RelationType> ByAlias([Header(Constants.Headers.ProjectAlias)] string projectAlias, string alias);
+    }
+
+    interface RelationManagementEndpoints
+    {
+        [Get("/relation/{id}")]
+        Task<Relation> ById([Header(Constants.Headers.ProjectAlias)] string projectAlias, int id);
+
+        [Get("/relation/{alias}")]
+        Task<RootRelationCollection> ByAlias([Header(Constants.Headers.ProjectAlias)] string projectAlias, string alias);
+
+        [Get("/relation/child/{childId}")]
+        Task<RootRelationCollection> ByChildId([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid childId);
+
+        [Get("/relation/parent/{parentId}")]
+        Task<RootRelationCollection> ByParentId([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid parentId);
+
+        [Post("/relation")]
+        Task<Relation> Create([Header(Constants.Headers.ProjectAlias)] string projectAlias, Relation relation);
+
+        [Delete("/relation/{id}")]
+        Task<Relation> Delete([Header(Constants.Headers.ProjectAlias)] string projectAlias, int id);
     }
 }

@@ -64,6 +64,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>RelationTypeServiceJson.resx</DependentUpon>
     </Compile>
+    <Compile Update="RelationServiceJson.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RelationServiceJson.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -102,6 +107,10 @@
     <EmbeddedResource Update="RelationTypeServiceJson.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RelationTypeServiceJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="RelationServiceJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RelationServiceJson.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

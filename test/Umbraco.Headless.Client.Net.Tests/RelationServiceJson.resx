@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="metadata">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" use="required" type="xsd:string" />
+                            <xsd:attribute name="type" type="xsd:string" />
+                            <xsd:attribute name="mimetype" type="xsd:string" />
+                            <xsd:attribute ref="xml:space" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="assembly">
+                        <xsd:complexType>
+                            <xsd:attribute name="alias" type="xsd:string" />
+                            <xsd:attribute name="name" type="xsd:string" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                            <xsd:attribute ref="xml:space" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" />
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Create" xml:space="preserve">
+        <value>{
+  "_id": 34,
+  "parentId": "916724a5-173d-4619-b97e-b9de133dd6f5",
+  "childId": "04138156-574e-4bb7-a27a-0ebafff5e83b",
+  "relationTypeAlias": "relateParentDocumentOnDelete",
+  "comment": "my comment",
+  "_links": {
+    "self": {
+      "href": "/api/relation/34"
+    }
+  }
+}</value>
+    </data>
+    <data name="Delete" xml:space="preserve">
+        <value>{
+  "_id": 32\4,
+  "parentId": "916724a5-173d-4619-b97e-b9de133dd6f5",
+  "childId": "04138156-574e-4bb7-a27a-0ebafff5e83b",
+  "relationTypeAlias": "relateParentDocumentOnDelete",
+  "comment": "",
+  "_links": {
+    "self": {
+      "href": "/api/relation/34"
+    }
+  }
+}</value>
+    </data>
+    <data name="ByAlias" xml:space="preserve">
+        <value>{
+  "_links": {
+    "self": {
+      "href": "/api/relation/relateParentDocumentOnDelete"
+    },
+    "relations": [
+      {
+        "href": "/api/relation/32"
+      },
+      {
+        "href": "/api/relation/33"
+      },
+      {
+        "href": "/api/relation/34"
+      }
+    ]
+  },
+  "_embedded": {
+    "relations": [
+      {
+        "_id": 32,
+        "parentId": "916724a5-173d-4619-b97e-b9de133dd6f5",
+        "childId": "9f717c5b-ec3a-43f6-ac11-523ca3114dc9",
+        "relationTypeAlias": "relateParentDocumentOnDelete",
+        "comment": "",
+        "_links": {
+          "self": {
+            "href": "/api/relation/32"
+          }
+        }
+      },
+      {
+        "_id": 33,
+        "parentId": "916724a5-173d-4619-b97e-b9de133dd6f5",
+        "childId": "22fbcdc1-79c6-47d0-a082-540e6fd8c5d0",
+        "relationTypeAlias": "relateParentDocumentOnDelete",
+        "comment": "",
+        "_links": {
+          "self": {
+            "href": "/api/relation/33"
+          }
+        }
+      },
+      {
+        "_id": 34,
+        "parentId": "916724a5-173d-4619-b97e-b9de133dd6f5",
+        "childId": "0cbf0bc6-741b-45bb-89a4-336572a84b6c",
+        "relationTypeAlias": "relateParentDocumentOnDelete",
+        "comment": "",
+        "_links": {
+          "self": {
+            "href": "/api/relation/34"
+          }
+        }
+      }
+    ]
+  }
+}</value>
+    </data>
+    <data name="ByChildId" xml:space="preserve">
+        <value>{
+  "_links": {
+    "self": {
+      "href": "/api/relation/relateParentDocumentOnDelete"
+    },
+    "relations": [
+      {
+        "href": "/api/relation/32"
+      }
+    ]
+  },
+  "_embedded": {
+    "relations": [
+      {
+        "_id": 32,
+        "parentId": "916724a5-173d-4619-b97e-b9de133dd6f5",
+        "childId": "9f717c5b-ec3a-43f6-ac11-523ca3114dc9",
+        "relationTypeAlias": "relateParentDocumentOnDelete",
+        "comment": "",
+        "_links": {
+          "self": {
+            "href": "/api/relation/32"
+          }
+        }
+      }
+    ]
+  }
+}</value>
+    </data>
+    <data name="ById" xml:space="preserve">
+        <value>{
+  "_id": 32,
+  "parentId": "916724a5-173d-4619-b97e-b9de133dd6f5",
+  "childId": "9f717c5b-ec3a-43f6-ac11-523ca3114dc9",
+  "relationTypeAlias": "relateParentDocumentOnDelete",
+  "comment": "",
+  "_links": {
+    "self": {
+      "href": "/api/relation/32"
+    }
+  }
+}</value>
+    </data>
+    <data name="ByParentId" xml:space="preserve">
+        <value>{
+  "_links": {
+    "self": {
+      "href": "/api/relation/relateParentDocumentOnDelete"
+    },
+    "relations": [
+      {
+        "href": "/api/relation/32"
+      },
+      {
+        "href": "/api/relation/33"
+      },
+      {
+        "href": "/api/relation/34"
+      }
+    ]
+  },
+  "_embedded": {
+    "relations": [
+      {
+        "_id": 32,
+        "parentId": "916724a5-173d-4619-b97e-b9de133dd6f5",
+        "childId": "9f717c5b-ec3a-43f6-ac11-523ca3114dc9",
+        "relationTypeAlias": "relateParentDocumentOnDelete",
+        "comment": "",
+        "_links": {
+          "self": {
+            "href": "/api/relation/32"
+          }
+        }
+      },
+      {
+        "_id": 33,
+        "parentId": "916724a5-173d-4619-b97e-b9de133dd6f5",
+        "childId": "22fbcdc1-79c6-47d0-a082-540e6fd8c5d0",
+        "relationTypeAlias": "relateParentDocumentOnDelete",
+        "comment": "",
+        "_links": {
+          "self": {
+            "href": "/api/relation/33"
+          }
+        }
+      },
+      {
+        "_id": 34,
+        "parentId": "916724a5-173d-4619-b97e-b9de133dd6f5",
+        "childId": "0cbf0bc6-741b-45bb-89a4-336572a84b6c",
+        "relationTypeAlias": "relateParentDocumentOnDelete",
+        "comment": "",
+        "_links": {
+          "self": {
+            "href": "/api/relation/34"
+          }
+        }
+      }
+    ]
+  }
+}</value>
+    </data>
+</root>

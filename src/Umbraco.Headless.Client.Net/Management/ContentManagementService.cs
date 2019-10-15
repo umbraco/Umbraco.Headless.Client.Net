@@ -39,6 +39,7 @@ namespace Umbraco.Headless.Client.Net.Management
             MediaType = new MediaTypeService(configuration, httpClient);
             MemberGroup = new MemberGroupService(configuration, httpClient);
             MemberType = new MemberTypeService(configuration, httpClient);
+            Relation = new RelationService(configuration, httpClient);
             RelationType = new RelationTypeService(configuration, httpClient);
         }
 
@@ -58,6 +59,7 @@ namespace Umbraco.Headless.Client.Net.Management
             MediaType = new MediaTypeService(configuration, httpClient);
             MemberGroup = new MemberGroupService(configuration, httpClient);
             MemberType = new MemberTypeService(configuration, httpClient);
+            Relation = new RelationService(configuration, httpClient);
             RelationType = new RelationTypeService(configuration, httpClient);
         }
 
@@ -66,6 +68,7 @@ namespace Umbraco.Headless.Client.Net.Management
         public IMediaTypeService MediaType { get; }
         public IMemberTypeService MemberType { get; }
         public IMemberGroupService MemberGroup { get; }
+        public IRelationService Relation { get; }
         public IRelationTypeService RelationType { get; }
     }
 }
