@@ -40,6 +40,7 @@ namespace Umbraco.Headless.Client.Net.Management
             Language = new LanguageService(configuration, httpClient);
             Media = new MediaService(configuration, httpClient);
             MediaType = new MediaTypeService(configuration, httpClient);
+            Member = new MemberService(configuration, httpClient);
             MemberGroup = new MemberGroupService(configuration, httpClient);
             MemberType = new MemberTypeService(configuration, httpClient);
             Relation = new RelationService(configuration, httpClient);
@@ -63,6 +64,7 @@ namespace Umbraco.Headless.Client.Net.Management
             Language = new LanguageService(configuration, httpClient);
             Media = new MediaService(configuration, httpClient);
             MediaType = new MediaTypeService(configuration, httpClient);
+            Member = new MemberService(configuration, httpClient);
             MemberGroup = new MemberGroupService(configuration, httpClient);
             MemberType = new MemberTypeService(configuration, httpClient);
             Relation = new RelationService(configuration, httpClient);
@@ -74,8 +76,9 @@ namespace Umbraco.Headless.Client.Net.Management
         public ILanguageService Language { get; }
         public IMediaService Media { get; }
         public IMediaTypeService MediaType { get; }
-        public IMemberTypeService MemberType { get; }
+        public IMemberService Member { get; }
         public IMemberGroupService MemberGroup { get; }
+        public IMemberTypeService MemberType { get; }
         public IRelationService Relation { get; }
         public IRelationTypeService RelationType { get; }
     }

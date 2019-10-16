@@ -64,7 +64,7 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         }
 
         [Fact]
-        public async Task GetById_ReturnsContent()
+        public async Task GetById_ReturnsMedia()
         {
             var service = new MediaService(_configuration,
                 GetMockedHttpClient(HttpMethod.Get, "/media/662af6ca-411a-4c93-a6c7-22c4845698e7", MediaServiceJson.ById));
@@ -79,6 +79,7 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
                 result.UpdateDate.ToUniversalTime());
             Assert.Null(result.DeleteDate);
             Assert.False(result.HasChildren);
+            Assert.Equal(new Guid("662af6ca-411a-4c93-a6c7-22c4845698e7"), result.Id);
             Assert.Equal(2, result.Level);
             Assert.Equal("Image", result.MediaTypeAlias);
             Assert.Equal(new Guid("b6f11172-373f-4473-af0f-0b0e5aefd21c"), result.ParentId);

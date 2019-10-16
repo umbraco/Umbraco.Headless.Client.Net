@@ -56,6 +56,27 @@ namespace Umbraco.Headless.Client.Net.Management
         Task<Media> Update([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id, Media media);
     }
 
+     interface MemberManagementEndpoints
+     {
+        [Post("/member")]
+        Task<Member> Create([Header(Constants.Headers.ProjectAlias)] string projectAlias, Member member);
+
+        [Delete("/member/{username}")]
+        Task<Member> Delete([Header(Constants.Headers.ProjectAlias)] string projectAlias, string username);
+
+        [Get("/member/{username}")]
+        Task<Member> ById([Header(Constants.Headers.ProjectAlias)] string projectAlias, string username);
+
+        [Put("/member/{username}")]
+        Task<Member> Update([Header(Constants.Headers.ProjectAlias)] string projectAlias, string username, Member member);
+
+        [Put("/member/{username}/groups/{groupName}")]
+        Task AddToGroup([Header(Constants.Headers.ProjectAlias)] string projectAlias, string username, string groupname);
+
+        [Delete("/member/{username}/groups/{groupName}")]
+        Task RemoveFromGroup([Header(Constants.Headers.ProjectAlias)] string projectAlias, string username, string groupname);
+      }
+
     interface DocumentTypeManagementEndpoints
     {
         [Get("/content/type")]

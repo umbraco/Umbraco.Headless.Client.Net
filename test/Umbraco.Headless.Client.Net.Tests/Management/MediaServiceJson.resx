@@ -145,15 +145,15 @@
   </data>
   <data name="Delete" xml:space="preserve">
     <value>{
-  "_contentTypeAlias": "Image",
+  "mediaTypeAlias": "Image",
   "_createDate": "2019-08-12T15:21:38.6632639+02:00",
   "_deleteDate": "2019-08-12T15:36:23.3756254+02:00",
   "_updateDate": "2019-08-12T15:21:38.6632639+02:00",
   "_hasChildren": false,
   "_id": "62981fa6-1d34-45c9-9efe-1c811892342b",
   "_level": 1,
-  "_name": "Han Solo",
-  "_sortOrder": 2,
+  "name": "Han Solo",
+  "sortOrder": 2,
   "_links": {
     "self": {
       "href": "/api/media/62981fa6-1d34-45c9-9efe-1c811892342b"
@@ -172,14 +172,14 @@
   </data>
     <data name="Update" xml:space="preserve">
     <value>{
-  "_contentTypeAlias": "Image",
+  "mediaTypeAlias": "Image",
   "_createDate": "2019-08-12T15:21:38.6632639+02:00",
   "_updateDate": "2019-08-12T15:25:52.5663452+02:00",
   "_hasChildren": false,
   "_id": "62981fa6-1d34-45c9-9efe-1c811892342b",
   "_level": 1,
-  "_name": "Han Solo",
-  "_sortOrder": 2,
+  "name": "Han Solo",
+  "sortOrder": 2,
   "_links": {
     "self": {
       "href": "/api/media/62981fa6-1d34-45c9-9efe-1c811892342b"
