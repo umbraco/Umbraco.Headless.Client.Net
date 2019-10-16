@@ -38,6 +38,7 @@ namespace Umbraco.Headless.Client.Net.Management
             Content = new ContentService(configuration, httpClient);
             DocumentType = new DocumentTypeService(configuration, httpClient);
             Language = new LanguageService(configuration, httpClient);
+            Media = new MediaService(configuration, httpClient);
             MediaType = new MediaTypeService(configuration, httpClient);
             MemberGroup = new MemberGroupService(configuration, httpClient);
             MemberType = new MemberTypeService(configuration, httpClient);
@@ -60,6 +61,7 @@ namespace Umbraco.Headless.Client.Net.Management
             Content = new ContentService(configuration, httpClient);
             DocumentType = new DocumentTypeService(configuration, httpClient);
             Language = new LanguageService(configuration, httpClient);
+            Media = new MediaService(configuration, httpClient);
             MediaType = new MediaTypeService(configuration, httpClient);
             MemberGroup = new MemberGroupService(configuration, httpClient);
             MemberType = new MemberTypeService(configuration, httpClient);
@@ -70,6 +72,7 @@ namespace Umbraco.Headless.Client.Net.Management
         public ContentService Content { get; }
         public IDocumentTypeService DocumentType { get; }
         public ILanguageService Language { get; }
+        public IMediaService Media { get; }
         public IMediaTypeService MediaType { get; }
         public IMemberTypeService MemberType { get; }
         public IMemberGroupService MemberGroup { get; }

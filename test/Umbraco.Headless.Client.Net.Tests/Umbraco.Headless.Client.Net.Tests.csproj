@@ -34,6 +34,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ContentJson.resx</DependentUpon>
     </Compile>
+    <Compile Update="Management\Models\MediaJson.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaJson.resx</DependentUpon>
+    </Compile>
     <Compile Update="Management\ContentServiceJson.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -88,6 +93,10 @@
     <EmbeddedResource Update="Management\Models\ContentJson.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ContentJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Management\Models\MediaJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MediaJson.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Management\ContentServiceJson.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -10,6 +10,8 @@ namespace Umbraco.Headless.Client.Net.Management.Models
     {
         [JsonExtensionData] private IDictionary<string, JToken> _additionalData;
 
+        // we don't want links to show up in the properties dictionary
+        // and we don't really need them so we just map them to this field
         [JsonProperty("_links", NullValueHandling = NullValueHandling.Ignore)]
         private object _links;
 

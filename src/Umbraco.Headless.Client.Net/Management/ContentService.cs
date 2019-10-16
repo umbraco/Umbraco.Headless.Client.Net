@@ -29,10 +29,8 @@ namespace Umbraco.Headless.Client.Net.Management
 
         public Task<Content> GetById(Guid id) => Service.ById(_configuration.ProjectAlias, id);
 
-        public async Task<PagedContent> GetChildren(Guid id, int page, int pageSize)
-        {
-            return await Service.Children(_configuration.ProjectAlias, id, page, pageSize);
-        }
+        public Task<PagedContent> GetChildren(Guid id, int page, int pageSize) =>
+            Service.Children(_configuration.ProjectAlias, id, page, pageSize);
 
         public async Task<IEnumerable<Content>> GetRoot()
         {

@@ -28,9 +28,25 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
             var content = new Content();
 
             var service = new ContentService(_configuration,
-                GetMockedHttpClient("/content", ContentServiceJson.Create));
+                GetMockedHttpClient(HttpMethod.Post, "/content", ContentServiceJson.Create));
 
             var result = await service.Create(content);
+
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public async Task Update_ReturnsUpdatedContent()
+        {
+            var content = new Content
+            {
+                Id = new Guid("1a927846-6d11-4188-8966-aa39e5d67db5")
+            };
+
+            var service = new ContentService(_configuration,
+                GetMockedHttpClient(HttpMethod.Put, "/content/1a927846-6d11-4188-8966-aa39e5d67db5", ContentServiceJson.Create));
+
+            var result = await service.Update(content);
 
             Assert.NotNull(result);
         }
@@ -39,7 +55,7 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         public async Task Delete_ReturnsDeletedContent()
         {
             var service = new ContentService(_configuration,
-                GetMockedHttpClient("/content/05a38d71-0ae8-48d6-8215-e0cb857a31a8", ContentServiceJson.Delete));
+                GetMockedHttpClient(HttpMethod.Delete, "/content/05a38d71-0ae8-48d6-8215-e0cb857a31a8", ContentServiceJson.Delete));
 
             var result = await service.Delete(new Guid("05a38d71-0ae8-48d6-8215-e0cb857a31a8"));
 
@@ -51,7 +67,7 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         public async Task GetById_ReturnsContent()
         {
             var service = new ContentService(_configuration,
-                GetMockedHttpClient("/content/05a38d71-0ae8-48d6-8215-e0cb857a31a8", ContentServiceJson.ById));
+                GetMockedHttpClient(HttpMethod.Get, "/content/05a38d71-0ae8-48d6-8215-e0cb857a31a8", ContentServiceJson.ById));
 
             var result = await service.GetById(new Guid("05a38d71-0ae8-48d6-8215-e0cb857a31a8"));
 
@@ -158,7 +174,7 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         public async Task GetRoot_ReturnsContent()
         {
             var service = new ContentService(_configuration,
-                GetMockedHttpClient("/content", ContentServiceJson.AtRoot));
+                GetMockedHttpClient(HttpMethod.Get, "/content", ContentServiceJson.AtRoot));
 
             var result = await service.GetRoot();
 
@@ -170,7 +186,7 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         public async Task GetChildren_ReturnsContent()
         {
             var service = new ContentService(_configuration,
-                GetMockedHttpClient("/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324/children?page=2&pageSize=5", ContentServiceJson.Children));
+                GetMockedHttpClient(HttpMethod.Get, "/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324/children?page=2&pageSize=5", ContentServiceJson.Children));
 
             var result = await service.GetChildren(new Guid("ec4aafcc-0c25-4f25-a8fe-705bfae1d324"), 2, 5);
 
@@ -186,7 +202,7 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         public async Task Publish_ReturnsPublishedContent()
         {
             var service = new ContentService(_configuration,
-                GetMockedHttpClient("/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/publish?culture=da", ContentServiceJson.Publish));
+                GetMockedHttpClient(HttpMethod.Put, "/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/publish?culture=da", ContentServiceJson.Publish));
 
             var result = await service.Publish(new Guid("262beb70-53a6-49b8-9e98-cfde2e85a78e"), "da");
 
@@ -198,16 +214,16 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         public async Task Unpublish_ReturnsUnpublishedContent()
         {
             var service = new ContentService(_configuration,
-                GetMockedHttpClient("/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/unpublish?culture=en-US", ContentServiceJson.Unpublish));
+                GetMockedHttpClient(HttpMethod.Put, "/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/unpublish?culture=en-US", ContentServiceJson.Unpublish));
 
             var result = await service.Unpublish(new Guid("262beb70-53a6-49b8-9e98-cfde2e85a78e"), "en-US");
 
             Assert.NotNull(result);
         }
 
-        private HttpClient GetMockedHttpClient(string url, string jsonResponse)
+        private HttpClient GetMockedHttpClient(HttpMethod method, string url, string jsonResponse)
         {
-            _mockHttp.When(url).Respond("application/json", jsonResponse);
+            _mockHttp.When(method, url).Respond("application/json", jsonResponse);
             var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseApiUrl) };
             return client;
         }
