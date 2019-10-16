@@ -75,5 +75,17 @@ namespace Umbraco.Headless.Client.Net.Tests {
                 return ResourceManager.GetString("Children", resourceCulture);
             }
         }
+
+        internal static string Publish {
+            get {
+                return ResourceManager.GetString("Publish", resourceCulture);
+            }
+        }
+
+        internal static string Unpublish {
+            get {
+                return ResourceManager.GetString("Unpublish", resourceCulture);
+            }
+        }
     }
 }

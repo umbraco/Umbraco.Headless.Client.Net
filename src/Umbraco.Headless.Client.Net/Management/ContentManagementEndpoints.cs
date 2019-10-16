@@ -23,13 +23,13 @@ namespace Umbraco.Headless.Client.Net.Management
         [Get("/content/{id}")]
         Task<Content> ById([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id);
 
-        [Put("/content/{id}/publish")]
+        [Put("/content/{id}/publish?culture={culture}")]
         Task<Content> Publish([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id, string culture);
 
         [Put("/content/{id}")]
         Task<Content> Update([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id, Content content);
 
-        [Put("/content/{id}/unpublish")]
+        [Put("/content/{id}/unpublish?culture={culture}")]
         Task<Content> Unpublish([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id, string culture);
     }
 

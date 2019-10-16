@@ -182,6 +182,29 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
             Assert.Equal(3, result.Content.Items.Count());
         }
 
+        [Fact]
+        public async Task Publish_ReturnsPublishedContent()
+        {
+            var service = new ContentService(_configuration,
+                GetMockedHttpClient("/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/publish?culture=da", ContentServiceJson.Publish));
+
+            var result = await service.Publish(new Guid("262beb70-53a6-49b8-9e98-cfde2e85a78e"), "da");
+
+            Assert.NotNull(result);
+        }
+
+
+        [Fact]
+        public async Task Unpublish_ReturnsUnpublishedContent()
+        {
+            var service = new ContentService(_configuration,
+                GetMockedHttpClient("/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/unpublish?culture=en-US", ContentServiceJson.Unpublish));
+
+            var result = await service.Unpublish(new Guid("262beb70-53a6-49b8-9e98-cfde2e85a78e"), "en-US");
+
+            Assert.NotNull(result);
+        }
+
         private HttpClient GetMockedHttpClient(string url, string jsonResponse)
         {
             _mockHttp.When(url).Respond("application/json", jsonResponse);
