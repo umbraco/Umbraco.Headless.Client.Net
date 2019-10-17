@@ -3,16 +3,15 @@ using Newtonsoft.Json;
 
 namespace Umbraco.Headless.Client.Net.Delivery.Models
 {
-    public class PublishedMedia : PublishedContentBase, IPublishedMedia
+    public class Content : ContentBase, IContent
     {
-        public PublishedMedia()
+        public Content()
         {
             Properties = new Dictionary<string, object>();
         }
 
-        [JsonProperty("mediaTypeAlias")]
-        public string MediaTypeAlias { get; set; }
-
+        [JsonProperty("contentTypeAlias")]
+        public string ContentTypeAlias { get; set; }
 
         [JsonExtensionData]
         public IDictionary<string, object> Properties { get; set; }

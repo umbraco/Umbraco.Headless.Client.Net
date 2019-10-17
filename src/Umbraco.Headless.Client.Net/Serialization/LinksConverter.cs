@@ -71,7 +71,7 @@ namespace Umbraco.Headless.Client.Net.Serialization
 
         public override bool CanConvert(Type objectType)
         {
-            return typeof(PublishedContentBase).IsAssignableFrom(objectType);
+            return typeof(ContentBase).IsAssignableFrom(objectType);
         }
 
         public override bool CanWrite => true;

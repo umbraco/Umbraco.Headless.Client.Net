@@ -7,7 +7,7 @@ namespace Umbraco.Headless.Client.Net.Delivery.Models
     /// Base class for Published Content and Media
     /// </summary>
     [JsonObject]
-    public abstract class PublishedContentBase : IPublishedContentBase
+    public abstract class ContentBase : IContentBase
     {
         [JsonProperty("_id")]
         public Guid Id { get; set; }

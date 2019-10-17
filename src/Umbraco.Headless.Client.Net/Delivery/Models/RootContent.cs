@@ -2,9 +2,9 @@
 
 namespace Umbraco.Headless.Client.Net.Delivery.Models
 {
-    internal class RootPublishedMedia<T> where T : IPublishedMedia
+    internal class RootContent<T> where T : IContent
     {
         [JsonProperty("_embedded")]
-        public PublishedMediaCollection<T> Media { get; set; }
+        public ContentCollection<T> Content { get; set; }
     }
 }

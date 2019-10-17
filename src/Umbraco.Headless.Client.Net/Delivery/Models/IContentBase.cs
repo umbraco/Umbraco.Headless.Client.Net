@@ -2,17 +2,17 @@
 
 namespace Umbraco.Headless.Client.Net.Delivery.Models
 {
-    public interface IPublishedContent : IPublishedContentBase
+    public interface IContent : IContentBase
     {
         string ContentTypeAlias { get; set; }
     }
 
-    public interface IPublishedMedia : IPublishedContentBase
+    public interface IMedia : IContentBase
     {
         string MediaTypeAlias { get; set; }
     }
 
-    public interface IPublishedContentBase
+    public interface IContentBase
     {
         Guid Id { get; set; }
         string Url { get; set; }
