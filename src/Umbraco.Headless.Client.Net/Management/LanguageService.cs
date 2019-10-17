@@ -8,7 +8,7 @@ using Umbraco.Headless.Client.Net.Management.Models;
 
 namespace Umbraco.Headless.Client.Net.Management
 {
-    public class LanguageService : ILanguageService
+    internal class LanguageService : ILanguageService
     {
         private readonly IHeadlessConfiguration _headlessConfiguration;
         private readonly HttpClient _httpClient;

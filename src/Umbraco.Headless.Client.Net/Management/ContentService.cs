@@ -8,7 +8,7 @@ using Umbraco.Headless.Client.Net.Management.Models;
 
 namespace Umbraco.Headless.Client.Net.Management
 {
-    public class ContentService : IContentService
+    internal class ContentService : IContentService
     {
         private readonly IHeadlessConfiguration _configuration;
         private readonly HttpClient _httpClient;

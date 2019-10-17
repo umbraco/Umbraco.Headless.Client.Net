@@ -8,7 +8,7 @@ using Umbraco.Headless.Client.Net.Management.Models;
 
 namespace Umbraco.Headless.Client.Net.Management
 {
-    public class MediaTypeService : IMediaTypeService
+    internal class MediaTypeService : IMediaTypeService
     {
         private readonly IHeadlessConfiguration _configuration;
         private readonly HttpClient _httpClient;
@@ -23,13 +23,13 @@ namespace Umbraco.Headless.Client.Net.Management
         private MediaTypeManagementEndpoints Service =>
             _restService ?? (_restService = RestService.For<MediaTypeManagementEndpoints>(_httpClient));
 
-        public async Task<MediaType> GetByAlias(string alias) =>
-            await Service.ByAlias(_configuration.ProjectAlias, alias);
-
-        public async Task<IEnumerable<MediaType>> GetRoot()
+        public async Task<IEnumerable<MediaType>> GetAll()
         {
             var root = await Service.GetRoot(_configuration.ProjectAlias);
             return root.MediaTypes.Items;
         }
+
+        public async Task<MediaType> GetByAlias(string alias) =>
+            await Service.ByAlias(_configuration.ProjectAlias, alias);
     }
 }

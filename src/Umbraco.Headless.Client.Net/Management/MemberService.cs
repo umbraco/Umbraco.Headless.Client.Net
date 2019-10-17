@@ -7,7 +7,7 @@ using Umbraco.Headless.Client.Net.Management.Models;
 
 namespace Umbraco.Headless.Client.Net.Management
 {
-    public class MemberService : IMemberService
+    internal class MemberService : IMemberService
     {
         private readonly IHeadlessConfiguration _configuration;
         private readonly HttpClient _httpClient;

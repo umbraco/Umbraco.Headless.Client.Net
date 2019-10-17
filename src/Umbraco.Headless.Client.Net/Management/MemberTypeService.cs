@@ -8,7 +8,7 @@ using Umbraco.Headless.Client.Net.Management.Models;
 
 namespace Umbraco.Headless.Client.Net.Management
 {
-    public class MemberTypeService : IMemberTypeService
+    internal class MemberTypeService : IMemberTypeService
     {
         private readonly IHeadlessConfiguration _configuration;
         private readonly HttpClient _httpClient;
@@ -23,13 +23,13 @@ namespace Umbraco.Headless.Client.Net.Management
         private MemberTypeManagementEndpoints Service =>
             _restService ?? (_restService = RestService.For<MemberTypeManagementEndpoints>(_httpClient));
 
-        public async Task<MemberType> GetByAlias(string alias) =>
-            await Service.ByAlias(_configuration.ProjectAlias, alias);
-
-        public async Task<IEnumerable<MemberType>> GetRoot()
+        public async Task<IEnumerable<MemberType>> GetAll()
         {
             var root = await Service.GetRoot(_configuration.ProjectAlias);
             return root.MemberTypes.Items;
         }
+
+        public async Task<MemberType> GetByAlias(string alias) =>
+            await Service.ByAlias(_configuration.ProjectAlias, alias);
     }
 }
