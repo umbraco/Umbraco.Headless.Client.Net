@@ -31,10 +31,10 @@ namespace Umbraco.Headless.Client.Net.Management
         public Task<Member> Update(Member member) =>
             Service.Update(_configuration.ProjectAlias, member.Username, member);
 
-        public Task AddToGroup(string username, string groupname) =>
-            Service.AddToGroup(_configuration.ProjectAlias, username, groupname);
+        public Task AddToGroup(string username, string groupName) =>
+            Service.AddToGroup(_configuration.ProjectAlias, username, groupName);
 
-        public Task RemoveFromGroup(string username, string groupname) =>
-            Service.RemoveFromGroup(_configuration.ProjectAlias, username, groupname);
+        public Task RemoveFromGroup(string username, string groupName) =>
+            Service.RemoveFromGroup(_configuration.ProjectAlias, username, groupName);
     }
 }

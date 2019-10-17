@@ -9,7 +9,7 @@ namespace Umbraco.Headless.Client.Net.Management
         Task<Member> Delete(string username);
         Task<Member> GetByUsername(string username);
         Task<Member> Update(Member member);
-        Task AddToGroup(string username, string groupname);
-        Task RemoveFromGroup(string username, string groupname);
+        Task AddToGroup(string username, string groupName);
+        Task RemoveFromGroup(string username, string groupName);
     }
 }
