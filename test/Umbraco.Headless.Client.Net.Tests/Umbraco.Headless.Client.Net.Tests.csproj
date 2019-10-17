@@ -29,6 +29,56 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>MediaDeliveryJson.resx</DependentUpon>
     </Compile>
+    <Compile Update="Management\Models\ContentJson.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContentJson.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Management\Models\MediaJson.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaJson.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Management\ContentServiceJson.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContentServiceJson.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Management\DocumentTypeServiceJson.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentTypeServiceJson.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Management\LanguageServiceJson.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>LanguageServiceJson.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Management\MediaTypeServiceJson.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaTypeServiceJson.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Management\MemberServiceJson.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MemberServiceJson.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Management\MemberGroupServiceJson.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MemberGroupServiceJson.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Management\RelationServiceJson.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RelationServiceJson.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Management\RelationTypeServiceJson.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RelationTypeServiceJson.resx</DependentUpon>
+    </Compile>
     <Compile Update="OAuthJson.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -44,6 +94,50 @@
     <EmbeddedResource Update="MediaDeliveryJson.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MediaDeliveryJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Management\Models\ContentJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContentJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Management\Models\MediaJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MediaJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Management\ContentServiceJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContentServiceJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Management\DocumentTypeServiceJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DocumentTypeServiceJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Management\LanguageServiceJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LanguageServiceJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Management\MediaTypeServiceJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MediaTypeServiceJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Management\MemberServiceJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MemberServiceJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Management\MemberGroupServiceJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MemberGroupServiceJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Management\MemberTypeServiceJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MemberTypeServiceJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Management\RelationServiceJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RelationServiceJson.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Management\RelationTypeServiceJson.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RelationTypeServiceJson.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="OAuthJson.resx">
       <Generator>ResXFileCodeGenerator</Generator>

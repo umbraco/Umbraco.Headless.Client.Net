@@ -2,11 +2,11 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Umbraco.Headless.Client.Net.Delivery.Models;
-using Umbraco.Headless.Client.Net.Delivery.Models.Hal;
+using Umbraco.Headless.Client.Net.Shared.Models;
 
 namespace Umbraco.Headless.Client.Net.Tests.StronglyTypedModels
 {
-    public class StarterkitHome : ContentBase
+    public class StarterkitHome : Content
     {
         public string HeroHeader { get; set; }
         public string HeroDescription { get; set; }
@@ -32,7 +32,7 @@ namespace Umbraco.Headless.Client.Net.Tests.StronglyTypedModels
         public LinkCollection Links { get; set; }
     }
 
-    public class Product : ContentBase
+    public class Product : Content
     {
         public string ProductName { get; set; }
         public string Price { get; set; }

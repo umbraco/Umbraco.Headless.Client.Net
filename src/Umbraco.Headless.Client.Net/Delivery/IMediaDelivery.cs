@@ -20,9 +20,9 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <summary>
         /// Gets the root Media items as the specified type
         /// </summary>
-        /// <typeparam name="T">A type that inherits from the <see cref="IContentBase"/> interface</typeparam>
+        /// <typeparam name="T">A type that inherits from the <see cref="IMedia"/> interface</typeparam>
         /// <returns><see cref="IEnumerable{T}"/></returns>
-        Task<IEnumerable<T>> GetRoot<T>() where T : IContentBase;
+        Task<IEnumerable<T>> GetRoot<T>() where T : IMedia;
 
         /// <summary>
         /// Gets a single Media item by its id
@@ -34,10 +34,10 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <summary>
         /// Gets a single Media item by its id as the specified type
         /// </summary>
-        /// <typeparam name="T">A type that inherits from the <see cref="IContentBase"/> interface</typeparam>
+        /// <typeparam name="T">A type that inherits from the <see cref="IMedia"/> interface</typeparam>
         /// <param name="id"><see cref="Guid"/> id of the Media item</param>
         /// <returns><see cref="T"/></returns>
-        Task<T> GetById<T>(Guid id) where T : IContentBase;
+        Task<T> GetById<T>(Guid id) where T : IMedia;
 
         /// <summary>
         /// Gets a paged list of Media items by their Parent Id
@@ -51,11 +51,11 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <summary>
         /// Gets a paged list of Media items by their Parent Id as the specified type
         /// </summary>
-        /// <typeparam name="T">A type that inherits from the <see cref="IContentBase"/> interface</typeparam>
+        /// <typeparam name="T">A type that inherits from the <see cref="IMedia"/> interface</typeparam>
         /// <param name="id"><see cref="Guid"/> id of the Media item's Parent</param>
         /// <param name="page">Integer specifying the page number (Optional)</param>
         /// <param name="pageSize">Integer specifying the page size (Optional)</param>
         /// <returns><see cref="PagedMedia{T}"/></returns>
-        Task<PagedMedia<T>> GetChildren<T>(Guid id, int page = 1, int pageSize = 10) where T : IContentBase;
+        Task<PagedMedia<T>> GetChildren<T>(Guid id, int page = 1, int pageSize = 10) where T : IMedia;
     }
 }

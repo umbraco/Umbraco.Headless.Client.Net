@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Umbraco.Headless.Client.Net.Delivery.Models.Hal
+namespace Umbraco.Headless.Client.Net.Shared.Models
 {
     internal class Self
     {

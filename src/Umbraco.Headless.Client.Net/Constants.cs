@@ -1,4 +1,7 @@
-﻿namespace Umbraco.Headless.Client.Net
+﻿using System.Runtime.CompilerServices;
+[assembly: InternalsVisibleTo("Umbraco.Headless.Client.Net.Tests")]
+
+namespace Umbraco.Headless.Client.Net
 {
     public static class Constants
     {

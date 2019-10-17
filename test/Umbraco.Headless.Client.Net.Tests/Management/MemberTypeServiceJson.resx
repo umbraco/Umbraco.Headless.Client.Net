@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="metadata">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" use="required" type="xsd:string" />
+                            <xsd:attribute name="type" type="xsd:string" />
+                            <xsd:attribute name="mimetype" type="xsd:string" />
+                            <xsd:attribute ref="xml:space" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="assembly">
+                        <xsd:complexType>
+                            <xsd:attribute name="alias" type="xsd:string" />
+                            <xsd:attribute name="name" type="xsd:string" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                            <xsd:attribute ref="xml:space" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" />
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="GetRoot" xml:space="preserve">
+        <value>{
+  "_links": {
+    "self": {
+      "href": "/api/member/type"
+    },
+    "membertypes": {
+      "href": "/api/member/type/Member"
+    }
+  },
+  "_embedded": {
+    "membertypes": [
+      {
+        "alias": "Member",
+        "compositions": [],
+        "groups": [
+          {
+            "name": "Membership",
+            "sortOrder": 1,
+            "properties": [
+              {
+                "isSensitive": false,
+                "memberCanEdit": false,
+                "memberCanView": false,
+                "alias": "umbracoMemberComments",
+                "label": "Comments",
+                "propertyEditorAlias": "Umbraco.TextArea",
+                "sortOrder": 0,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "isSensitive": false,
+                "memberCanEdit": false,
+                "memberCanView": false,
+                "alias": "umbracoMemberFailedPasswordAttempts",
+                "label": "Failed Password Attempts",
+                "propertyEditorAlias": "Umbraco.Label",
+                "sortOrder": 1,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "isSensitive": false,
+                "memberCanEdit": false,
+                "memberCanView": false,
+                "alias": "umbracoMemberApproved",
+                "label": "Is Approved",
+                "propertyEditorAlias": "Umbraco.TrueFalse",
+                "sortOrder": 2,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "isSensitive": false,
+                "memberCanEdit": false,
+                "memberCanView": false,
+                "alias": "umbracoMemberLockedOut",
+                "label": "Is Locked Out",
+                "propertyEditorAlias": "Umbraco.TrueFalse",
+                "sortOrder": 3,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "isSensitive": false,
+                "memberCanEdit": false,
+                "memberCanView": false,
+                "alias": "umbracoMemberLastLockoutDate",
+                "label": "Last Lockout Date",
+                "propertyEditorAlias": "Umbraco.Label",
+                "sortOrder": 4,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "isSensitive": false,
+                "memberCanEdit": false,
+                "memberCanView": false,
+                "alias": "umbracoMemberLastLogin",
+                "label": "Last Login Date",
+                "propertyEditorAlias": "Umbraco.Label",
+                "sortOrder": 5,
+                "validation": {
+                  "required": false
+                }
+              },
+              {
+                "isSensitive": false,
+                "memberCanEdit": false,
+                "memberCanView": false,
+                "alias": "umbracoMemberLastPasswordChangeDate",
+                "label": "Last Password Change Date",
+                "propertyEditorAlias": "Umbraco.Label",
+                "sortOrder": 6,
+                "validation": {
+                  "required": false
+                }
+              }
+            ]
+          }
+        ],
+        "name": "Member",
+        "_createDate": "2019-06-17T13:40:01.46Z",
+        "_id": "d59be02f-1df9-4228-aa1e-01917d806cda",
+        "_updateDate": "2019-06-17T13:40:01.46Z",
+        "_links": {
+          "self": {
+            "href": "/api/member/type/Member"
+          },
+          "root": {
+            "href": "/api/member/type"
+          }
+        }
+      }
+    ]
+  }
+}</value>
+    </data>
+    <data name="ByAlias" xml:space="preserve">
+        <value>{
+  "alias": "Member",
+  "compositions": [],
+  "groups": [
+    {
+      "name": "Membership",
+      "sortOrder": 1,
+      "properties": [
+        {
+          "isSensitive": false,
+          "memberCanEdit": false,
+          "memberCanView": false,
+          "alias": "umbracoMemberComments",
+          "label": "Comments",
+          "propertyEditorAlias": "Umbraco.TextArea",
+          "sortOrder": 0,
+          "validation": {
+            "required": false
+          }
+        },
+        {
+          "isSensitive": false,
+          "memberCanEdit": false,
+          "memberCanView": false,
+          "alias": "umbracoMemberFailedPasswordAttempts",
+          "label": "Failed Password Attempts",
+          "propertyEditorAlias": "Umbraco.Label",
+          "sortOrder": 1,
+          "validation": {
+            "required": false
+          }
+        },
+        {
+          "isSensitive": false,
+          "memberCanEdit": false,
+          "memberCanView": false,
+          "alias": "umbracoMemberApproved",
+          "label": "Is Approved",
+          "propertyEditorAlias": "Umbraco.TrueFalse",
+          "sortOrder": 2,
+          "validation": {
+            "required": false
+          }
+        },
+        {
+          "isSensitive": false,
+          "memberCanEdit": false,
+          "memberCanView": false,
+          "alias": "umbracoMemberLockedOut",
+          "label": "Is Locked Out",
+          "propertyEditorAlias": "Umbraco.TrueFalse",
+          "sortOrder": 3,
+          "validation": {
+            "required": false
+          }
+        },
+        {
+          "isSensitive": false,
+          "memberCanEdit": false,
+          "memberCanView": false,
+          "alias": "umbracoMemberLastLockoutDate",
+          "label": "Last Lockout Date",
+          "propertyEditorAlias": "Umbraco.Label",
+          "sortOrder": 4,
+          "validation": {
+            "required": false
+          }
+        },
+        {
+          "isSensitive": false,
+          "memberCanEdit": false,
+          "memberCanView": false,
+          "alias": "umbracoMemberLastLogin",
+          "label": "Last Login Date",
+          "propertyEditorAlias": "Umbraco.Label",
+          "sortOrder": 5,
+          "validation": {
+            "required": false
+          }
+        },
+        {
+          "isSensitive": false,
+          "memberCanEdit": false,
+          "memberCanView": false,
+          "alias": "umbracoMemberLastPasswordChangeDate",
+          "label": "Last Password Change Date",
+          "propertyEditorAlias": "Umbraco.Label",
+          "sortOrder": 6,
+          "validation": {
+            "required": false
+          }
+        }
+      ]
+    }
+  ],
+  "name": "Member",
+  "_createDate": "2019-06-17T13:40:01.46Z",
+  "_id": "d59be02f-1df9-4228-aa1e-01917d806cda",
+  "_updateDate": "2019-06-17T13:40:01.46Z",
+  "_links": {
+    "self": {
+      "href": "/api/member/type/Member"
+    }
+  }
+}</value>
+    </data>
+</root>

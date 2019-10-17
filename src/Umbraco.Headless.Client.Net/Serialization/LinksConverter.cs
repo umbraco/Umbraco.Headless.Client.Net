@@ -4,7 +4,7 @@ using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Umbraco.Headless.Client.Net.Delivery.Models;
-using Umbraco.Headless.Client.Net.Delivery.Models.Hal;
+using Umbraco.Headless.Client.Net.Shared.Models;
 
 namespace Umbraco.Headless.Client.Net.Serialization
 {

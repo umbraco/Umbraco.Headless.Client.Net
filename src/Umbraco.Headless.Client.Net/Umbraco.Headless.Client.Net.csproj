@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>latest</LangVersion>
+    <Company>Umbraco HQ</Company>
+    <Authors>Umbraco</Authors>
+    <Description>NET Standard client library for the Umbraco Headless APIs</Description>
+    <Copyright>2019</Copyright>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="Management\Models\" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="refit" Version="4.7.51" />

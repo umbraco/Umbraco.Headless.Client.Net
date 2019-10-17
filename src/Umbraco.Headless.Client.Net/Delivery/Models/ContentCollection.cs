@@ -3,15 +3,13 @@ using Newtonsoft.Json;
 
 namespace Umbraco.Headless.Client.Net.Delivery.Models
 {
-    public class ContentCollection<T> where T : IContentBase
+    public class ContentCollection<T> where T : IContent
     {
         [JsonProperty("content")]
         public IEnumerable<T> Items { get; set; }
     }
 
-    public class ContentCollection
+    public class ContentCollection : ContentCollection<Content>
     {
-        [JsonProperty("content")]
-        public IEnumerable<Content> Items { get; set; }
     }
 }

@@ -47,7 +47,11 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <param name="configuration">Reference to the <see cref="IPasswordBasedConfiguration"/></param>
         public ContentDeliveryService(IPasswordBasedConfiguration configuration)
         {
-            var httpClient = new HttpClient (new AuthenticatedHttpClientHandler(configuration)) { BaseAddress = new Uri(Constants.Urls.BaseCdnUrl) };
+            var httpClient = new HttpClient(new AuthenticatedHttpClientHandler(configuration))
+            {
+                BaseAddress = new Uri(Constants.Urls.BaseCdnUrl)
+            };
+
             Content = new ContentDelivery(configuration, httpClient);
             Media = new MediaDelivery(configuration, httpClient);
         }
@@ -58,8 +62,12 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <param name="configuration">Reference to the <see cref="IApiKeyBasedConfiguration"/></param>
         public ContentDeliveryService(IApiKeyBasedConfiguration configuration)
         {
-            var httpClient = new HttpClient {BaseAddress = new Uri(Constants.Urls.BaseCdnUrl)};
-            httpClient.DefaultRequestHeaders.Add(Constants.Headers.ApiKey, configuration.Token);
+            var httpClient = new HttpClient
+            {
+                BaseAddress = new Uri(Constants.Urls.BaseCdnUrl),
+                DefaultRequestHeaders = { { Constants.Headers.ApiKey, configuration.Token } }
+            };
+
             Content = new ContentDelivery(configuration, httpClient);
             Media = new MediaDelivery(configuration, httpClient);
         }

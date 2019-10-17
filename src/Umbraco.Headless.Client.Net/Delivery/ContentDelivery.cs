@@ -26,7 +26,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
             return root.Content.Items;
         }
 
-        public async Task<IEnumerable<T>> GetRoot<T>(string culture) where T : IContentBase
+        public async Task<IEnumerable<T>> GetRoot<T>(string culture) where T : IContent
         {
             var service = RestService.For<TypedContentRootDeliveryEndpoints<T>>(_httpClient);
             var root = await service.GetRoot(_configuration.ProjectAlias, culture);
@@ -40,7 +40,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
             return content;
         }
 
-        public async Task<T> GetById<T>(Guid id, string culture, int depth) where T : IContentBase
+        public async Task<T> GetById<T>(Guid id, string culture, int depth) where T : IContent
         {
             var service = RestService.For<TypedContentDeliveryEndpoints<T>>(_httpClient);
             var content = await service.GetById(_configuration.ProjectAlias, culture, id, depth);
@@ -54,7 +54,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
             return content;
         }
 
-        public async Task<T> GetByUrl<T>(string url, string culture, int depth) where T : IContentBase
+        public async Task<T> GetByUrl<T>(string url, string culture, int depth) where T : IContent
         {
             var service = RestService.For<TypedContentDeliveryEndpoints<T>>(_httpClient);
             var content = await service.GetByUrl(_configuration.ProjectAlias, culture, url, depth);
@@ -68,7 +68,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
             return content;
         }
 
-        public async Task<PagedContent<T>> GetChildren<T>(Guid id, string culture, int page, int pageSize) where T : IContentBase
+        public async Task<PagedContent<T>> GetChildren<T>(Guid id, string culture, int page, int pageSize) where T : IContent
         {
             var service = RestService.For<TypedPagedContentDeliveryEndpoints<T>>(_httpClient);
             var content = await service.GetChildren(_configuration.ProjectAlias, culture, id, page, pageSize);
@@ -82,7 +82,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
             return content;
         }
 
-        public async Task<PagedContent<T>> GetDescendants<T>(Guid id, string culture, int page, int pageSize) where T : IContentBase
+        public async Task<PagedContent<T>> GetDescendants<T>(Guid id, string culture, int page, int pageSize) where T : IContent
         {
             var service = RestService.For<TypedPagedContentDeliveryEndpoints<T>>(_httpClient);
             var content = await service.GetDescendants(_configuration.ProjectAlias, culture, id, page, pageSize);
@@ -96,7 +96,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
             return root.Content.Items;
         }
 
-        public async Task<IEnumerable<T>> GetAncestors<T>(Guid id, string culture) where T : IContentBase
+        public async Task<IEnumerable<T>> GetAncestors<T>(Guid id, string culture) where T : IContent
         {
             var service = RestService.For<TypedContentRootDeliveryEndpoints<T>>(_httpClient);
             var root = await service.GetAncestors(_configuration.ProjectAlias, culture, id);
