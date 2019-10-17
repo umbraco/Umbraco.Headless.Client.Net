@@ -71,7 +71,7 @@ namespace Umbraco.Headless.Client.Net.Management
             RelationType = new RelationTypeService(configuration, httpClient);
         }
 
-        public ContentService Content { get; }
+        public IContentService Content { get; }
         public IDocumentTypeService DocumentType { get; }
         public ILanguageService Language { get; }
         public IMediaService Media { get; }
