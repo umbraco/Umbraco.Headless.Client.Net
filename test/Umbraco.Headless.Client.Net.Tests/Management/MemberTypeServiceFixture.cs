@@ -24,7 +24,7 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
             var service = new MemberTypeService(_configuration,
                 GetMockedHttpClient("/member/type", MemberTypeServiceJson.GetRoot));
 
-            var documentTypes = await service.GetRoot();
+            var documentTypes = await service.GetAll();
 
             Assert.NotNull(documentTypes);
             Assert.Single(documentTypes);

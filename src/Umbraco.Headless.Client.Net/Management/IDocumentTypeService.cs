@@ -6,7 +6,7 @@ namespace Umbraco.Headless.Client.Net.Management
 {
     public interface IDocumentTypeService
     {
+        Task<IEnumerable<DocumentType>> GetAll();
         Task<DocumentType> GetByAlias(string alias);
-        Task<IEnumerable<DocumentType>> GetRoot();
     }
 }

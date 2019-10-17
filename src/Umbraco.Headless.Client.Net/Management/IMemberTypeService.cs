@@ -6,7 +6,7 @@ namespace Umbraco.Headless.Client.Net.Management
 {
     public interface IMemberTypeService
     {
+        Task<IEnumerable<MemberType>> GetAll();
         Task<MemberType> GetByAlias(string alias);
-        Task<IEnumerable<MemberType>> GetRoot();
     }
 }

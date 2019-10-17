@@ -6,7 +6,7 @@ namespace Umbraco.Headless.Client.Net.Management
 {
     public interface IMediaTypeService
     {
+        Task<IEnumerable<MediaType>> GetAll();
         Task<MediaType> GetByAlias(string alias);
-        Task<IEnumerable<MediaType>> GetRoot();
     }
 }

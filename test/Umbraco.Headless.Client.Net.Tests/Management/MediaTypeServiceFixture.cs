@@ -25,7 +25,7 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
             var service = new MediaTypeService(_configuration,
                 GetMockedHttpClient("/media/type", MediaTypeServiceJson.GetRoot));
 
-            var mediaTypes = await service.GetRoot();
+            var mediaTypes = await service.GetAll();
 
             Assert.NotNull(mediaTypes);
             Assert.Equal(3, mediaTypes.Count());
