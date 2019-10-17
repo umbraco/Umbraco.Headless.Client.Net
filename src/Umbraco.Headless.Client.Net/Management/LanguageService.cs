@@ -23,7 +23,7 @@ namespace Umbraco.Headless.Client.Net.Management
         private LanguageManagementEndpoints Service =>
             _restService ?? (_restService = RestService.For<LanguageManagementEndpoints>(_httpClient));
 
-        public async Task<IEnumerable<Language>> GetRoot()
+        public async Task<IEnumerable<Language>> GetAll()
         {
             var languages = await Service.GetRoot(_headlessConfiguration.ProjectAlias);
             return languages.Languages.Items;

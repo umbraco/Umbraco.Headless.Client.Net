@@ -26,7 +26,7 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
             var service = new LanguageService(_configuration,
                 GetMockedHttpClient("/language", LanguageServiceJson.AtRoot));
 
-            var language = await service.GetRoot();
+            var language = await service.GetAll();
 
             Assert.NotNull(language);
             Assert.Equal(2, language.Count());

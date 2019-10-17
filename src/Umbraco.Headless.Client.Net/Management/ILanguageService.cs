@@ -6,7 +6,7 @@ namespace Umbraco.Headless.Client.Net.Management
 {
     public interface ILanguageService
     {
-        Task<IEnumerable<Language>> GetRoot();
+        Task<IEnumerable<Language>> GetAll();
         Task<Language> GetByIsoCode(string isoCode);
         Task<Language> Create(Language language);
         Task<Language> Update(string isoCode, Language language);
