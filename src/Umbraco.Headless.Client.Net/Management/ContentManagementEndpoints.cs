@@ -5,36 +5,42 @@ using Umbraco.Headless.Client.Net.Management.Models;
 
 namespace Umbraco.Headless.Client.Net.Management
 {
+    interface ContentManagementEndpoints
+    {
+        [Post("/content")]
+        Task<Management.Models.Content> Create([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias, Management.Models.Content content);
 
-     interface ContentManagementEndpoints
-     {
-         [Post("/content")]
-         Task<Content> Create([Header(Constants.Headers.ProjectAlias)] string projectAlias, Content content);
+        [Get("/content/{id}/children?page={page}&pageSize={pageSize}")]
+        Task<Management.Models.PagedContent> Children([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias, Guid id, int page, int pageSize);
 
-         [Get("/content/{id}/children?page={page}&pageSize={pageSize}")]
-         Task<PagedContent> Children([Header(Constants.Headers.ProjectAlias)]
-             string projectAlias, Guid id, int page, int pageSize);
+        [Delete("/content/{id}")]
+        Task<Management.Models.Content> Delete([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias, Guid id);
 
-         [Delete("/content/{id}")]
-         Task<Content> Delete([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id);
+        [Get("/content")]
+        Task<Management.Models.RootContentCollection> GetRoot([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias);
 
-         [Get("/content")]
-         Task<RootContentCollection> GetRoot([Header(Constants.Headers.ProjectAlias)] string projectAlias);
+        [Get("/content/{id}")]
+        Task<Management.Models.Content> ById([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias, Guid id);
 
-         [Get("/content/{id}")]
-         Task<Content> ById([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id);
+        [Put("/content/{id}/publish?culture={culture}")]
+        Task<Management.Models.Content> Publish([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias, Guid id, string culture);
 
-         [Put("/content/{id}/publish?culture={culture}")]
-         Task<Content> Publish([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id, string culture);
+        [Put("/content/{id}")]
+        Task<Management.Models.Content> Update([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias, Guid id, Management.Models.Content content);
 
-         [Put("/content/{id}")]
-         Task<Content> Update([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id, Content content);
+        [Put("/content/{id}/unpublish?culture={culture}")]
+        Task<Management.Models.Content> Unpublish([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias, Guid id, string culture);
+    }
 
-         [Put("/content/{id}/unpublish?culture={culture}")]
-         Task<Content> Unpublish([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id, string culture);
-     }
-
-     interface MediaManagementEndpoints
+    interface MediaManagementEndpoints
      {
         [Post("/media")]
         Task<Media> Create([Header(Constants.Headers.ProjectAlias)] string projectAlias, Media media);
@@ -54,7 +60,7 @@ namespace Umbraco.Headless.Client.Net.Management
 
         [Put("/media/{id}")]
         Task<Media> Update([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id, Media media);
-    }
+     }
 
      interface MemberManagementEndpoints
      {
@@ -143,21 +149,27 @@ namespace Umbraco.Headless.Client.Net.Management
     interface RelationManagementEndpoints
     {
         [Get("/relation/{id}")]
-        Task<Relation> ById([Header(Constants.Headers.ProjectAlias)] string projectAlias, int id);
+        Task<Relation> ById([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias, int id);
 
         [Get("/relation/{alias}")]
-        Task<RootRelationCollection> ByAlias([Header(Constants.Headers.ProjectAlias)] string projectAlias, string alias);
+        Task<RootRelationCollection> ByAlias([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias, string alias);
 
         [Get("/relation/child/{childId}")]
-        Task<RootRelationCollection> ByChildId([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid childId);
+        Task<RootRelationCollection> ByChildId([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias, Guid childId);
 
         [Get("/relation/parent/{parentId}")]
-        Task<RootRelationCollection> ByParentId([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid parentId);
+        Task<RootRelationCollection> ByParentId([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias, Guid parentId);
 
         [Post("/relation")]
-        Task<Relation> Create([Header(Constants.Headers.ProjectAlias)] string projectAlias, Relation relation);
+        Task<Relation> Create([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias, Relation relation);
 
         [Delete("/relation/{id}")]
-        Task<Relation> Delete([Header(Constants.Headers.ProjectAlias)] string projectAlias, int id);
+        Task<Relation> Delete([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias, int id);
     }
 }
