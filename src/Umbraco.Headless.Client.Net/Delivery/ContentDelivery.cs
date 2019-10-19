@@ -131,6 +131,13 @@ namespace Umbraco.Headless.Client.Net.Delivery
             return content;
         }
 
+        public async Task<PagedContent> Search(string term, string culture = null, int page = 1, int pageSize = 10)
+        {
+            var service = RestService.For<ContentDeliveryEndpoints>(_httpClient);
+            var content = await service.Search(_configuration.ProjectAlias, culture, term, page, pageSize);
+            return content;
+        }
+
         private static string GetAliasFromClassName<T>()
         {
             var className = typeof(T).Name;

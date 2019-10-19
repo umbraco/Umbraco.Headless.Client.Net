@@ -142,5 +142,15 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <param name="pageSize">Integer specifying the page size (Optional)</param>
         /// <returns><see cref="PagedContent{T}"/></returns>
         Task<PagedContent<T>> GetByType<T>(string culture = null, int page = 1, int pageSize = 10) where T : IContent;
+
+        /// <summary>
+        /// Search for content by term
+        /// </summary>
+        /// <param name="term">Search term</param>
+        /// <param name="culture">Content Culture (Optional)</param>
+        /// <param name="page">Integer specifying the page number (Optional)</param>
+        /// <param name="pageSize">Integer specifying the page size (Optional)</param>
+        /// <returns><see cref="PagedContent"/></returns>
+        Task<PagedContent> Search(string term, string culture = null, int page = 1, int pageSize = 10);
     }
 }

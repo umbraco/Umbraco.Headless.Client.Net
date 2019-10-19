@@ -287,5 +287,11 @@ namespace Umbraco.Headless.Client.Net.Tests {
                 return ResourceManager.GetString("GetByType", resourceCulture);
             }
         }
+
+        internal static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
     }
 }

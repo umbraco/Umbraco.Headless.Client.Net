@@ -27,6 +27,9 @@ namespace Umbraco.Headless.Client.Net.Delivery
 
         [Get("/content/type?contentType={contentType}&page={page}&pageSize={pageSize}&hyperlinks=false")]
         Task<Delivery.Models.PagedContent> GetByType([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, string contentType, int page, int pageSize);
+
+        [Get("/content/search?term={term}&page={page}&pageSize={pageSize}&hyperlinks=false")]
+        Task<Delivery.Models.PagedContent> Search([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, string term, int page, int pageSize);
     }
 
     interface TypedContentRootDeliveryEndpoints<T> where T : Delivery.Models.IContent

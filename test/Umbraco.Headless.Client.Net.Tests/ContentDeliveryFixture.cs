@@ -119,6 +119,19 @@ namespace Umbraco.Headless.Client.Net.Tests
             Assert.Equal(2, ancestors.Count());
         }
 
+        [Fact]
+        public async Task Can_Search()
+        {
+            var service = new ContentDeliveryService(_configuration,
+                GetMockedHttpClient($"{_contentBaseUrl}/search?term=jacket", ContentDeliveryJson.Search));
+            var result = await service.Content.Search("jacket");
+            Assert.NotNull(result);
+            Assert.NotNull(result.Content);
+            Assert.NotEmpty(result.Content.Items);
+            Assert.Equal(1, result.TotalPages);
+            Assert.Equal(1, result.TotalItems);
+        }
+
         private HttpClient GetMockedHttpClient(string url, string jsonResponse)
         {
             _mockHttp.When(url).Respond("application/json", jsonResponse);
