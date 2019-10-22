@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Refit;
@@ -21,6 +22,12 @@ namespace Umbraco.Headless.Client.Net.Management
 
         private MemberGroupManagementEndpoints Service =>
             _restService ?? (_restService = RestService.For<MemberGroupManagementEndpoints>(_httpClient));
+
+        public async Task<IEnumerable<MemberGroup>> GetAll()
+        {
+            var result = await Service.GetAll(_headlessConfiguration.ProjectAlias);
+            return result.MemberGroups.Items;
+        }
 
         public async Task<MemberGroup> GetByName(string name)
             => await Service.GetByName(_headlessConfiguration.ProjectAlias, name);

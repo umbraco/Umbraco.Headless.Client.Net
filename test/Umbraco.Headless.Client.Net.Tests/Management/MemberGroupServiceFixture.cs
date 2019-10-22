@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using RichardSzalay.MockHttp;
@@ -17,6 +18,18 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         public MemberGroupServiceFixture()
         {
             _mockHttp = new MockHttpMessageHandler();
+        }
+
+        [Fact]
+        public async Task GetAll_ReturnsAllMemberGroups()
+        {
+            var service = new MemberGroupService(_configuration,
+                GetMockedHttpClient("/member/group", MemberGroupServiceJson.GetAll));
+
+            var documentTypes = await service.GetAll();
+
+            Assert.NotNull(documentTypes);
+            Assert.Equal(2, documentTypes.Count());
         }
 
         [Fact]

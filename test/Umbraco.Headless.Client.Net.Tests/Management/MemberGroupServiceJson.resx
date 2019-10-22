@@ -84,4 +84,43 @@
   "_updateDate": "2019-08-15T12:32:14.3112288Z"
 }</value>
     </data>
+    <data name="GetAll" xml:space="preserve">
+        <value>{
+  "_links": {
+    "self": {
+      "href": "/api/member/group"
+    },
+    "membergroups": {
+      "href": "/api/member/group/Club%20Blue%20Members",
+      "href": "/api/member/group/Elite%20Shoppers%20Group"
+    }
+  },
+  "_embedded": {
+    "membergroups": [
+      {
+        "name": "Club Blue Members",
+        "_createDate": "2019-10-10T12:02:50.83Z",
+        "_id": "15a1a854-596c-4b72-b462-769015a6b0eb",
+        "_updateDate": "0001-01-01T00:00:00Z",
+        "_links": {
+          "self": {
+            "href": "/api/member/group/Club%20Blue%20Members"
+          }
+        }
+      },
+      {
+        "name": "Elite Shoppers Group",
+        "_createDate": "2019-10-10T12:09:58.5982624Z",
+        "_id": "1ae62150-e54c-4fd7-aabe-9ad46d1b7109",
+        "_updateDate": "0001-01-01T00:00:00Z",
+        "_links": {
+          "self": {
+            "href": "/api/member/group/Elite%20Shoppers%20Group"
+          }
+        }
+      }
+    ]
+  }
+}</value>
+    </data>
 </root>
