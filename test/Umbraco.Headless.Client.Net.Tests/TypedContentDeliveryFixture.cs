@@ -53,6 +53,25 @@ namespace Umbraco.Headless.Client.Net.Tests
             }
         }
 
+        [Theory]
+        [InlineData("product")]
+        public async Task Can_Retrieve_Content_By_Type_Typed(string contentType)
+        {
+            var service = new ContentDeliveryService(_configuration,
+                GetMockedHttpClient($"{_contentBaseUrl}/type?contentType={contentType}", ContentDeliveryJson.GetByType));
+            var pagedContent = await service.Content.GetByType<Product>(contentType);
+            Assert.NotNull(pagedContent);
+            Assert.NotNull(pagedContent.Content);
+            Assert.NotEmpty(pagedContent.Content.Items);
+            Assert.Equal(1, pagedContent.TotalPages);
+            Assert.Equal(8, pagedContent.TotalItems);
+            foreach (var contentItem in pagedContent.Content.Items)
+            {
+                Assert.NotNull(contentItem);
+                Assert.False(string.IsNullOrEmpty(contentItem.ProductName));
+            }
+        }
+
         private HttpClient GetMockedHttpClient(string url, string jsonResponse)
         {
             _mockHttp.When(url).Respond("application/json", jsonResponse);

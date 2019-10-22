@@ -93,6 +93,20 @@ namespace Umbraco.Headless.Client.Net.Tests
         }
 
         [Theory]
+        [InlineData("product")]
+        public async Task Can_Retrieve_Content_By_Type(string contentType)
+        {
+            var service = new ContentDeliveryService(_configuration,
+                GetMockedHttpClient($"{_contentBaseUrl}/type?contentType={contentType}", ContentDeliveryJson.GetByType));
+            var ofType = await service.Content.GetByType(contentType);
+            Assert.NotNull(ofType);
+            Assert.NotNull(ofType.Content);
+            Assert.NotEmpty(ofType.Content.Items);
+            Assert.Equal(1, ofType.TotalPages);
+            Assert.Equal(8, ofType.TotalItems);
+        }
+
+        [Theory]
         [InlineData("72346384-fc5e-4a6e-a07d-559eec11dcea")]
         public async Task Can_Retrieve_Ancestors_By_Id(string id)
         {
@@ -103,6 +117,19 @@ namespace Umbraco.Headless.Client.Net.Tests
             Assert.NotNull(ancestors);
             Assert.NotEmpty(ancestors);
             Assert.Equal(2, ancestors.Count());
+        }
+
+        [Fact]
+        public async Task Can_Search()
+        {
+            var service = new ContentDeliveryService(_configuration,
+                GetMockedHttpClient($"{_contentBaseUrl}/search?term=jacket", ContentDeliveryJson.Search));
+            var result = await service.Content.Search("jacket");
+            Assert.NotNull(result);
+            Assert.NotNull(result.Content);
+            Assert.NotEmpty(result.Content.Items);
+            Assert.Equal(1, result.TotalPages);
+            Assert.Equal(1, result.TotalItems);
         }
 
         private HttpClient GetMockedHttpClient(string url, string jsonResponse)

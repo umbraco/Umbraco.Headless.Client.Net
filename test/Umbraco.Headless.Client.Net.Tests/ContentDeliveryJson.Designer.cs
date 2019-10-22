@@ -10,8 +10,8 @@
 
 namespace Umbraco.Headless.Client.Net.Tests {
     using System;
-    
-    
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -23,15 +23,15 @@ namespace Umbraco.Headless.Client.Net.Tests {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class ContentDeliveryJson {
-        
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal ContentDeliveryJson() {
         }
-        
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -45,7 +45,7 @@ namespace Umbraco.Headless.Client.Net.Tests {
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
@@ -59,7 +59,7 @@ namespace Umbraco.Headless.Client.Net.Tests {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_links&quot;: {
@@ -85,7 +85,7 @@ namespace Umbraco.Headless.Client.Net.Tests {
                 return ResourceManager.GetString("GetAncestors", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_creatorName&quot;: &quot;Morten Christensen&quot;,
@@ -108,7 +108,7 @@ namespace Umbraco.Headless.Client.Net.Tests {
                 return ResourceManager.GetString("GetByUrlHomeProductsUnicorn", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_totalItems&quot;: 5,
@@ -135,7 +135,7 @@ namespace Umbraco.Headless.Client.Net.Tests {
                 return ResourceManager.GetString("GetChildrenByParentId", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_totalItems&quot;: 8,
@@ -162,7 +162,7 @@ namespace Umbraco.Headless.Client.Net.Tests {
                 return ResourceManager.GetString("GetChildrenOfProducts", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_creatorName&quot;: &quot;Morten Christensen&quot;,
@@ -185,7 +185,7 @@ namespace Umbraco.Headless.Client.Net.Tests {
                 return ResourceManager.GetString("GetContentById", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_totalItems&quot;: 23,
@@ -209,7 +209,7 @@ namespace Umbraco.Headless.Client.Net.Tests {
                 return ResourceManager.GetString("GetDescendantsPageOne", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_totalItems&quot;: 23,
@@ -233,7 +233,7 @@ namespace Umbraco.Headless.Client.Net.Tests {
                 return ResourceManager.GetString("GetDescendantsPageThree", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_totalItems&quot;: 23,
@@ -256,7 +256,7 @@ namespace Umbraco.Headless.Client.Net.Tests {
                 return ResourceManager.GetString("GetDescendantsPageTwo", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_links&quot;: {
@@ -279,6 +279,18 @@ namespace Umbraco.Headless.Client.Net.Tests {
         internal static string GetRoot {
             get {
                 return ResourceManager.GetString("GetRoot", resourceCulture);
+            }
+        }
+
+        internal static string GetByType {
+            get {
+                return ResourceManager.GetString("GetByType", resourceCulture);
+            }
+        }
+
+        internal static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
             }
         }
     }
