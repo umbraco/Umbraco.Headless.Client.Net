@@ -112,6 +112,9 @@ namespace Umbraco.Headless.Client.Net.Management
 
     interface MemberGroupManagementEndpoints
     {
+        [Get("/member/group")]
+        Task<RootMemberGroupCollection> GetAll([Header(Constants.Headers.ProjectAlias)] string projectAlias);
+
         [Get("/member/group/{name}")]
         Task<MemberGroup> GetByName([Header(Constants.Headers.ProjectAlias)] string projectAlias, string name);
 
