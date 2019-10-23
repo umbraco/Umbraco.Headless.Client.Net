@@ -25,27 +25,15 @@ namespace Umbraco.Headless.Client.Net.Management
         private MediaManagementEndpoints Service =>
             _restService ??= RestService.For<MediaManagementEndpoints>(_httpClient, _refitSettings);
 
-        public async Task<Media> Create(Media media)
+        public Task<Media> Create(Media media)
         {
             if (media.Files.Count > 0)
             {
-                var content = new MultipartFormDataContent
-                {
-                    Headers =
-                    {
-                        {Constants.Headers.ProjectAlias, _configuration.ProjectAlias}
-                    },
-                };
-                var postData = await _refitSettings.ContentSerializer.SerializeAsync(media);
-                content.Add(postData, "content");
-                foreach (var file in media.Files)
-                    content.Add(file.Value.ToContent(), file.Key, file.Value.FileName);
-
-                var response = await _httpClient.PostAsync("/media", content);
-                return await _refitSettings.ContentSerializer.DeserializeAsync<Media>(response.Content);
+                return _httpClient.PostMultipartAsync<Media>(_refitSettings.ContentSerializer, "/media",
+                    _configuration.ProjectAlias, media, media.Files);
             }
 
-            return await Service.Create(_configuration.ProjectAlias, media);
+            return Service.Create(_configuration.ProjectAlias, media);
         }
 
         public Task<Media> Delete(Guid id) => Service.Delete(_configuration.ProjectAlias, id);
