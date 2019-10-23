@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Refit;
 using RichardSzalay.MockHttp;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Management;
@@ -22,8 +23,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task AtRoot_ReturnsAllDocumentTypes()
         {
-            var service = new DocumentTypeService(_configuration,
-                GetMockedHttpClient("/content/type", DocumentTypeServiceJson.GetRoot));
+            var httpClient = GetMockedHttpClient("/content/type", DocumentTypeServiceJson.GetRoot);
+            var service = CreateService(httpClient);
 
             var documentTypes = await service.GetAll();
 
@@ -34,8 +35,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task ByAlias_ReturnsSingleDocumentType()
         {
-            var service = new DocumentTypeService(_configuration,
-                GetMockedHttpClient("/content/type/products", DocumentTypeServiceJson.ByAlias));
+            var httpClient = GetMockedHttpClient("/content/type/products", DocumentTypeServiceJson.ByAlias);
+            var service = CreateService(httpClient);
 
             var documentType = await service.GetByAlias("products");
 
@@ -111,5 +112,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
             var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseApiUrl) };
             return client;
         }
+
+        private DocumentTypeService CreateService(HttpClient client) =>
+            new DocumentTypeService(_configuration, client, new RefitSettings());
     }
 }

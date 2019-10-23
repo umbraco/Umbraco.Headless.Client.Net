@@ -1,6 +1,7 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Refit;
 using RichardSzalay.MockHttp;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Management;
@@ -24,8 +25,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         {
             var member = new Member();
 
-            var service = new MemberService(_configuration,
-                GetMockedHttpClient(HttpMethod.Post, "/member", MemberServiceJson.Create));
+            var httpClient = GetMockedHttpClient(HttpMethod.Post, "/member", MemberServiceJson.Create);
+            var service = CreateService(httpClient);
 
             var result = await service.Create(member);
 
@@ -35,8 +36,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task Delete_ReturnsDeletedMember()
         {
-            var service = new MemberService(_configuration,
-                GetMockedHttpClient(HttpMethod.Delete,  "/member/test", MemberServiceJson.Delete));
+            var httpClient = GetMockedHttpClient(HttpMethod.Delete, "/member/test", MemberServiceJson.Delete);
+            var service = CreateService(httpClient);
 
             var result = await service.Delete("test");
 
@@ -53,8 +54,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
                 Username = "test"
             };
 
-            var service = new MemberService(_configuration,
-                GetMockedHttpClient(HttpMethod.Put, "/member/test", MemberServiceJson.Update));
+            var httpClient = GetMockedHttpClient(HttpMethod.Put, "/member/test", MemberServiceJson.Update);
+            var service = CreateService(httpClient);
 
             var result = await service.Update(member);
 
@@ -65,8 +66,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task GetByUsername_ReturnsMember()
         {
-            var service = new MemberService(_configuration,
-                GetMockedHttpClient(HttpMethod.Get, "/member/test", MemberServiceJson.ByUsername));
+            var httpClient = GetMockedHttpClient(HttpMethod.Get, "/member/test", MemberServiceJson.ByUsername);
+            var service = CreateService(httpClient);
 
             var result = await service.GetByUsername("test");
 
@@ -104,8 +105,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         {
             _mockHttp.Expect(HttpMethod.Put, "/member/test/groups/myGroup");
 
-            var client = new HttpClient(_mockHttp) {BaseAddress = new Uri(Constants.Urls.BaseApiUrl)};
-            var service = new MemberService(_configuration, client);
+            var httpClient = new HttpClient(_mockHttp) {BaseAddress = new Uri(Constants.Urls.BaseApiUrl)};
+            var service = CreateService(httpClient);
 
             service.AddToGroup("test", "myGroup");
 
@@ -117,8 +118,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         {
             _mockHttp.Expect(HttpMethod.Delete, "/member/test/groups/myGroup");
 
-            var client = new HttpClient(_mockHttp) {BaseAddress = new Uri(Constants.Urls.BaseApiUrl)};
-            var service = new MemberService(_configuration, client);
+            var httpClient = new HttpClient(_mockHttp) {BaseAddress = new Uri(Constants.Urls.BaseApiUrl)};
+            var service = CreateService(httpClient);
 
             service.RemoveFromGroup("test", "myGroup");
 
@@ -131,6 +132,9 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
             var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseApiUrl) };
             return client;
         }
+
+        private MemberService CreateService(HttpClient client) =>
+            new MemberService(_configuration, client, new RefitSettings());
     }
 
 }

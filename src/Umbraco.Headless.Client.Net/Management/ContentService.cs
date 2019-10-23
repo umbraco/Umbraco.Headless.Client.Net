@@ -12,16 +12,18 @@ namespace Umbraco.Headless.Client.Net.Management
     {
         private readonly IHeadlessConfiguration _configuration;
         private readonly HttpClient _httpClient;
+        private readonly RefitSettings _refitSettings;
         private ContentManagementEndpoints _restService;
 
-        public ContentService(IHeadlessConfiguration configuration, HttpClient httpClient)
+        public ContentService(IHeadlessConfiguration configuration, HttpClient httpClient, RefitSettings refitSettings)
         {
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+            _refitSettings = refitSettings ?? throw new ArgumentNullException(nameof(refitSettings));
         }
 
         private ContentManagementEndpoints Service =>
-            _restService ?? (_restService = RestService.For<ContentManagementEndpoints>(_httpClient));
+            _restService ??= RestService.For<ContentManagementEndpoints>(_httpClient, _refitSettings);
 
         public Task<Content> Create(Content content) => Service.Create(_configuration.ProjectAlias, content);
 

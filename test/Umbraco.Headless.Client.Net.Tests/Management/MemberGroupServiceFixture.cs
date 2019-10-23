@@ -1,6 +1,7 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Refit;
 using RichardSzalay.MockHttp;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Management;
@@ -22,8 +23,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task ByName_ReturnsSingleMemberGroup()
         {
-            var service = new MemberGroupService(_configuration,
-                GetMockedHttpClient("/member/group/My Group", MemberGroupServiceJson.ByName));
+            var httpClient = GetMockedHttpClient("/member/group/My Group", MemberGroupServiceJson.ByName);
+            var service = CreateService(httpClient);
 
             var memberGroup = await service.GetByName("My Group");
 
@@ -38,8 +39,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task Create_ReturnsCreatedMemberGroup()
         {
-            var service = new MemberGroupService(_configuration,
-                GetMockedHttpClient("/member/group", MemberGroupServiceJson.Create));
+            var httpClient = GetMockedHttpClient("/member/group", MemberGroupServiceJson.Create);
+            var service = CreateService(httpClient);
 
             var memberGroup = await service.Create(new MemberGroup { Name = "My Group"});
 
@@ -54,8 +55,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task Delete_ReturnsDeletedMemberGroup()
         {
-            var service = new MemberGroupService(_configuration,
-                GetMockedHttpClient("/member/group/My Group", MemberGroupServiceJson.Delete));
+            var httpClient = GetMockedHttpClient("/member/group/My Group", MemberGroupServiceJson.Delete);
+            var service = CreateService(httpClient);
 
             var memberGroup = await service.Delete("My Group");
 
@@ -74,5 +75,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
             var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseApiUrl) };
             return client;
         }
+
+        private MemberGroupService CreateService(HttpClient client) =>
+            new MemberGroupService(_configuration, client, new RefitSettings());
     }
 }

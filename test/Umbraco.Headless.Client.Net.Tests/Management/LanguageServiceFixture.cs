@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Refit;
 using RichardSzalay.MockHttp;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Management;
@@ -23,8 +24,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task GetRoot_ReturnsAllLanguages()
         {
-            var service = new LanguageService(_configuration,
-                GetMockedHttpClient("/language", LanguageServiceJson.AtRoot));
+            var httpClient = GetMockedHttpClient("/language", LanguageServiceJson.AtRoot);
+            var service = CreateService(httpClient);
 
             var language = await service.GetAll();
 
@@ -35,8 +36,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task ByIsoCode_ReturnsSingleLanguage()
         {
-            var service = new LanguageService(_configuration,
-                GetMockedHttpClient("/language/da", LanguageServiceJson.ByIsoCode));
+            var httpClient =  GetMockedHttpClient("/language/da", LanguageServiceJson.ByIsoCode);
+            var service = CreateService(httpClient);
 
             var language = await service.GetByIsoCode("da");
 
@@ -52,8 +53,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task Create_ReturnsCreatedLanguage()
         {
-            var service = new LanguageService(_configuration,
-                GetMockedHttpClient("/language", LanguageServiceJson.Create));
+            var httpClient = GetMockedHttpClient("/language", LanguageServiceJson.Create);
+            var service = CreateService(httpClient);
 
             var language = await service.Create(new Language { IsoCode = "da", FallbackLanguage = "en-GB" });
 
@@ -69,8 +70,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task Update_ReturnsDeletedLanguage()
         {
-            var service = new LanguageService(_configuration,
-                GetMockedHttpClient("/language/da", LanguageServiceJson.Delete));
+            var httpClient = GetMockedHttpClient("/language/da", LanguageServiceJson.Delete);
+            var service = CreateService(httpClient);
 
             var language = await service.Update("da",
                 new Language
@@ -93,8 +94,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task Delete_ReturnsDeletedLanguage()
         {
-            var service = new LanguageService(_configuration,
-                GetMockedHttpClient("/language/da", LanguageServiceJson.Delete));
+            var httpClient = GetMockedHttpClient("/language/da", LanguageServiceJson.Delete);
+            var service = CreateService(httpClient);
 
             var language = await service.Delete("da");
 
@@ -113,5 +114,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
             var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseApiUrl) };
             return client;
         }
+
+        private LanguageService CreateService(HttpClient client) =>
+            new LanguageService(_configuration, client, new RefitSettings());
     }
 }

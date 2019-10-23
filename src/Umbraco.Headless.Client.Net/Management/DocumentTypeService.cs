@@ -12,16 +12,19 @@ namespace Umbraco.Headless.Client.Net.Management
     {
         private readonly IHeadlessConfiguration _configuration;
         private readonly HttpClient _httpClient;
+        private readonly RefitSettings _refitSettings;
         private DocumentTypeManagementEndpoints _restService;
 
-        public DocumentTypeService(IHeadlessConfiguration configuration, HttpClient httpClient)
+        public DocumentTypeService(IHeadlessConfiguration configuration, HttpClient httpClient,
+            RefitSettings refitSettings)
         {
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+            _refitSettings = refitSettings ?? throw new ArgumentNullException(nameof(refitSettings));
         }
 
         private DocumentTypeManagementEndpoints Service =>
-            _restService ?? (_restService = RestService.For<DocumentTypeManagementEndpoints>(_httpClient));
+            _restService ??= RestService.For<DocumentTypeManagementEndpoints>(_httpClient, _refitSettings);
 
         public async Task<IEnumerable<DocumentType>> GetAll()
         {

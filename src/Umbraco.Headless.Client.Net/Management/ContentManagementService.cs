@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Net.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Refit;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Security;
@@ -36,18 +38,18 @@ namespace Umbraco.Headless.Client.Net.Management
                 BaseAddress = new Uri(Constants.Urls.BaseApiUrl)
             };
 
-            var refitSettings = new RefitSettings();
+            var refitSettings = CreateRefitSettings();
 
-            Content = new ContentService(configuration, httpClient);
-            DocumentType = new DocumentTypeService(configuration, httpClient);
-            Language = new LanguageService(configuration, httpClient);
+            Content = new ContentService(configuration, httpClient, refitSettings);
+            DocumentType = new DocumentTypeService(configuration, httpClient, refitSettings);
+            Language = new LanguageService(configuration, httpClient, refitSettings);
             Media = new MediaService(configuration, httpClient, refitSettings);
-            MediaType = new MediaTypeService(configuration, httpClient);
-            Member = new MemberService(configuration, httpClient);
-            MemberGroup = new MemberGroupService(configuration, httpClient);
-            MemberType = new MemberTypeService(configuration, httpClient);
-            Relation = new RelationService(configuration, httpClient);
-            RelationType = new RelationTypeService(configuration, httpClient);
+            MediaType = new MediaTypeService(configuration, httpClient, refitSettings);
+            Member = new MemberService(configuration, httpClient, refitSettings);
+            MemberGroup = new MemberGroupService(configuration, httpClient, refitSettings);
+            MemberType = new MemberTypeService(configuration, httpClient, refitSettings);
+            Relation = new RelationService(configuration, httpClient, refitSettings);
+            RelationType = new RelationTypeService(configuration, httpClient, refitSettings);
         }
 
         /// <summary>
@@ -62,18 +64,18 @@ namespace Umbraco.Headless.Client.Net.Management
                 DefaultRequestHeaders = {{Constants.Headers.ApiKey, configuration.Token}}
             };
 
-            var refitSettings = new RefitSettings();
+            var refitSettings = CreateRefitSettings();
 
-            Content = new ContentService(configuration, httpClient);
-            DocumentType = new DocumentTypeService(configuration, httpClient);
-            Language = new LanguageService(configuration, httpClient);
+            Content = new ContentService(configuration, httpClient, refitSettings);
+            DocumentType = new DocumentTypeService(configuration, httpClient, refitSettings);
+            Language = new LanguageService(configuration, httpClient, refitSettings);
             Media = new MediaService(configuration, httpClient, refitSettings);
-            MediaType = new MediaTypeService(configuration, httpClient);
-            Member = new MemberService(configuration, httpClient);
-            MemberGroup = new MemberGroupService(configuration, httpClient);
-            MemberType = new MemberTypeService(configuration, httpClient);
-            Relation = new RelationService(configuration, httpClient);
-            RelationType = new RelationTypeService(configuration, httpClient);
+            MediaType = new MediaTypeService(configuration, httpClient, refitSettings);
+            Member = new MemberService(configuration, httpClient, refitSettings);
+            MemberGroup = new MemberGroupService(configuration, httpClient, refitSettings);
+            MemberType = new MemberTypeService(configuration, httpClient, refitSettings);
+            Relation = new RelationService(configuration, httpClient, refitSettings);
+            RelationType = new RelationTypeService(configuration, httpClient, refitSettings);
         }
 
         public IContentService Content { get; }
@@ -86,5 +88,18 @@ namespace Umbraco.Headless.Client.Net.Management
         public IMemberTypeService MemberType { get; }
         public IRelationService Relation { get; }
         public IRelationTypeService RelationType { get; }
+
+
+        private static RefitSettings CreateRefitSettings()
+        {
+            return new RefitSettings
+            {
+                ContentSerializer = new JsonContentSerializer(new JsonSerializerSettings
+                {
+                    Formatting = Formatting.None,
+                    ContractResolver = new CamelCasePropertyNamesContractResolver()
+                })
+            };
+        }
     }
 }

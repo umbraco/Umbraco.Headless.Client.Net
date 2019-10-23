@@ -12,16 +12,19 @@ namespace Umbraco.Headless.Client.Net.Management
     {
         private readonly IHeadlessConfiguration _configuration;
         private readonly HttpClient _httpClient;
+        private readonly RefitSettings _refitSettings;
         private MediaTypeManagementEndpoints _restService;
 
-        public MediaTypeService(IHeadlessConfiguration configuration, HttpClient httpClient)
+        public MediaTypeService(IHeadlessConfiguration configuration, HttpClient httpClient,
+            RefitSettings refitSettings)
         {
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+            _refitSettings = refitSettings ?? throw new ArgumentNullException(nameof(refitSettings));
         }
 
         private MediaTypeManagementEndpoints Service =>
-            _restService ?? (_restService = RestService.For<MediaTypeManagementEndpoints>(_httpClient));
+            _restService ??= RestService.For<MediaTypeManagementEndpoints>(_httpClient, _refitSettings);
 
         public async Task<IEnumerable<MediaType>> GetAll()
         {

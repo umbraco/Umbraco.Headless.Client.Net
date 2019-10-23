@@ -1,7 +1,9 @@
 using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Refit;
 using RichardSzalay.MockHttp;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Management;
@@ -22,8 +24,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task AtRoot_ReturnsAllMediaTypes()
         {
-            var service = new MediaTypeService(_configuration,
-                GetMockedHttpClient("/media/type", MediaTypeServiceJson.GetRoot));
+            var httpClient = GetMockedHttpClient("/media/type", MediaTypeServiceJson.GetRoot);
+            var service = CreateService(httpClient);
 
             var mediaTypes = await service.GetAll();
 
@@ -34,8 +36,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task ByAlias_ReturnsSingleMediaType()
         {
-            var service = new MediaTypeService(_configuration,
-                GetMockedHttpClient("/media/type/Image", MediaTypeServiceJson.ByAlias));
+            var httpClient = GetMockedHttpClient("/media/type/Image", MediaTypeServiceJson.ByAlias);
+            var service = CreateService(httpClient);
 
             var mediaType = await service.GetByAlias("Image");
 
@@ -110,5 +112,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
             var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseApiUrl) };
             return client;
         }
+
+        private MediaTypeService CreateService(HttpClient client) =>
+            new MediaTypeService(_configuration, client, new RefitSettings());
     }
 }

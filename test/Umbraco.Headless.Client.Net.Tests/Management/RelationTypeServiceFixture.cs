@@ -1,6 +1,7 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Refit;
 using RichardSzalay.MockHttp;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Management;
@@ -22,8 +23,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task ByAlias_ReturnsSingleRelationType()
         {
-            var service = new RelationTypeService(_configuration,
-                GetMockedHttpClient("/relation/type/relateDocumentOnCopy", RelationTypeServiceJson.ByAlias));
+            var httpClient = GetMockedHttpClient("/relation/type/relateDocumentOnCopy", RelationTypeServiceJson.ByAlias);
+             var service = CreateService(httpClient);
 
             var relationType = await service.GetByAlias("relateDocumentOnCopy");
 
@@ -42,5 +43,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
             var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseApiUrl) };
             return client;
         }
+
+        private RelationTypeService CreateService(HttpClient client) =>
+            new RelationTypeService(_configuration, client, new RefitSettings());
     }
 }
