@@ -16,6 +16,15 @@ namespace Umbraco.Headless.Client.Net.Management
             return await contentSerializer.DeserializeAsync<T>(response.Content);
         }
 
+        public static async Task<T> PutMultipartAsync<T>(this HttpClient client, IContentSerializer contentSerializer,
+            string url, string projectAlias, object data, IDictionary<string, MultipartItem> files)
+        {
+            var content = await CreateContent<T>(contentSerializer, projectAlias, data, files);
+
+            var response = await client.PutAsync(url, content);
+            return await contentSerializer.DeserializeAsync<T>(response.Content);
+        }
+
         private static async Task<MultipartFormDataContent> CreateContent<T>(IContentSerializer contentSerializer, string projectAlias, object data,
             IDictionary<string, MultipartItem> files)
         {

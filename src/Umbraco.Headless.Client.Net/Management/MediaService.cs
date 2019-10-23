@@ -49,6 +49,15 @@ namespace Umbraco.Headless.Client.Net.Management
             return media.Media.Items;
         }
 
-        public Task<Media> Update(Media media) => Service.Update(_configuration.ProjectAlias, media.Id, media);
+        public Task<Media> Update(Media media)
+        {
+            if (media.Files.Count > 0)
+            {
+                return _httpClient.PutMultipartAsync<Media>(_refitSettings.ContentSerializer,
+                    $"/media/{media.Id.ToString()}", _configuration.ProjectAlias, media, media.Files);
+            }
+
+            return Service.Update(_configuration.ProjectAlias, media.Id, media);
+        }
     }
 }

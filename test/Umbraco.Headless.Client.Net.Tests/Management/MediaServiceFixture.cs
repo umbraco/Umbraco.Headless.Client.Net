@@ -103,7 +103,51 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
            var result = await service.Update(media);
 
             Assert.NotNull(result);
+        }
 
+        [Fact]
+        public async Task Update_WithFiles_SendsMultipartRequest()
+        {
+            var media = new Media
+            {
+                Id = new Guid("62981fa6-1d34-45c9-9efe-1c811892342b")
+            };
+            media.SetValue("umbracoFile", "{\"src\":\"han-solo.png\"}", new ByteArrayPart(new byte[0], "han-solo.png", "image/png"));
+
+            _mockHttp.Expect(HttpMethod.Put, "/media/62981fa6-1d34-45c9-9efe-1c811892342b")
+                .With(x =>
+                {
+                    if (x.Content is MultipartFormDataContent content)
+                    {
+                        Assert.Collection(content,
+                            part =>
+                            {
+                                Assert.IsType<StringContent>(part);
+                                Assert.Equal("content", part.Headers.ContentDisposition.Name);
+                            },
+                            part =>
+                            {
+                                Assert.IsType<ByteArrayContent>(part);
+                                Assert.Equal("umbracoFile", part.Headers.ContentDisposition.Name);
+                            }
+                        );
+                        return true;
+                    }
+
+                    return false;
+                })
+                .Respond("application/json", MediaServiceJson.Create);
+
+            var client = new HttpClient(_mockHttp)
+            {
+                BaseAddress = new Uri(Constants.Urls.BaseApiUrl)
+            };
+            var service = CreateService(client);
+
+            var result = await service.Update(media);
+
+            Assert.NotNull(result);
+            _mockHttp.VerifyNoOutstandingExpectation();
         }
 
         [Fact]
