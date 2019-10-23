@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using Newtonsoft.Json;
+using Refit;
 
 namespace Umbraco.Headless.Client.Net.Management.Models
 {
@@ -20,6 +22,7 @@ namespace Umbraco.Headless.Client.Net.Management.Models
         public Media()
         {
             Properties = new Dictionary<string, object>();
+            Files = new Dictionary<string, MultipartItem>();
         }
 
         public string MediaTypeAlias { get; set; }
@@ -36,7 +39,10 @@ namespace Umbraco.Headless.Client.Net.Management.Models
         public Guid? ParentId { get; set; }
 
         [JsonExtensionData]
-        public IDictionary<string, object> Properties { get; set; }
+        public IDictionary<string, object> Properties { get; }
+
+        [JsonIgnore]
+        internal IDictionary<string, MultipartItem> Files { get; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public int? SortOrder { get; set; }
@@ -54,6 +60,12 @@ namespace Umbraco.Headless.Client.Net.Management.Models
         public void SetValue(string alias, object value)
         {
             Properties[alias] = value;
+        }
+
+        public void SetValue(string alias, object value, MultipartItem file)
+        {
+            Properties[alias] = value;
+            Files[alias] = file;
         }
     }
 }

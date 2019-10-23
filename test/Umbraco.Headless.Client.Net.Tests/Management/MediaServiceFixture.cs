@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
+using Refit;
 using RichardSzalay.MockHttp;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Management;
@@ -26,8 +27,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         {
             var media = new Media();
 
-            var service = new MediaService(_configuration,
-                GetMockedHttpClient(HttpMethod.Post, "/media", MediaServiceJson.Create));
+            var client = GetMockedHttpClient(HttpMethod.Post, "/media", MediaServiceJson.Create);
+            var service = CreateService(client);
 
             var result = await service.Create(media);
 
@@ -35,10 +36,52 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         }
 
         [Fact]
+        public async Task Create_WithFiles_SendsMultipartRequest()
+        {
+            var media = new Media();
+            media.SetValue("umbracoFile", "han-solo.png", new ByteArrayPart(new byte[0], "han-solo.png", "image/png"));
+
+            _mockHttp.Expect(HttpMethod.Post, "/media")
+                .With(x =>
+                {
+                    if (x.Content is MultipartFormDataContent content)
+                    {
+                        Assert.Collection(content,
+                            part =>
+                            {
+                                Assert.IsType<StringContent>(part);
+                                Assert.Equal("content", part.Headers.ContentDisposition.Name);
+                            },
+                            part =>
+                            {
+                                Assert.IsType<ByteArrayContent>(part);
+                                Assert.Equal("umbracoFile", part.Headers.ContentDisposition.Name);
+                            }
+                        );
+                        return true;
+                    }
+
+                    return false;
+                })
+                .Respond("application/json", MediaServiceJson.Create);
+
+            var client = new HttpClient(_mockHttp)
+            {
+                BaseAddress = new Uri(Constants.Urls.BaseApiUrl)
+            };
+            var service = CreateService(client);
+
+            var result = await service.Create(media);
+
+            Assert.NotNull(result);
+            _mockHttp.VerifyNoOutstandingExpectation();
+        }
+
+        [Fact]
         public async Task Delete_ReturnsDeletedMedia()
         {
-            var service = new MediaService(_configuration,
-                GetMockedHttpClient(HttpMethod.Delete,  "/media/62981fa6-1d34-45c9-9efe-1c811892342b", MediaServiceJson.Delete));
+            var httpClient = GetMockedHttpClient(HttpMethod.Delete,  "/media/62981fa6-1d34-45c9-9efe-1c811892342b", MediaServiceJson.Delete);
+            var service = CreateService(httpClient);
 
             var result = await service.Delete(new Guid("62981fa6-1d34-45c9-9efe-1c811892342b"));
 
@@ -54,10 +97,10 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
                 Id = new Guid("62981fa6-1d34-45c9-9efe-1c811892342b")
             };
 
-            var service = new MediaService(_configuration,
-                GetMockedHttpClient(HttpMethod.Put, "/media/62981fa6-1d34-45c9-9efe-1c811892342b", MediaServiceJson.Update));
+            var httpClient = GetMockedHttpClient(HttpMethod.Put, "/media/62981fa6-1d34-45c9-9efe-1c811892342b", MediaServiceJson.Update);
+            var service = CreateService(httpClient);
 
-            var result = await service.Update(media);
+           var result = await service.Update(media);
 
             Assert.NotNull(result);
 
@@ -66,8 +109,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task GetById_ReturnsMedia()
         {
-            var service = new MediaService(_configuration,
-                GetMockedHttpClient(HttpMethod.Get, "/media/662af6ca-411a-4c93-a6c7-22c4845698e7", MediaServiceJson.ById));
+            var httpClient = GetMockedHttpClient(HttpMethod.Get, "/media/662af6ca-411a-4c93-a6c7-22c4845698e7", MediaServiceJson.ById);
+            var service = CreateService(httpClient);
 
             var result = await service.GetById(new Guid("662af6ca-411a-4c93-a6c7-22c4845698e7"));
 
@@ -121,8 +164,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task GetRoot_ReturnsMedia()
         {
-            var service = new MediaService(_configuration,
-                GetMockedHttpClient(HttpMethod.Get, "/media", MediaServiceJson.AtRoot));
+            var httpClient = GetMockedHttpClient(HttpMethod.Get, "/media", MediaServiceJson.AtRoot);
+            var service = CreateService(httpClient);
 
             var result = await service.GetRoot();
 
@@ -133,8 +176,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task GetChildren_ReturnsMedia()
         {
-            var service = new MediaService(_configuration,
-                GetMockedHttpClient(HttpMethod.Get, "/media/b6f11172-373f-4473-af0f-0b0e5aefd21c/children?page=1&pageSize=10", MediaServiceJson.Children));
+            var httpClient = GetMockedHttpClient(HttpMethod.Get, "/media/b6f11172-373f-4473-af0f-0b0e5aefd21c/children?page=1&pageSize=10", MediaServiceJson.Children);
+            var service = CreateService(httpClient);
 
             var result = await service.GetChildren(new Guid("b6f11172-373f-4473-af0f-0b0e5aefd21c"), 1, 10);
 
@@ -152,6 +195,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
             var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseApiUrl) };
             return client;
         }
-    }
 
+        private MediaService CreateService(HttpClient client) =>
+            new MediaService(_configuration, client, new RefitSettings());
+    }
 }

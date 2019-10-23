@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using Refit;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Security;
 
@@ -35,10 +36,12 @@ namespace Umbraco.Headless.Client.Net.Management
                 BaseAddress = new Uri(Constants.Urls.BaseApiUrl)
             };
 
+            var refitSettings = new RefitSettings();
+
             Content = new ContentService(configuration, httpClient);
             DocumentType = new DocumentTypeService(configuration, httpClient);
             Language = new LanguageService(configuration, httpClient);
-            Media = new MediaService(configuration, httpClient);
+            Media = new MediaService(configuration, httpClient, refitSettings);
             MediaType = new MediaTypeService(configuration, httpClient);
             Member = new MemberService(configuration, httpClient);
             MemberGroup = new MemberGroupService(configuration, httpClient);
@@ -59,10 +62,12 @@ namespace Umbraco.Headless.Client.Net.Management
                 DefaultRequestHeaders = {{Constants.Headers.ApiKey, configuration.Token}}
             };
 
+            var refitSettings = new RefitSettings();
+
             Content = new ContentService(configuration, httpClient);
             DocumentType = new DocumentTypeService(configuration, httpClient);
             Language = new LanguageService(configuration, httpClient);
-            Media = new MediaService(configuration, httpClient);
+            Media = new MediaService(configuration, httpClient, refitSettings);
             MediaType = new MediaTypeService(configuration, httpClient);
             Member = new MemberService(configuration, httpClient);
             MemberGroup = new MemberGroupService(configuration, httpClient);
