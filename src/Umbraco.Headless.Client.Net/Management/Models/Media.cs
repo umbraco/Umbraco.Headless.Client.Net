@@ -64,7 +64,7 @@ namespace Umbraco.Headless.Client.Net.Management.Models
 
         public void SetValue(string alias, object value, MultipartItem file)
         {
-            Properties[alias] = value;
+            SetValue(alias, value);
             Files[alias] = file;
         }
     }

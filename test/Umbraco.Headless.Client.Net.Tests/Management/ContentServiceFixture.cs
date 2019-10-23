@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -36,6 +37,49 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         }
 
         [Fact]
+        public async Task Create_WithFiles_SendsMultipartRequest()
+        {
+            var content = new Content();
+            content.SetValue("myFile", "han-solo.png", new StreamPart(Stream.Null, "han-solo.png", "image/png"));
+
+            _mockHttp.Expect(HttpMethod.Post, "/content")
+                .With(x =>
+                {
+                    if (x.Content is MultipartFormDataContent formDataContent)
+                    {
+                        Assert.Collection(formDataContent,
+                            part =>
+                            {
+                                Assert.IsType<StringContent>(part);
+                                Assert.Equal("content", part.Headers.ContentDisposition.Name);
+                            },
+                            part =>
+                            {
+                                Assert.IsType<StreamContent>(part);
+                                Assert.Equal("myFile.$invariant", part.Headers.ContentDisposition.Name);
+                            }
+                        );
+                        return true;
+                    }
+
+                    return false;
+                })
+                .Respond("application/json", ContentServiceJson.Create);
+
+            var client = new HttpClient(_mockHttp)
+            {
+                BaseAddress = new Uri(Constants.Urls.BaseApiUrl)
+            };
+            var service = CreateService(client);
+
+            var result = await service.Create(content);
+
+            Assert.NotNull(result);
+            _mockHttp.VerifyNoOutstandingExpectation();
+        }
+
+
+        [Fact]
         public async Task Update_ReturnsUpdatedContent()
         {
             var content = new Content
@@ -49,6 +93,51 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
             var result = await service.Update(content);
 
             Assert.NotNull(result);
+        }
+
+        [Fact]
+        public async Task Update_WithFiles_SendsMultipartRequest()
+        {
+            var content = new Content
+            {
+                Id = new Guid("1a927846-6d11-4188-8966-aa39e5d67db5")
+            };
+            content.SetValue("myFile", "han-solo.png", new StreamPart(Stream.Null, "han-solo.png", "image/png"), "en");
+
+            _mockHttp.Expect(HttpMethod.Put, "/content/1a927846-6d11-4188-8966-aa39e5d67db5")
+                .With(x =>
+                {
+                    if (x.Content is MultipartFormDataContent formDataContent)
+                    {
+                        Assert.Collection(formDataContent,
+                            part =>
+                            {
+                                Assert.IsType<StringContent>(part);
+                                Assert.Equal("content", part.Headers.ContentDisposition.Name);
+                            },
+                            part =>
+                            {
+                                Assert.IsType<StreamContent>(part);
+                                Assert.Equal("myFile.en", part.Headers.ContentDisposition.Name);
+                            }
+                        );
+                        return true;
+                    }
+
+                    return false;
+                })
+                .Respond("application/json", ContentServiceJson.Create);
+
+            var client = new HttpClient(_mockHttp)
+            {
+                BaseAddress = new Uri(Constants.Urls.BaseApiUrl)
+            };
+            var service = CreateService(client);
+
+            var result = await service.Update(content);
+
+            Assert.NotNull(result);
+            _mockHttp.VerifyNoOutstandingExpectation();
         }
 
         [Fact]
