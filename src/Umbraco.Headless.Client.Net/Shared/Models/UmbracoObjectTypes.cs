@@ -1,8 +1,13 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Umbraco.Headless.Client.Net.Serialization;
+
 namespace Umbraco.Headless.Client.Net.Shared.Models
 {
     /// <summary>
-    /// Enum used to represent the Umbraco Object Types and their associated GUIDs
+    /// Enum used to represent the Umbraco Object Types
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter), typeof(UpperSnakeCaseNamingStrategy))]
     public enum UmbracoObjectTypes
     {
         /// <summary>
