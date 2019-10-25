@@ -24,8 +24,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task GetAll_ReturnsAllMemberGroups()
         {
-            var service = new MemberGroupService(_configuration,
-                GetMockedHttpClient("/member/group", MemberGroupServiceJson.GetAll));
+            var httpClient = GetMockedHttpClient("/member/group", MemberGroupServiceJson.GetAll);
+            var service = CreateService(httpClient);
 
             var documentTypes = await service.GetAll();
 
