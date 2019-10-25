@@ -12,16 +12,19 @@ namespace Umbraco.Headless.Client.Net.Management
     {
         private readonly IHeadlessConfiguration _headlessConfiguration;
         private readonly HttpClient _httpClient;
+        private readonly RefitSettings _refitSettings;
         private MemberGroupManagementEndpoints _restService;
 
-        public MemberGroupService(IHeadlessConfiguration headlessConfiguration, HttpClient httpClient)
+        public MemberGroupService(IHeadlessConfiguration headlessConfiguration, HttpClient httpClient,
+            RefitSettings refitSettings)
         {
             _headlessConfiguration = headlessConfiguration ?? throw new ArgumentNullException(nameof(headlessConfiguration));
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+            _refitSettings = refitSettings ?? throw new ArgumentNullException(nameof(refitSettings));
         }
 
         private MemberGroupManagementEndpoints Service =>
-            _restService ?? (_restService = RestService.For<MemberGroupManagementEndpoints>(_httpClient));
+            _restService ??= RestService.For<MemberGroupManagementEndpoints>(_httpClient, _refitSettings);
 
         public async Task<IEnumerable<MemberGroup>> GetAll()
         {

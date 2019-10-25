@@ -12,18 +12,29 @@ namespace Umbraco.Headless.Client.Net.Management
     {
         private readonly IHeadlessConfiguration _configuration;
         private readonly HttpClient _httpClient;
+        private readonly RefitSettings _refitSettings;
         private ContentManagementEndpoints _restService;
 
-        public ContentService(IHeadlessConfiguration configuration, HttpClient httpClient)
+        public ContentService(IHeadlessConfiguration configuration, HttpClient httpClient, RefitSettings refitSettings)
         {
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+            _refitSettings = refitSettings ?? throw new ArgumentNullException(nameof(refitSettings));
         }
 
         private ContentManagementEndpoints Service =>
-            _restService ?? (_restService = RestService.For<ContentManagementEndpoints>(_httpClient));
+            _restService ??= RestService.For<ContentManagementEndpoints>(_httpClient, _refitSettings);
 
-        public Task<Content> Create(Content content) => Service.Create(_configuration.ProjectAlias, content);
+        public Task<Content> Create(Content content)
+        {
+            if (content.Files.Count > 0)
+            {
+                return _httpClient.PostMultipartAsync<Content>(_refitSettings.ContentSerializer, "/content",
+                    _configuration.ProjectAlias, content, content.Files);
+            }
+
+            return Service.Create(_configuration.ProjectAlias, content);
+        }
 
         public Task<Content> Delete(Guid id) => Service.Delete(_configuration.ProjectAlias, id);
 
@@ -41,8 +52,16 @@ namespace Umbraco.Headless.Client.Net.Management
         public Task<Content> Publish(Guid id, string culture) =>
             Service.Publish(_configuration.ProjectAlias, id, culture);
 
-        public Task<Content> Update(Content content) =>
-            Service.Update(_configuration.ProjectAlias, content.Id, content);
+        public Task<Content> Update(Content content)
+        {
+            if (content.Files.Count > 0)
+            {
+                return _httpClient.PutMultipartAsync<Content>(_refitSettings.ContentSerializer,
+                    $"/content/{content.Id.ToString()}", _configuration.ProjectAlias, content, content.Files);
+            }
+
+            return Service.Update(_configuration.ProjectAlias, content.Id, content);
+        }
 
         public Task<Content> Unpublish(Guid id, string culture) =>
             Service.Unpublish(_configuration.ProjectAlias, id, culture);

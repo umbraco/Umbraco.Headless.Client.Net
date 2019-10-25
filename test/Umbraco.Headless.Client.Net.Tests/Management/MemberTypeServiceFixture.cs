@@ -1,6 +1,7 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Refit;
 using RichardSzalay.MockHttp;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Management;
@@ -21,8 +22,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task AtRoot_ReturnsAllMemberTypes()
         {
-            var service = new MemberTypeService(_configuration,
-                GetMockedHttpClient("/member/type", MemberTypeServiceJson.GetRoot));
+            var httpClient = GetMockedHttpClient("/member/type", MemberTypeServiceJson.GetRoot);
+            var service = CreateService(httpClient);
 
             var documentTypes = await service.GetAll();
 
@@ -33,8 +34,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         [Fact]
         public async Task ByAlias_ReturnsSingleMemberType()
         {
-            var service = new MemberTypeService(_configuration,
-                GetMockedHttpClient("/member/type/Member", MemberTypeServiceJson.ByAlias));
+            var httpClient = GetMockedHttpClient("/member/type/Member", MemberTypeServiceJson.ByAlias);
+            var service = CreateService(httpClient);
 
             var memberType = await service.GetByAlias("Member");
 
@@ -145,5 +146,8 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
             var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseApiUrl) };
             return client;
         }
+
+        private MemberTypeService CreateService(HttpClient client) =>
+            new MemberTypeService(_configuration, client, new RefitSettings());
     }
 }

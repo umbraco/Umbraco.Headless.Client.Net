@@ -12,16 +12,18 @@ namespace Umbraco.Headless.Client.Net.Management
     {
         private readonly IHeadlessConfiguration _configuration;
         private readonly HttpClient _httpClient;
+        private readonly RefitSettings _refitSettings;
         private RelationManagementEndpoints _restService;
 
-        public RelationService(IHeadlessConfiguration configuration, HttpClient httpClient)
+        public RelationService(IHeadlessConfiguration configuration, HttpClient httpClient, RefitSettings refitSettings)
         {
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+            _refitSettings = refitSettings ?? throw new ArgumentNullException(nameof(refitSettings));
         }
 
         private RelationManagementEndpoints Service =>
-            _restService ?? (_restService = RestService.For<RelationManagementEndpoints>(_httpClient));
+            _restService ??= RestService.For<RelationManagementEndpoints>(_httpClient, _refitSettings);
 
         public async Task<Relation> Create(Relation relation) =>
             await Service.Create(_configuration.ProjectAlias, relation);

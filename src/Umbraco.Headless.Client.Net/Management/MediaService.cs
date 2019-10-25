@@ -12,18 +12,29 @@ namespace Umbraco.Headless.Client.Net.Management
     {
         private readonly IHeadlessConfiguration _configuration;
         private readonly HttpClient _httpClient;
+        private readonly RefitSettings _refitSettings;
         private MediaManagementEndpoints _restService;
 
-        public MediaService(IHeadlessConfiguration configuration, HttpClient httpClient)
+        public MediaService(IHeadlessConfiguration configuration, HttpClient httpClient, RefitSettings refitSettings)
         {
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+            _refitSettings = refitSettings ?? throw new ArgumentNullException(nameof(refitSettings));
         }
 
         private MediaManagementEndpoints Service =>
-            _restService ?? (_restService = RestService.For<MediaManagementEndpoints>(_httpClient));
+            _restService ??= RestService.For<MediaManagementEndpoints>(_httpClient, _refitSettings);
 
-        public Task<Media> Create(Media media) => Service.Create(_configuration.ProjectAlias, media);
+        public Task<Media> Create(Media media)
+        {
+            if (media.Files.Count > 0)
+            {
+                return _httpClient.PostMultipartAsync<Media>(_refitSettings.ContentSerializer, "/media",
+                    _configuration.ProjectAlias, media, media.Files);
+            }
+
+            return Service.Create(_configuration.ProjectAlias, media);
+        }
 
         public Task<Media> Delete(Guid id) => Service.Delete(_configuration.ProjectAlias, id);
 
@@ -38,6 +49,15 @@ namespace Umbraco.Headless.Client.Net.Management
             return media.Media.Items;
         }
 
-        public Task<Media> Update(Media media) => Service.Update(_configuration.ProjectAlias, media.Id, media);
+        public Task<Media> Update(Media media)
+        {
+            if (media.Files.Count > 0)
+            {
+                return _httpClient.PutMultipartAsync<Media>(_refitSettings.ContentSerializer,
+                    $"/media/{media.Id.ToString()}", _configuration.ProjectAlias, media, media.Files);
+            }
+
+            return Service.Update(_configuration.ProjectAlias, media.Id, media);
+        }
     }
 }

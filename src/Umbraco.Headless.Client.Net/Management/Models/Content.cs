@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Refit;
 
 namespace Umbraco.Headless.Client.Net.Management.Models
 {
@@ -25,6 +26,7 @@ namespace Umbraco.Headless.Client.Net.Management.Models
         {
             Name = new Dictionary<string, string>();
             Properties = new Dictionary<string, IDictionary<string, object>>();
+            Files = new Dictionary<string, MultipartItem>();
         }
 
         public string ContentTypeAlias { get; set; }
@@ -38,13 +40,16 @@ namespace Umbraco.Headless.Client.Net.Management.Models
         [JsonIgnore]
         public int Level => _level.GetValueOrDefault();
 
-        public IDictionary<string, string> Name { get; private set; }
+        public IDictionary<string, string> Name { get; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public Guid? ParentId { get; set; }
 
         [JsonIgnore]
-        public IDictionary<string, IDictionary<string, object>> Properties { get; set; }
+        public IDictionary<string, IDictionary<string, object>> Properties { get; }
+
+        [JsonIgnore]
+        internal IDictionary<string, MultipartItem> Files { get; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public int? SortOrder { get; set; }
@@ -79,6 +84,16 @@ namespace Umbraco.Headless.Client.Net.Management.Models
             cultures[culture] = value;
         }
 
+        public void SetValue(string alias, object value, MultipartItem file, string culture = null)
+        {
+            SetValue(alias, value, culture);
+
+            if (culture == null)
+                culture = "$invariant";
+
+            Files[$"{alias}.{culture}"] = file;
+        }
+
         [OnSerializing]
         internal void OnSerializingMethod(StreamingContext context)
         {
@@ -93,7 +108,7 @@ namespace Umbraco.Headless.Client.Net.Management.Models
         [OnDeserialized]
         private void OnDeserialized(StreamingContext context)
         {
-            Properties = new Dictionary<string, IDictionary<string, object>>();
+            Properties.Clear();
 
             if (_additionalData == null)
                 return;
