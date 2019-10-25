@@ -23,7 +23,7 @@ namespace Umbraco.Headless.Client.Net.Management
         }
 
         private ContentManagementEndpoints Service =>
-            _restService ??= RestService.For<ContentManagementEndpoints>(_httpClient, _refitSettings);
+            _restService ?? (_restService = RestService.For<ContentManagementEndpoints>(_httpClient, _refitSettings));
 
         public Task<Content> Create(Content content)
         {

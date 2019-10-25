@@ -23,7 +23,7 @@ namespace Umbraco.Headless.Client.Net.Management
         }
 
         private RelationManagementEndpoints Service =>
-            _restService ??= RestService.For<RelationManagementEndpoints>(_httpClient, _refitSettings);
+            _restService ?? (_restService = RestService.For<RelationManagementEndpoints>(_httpClient, _refitSettings));
 
         public async Task<Relation> Create(Relation relation) =>
             await Service.Create(_configuration.ProjectAlias, relation);

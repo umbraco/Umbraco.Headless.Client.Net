@@ -24,7 +24,7 @@ namespace Umbraco.Headless.Client.Net.Management
         }
 
         private DocumentTypeManagementEndpoints Service =>
-            _restService ??= RestService.For<DocumentTypeManagementEndpoints>(_httpClient, _refitSettings);
+            _restService ?? (_restService = RestService.For<DocumentTypeManagementEndpoints>(_httpClient, _refitSettings));
 
         public async Task<IEnumerable<DocumentType>> GetAll()
         {

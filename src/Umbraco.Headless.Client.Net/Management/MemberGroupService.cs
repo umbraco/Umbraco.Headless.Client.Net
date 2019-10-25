@@ -24,7 +24,7 @@ namespace Umbraco.Headless.Client.Net.Management
         }
 
         private MemberGroupManagementEndpoints Service =>
-            _restService ??= RestService.For<MemberGroupManagementEndpoints>(_httpClient, _refitSettings);
+            _restService ?? (_restService = RestService.For<MemberGroupManagementEndpoints>(_httpClient, _refitSettings));
 
         public async Task<IEnumerable<MemberGroup>> GetAll()
         {

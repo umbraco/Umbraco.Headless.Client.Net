@@ -22,7 +22,7 @@ namespace Umbraco.Headless.Client.Net.Management
         }
 
         private MemberManagementEndpoints Service =>
-            _restService ??= RestService.For<MemberManagementEndpoints>(_httpClient, _refitSettings);
+            _restService ?? (_restService = RestService.For<MemberManagementEndpoints>(_httpClient, _refitSettings));
 
         public Task<Member> Create(Member member) => Service.Create(_configuration.ProjectAlias, member);
 

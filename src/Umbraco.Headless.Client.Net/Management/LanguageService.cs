@@ -24,7 +24,7 @@ namespace Umbraco.Headless.Client.Net.Management
         }
 
         private LanguageManagementEndpoints Service =>
-            _restService ??= RestService.For<LanguageManagementEndpoints>(_httpClient, _refitSettings);
+            _restService ?? (_restService = RestService.For<LanguageManagementEndpoints>(_httpClient, _refitSettings));
 
         public async Task<IEnumerable<Language>> GetAll()
         {

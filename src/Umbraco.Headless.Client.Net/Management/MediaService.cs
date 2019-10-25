@@ -23,7 +23,7 @@ namespace Umbraco.Headless.Client.Net.Management
         }
 
         private MediaManagementEndpoints Service =>
-            _restService ??= RestService.For<MediaManagementEndpoints>(_httpClient, _refitSettings);
+            _restService ?? (_restService = RestService.For<MediaManagementEndpoints>(_httpClient, _refitSettings));
 
         public Task<Media> Create(Media media)
         {

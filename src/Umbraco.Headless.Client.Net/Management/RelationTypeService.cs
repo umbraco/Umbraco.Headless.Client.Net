@@ -23,7 +23,7 @@ namespace Umbraco.Headless.Client.Net.Management
         }
 
         private RelationTypeManagementEndpoints Service =>
-            _restService ??= RestService.For<RelationTypeManagementEndpoints>(_httpClient, _refitSettings);
+            _restService ?? (_restService = RestService.For<RelationTypeManagementEndpoints>(_httpClient, _refitSettings));
 
         public async Task<RelationType> GetByAlias(string alias) =>
             await Service.ByAlias(_configuration.ProjectAlias, alias);
