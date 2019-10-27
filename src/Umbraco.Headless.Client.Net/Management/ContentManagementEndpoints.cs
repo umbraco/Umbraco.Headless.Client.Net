@@ -145,6 +145,9 @@ namespace Umbraco.Headless.Client.Net.Management
 
     interface RelationTypeManagementEndpoints
     {
+        [Get("/relation/type")]
+        Task<RootRelationTypeCollection> GetRoot([Header(Constants.Headers.ProjectAlias)] string projectAlias);
+
         [Get("/relation/type/{alias}")]
         Task<RelationType> ByAlias([Header(Constants.Headers.ProjectAlias)] string projectAlias, string alias);
     }

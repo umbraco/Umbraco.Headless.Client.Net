@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Refit;
@@ -24,6 +25,12 @@ namespace Umbraco.Headless.Client.Net.Management
 
         private RelationTypeManagementEndpoints Service =>
             _restService ?? (_restService = RestService.For<RelationTypeManagementEndpoints>(_httpClient, _refitSettings));
+
+        public async Task<IEnumerable<RelationType>> GetAll()
+        {
+            var root = await Service.GetRoot(_configuration.ProjectAlias);
+            return root.RelationTypes.Items;
+        }
 
         public async Task<RelationType> GetByAlias(string alias) =>
             await Service.ByAlias(_configuration.ProjectAlias, alias);

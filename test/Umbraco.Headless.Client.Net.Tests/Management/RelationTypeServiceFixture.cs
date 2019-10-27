@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Refit;
@@ -18,6 +19,19 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         public RelationTypeServiceFixture()
         {
             _mockHttp = new MockHttpMessageHandler();
+        }
+
+        [Fact]
+        public async Task AtRoot_ReturnsAllRelationTypes()
+        {
+            var httpClient = GetMockedHttpClient("/relation/type", RelationTypeServiceJson.GetAll);
+            var service = CreateService(httpClient);
+
+            var relationTypes = await service.GetAll();
+
+            Assert.NotNull(relationTypes);
+            Assert.NotEmpty(relationTypes);
+            Assert.Equal(3, relationTypes.Count());
         }
 
         [Fact]
