@@ -1,0 +1,13 @@
+@model IEnumerable<Umbraco.Headless.Client.Net.Delivery.Models.IContent>
+
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        @foreach (var content in Model)
+        {
+            <li>
+                <a href="@content.Url">@content.Name</a>
+            </li>
+        }
+    </ul>
+</nav>
