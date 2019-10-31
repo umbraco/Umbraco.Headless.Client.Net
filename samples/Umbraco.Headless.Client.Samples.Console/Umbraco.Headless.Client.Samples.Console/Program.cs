@@ -182,9 +182,20 @@ namespace Umbraco.Headless.Client.Samples.Console
                 System.Console.WriteLine(" ");
                 System.Console.WriteLine("Uploading '{0}' to a new Console folder in the Media Library", fileName);
 
-                var folder = await managementService.Media.Create(new Net.Management.Models.Media { MediaTypeAlias = "Folder", Name = "Console" });
+                var rootMediaItems = await service.Media.GetRoot();
+                var folder = rootMediaItems.FirstOrDefault(x => x.Name.Equals("Console"));
+                Guid folderId;
+                if (folder == null)
+                {
+                    var createdFolder = await managementService.Media.Create(new Net.Management.Models.Media { MediaTypeAlias = "Folder", Name = "Console" });
+                    folderId = createdFolder.Id;
+                }
+                else
+                {
+                    folderId = folder.Id;
+                }
 
-                var media = new Net.Management.Models.Media {Name = mediaName, MediaTypeAlias = "Image", ParentId = folder.Id};
+                var media = new Net.Management.Models.Media {Name = mediaName, MediaTypeAlias = "Image", ParentId = folderId};
                 media.SetValue("umbracoFile", new { src = fileName }, new FileInfoPart(new FileInfo(imagePath), fileName, $"image/{extension}"));
                 var image = await managementService.Media.Create(media);
 
