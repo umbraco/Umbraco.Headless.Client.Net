@@ -28,7 +28,7 @@ namespace Umbraco.Headless.Client.Net.Security
         {
             // See if the request has an authorize header
             var auth = request.Headers.Authorization;
-            if (auth != null)
+            if (auth == null)
             {
                 var token = await GetToken(_configuration.Username, _configuration.Password).ConfigureAwait(false);
                 request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
@@ -52,7 +52,7 @@ namespace Umbraco.Headless.Client.Net.Security
             };
 
             var response = await RestService.For<OAuthEndpoints>(Constants.Urls.BaseApiUrl)
-                .GetAuthToken(formData);
+                .GetAuthToken(_configuration.ProjectAlias, formData);
 
             _token = response.AccessToken;
             _tokenExpirationTime = DateTime.UtcNow
