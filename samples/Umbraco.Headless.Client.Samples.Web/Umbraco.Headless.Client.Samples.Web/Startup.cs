@@ -37,9 +37,11 @@ namespace Umbraco.Headless.Client.Samples.Web
                 .AddMvcOptions(opt => opt.EnableEndpointRouting = false)
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            // TODO: Get project alias form config
-            services.AddUmbracoHeadlessContentDelivery("test-headless");
-            // services.AddUmbracoHeadlessContentManagement();
+            var umbracoConfig = Configuration.GetSection("umbraco");
+            var projectAlias = umbracoConfig.GetValue<string>("projectAlias");
+            var apiKey = umbracoConfig.GetValue<string>("apiKey");
+
+            services.AddUmbracoHeadlessContentDelivery(projectAlias, apiKey);
 
             services.AddUmbracoHeadlessWebEngine();
         }

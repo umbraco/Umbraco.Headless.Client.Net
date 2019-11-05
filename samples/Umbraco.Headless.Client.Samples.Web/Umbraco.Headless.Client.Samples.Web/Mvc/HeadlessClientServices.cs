@@ -9,9 +9,11 @@ namespace Umbraco.Headless.Client.Samples.Web.Mvc
     public static class HeadlessClientServices
     {
         public static IServiceCollection AddUmbracoHeadlessContentDelivery(this IServiceCollection services,
-            string projectAlias)
+            string projectAlias, string apiKey = null)
         {
-            services.TryAddSingleton(new ContentDeliveryService(projectAlias));
+            services.TryAddSingleton(string.IsNullOrEmpty(apiKey)
+                ? new ContentDeliveryService(projectAlias)
+                : new ContentDeliveryService(projectAlias, apiKey));
             return services;
         }
 

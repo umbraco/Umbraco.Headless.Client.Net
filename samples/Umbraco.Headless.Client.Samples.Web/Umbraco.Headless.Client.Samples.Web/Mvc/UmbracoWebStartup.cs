@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -10,7 +11,7 @@ namespace Umbraco.Headless.Client.Samples.Web.Mvc
         public static IServiceCollection AddUmbracoHeadlessWebEngine(this IServiceCollection services,
             IConfiguration headlessConfiguration = null)
         {
-            //services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.TryAddSingleton<UmbracoCache>();
             services.TryAddScoped<UmbracoContext>();
             services.TryAddSingleton<UmbracoControllerTypeCollection>();

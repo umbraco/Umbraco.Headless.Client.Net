@@ -1,0 +1,6 @@
+@model IEnumerable<Element>
+
+@foreach (var element in Model)
+{
+    @await Component.InvokeAsync(element.ContentTypeAlias, new { element })
+}
