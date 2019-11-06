@@ -37,7 +37,7 @@ namespace Umbraco.Headless.Client.Samples.Console
             var projectAlias = System.Console.ReadLine();
 
             //New up service with the entered Headless Project Alias
-            var service = new ContentDeliveryService(new ContentDeliveryConfiguration(projectAlias));
+            var service = new ContentDeliveryService(projectAlias);
 
             //Output options to the console and record the user's choice
             await RenderOptions(service, projectAlias);
