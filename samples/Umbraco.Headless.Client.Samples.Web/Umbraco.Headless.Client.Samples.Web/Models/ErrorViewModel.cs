@@ -1,5 +1,3 @@
-using System;
-
 namespace Umbraco.Headless.Client.Samples.Web.Models
 {
     public class ErrorViewModel
