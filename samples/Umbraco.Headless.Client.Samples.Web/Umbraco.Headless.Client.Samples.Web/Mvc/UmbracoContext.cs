@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Refit;
 using Umbraco.Headless.Client.Net.Delivery.Models;
 
 namespace Umbraco.Headless.Client.Samples.Web.Mvc
@@ -21,9 +23,16 @@ namespace Umbraco.Headless.Client.Samples.Web.Mvc
             if (url == null)
                 throw new InvalidOperationException("Could not determine the current URL path in the request");
 
-            var content = await Cache.GetContentByUrl(url);
-            Content = content;
-            return content != null;
+            try
+            {
+                var content = await Cache.GetContentByUrl(url);
+                Content = content;
+                return content != null;
+            }
+            catch(ApiException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
+            {
+                return false;
+            }
         }
     }
 }
