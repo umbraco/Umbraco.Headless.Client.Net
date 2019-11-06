@@ -1,0 +1,10 @@
+@model IEnumerable<NavigationItem>
+
+<nav class="page-header__nav-container" aria-label="Primary">
+  <ul class="nav">
+    @foreach (var item in Model)
+    {
+      <li class="nav__item"><a class="nav__item-link @(item.IsCurrent ? "nav__item-link--current" : "")" href="@item.Url">@item.Title</a></li>
+    }
+  </ul>
+</nav>
