@@ -57,7 +57,7 @@ In order to use the sample you will need an Umbraco Headless project with conten
 
 The client library depend on refit for working with the various endpoints of the Umbraco Headless Content Delivery and Content Management APIs. What it does is essentially to turn the REST API into a live interface, and it supports UWP, Xamarin.Android, Xamarin.Mac, Xamarin.iOS, Desktop .NET 4.6.1 and .NET Core. So it should work with almost any type of project you can imagine.
 
-- [refit][]
+- [Refit: The automatic type-safe REST library for .NET Core, Xamarin and .NET](https://github.com/reactiveui/refit/)
 
 ## Bugs, issues and Pull Requests
 
