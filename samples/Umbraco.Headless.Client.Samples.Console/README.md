@@ -25,10 +25,10 @@ When the Console application is running you will first be prompted to "Enter the
 
 In the list below you will find the options available in the Console application. Option A-E use the Umbraco Headless Content Delivery API and can be used for any Headless Project, which has public content. Option F uses the Content Management API, so an API-Key is required to run this part of the sample, as it will create a new folder in the Media Library and upload an image to a new Media item.
 
-- [A] Fetch and show Content tree
-- [B] Fetch and show Media tree
-- [C] Show root Content
-- [D] Show root Media
-- [E] List Content URLs
-- [F] Upload image to Media Library
-- [X] Exit
+- [ A ] Fetch and show Content tree
+- [ B ] Fetch and show Media tree
+- [ C ] Show root Content
+- [ D ] Show root Media
+- [ E ] List Content URLs
+- [ F ] Upload image to Media Library
+- [ X ] Exit
