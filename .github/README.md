@@ -1,6 +1,12 @@
-# Umbraco.Headless.Client.Net
+<p align="center">
+  <img src="img/logo.png" alt="Umbraco Heartcore Logo" />
+</p>
 
-.NET Core client library for the Umbraco Headless APIs.
+<br>
+
+# .NET Core Client Library for Umbraco Heartcore - headless cms
+
+.NET Core client library for the Umbraco Heartcore REST APIs.
 The library is based on Netstandard2.0 to support application development including Xamarin/UWP applications.
 
 ## Download & Install
