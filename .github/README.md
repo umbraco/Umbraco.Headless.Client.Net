@@ -19,8 +19,8 @@ To get the binaries of this library as distributed by Umbraco, ready for use wit
 
 Please note that the minimum NuGet client version requirement has been updated to 2.12 in order to support multiple .NET Standard targets in the NuGet package.
 
-```
-Install-Package Umbraco.Headless.Client.Net
+```powershell
+> Install-Package Umbraco.Headless.Client.Net
 ```
 
 ### Via Git
@@ -28,8 +28,8 @@ Install-Package Umbraco.Headless.Client.Net
 To get the source code of the client library via git just type:
 
 ```bash
-git clone https://github.com/umbraco/Umbraco.Headless.Client.Net.git
-cd Umbraco.Headless.Client.Net
+> git clone https://github.com/umbraco/Umbraco.Headless.Client.Net.git
+> cd Umbraco.Headless.Client.Net
 ```
 
 ## Requirements
