@@ -2,7 +2,7 @@
   <img src="img/logo.png" alt="Umbraco Heartcore Logo" />
 </p>
 
-<br>
+<hr>
 
 # .NET Core Client Library for Umbraco Heartcore
 
