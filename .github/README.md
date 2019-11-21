@@ -4,9 +4,11 @@
 
 <br>
 
-# .NET Core Client Library for Umbraco Heartcore - headless cms
+# .NET Core Client Library for Umbraco Heartcore
 
-.NET Core client library for the Umbraco Heartcore REST APIs.
+Umbraco Heartcore is the headless cms version of Umbraco as a service.
+
+This repository contains the .NET Core client library for the Umbraco Heartcore REST APIs.
 The library is based on Netstandard2.0 to support application development including Xamarin/UWP applications.
 
 ## Download & Install
