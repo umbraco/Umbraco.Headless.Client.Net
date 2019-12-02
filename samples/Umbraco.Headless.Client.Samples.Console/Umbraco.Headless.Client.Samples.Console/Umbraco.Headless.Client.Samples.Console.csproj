@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Umbraco.Headless.Client.Net" Version="0.9.0.28847-RC" />
+    <PackageReference Include="Umbraco.Headless.Client.Net" Version="1.0.0.29753" />
   </ItemGroup>
 
 </Project>
