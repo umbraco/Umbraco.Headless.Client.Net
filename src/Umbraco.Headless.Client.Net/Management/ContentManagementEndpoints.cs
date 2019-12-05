@@ -178,4 +178,19 @@ namespace Umbraco.Headless.Client.Net.Management
         Task<Relation> Delete([Header(Constants.Headers.ProjectAlias)]
             string projectAlias, int id);
     }
+
+    interface FormManagementEndpoints
+    {
+        [Get("/forms")]
+        Task<RootFormCollection> GetRoot([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias);
+
+        [Get("/forms/{id}")]
+        Task<Form> ById([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias, Guid id);
+
+        [Post("/forms/{id}/entries")]
+        Task SubmitEntry([Header(Constants.Headers.ProjectAlias)]
+            string projectAlias, Guid id, [Body] object data);
+    }
 }

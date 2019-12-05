@@ -42,6 +42,7 @@ namespace Umbraco.Headless.Client.Net.Management
 
             Content = new ContentService(configuration, httpClient, refitSettings);
             DocumentType = new DocumentTypeService(configuration, httpClient, refitSettings);
+            Forms = new FormService(configuration, httpClient, refitSettings);
             Language = new LanguageService(configuration, httpClient, refitSettings);
             Media = new MediaService(configuration, httpClient, refitSettings);
             MediaType = new MediaTypeService(configuration, httpClient, refitSettings);
@@ -68,6 +69,7 @@ namespace Umbraco.Headless.Client.Net.Management
 
             Content = new ContentService(configuration, httpClient, refitSettings);
             DocumentType = new DocumentTypeService(configuration, httpClient, refitSettings);
+            Forms = new FormService(configuration, httpClient, refitSettings);
             Language = new LanguageService(configuration, httpClient, refitSettings);
             Media = new MediaService(configuration, httpClient, refitSettings);
             MediaType = new MediaTypeService(configuration, httpClient, refitSettings);
@@ -80,6 +82,7 @@ namespace Umbraco.Headless.Client.Net.Management
 
         public IContentService Content { get; }
         public IDocumentTypeService DocumentType { get; }
+        public IFormService Forms { get; }
         public ILanguageService Language { get; }
         public IMediaService Media { get; }
         public IMediaTypeService MediaType { get; }
