@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29319.158
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Headless.Client.Samples.BlazorServer", "Umbraco.Headless.Client.Samples.BlazorServer\Umbraco.Headless.Client.Samples.BlazorServer.csproj", "{5E519012-1DD4-4B99-80FB-E549EFED4EDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E519012-1DD4-4B99-80FB-E549EFED4EDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E519012-1DD4-4B99-80FB-E549EFED4EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E519012-1DD4-4B99-80FB-E549EFED4EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E519012-1DD4-4B99-80FB-E549EFED4EDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87A4EB3F-CDB5-4C85-8101-0C6A0B642B25}
+	EndGlobalSection
+EndGlobal

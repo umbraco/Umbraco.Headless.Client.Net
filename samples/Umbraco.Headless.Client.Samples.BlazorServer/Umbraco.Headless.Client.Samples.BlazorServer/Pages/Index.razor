@@ -1,0 +1,25 @@
+﻿@page "/"
+@using Umbraco.Headless.Client.Samples.BlazorServer.Heartcore;
+@using Umbraco.Headless.Client.Net.Delivery.Models;
+
+@inject UmbracoService UmbracoService
+
+
+<h1>@root.Name</h1>
+<h2>@root.Properties.Where(x=>x.Key=="heroSubtitle").FirstOrDefault().Value</h2>
+
+
+
+
+@code {
+
+    Content root = new Content();
+    ContentCollection<Content> content = new ContentCollection<Content>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        root = await UmbracoService.GetRoot();    
+        
+    
+    }
+}
