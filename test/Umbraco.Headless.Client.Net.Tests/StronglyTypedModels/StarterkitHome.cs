@@ -6,6 +6,7 @@ using Umbraco.Headless.Client.Net.Shared.Models;
 
 namespace Umbraco.Headless.Client.Net.Tests.StronglyTypedModels
 {
+    [ContentModel("home")]
     public class StarterkitHome : Content
     {
         public string HeroHeader { get; set; }
@@ -74,7 +75,7 @@ namespace Umbraco.Headless.Client.Net.Tests.StronglyTypedModels
         public JObject BodyText { get; set; }
     }
 
-    public class NavigationBase : ContentBase
+    public class NavigationBase : Content
     {
         public string SeoMetaDescription { get; set; }
         public List<string> Keywords { get; set; }

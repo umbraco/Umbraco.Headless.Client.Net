@@ -16,7 +16,7 @@ namespace Umbraco.Headless.Client.Net.Security
         private MemberOAuthEndpoints _cdnEndpoints;
 
         public AuthenticationService(string projectAlias, HttpClient cdnHttpClient = null,
-            HttpClient apiHttpClient = null) : this(new BasicHeadlessConfiguration(projectAlias), cdnHttpClient, apiHttpClient)
+            HttpClient apiHttpClient = null) : this(new HeadlessConfiguration(projectAlias), cdnHttpClient, apiHttpClient)
         {
         }
 

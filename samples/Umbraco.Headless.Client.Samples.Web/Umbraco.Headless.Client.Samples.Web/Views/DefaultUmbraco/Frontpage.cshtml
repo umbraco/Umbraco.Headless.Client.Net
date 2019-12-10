@@ -1,17 +1,16 @@
-@using Umbraco.Headless.Client.Net.Delivery.Models
-@model Umbraco.Headless.Client.Net.Delivery.Models.Content
+@model Frontpage
 
 @await  Component.InvokeAsync("Hero", new
 {
-  title = Model.Value<string>("heroTitle"),
-  subTitle = Model.Value<string>("heroSubtitle"),
-  image = Model.Value<Image>("heroImage")
+  title = Model.HeroTitle,
+  subTitle = Model.HeroSubtitle,
+  image = Model.HeroImage
 })
 
 @await Component.InvokeAsync("UniqueSellingPoints", new
 {
-    title = Model.Value<string>("uniqueSellingPointsTitle"),
-    contents = Model.Value<IEnumerable<Content>>("uniqueSellingPoints")
+    title = Model.UniqueSellingPointsTitle,
+    contents = Model.UniqueSellingPoints
 })
 
-@await Html.PartialAsync("_Elements", Model.Value<IEnumerable<Element>>("elements"))
+@await Html.PartialAsync("_Elements", Model.Elements)

@@ -24,7 +24,7 @@ namespace Umbraco.Headless.Client.Samples.Web.ViewComponents
             var rootContent = await _umbracoCache.GetContentByUrl("/");
             var children = await _contentDeliveryService.Content.GetChildren(rootContent.Id);
 
-            return View(from item in children.Content.Items.Where(x => x.IsVisible())
+            return View(from item in children.Content.Items
                 select new NavigationItem
                 {
                     Title = item.Name,

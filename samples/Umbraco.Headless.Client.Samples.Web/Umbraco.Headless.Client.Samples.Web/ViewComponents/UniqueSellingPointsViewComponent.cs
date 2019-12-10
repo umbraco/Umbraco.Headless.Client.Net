@@ -9,19 +9,12 @@ namespace Umbraco.Headless.Client.Samples.Web.ViewComponents
 {
     public class UniqueSellingPointsViewComponent : ViewComponent
     {
-        public IViewComponentResult Invoke(string title, IEnumerable<Content> contents)
+        public IViewComponentResult Invoke(string title, IEnumerable<UniqueSellingPoint> contents)
         {
             return View(new UniqueSellingPointsViewModel
             {
                 Title = title,
-                UniqueSellingPoints = from c in contents
-                    select new UniqueSellingPoint
-                    {
-                        Link = c.Value<MultiUrlPickerLink>("link"),
-                        Text = c.Value<IHtmlContent>("text"),
-                        Title = c.Value<string>("title"),
-                        ImageUrl = c.Value<Image>("image")?.Url
-                    }
+                UniqueSellingPoints = contents
             });
         }
     }

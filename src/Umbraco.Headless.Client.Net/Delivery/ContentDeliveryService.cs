@@ -14,7 +14,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// Initializes a new instance of the ContentDeliveryService class
         /// </summary>
         /// <param name="projectAlias">Alias of the Project</param>
-        public ContentDeliveryService(string projectAlias) : this(new BasicHeadlessConfiguration(projectAlias))
+        public ContentDeliveryService(string projectAlias) : this(new HeadlessConfiguration(projectAlias))
         { }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// </remarks>
         /// <param name="projectAlias">Alias of the Project</param>
         /// <param name="httpClient">Reference to the <see cref="HttpClient"/></param>
-        public ContentDeliveryService(string projectAlias, HttpClient httpClient) : this(new BasicHeadlessConfiguration(projectAlias), httpClient)
+        public ContentDeliveryService(string projectAlias, HttpClient httpClient) : this(new HeadlessConfiguration(projectAlias), httpClient)
         {
         }
 

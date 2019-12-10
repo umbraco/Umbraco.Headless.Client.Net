@@ -6,6 +6,7 @@ using RichardSzalay.MockHttp;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Delivery;
 using Umbraco.Headless.Client.Net.Delivery.Models;
+using Umbraco.Headless.Client.Net.Tests.StronglyTypedModels;
 using Xunit;
 
 namespace Umbraco.Headless.Client.Net.Tests
@@ -150,6 +151,23 @@ namespace Umbraco.Headless.Client.Net.Tests
             Assert.NotEmpty(result.Content.Items);
             Assert.Equal(1, result.TotalPages);
             Assert.Equal(1, result.TotalItems);
+        }
+
+        [Fact]
+        public async Task Can_Deserialize_To_Strongly_Models()
+        {
+            _configuration.ContentModelTypes.Add<StarterkitHome>();
+            _configuration.ContentModelTypes.Add<Products>();
+            _configuration.ContentModelTypes.Add<Blog>();
+
+            var service = new ContentDeliveryService(_configuration,
+                GetMockedHttpClient($"{_contentBaseUrl}/ca4249ed-2b23-4337-b522-63cabe5587d1/ancestors", ContentDeliveryJson.GetAncestors));
+            var contentItems = await service.Content.GetAncestors(new Guid("ca4249ed-2b23-4337-b522-63cabe5587d1"));
+
+            Assert.Collection(contentItems,
+                content => Assert.IsType<Blog>(content),
+                content => Assert.IsType<StarterkitHome>(content)
+            );
         }
 
         private HttpClient GetMockedHttpClient(string url, string jsonResponse)

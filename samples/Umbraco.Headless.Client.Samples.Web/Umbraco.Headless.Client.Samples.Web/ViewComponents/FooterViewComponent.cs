@@ -19,12 +19,12 @@ namespace Umbraco.Headless.Client.Samples.Web.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var content = (Content) await _umbracoContext.Cache.GetContentByUrl("/");
+            var content = (Frontpage) await _umbracoContext.Cache.GetContentByUrl("/");
 
             return View(new FooterViewModel
             {
-                Title = content.Value<string>("footerTitle"),
-                Links = content.Value<IEnumerable<MultiUrlPickerLink>>("footerLinks")
+                Title = content.FooterTitle,
+                Links = content.FooterLinks
             });
         }
     }

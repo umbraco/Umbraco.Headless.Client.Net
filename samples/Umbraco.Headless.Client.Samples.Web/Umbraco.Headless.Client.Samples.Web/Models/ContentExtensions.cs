@@ -32,9 +32,15 @@ namespace Umbraco.Headless.Client.Samples.Web.Models
             return (T) Convert.ChangeType(value, typeof(T));
         }
 
-        public static bool IsVisible(this Content content)
+        public static bool IsVisible(this IContent content)
         {
-            return content.Value<bool>("umbracoNaviHide") == false;
+            if (content is IHideInNavigation hideInNavigation)
+                return hideInNavigation.HideInNavigation == false;
+
+            if (content is Content c)
+                return c.Value<bool>("umbracoNaviHide") == false;
+
+            return true;
         }
     }
     public static class ElementExtensions
