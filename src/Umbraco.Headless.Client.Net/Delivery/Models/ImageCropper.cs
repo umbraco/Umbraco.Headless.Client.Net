@@ -9,8 +9,9 @@ namespace Umbraco.Headless.Client.Net.Delivery.Models
     {
         public string Src { get; set; }
         public FocalPoint FocalPoint { get; set; }
+        public string FocalPointUrlTemplate { get; set; }
         public IEnumerable<Crop> Crops { get; set; }
-
+        public IDictionary<string, string> CropUrls { get; set; }
     }
 
     public class FocalPoint
