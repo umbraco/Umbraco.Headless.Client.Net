@@ -5,6 +5,7 @@ using Umbraco.Headless.Client.Net.Management.Models;
 
 namespace Umbraco.Headless.Client.Net.Management
 {
+    [Headers(Constants.ApiVersionHeader)]
     interface ContentManagementEndpoints
     {
         [Post("/content")]
@@ -40,6 +41,7 @@ namespace Umbraco.Headless.Client.Net.Management
             string projectAlias, Guid id, string culture);
     }
 
+    [Headers(Constants.ApiVersionHeader)]
     interface MediaManagementEndpoints
      {
         [Post("/media")]
@@ -62,8 +64,9 @@ namespace Umbraco.Headless.Client.Net.Management
         Task<Media> Update([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id, Media media);
      }
 
-     interface MemberManagementEndpoints
-     {
+    [Headers(Constants.ApiVersionHeader)]
+    interface MemberManagementEndpoints
+    {
         [Post("/member")]
         Task<Member> Create([Header(Constants.Headers.ProjectAlias)] string projectAlias, Member member);
 
@@ -81,8 +84,9 @@ namespace Umbraco.Headless.Client.Net.Management
 
         [Delete("/member/{username}/groups/{groupName}")]
         Task RemoveFromGroup([Header(Constants.Headers.ProjectAlias)] string projectAlias, string username, string groupname);
-      }
+    }    
 
+    [Headers(Constants.ApiVersionHeader)]
     interface DocumentTypeManagementEndpoints
     {
         [Get("/content/type")]
@@ -92,6 +96,7 @@ namespace Umbraco.Headless.Client.Net.Management
         Task<DocumentType> ByAlias([Header(Constants.Headers.ProjectAlias)] string projectAlias, string alias);
     }
 
+    [Headers(Constants.ApiVersionHeader)]
     interface MediaTypeManagementEndpoints
     {
         [Get("/media/type")]
@@ -101,6 +106,7 @@ namespace Umbraco.Headless.Client.Net.Management
         Task<MediaType> ByAlias([Header(Constants.Headers.ProjectAlias)] string projectAlias, string alias);
     }
 
+    [Headers(Constants.ApiVersionHeader)]
     interface MemberTypeManagementEndpoints
     {
         [Get("/member/type")]
@@ -110,6 +116,7 @@ namespace Umbraco.Headless.Client.Net.Management
         Task<MemberType> ByAlias([Header(Constants.Headers.ProjectAlias)] string projectAlias, string alias);
     }
 
+    [Headers(Constants.ApiVersionHeader)]
     interface MemberGroupManagementEndpoints
     {
         [Get("/member/group")]
@@ -125,6 +132,7 @@ namespace Umbraco.Headless.Client.Net.Management
         Task<MemberGroup> Delete([Header(Constants.Headers.ProjectAlias)] string projectAlias, string name);
     }
 
+    [Headers(Constants.ApiVersionHeader)]
     interface LanguageManagementEndpoints
     {
         [Get("/language")]
@@ -143,6 +151,7 @@ namespace Umbraco.Headless.Client.Net.Management
         Task<Language> Delete([Header(Constants.Headers.ProjectAlias)] string projectAlias, string isoCode);
     }
 
+    [Headers(Constants.ApiVersionHeader)]
     interface RelationTypeManagementEndpoints
     {
         [Get("/relation/type")]
@@ -152,6 +161,7 @@ namespace Umbraco.Headless.Client.Net.Management
         Task<RelationType> ByAlias([Header(Constants.Headers.ProjectAlias)] string projectAlias, string alias);
     }
 
+    [Headers(Constants.ApiVersionHeader)]
     interface RelationManagementEndpoints
     {
         [Get("/relation/{id}")]
@@ -179,6 +189,7 @@ namespace Umbraco.Headless.Client.Net.Management
             string projectAlias, int id);
     }
 
+    [Headers(Constants.ApiVersionHeader)]
     interface FormManagementEndpoints
     {
         [Get("/forms")]
