@@ -2,6 +2,11 @@
 {
     public class ContentFilter
     {
+        public ContentFilter(ContentFilterProperties[] properties)
+        {
+            Properties = properties;
+        }
+
         public ContentFilter(string contentTypeAlias, ContentFilterProperties[] properties)
         {
             ContentTypeAlias = contentTypeAlias;
