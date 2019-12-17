@@ -45,23 +45,23 @@ namespace Umbraco.Headless.Client.Net.Management
     interface MediaManagementEndpoints
      {
         [Post("/media")]
-        Task<Media> Create([Header(Constants.Headers.ProjectAlias)] string projectAlias, Media media);
+        Task<Management.Models.Media> Create([Header(Constants.Headers.ProjectAlias)] string projectAlias, Management.Models.Media media);
 
         [Get("/media/{id}/children?page={page}&pageSize={pageSize}")]
-        Task<PagedMedia> Children([Header(Constants.Headers.ProjectAlias)]
+        Task<Management.Models.PagedMedia> Children([Header(Constants.Headers.ProjectAlias)]
             string projectAlias, Guid id, int page, int pageSize);
 
         [Delete("/media/{id}")]
-        Task<Media> Delete([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id);
+        Task<Management.Models.Media> Delete([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id);
 
         [Get("/media")]
-        Task<RootMediaCollection> GetRoot([Header(Constants.Headers.ProjectAlias)] string projectAlias);
+        Task<Management.Models.RootMediaCollection> GetRoot([Header(Constants.Headers.ProjectAlias)] string projectAlias);
 
         [Get("/media/{id}")]
-        Task<Media> ById([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id);
+        Task<Management.Models.Media> ById([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id);
 
         [Put("/media/{id}")]
-        Task<Media> Update([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id, Media media);
+        Task<Management.Models.Media> Update([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id, Management.Models.Media media);
      }
 
     [Headers(Constants.ApiVersionHeader)]

@@ -131,6 +131,16 @@ namespace Umbraco.Headless.Client.Net.Delivery
             return content;
         }
 
+        public async Task<PagedContent> Filter(ContentFilter filter, string culture = null, int page = 1, int pageSize = 10)
+        {
+            if(filter == null || filter.Properties.Length == 0)
+                throw new ArgumentException("ContentFilter should contain at least one property to filter on");
+
+            var service = RestService.For<ContentDeliveryEndpoints>(_httpClient);
+            var content = await service.Filter(_configuration.ProjectAlias, culture, filter, page, pageSize);
+            return content;
+        }
+
         public async Task<PagedContent> Search(string term, string culture = null, int page = 1, int pageSize = 10)
         {
             var service = RestService.For<ContentDeliveryEndpoints>(_httpClient);

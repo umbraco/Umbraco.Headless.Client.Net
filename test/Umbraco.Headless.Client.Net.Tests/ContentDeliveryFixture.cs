@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using RichardSzalay.MockHttp;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Delivery;
+using Umbraco.Headless.Client.Net.Delivery.Models;
 using Xunit;
 
 namespace Umbraco.Headless.Client.Net.Tests
@@ -120,6 +121,23 @@ namespace Umbraco.Headless.Client.Net.Tests
         }
 
         [Fact]
+        public async Task Can_Filter()
+        {
+            var filter = new ContentFilter("product",
+                new[] {new ContentFilterProperties("productName", "Jacket", ContentFilterMatch.Contains)});
+
+            var service = new ContentDeliveryService(_configuration,
+                GetMockedHttpClient(HttpMethod.Post, $"{_contentBaseUrl}/filter", ContentDeliveryJson.Search));//result is the same as with search so reusing the json
+            var result = await service.Content.Filter(filter);
+
+            Assert.NotNull(result);
+            Assert.NotNull(result.Content);
+            Assert.NotEmpty(result.Content.Items);
+            Assert.Equal(1, result.TotalPages);
+            Assert.Equal(1, result.TotalItems);
+        }
+
+        [Fact]
         public async Task Can_Search()
         {
             var service = new ContentDeliveryService(_configuration,
@@ -135,6 +153,13 @@ namespace Umbraco.Headless.Client.Net.Tests
         private HttpClient GetMockedHttpClient(string url, string jsonResponse)
         {
             _mockHttp.When(url).Respond("application/json", jsonResponse);
+            var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseCdnUrl) };
+            return client;
+        }
+
+        private HttpClient GetMockedHttpClient(HttpMethod method, string url, string jsonResponse)
+        {
+            _mockHttp.When(method, url).Respond("application/json", jsonResponse);
             var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseCdnUrl) };
             return client;
         }
