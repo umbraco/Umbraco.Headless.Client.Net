@@ -144,6 +144,16 @@ namespace Umbraco.Headless.Client.Net.Delivery
         Task<PagedContent<T>> GetByType<T>(string culture = null, int page = 1, int pageSize = 10) where T : IContent;
 
         /// <summary>
+        /// Filter content based on property value and optionally content type
+        /// </summary>
+        /// <param name="filter"><see cref="ContentFilter"/> with at least one property</param>
+        /// <param name="culture">Content Culture (Optional)</param>
+        /// <param name="page">Integer specifying the page number (Optional)</param>
+        /// <param name="pageSize">Integer specifying the page size (Optional)</param>
+        /// <returns></returns>
+        Task<PagedContent> Filter(ContentFilter filter, string culture = null, int page = 1, int pageSize = 10);
+
+        /// <summary>
         /// Search for content by term
         /// </summary>
         /// <param name="term">Search term</param>
