@@ -125,9 +125,13 @@ namespace Umbraco.Headless.Client.Net.Delivery
         public async Task<PagedContent<T>> GetByType<T>(string culture = null, int page = 1, int pageSize = 10) where T : IContent
         {
             var contentType = GetAliasFromClassName<T>();
+            return await GetByTypeAlias<T>(contentType, culture, page, pageSize);
+        }
 
+        public async Task<PagedContent<T>> GetByTypeAlias<T>(string contentTypeAlias, string culture = null, int page = 1, int pageSize = 10) where T : IContent
+        {
             var service = RestService.For<TypedPagedContentDeliveryEndpoints<T>>(_httpClient);
-            var content = await service.GetByType(_configuration.ProjectAlias, culture, contentType, page, pageSize);
+            var content = await service.GetByType(_configuration.ProjectAlias, culture, contentTypeAlias, page, pageSize);
             return content;
         }
 

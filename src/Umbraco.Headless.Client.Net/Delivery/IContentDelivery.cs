@@ -136,12 +136,30 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <summary>
         /// Gets all Content of a specific type
         /// </summary>
+        /// <remarks>
+        /// The Content Type alias is derived from the class type name.
+        /// </remarks>
         /// <typeparam name="T">A type that inherits from the <see cref="IContent"/> interface</typeparam>
         /// <param name="culture">Content Culture (Optional)</param>
         /// <param name="page">Integer specifying the page number (Optional)</param>
         /// <param name="pageSize">Integer specifying the page size (Optional)</param>
         /// <returns><see cref="PagedContent{T}"/></returns>
         Task<PagedContent<T>> GetByType<T>(string culture = null, int page = 1, int pageSize = 10) where T : IContent;
+
+        /// <summary>
+        /// Gets all Content of a specific type
+        /// </summary>
+        /// <remarks>
+        /// This allows manual specification of the Content Type alias instead of deriving it from the class type name.
+        /// </remarks>
+        /// <typeparam name="T">A type that inherits from the <see cref="IContent"/> interface</typeparam>
+        /// <param name="contentTypeAlias">Alias of the ContentType</param>
+        /// <param name="culture">Content Culture (Optional)</param>
+        /// <param name="page">Integer specifying the page number (Optional)</param>
+        /// <param name="pageSize">Integer specifying the page size (Optional)</param>
+        /// <returns><see cref="PagedContent{T}"/></returns>
+        Task<PagedContent<T>> GetByTypeAlias<T>(string contentTypeAlias, string culture = null, int page = 1,
+            int pageSize = 10) where T : IContent;
 
         /// <summary>
         /// Filter content based on property value and optionally content type
