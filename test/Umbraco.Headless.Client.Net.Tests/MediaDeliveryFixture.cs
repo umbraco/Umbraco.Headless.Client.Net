@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using RichardSzalay.MockHttp;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Delivery;
+using Umbraco.Headless.Client.Net.Delivery.Models;
 using Xunit;
 
 namespace Umbraco.Headless.Client.Net.Tests
@@ -12,7 +13,7 @@ namespace Umbraco.Headless.Client.Net.Tests
     public class MediaDeliveryFixture
     {
         private readonly MockHttpMessageHandler _mockHttp;
-        private readonly IHeadlessConfiguration _configuration = new FakeHeadlessConfiguration();
+        private readonly FakeHeadlessConfiguration _configuration = new FakeHeadlessConfiguration();
         private readonly string _mediaBaseUrl = $"{Constants.Urls.BaseCdnUrl}/media";
 
         public MediaDeliveryFixture()
@@ -41,7 +42,6 @@ namespace Umbraco.Headless.Client.Net.Tests
             var media = await service.Media.GetById(mediaId);
             Assert.NotNull(media);
             Assert.NotEmpty(media.Properties);
-            Assert.Equal(1, media.Properties.Count);
         }
 
         [Theory]
@@ -53,8 +53,6 @@ namespace Umbraco.Headless.Client.Net.Tests
                 GetMockedHttpClient($"{_mediaBaseUrl}/*", MediaDeliveryJson.GetMediaByIdMediaItem));
             var media = await service.Media.GetById(mediaId);
             Assert.NotNull(media);
-            Assert.NotEmpty(media.Properties);
-            Assert.Equal(6, media.Properties.Count);
         }
 
         [Theory]
@@ -72,6 +70,19 @@ namespace Umbraco.Headless.Client.Net.Tests
             Assert.Equal(1, children.TotalPages);
             Assert.Equal(1, children.Page);
         }
+
+        [Fact]
+        public async Task Can_Deserialize_To_Strongly_Models()
+        {
+           var service = new ContentDeliveryService(_configuration,
+                GetMockedHttpClient($"{_mediaBaseUrl}/6d986832-fb11-4d65-b2ae-0d7742f27a19/children", MediaDeliveryJson.GetChildrenByParentId));
+            var mediaItems = await service.Media.GetChildren(new Guid("6d986832-fb11-4d65-b2ae-0d7742f27a19"));
+
+            Assert.Collection(mediaItems.Media.Items,
+                content => Assert.IsType<Image>(content)
+            );
+        }
+
 
         private HttpClient GetMockedHttpClient(string url, string jsonResponse)
         {

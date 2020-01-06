@@ -3,5 +3,5 @@
     public interface IHeadlessConfiguration
     {
         string ProjectAlias { get; }
-   }
+    }
 }

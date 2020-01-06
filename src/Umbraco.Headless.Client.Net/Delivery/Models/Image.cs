@@ -3,9 +3,10 @@
 namespace Umbraco.Headless.Client.Net.Delivery.Models
 {
     /// <summary>
-    /// Default model for "Image" Document Types, which uses the ImageCropper for the "umbracoFile" Property.
+    /// Default model for "Image" Media Types, which uses the ImageCropper for the "umbracoFile" Property.
     /// </summary>
-    public class Image : ContentBase, IMedia
+    [MediaModel("Image")]
+    public class Image : Media
     {
         [JsonProperty("umbracoFile")]
         public ImageCropper File { get; set; }
@@ -21,8 +22,5 @@ namespace Umbraco.Headless.Client.Net.Delivery.Models
 
         [JsonProperty("umbracoExtension")]
         public string Extension { get; set; }
-
-        [JsonProperty("mediaTypeAlias")]
-        public string MediaTypeAlias { get; set; }
-    }
+   }
 }

@@ -10,9 +10,16 @@ namespace Umbraco.Headless.Client.Net.Configuration
         {
             ProjectAlias = projectAlias ?? throw new ArgumentNullException(nameof(projectAlias));
             ContentModelTypes = new TypeList<IContent>();
+            MediaModelTypes = new TypeList<IMedia>
+            {
+                typeof(File),
+                typeof(Folder),
+                typeof(Image)
+            };
         }
 
         public string ProjectAlias { get; }
         public ITypeList<IContent> ContentModelTypes { get; }
+        public ITypeList<IMedia> MediaModelTypes { get; }
     }
 }

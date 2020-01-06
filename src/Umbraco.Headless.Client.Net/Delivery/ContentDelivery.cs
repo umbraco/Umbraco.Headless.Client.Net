@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -9,7 +8,6 @@ using Refit;
 using Umbraco.Headless.Client.Net.Collections;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Delivery.Models;
-using Umbraco.Headless.Client.Net.Serialization;
 
 namespace Umbraco.Headless.Client.Net.Delivery
 {
@@ -17,14 +15,12 @@ namespace Umbraco.Headless.Client.Net.Delivery
     {
         private readonly IHeadlessConfiguration _configuration;
         private readonly HttpClient _httpClient;
-        private readonly ITypeList<IContent> _contentModelTypes;
         private ContentDeliveryEndpoints _service;
 
-        public ContentDelivery(IHeadlessConfiguration configuration, HttpClient httpClient, ITypeList<IContent> contentModelTypes)
+        public ContentDelivery(IHeadlessConfiguration configuration, HttpClient httpClient)
         {
             _configuration = configuration;
             _httpClient = httpClient;
-            _contentModelTypes = contentModelTypes;
         }
 
         private ContentDeliveryEndpoints Service =>
@@ -33,10 +29,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
                 {
                     ContentSerializer = new JsonContentSerializer(new JsonSerializerSettings
                     {
-                        Converters =
-                        {
-                            new ContentConverter(_contentModelTypes.ToDictionary(GetAliasFromClassName))
-                        }
+                        Converters = _configuration.GetJsonConverters()
                     })
                 }));
 
@@ -179,7 +172,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
 
         private static string GetAliasFromClassName<T>() => GetAliasFromClassName(typeof(T));
 
-        private static string GetAliasFromClassName(Type type)
+        internal static string GetAliasFromClassName(Type type)
         {
             if (type.GetCustomAttribute(typeof(ContentModelAttribute)) is ContentModelAttribute attr)
                 return attr.ContentTypeAlias;

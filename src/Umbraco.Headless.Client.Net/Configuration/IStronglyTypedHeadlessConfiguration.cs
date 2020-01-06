@@ -6,5 +6,6 @@ namespace Umbraco.Headless.Client.Net.Configuration
     public interface IStronglyTypedHeadlessConfiguration : IHeadlessConfiguration
     {
         ITypeList<IContent> ContentModelTypes { get; }
+        ITypeList<IMedia> MediaModelTypes { get; }
     }
 }
