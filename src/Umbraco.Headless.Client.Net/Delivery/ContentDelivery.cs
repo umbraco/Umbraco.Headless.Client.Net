@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Refit;
+using Umbraco.Headless.Client.Net.Collections;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Delivery.Models;
 using Umbraco.Headless.Client.Net.Serialization;
@@ -16,25 +17,25 @@ namespace Umbraco.Headless.Client.Net.Delivery
     {
         private readonly IHeadlessConfiguration _configuration;
         private readonly HttpClient _httpClient;
+        private readonly ITypeList<IContent> _contentModelTypes;
         private ContentDeliveryEndpoints _service;
 
-        public ContentDelivery(IHeadlessConfiguration configuration, HttpClient httpClient)
+        public ContentDelivery(IHeadlessConfiguration configuration, HttpClient httpClient, ITypeList<IContent> contentModelTypes)
         {
             _configuration = configuration;
             _httpClient = httpClient;
+            _contentModelTypes = contentModelTypes;
         }
 
         private ContentDeliveryEndpoints Service =>
             _service ?? (_service = RestService.For<ContentDeliveryEndpoints>(_httpClient,
                 new RefitSettings
                 {
-                    ContentSerializer = new JsonContentSerializer(new JsonSerializerSettings()
+                    ContentSerializer = new JsonContentSerializer(new JsonSerializerSettings
                     {
                         Converters =
                         {
-                            new ContentConverter(
-                                _configuration.ContentModelTypes.ToDictionary(GetAliasFromClassName)
-                            )
+                            new ContentConverter(_contentModelTypes.ToDictionary(GetAliasFromClassName))
                         }
                     })
                 }));

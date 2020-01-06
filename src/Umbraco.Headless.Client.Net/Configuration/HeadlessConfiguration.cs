@@ -4,7 +4,7 @@ using Umbraco.Headless.Client.Net.Delivery.Models;
 
 namespace Umbraco.Headless.Client.Net.Configuration
 {
-    public class HeadlessConfiguration : IHeadlessConfiguration
+    public class HeadlessConfiguration : IStronglyTypedHeadlessConfiguration
     {
         public HeadlessConfiguration(string projectAlias)
         {
