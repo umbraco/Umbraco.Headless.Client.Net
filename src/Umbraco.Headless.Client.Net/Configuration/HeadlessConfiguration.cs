@@ -9,6 +9,7 @@ namespace Umbraco.Headless.Client.Net.Configuration
         public HeadlessConfiguration(string projectAlias)
         {
             ProjectAlias = projectAlias ?? throw new ArgumentNullException(nameof(projectAlias));
+            ElementModelTypes = new TypeList<IElement>();
             ContentModelTypes = new TypeList<IContent>();
             MediaModelTypes = new TypeList<IMedia>
             {
@@ -19,6 +20,7 @@ namespace Umbraco.Headless.Client.Net.Configuration
         }
 
         public string ProjectAlias { get; }
+        public ITypeList<IElement> ElementModelTypes { get; }
         public ITypeList<IContent> ContentModelTypes { get; }
         public ITypeList<IMedia> MediaModelTypes { get; }
     }

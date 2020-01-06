@@ -13,7 +13,7 @@ namespace Umbraco.Headless.Client.Samples.Web.Models
         public string UniqueSellingPointsTitle { get; set; }
         public IEnumerable<UniqueSellingPoint> UniqueSellingPoints { get; set; }
 
-        public IEnumerable<Element> Elements { get; set; }
+        public IEnumerable<IElement> Elements { get; set; }
 
         public string FooterTitle { get; set; }
         public IEnumerable<MultiUrlPickerLink> FooterLinks { get; set; }

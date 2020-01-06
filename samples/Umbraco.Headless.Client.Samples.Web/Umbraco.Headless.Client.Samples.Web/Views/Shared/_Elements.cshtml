@@ -1,6 +1,6 @@
-@model IEnumerable<Umbraco.Headless.Client.Net.Delivery.Models.Element>
+@model IEnumerable<Umbraco.Headless.Client.Net.Delivery.Models.IElement>
 
 @foreach (var element in Model)
 {
-    @await Component.InvokeAsync(element.ContentTypeAlias, new { element })
+    await Html.RenderPartialAsync($"Elements/_{element.ContentTypeAlias}", element);
 }

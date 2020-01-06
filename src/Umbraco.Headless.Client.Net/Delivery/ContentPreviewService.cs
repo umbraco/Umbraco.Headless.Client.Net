@@ -30,8 +30,10 @@ namespace Umbraco.Headless.Client.Net.Delivery
                 DefaultRequestHeaders = { { Constants.Headers.ApiKey, configuration.Token } }
             };
 
-            Content = new ContentDelivery(configuration, httpClient);
-            Media = new MediaDelivery(configuration, httpClient);
+            var modelNameResolver = new ModelNameResolver();
+
+            Content = new ContentDelivery(configuration, httpClient, modelNameResolver);
+            Media = new MediaDelivery(configuration, httpClient, modelNameResolver);
         }
 
         /// <summary>

@@ -7,10 +7,10 @@
   image = Model.HeroImage
 })
 
-@await Component.InvokeAsync("UniqueSellingPoints", new
+@await Html.PartialAsync("_UniqueSellingPoints", new UniqueSellingPointsViewModel
 {
-    title = Model.UniqueSellingPointsTitle,
-    contents = Model.UniqueSellingPoints
+    Title = Model.UniqueSellingPointsTitle,
+    UniqueSellingPoints = Model.UniqueSellingPoints
 })
 
 @await Html.PartialAsync("_Elements", Model.Elements)

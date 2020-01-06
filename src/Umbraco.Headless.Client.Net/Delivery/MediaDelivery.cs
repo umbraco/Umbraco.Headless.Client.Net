@@ -14,12 +14,14 @@ namespace Umbraco.Headless.Client.Net.Delivery
     {
         private readonly IHeadlessConfiguration _configuration;
         private readonly HttpClient _httpClient;
+        private readonly ModelNameResolver _modelNameResolver;
         private MediaDeliveryEndpoints _service;
 
-        public MediaDelivery(IHeadlessConfiguration configuration, HttpClient httpClient)
+        public MediaDelivery(IHeadlessConfiguration configuration, HttpClient httpClient, ModelNameResolver modelNameResolver)
         {
             _configuration = configuration;
             _httpClient = httpClient;
+            _modelNameResolver = modelNameResolver;
         }
 
         private MediaDeliveryEndpoints Service =>
@@ -29,7 +31,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
                 {
                     ContentSerializer = new JsonContentSerializer(new JsonSerializerSettings
                     {
-                        Converters = _configuration.GetJsonConverters()
+                        Converters = _configuration.GetJsonConverters(_modelNameResolver)
                     })
                 }));
 
@@ -70,26 +72,6 @@ namespace Umbraco.Headless.Client.Net.Delivery
             var service = RestService.For<TypedMediaDeliveryEndpoints<T>>(_httpClient);
             var content = await service.GetChildren(_configuration.ProjectAlias, id, page, pageSize).ConfigureAwait(false);
             return content;
-        }
-
-        private static string GetAliasFromClassName<T>() => GetAliasFromClassName(typeof(T));
-
-        internal static string GetAliasFromClassName(Type type)
-        {
-            if (type.GetCustomAttribute(typeof(MediaModelAttribute)) is MediaModelAttribute attr)
-                return attr.MediaTypeAlias;
-
-            var className = type.Name;
-            if (className.IndexOf("Model", StringComparison.Ordinal) > -1)
-            {
-                className = className.Substring(0, className.IndexOf("Model", StringComparison.Ordinal));
-            }
-
-            // test for default casing
-            if (className.Length > 1)
-                className = $"{className.Substring(0, 1).ToLower()}{className.Substring(1)}";
-
-            return className;
         }
     }
 }

@@ -6,13 +6,15 @@ using Umbraco.Headless.Client.Net.Delivery.Models;
 
 namespace Umbraco.Headless.Client.Net.Serialization
 {
-    internal class MediaConverter : JsonConverter
+    internal class ModelConverter<TInterface, TImplementation> : JsonConverter
     {
         private readonly IDictionary<string, Type> _types;
+        private readonly string _aliasProperty;
 
-        public MediaConverter(IDictionary<string, Type> types)
+        public ModelConverter(IDictionary<string, Type> types, string aliasProperty)
         {
             _types = types ?? throw new ArgumentNullException(nameof(types));
+            _aliasProperty = aliasProperty ?? throw new ArgumentNullException(nameof(aliasProperty));
         }
 
         public override bool CanWrite { get; } = false;
@@ -23,11 +25,13 @@ namespace Umbraco.Headless.Client.Net.Serialization
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var obj = serializer.Deserialize<JObject>(reader);
-            var mediaTypeAlias = obj.GetValue("mediaTypeAlias").Value<string>();
+            var contentTypeAlias = obj.GetValue(_aliasProperty).Value<string>();
 
-            return _types.TryGetValue(mediaTypeAlias, out var type) ? obj.ToObject(type) : obj.ToObject<Media>();
+            return _types.TryGetValue(contentTypeAlias, out var type) ?
+                obj.ToObject(type, serializer) : obj.ToObject<TImplementation>();
         }
 
-        public override bool CanConvert(Type objectType) => typeof(IMedia).IsAssignableFrom(objectType);
+        public override bool CanConvert(Type objectType) =>
+            typeof(TInterface) == objectType || typeof(TImplementation) == objectType;
     }
 }
