@@ -5,7 +5,6 @@ using Umbraco.Headless.Client.Net.Delivery.Models;
 
 namespace Umbraco.Headless.Client.Net.Delivery
 {
-    [Headers(Constants.ApiVersionHeader)]
     interface ContentDeliveryEndpoints
     {
         [Get("/content?hyperlinks=false")]
@@ -29,6 +28,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
         [Get("/content/type?contentType={contentType}&page={page}&pageSize={pageSize}&hyperlinks=false")]
         Task<Delivery.Models.PagedContent> GetByType([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, string contentType, int page, int pageSize);
 
+        [Headers(Constants.ApiVersionHeader)]
         [Post("/content/filter?page={page}&pageSize={pageSize}&hyperlinks=false")]
         Task<Delivery.Models.PagedContent> Filter([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, [Body] ContentFilter filter, int page, int pageSize);
 
@@ -36,7 +36,6 @@ namespace Umbraco.Headless.Client.Net.Delivery
         Task<Delivery.Models.PagedContent> Search([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, string term, int page, int pageSize);
     }
 
-    [Headers(Constants.ApiVersionHeader)]
     interface TypedContentRootDeliveryEndpoints<T> where T : Delivery.Models.IContent
     {
         [Get("/content?contentType={contentType}&hyperlinks=false")]
@@ -46,7 +45,6 @@ namespace Umbraco.Headless.Client.Net.Delivery
         Task<Delivery.Models.RootContent<T>> GetAncestors([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, Guid id, string contentType);
     }
 
-    [Headers(Constants.ApiVersionHeader)]
     interface TypedPagedContentDeliveryEndpoints<T> where T : Delivery.Models.IContent
     {
         [Get("/content/{id}/children?contentType={contentType}&page={page}&pageSize={pageSize}&hyperlinks=false")]
@@ -62,7 +60,6 @@ namespace Umbraco.Headless.Client.Net.Delivery
         Task<Delivery.Models.PagedContent<T>> Filter([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, [Body] ContentFilter filter, int page, int pageSize);
     }
 
-    [Headers(Constants.ApiVersionHeader)]
     interface TypedContentDeliveryEndpoints<T> where T : Delivery.Models.IContent
     {
         [Get("/content/{id}?depth={depth}&contentType={contentType}&hyperlinks=false")]
@@ -72,7 +69,6 @@ namespace Umbraco.Headless.Client.Net.Delivery
         Task<T> GetByUrl([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, string url, string contentType, int depth);
     }
 
-    [Headers(Constants.ApiVersionHeader)]
     interface MediaDeliveryEndpoints
     {
         [Get("/media?hyperlinks=false")]
@@ -85,7 +81,6 @@ namespace Umbraco.Headless.Client.Net.Delivery
         Task<Delivery.Models.PagedMedia> GetChildren([Header(Constants.Headers.ProjectAlias)] string projectAlias, Guid id, int page, int pageSize);
     }
 
-    [Headers(Constants.ApiVersionHeader)]
     interface TypedMediaDeliveryEndpoints<T> where T : Delivery.Models.IMedia
     {
         [Get("/media?hyperlinks=false")]
