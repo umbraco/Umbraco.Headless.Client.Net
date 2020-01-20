@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using RichardSzalay.MockHttp;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Delivery;
+using Umbraco.Headless.Client.Net.Delivery.Models;
 using Umbraco.Headless.Client.Net.Tests.StronglyTypedModels;
 using Xunit;
 
@@ -84,6 +86,28 @@ namespace Umbraco.Headless.Client.Net.Tests
             Assert.NotEmpty(pagedContent.Content.Items);
             Assert.Equal(1, pagedContent.TotalPages);
             Assert.Equal(8, pagedContent.TotalItems);
+            foreach (var contentItem in pagedContent.Content.Items)
+            {
+                Assert.NotNull(contentItem);
+                Assert.False(string.IsNullOrEmpty(contentItem.ProductName));
+            }
+        }
+
+        [Theory]
+        [InlineData("description", "Donec", ContentFilterMatch.Contains)]
+        public async Task Can_Retrieve_Filtered_Content_As_Typed_Object(string alias, string value, ContentFilterMatch match)
+        {
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient($"{_contentBaseUrl}/filter", ContentDeliveryJson.Filter));
+            var filters = new List<ContentFilterProperties>();
+            filters.Add(new ContentFilterProperties(alias, value, match));
+            var contentFilter = new ContentFilter(filters.ToArray());
+            var pagedContent = await service.Content.Filter<Product>(contentFilter);
+
+            Assert.NotNull(pagedContent);
+            Assert.NotNull(pagedContent.Content);
+            Assert.NotEmpty(pagedContent.Content.Items);
+            Assert.Equal(1, pagedContent.TotalPages);
+            Assert.Equal(1, pagedContent.TotalItems);
             foreach (var contentItem in pagedContent.Content.Items)
             {
                 Assert.NotNull(contentItem);

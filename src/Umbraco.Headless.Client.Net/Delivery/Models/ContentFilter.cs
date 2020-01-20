@@ -13,7 +13,7 @@
             Properties = properties;
         }
 
-        public string ContentTypeAlias { get; }
+        public string ContentTypeAlias { get; internal set; }
         public ContentFilterProperties[] Properties { get; }
 
     }
