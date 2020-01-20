@@ -172,6 +172,17 @@ namespace Umbraco.Headless.Client.Net.Delivery
         Task<PagedContent> Filter(ContentFilter filter, string culture = null, int page = 1, int pageSize = 10);
 
         /// <summary>
+        /// Filter content based on property value and optionally content type
+        /// </summary>
+        /// <typeparam name="T">A type that inherits from the <see cref="IContent"/> interface</typeparam>
+        /// <param name="filter"><see cref="ContentFilter"/> with at least one property</param>
+        /// <param name="culture">Content Culture (Optional)</param>
+        /// <param name="page">Integer specifying the page number (Optional)</param>
+        /// <param name="pageSize">Integer specifying the page size (Optional)</param>
+        /// <returns></returns>
+        Task<PagedContent<T>> Filter<T>(ContentFilter filter, string culture = null, int page = 1, int pageSize = 10) where T : IContent;
+
+        /// <summary>
         /// Search for content by term
         /// </summary>
         /// <param name="term">Search term</param>
