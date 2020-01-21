@@ -288,6 +288,12 @@ namespace Umbraco.Headless.Client.Net.Tests {
             }
         }
 
+        internal static string Filter {
+            get {
+                return ResourceManager.GetString("Filter", resourceCulture);
+            }
+        }
+
         internal static string Search {
             get {
                 return ResourceManager.GetString("Search", resourceCulture);

@@ -57,6 +57,9 @@ namespace Umbraco.Headless.Client.Net.Delivery
 
         [Get("/content/type?contentType={contentType}&page={page}&pageSize={pageSize}&hyperlinks=false")]
         Task<Delivery.Models.PagedContent<T>> GetByType([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, string contentType, int page, int pageSize);
+
+        [Post("/content/filter?page={page}&pageSize={pageSize}&hyperlinks=false")]
+        Task<Delivery.Models.PagedContent<T>> Filter([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, [Body] ContentFilter filter, int page, int pageSize);
     }
 
     [Headers(Constants.ApiVersionHeader)]
