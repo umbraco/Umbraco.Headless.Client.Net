@@ -1,4 +1,7 @@
-﻿namespace Umbraco.Headless.Client.Net.Delivery.Models
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
+namespace Umbraco.Headless.Client.Net.Delivery.Models
 {
     public class ContentFilter
     {
@@ -29,6 +32,8 @@
 
         public string Alias { get; }
         public string Value { get; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
         public ContentFilterMatch Match { get; }
     }
 
