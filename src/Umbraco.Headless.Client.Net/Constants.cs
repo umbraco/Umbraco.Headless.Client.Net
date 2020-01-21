@@ -11,12 +11,12 @@ namespace Umbraco.Headless.Client.Net
          * In this library we mark the methods that support newly released features/endpoints
          * with the version from when they were available.
          * Ie. Forms was introduced in 2.1, so those endpoints send that version header.
-         * All existing (original) endpoints don't send any version header as they are on
+         * All existing (original) endpoints will send the minimum version header as they are on
          * the minimum version, which is 2.0.
          */
 
         //Minimum version for this Library
-        public const string ApiMinimumVersion = "2.1";
+        public const string ApiMinimumVersion = "2.0";
         public const string ApiMinimumVersionHeader = Headers.ApiVersion + ": " + ApiMinimumVersion;
         //Current version for this library
         public const string ApiVersion = "2.1";
