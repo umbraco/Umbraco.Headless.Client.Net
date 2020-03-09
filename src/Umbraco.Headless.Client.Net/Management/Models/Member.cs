@@ -38,6 +38,7 @@ namespace Umbraco.Headless.Client.Net.Management.Models
         public string MemberTypeAlias { get; set; }
         public string Name { get; set; }
         public string Username { get; set; }
+        public string Password { get; set; }
 
         [JsonExtensionData]
         public IDictionary<string, object> Properties { get; set; }

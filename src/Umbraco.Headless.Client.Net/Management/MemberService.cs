@@ -38,5 +38,8 @@ namespace Umbraco.Headless.Client.Net.Management
 
         public Task RemoveFromGroup(string username, string groupName) =>
             Service.RemoveFromGroup(_configuration.ProjectAlias, username, groupName);
+
+        public Task ChangePassword(string username, string currentPassword, string newPassword) =>
+            Service.ChangePassword(_configuration.ProjectAlias, username, new ChangeMemberPassword { CurrentPassword = currentPassword, NewPassword = newPassword });
     }
 }

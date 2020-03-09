@@ -126,6 +126,20 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
             _mockHttp.VerifyNoOutstandingExpectation();
         }
 
+        [Fact]
+        public void ChangePassword_CallsEndpoint()
+        {
+            _mockHttp.Expect(HttpMethod.Post, "/member/test/password")
+                .WithContent("{\"CurrentPassword\":\"myPassword\",\"NewPassword\":\"myNewPassword\"}");
+
+            var httpClient = new HttpClient(_mockHttp) {BaseAddress = new Uri(Constants.Urls.BaseApiUrl)};
+            var service = CreateService(httpClient);
+
+            service.ChangePassword("test", "myPassword", "myNewPassword");
+
+            _mockHttp.VerifyNoOutstandingExpectation();
+        }
+
         private HttpClient GetMockedHttpClient(HttpMethod method, string url, string jsonResponse)
         {
             _mockHttp.When(method, url).Respond("application/json", jsonResponse);

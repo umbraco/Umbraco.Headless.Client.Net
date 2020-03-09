@@ -11,5 +11,6 @@ namespace Umbraco.Headless.Client.Net.Management
         Task<Member> Update(Member member);
         Task AddToGroup(string username, string groupName);
         Task RemoveFromGroup(string username, string groupName);
+        Task ChangePassword(string username, string currentPassword, string newPassword);
     }
 }
