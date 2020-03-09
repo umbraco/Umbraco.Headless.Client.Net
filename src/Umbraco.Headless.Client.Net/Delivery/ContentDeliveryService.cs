@@ -37,6 +37,18 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <summary>
         /// Initializes a new instance of the ContentDeliveryService class
         /// </summary>
+        /// <remarks>
+        /// When passing in your own HttpClient you are responsible for setting the authentication headers
+        /// </remarks>
+        /// <param name="projectAlias">Alias of the Project</param>
+        /// <param name="httpClient">Reference to the <see cref="HttpClient"/></param>
+        public ContentDeliveryService(string projectAlias, HttpClient httpClient) : this(new BasicHeadlessConfiguration(projectAlias), httpClient)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the ContentDeliveryService class
+        /// </summary>
         /// <param name="configuration">Reference to the <see cref="IHeadlessConfiguration"/></param>
         public ContentDeliveryService(IHeadlessConfiguration configuration) : this (configuration, new HttpClient { BaseAddress = new Uri(Constants.Urls.BaseCdnUrl) })
         { }
@@ -47,7 +59,9 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <param name="configuration">Reference to the <see cref="IPasswordBasedConfiguration"/></param>
         public ContentDeliveryService(IPasswordBasedConfiguration configuration)
         {
-            var httpClient = new HttpClient(new AuthenticatedHttpClientHandler(configuration))
+            var authenticationService = new AuthenticationService(configuration);
+            var tokenResolver = new UserPasswordAccessTokenResolver(configuration.Username, configuration.ProjectAlias, authenticationService);
+            var httpClient = new HttpClient(new AuthenticatedHttpClientHandler(tokenResolver))
             {
                 BaseAddress = new Uri(Constants.Urls.BaseCdnUrl)
             };
