@@ -41,5 +41,11 @@ namespace Umbraco.Headless.Client.Net.Management
 
         public Task ChangePassword(string username, string currentPassword, string newPassword) =>
             Service.ChangePassword(_configuration.ProjectAlias, username, new ChangeMemberPassword { CurrentPassword = currentPassword, NewPassword = newPassword });
+
+        public Task<MemberResetPasswordToken> CreateResetPasswordToken(string username) =>
+            Service.CreateResetPasswordToken(_configuration.ProjectAlias, username);
+
+        public Task ResetPassword(string username, string token, string newPassword) =>
+            Service.ResetPassword(_configuration.ProjectAlias, username, new ResetMemberPassword { Token = token, NewPassword = newPassword });
     }
 }

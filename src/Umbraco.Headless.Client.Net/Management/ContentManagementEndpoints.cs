@@ -86,14 +86,16 @@ namespace Umbraco.Headless.Client.Net.Management
         Task RemoveFromGroup([Header(Constants.Headers.ProjectAlias)] string projectAlias, string username, string groupname);
 
         [Post("/member/{username}/password")]
-        [Headers(Constants.Headers.ApiVersion + "2.2")]
+        [Headers(Constants.Headers.ApiVersion + ":2.2")]
         Task ChangePassword([Header(Constants.Headers.ProjectAlias)] string projectAlias, string username, ChangeMemberPassword model);
-    }
 
-    class ChangeMemberPassword
-    {
-        public string CurrentPassword { get; set; }
-        public string NewPassword { get; set; }
+        [Get("/member/{username}/password/reset-token")]
+        [Headers(Constants.Headers.ApiVersion + ":2.2")]
+        Task<MemberResetPasswordToken> CreateResetPasswordToken([Header(Constants.Headers.ProjectAlias)] string projectAlias, string username);
+
+        [Post("/member/{username}/password/reset")]
+        [Headers(Constants.Headers.ApiVersion + ":2.2")]
+        Task ResetPassword([Header(Constants.Headers.ProjectAlias)] string projectAlias, string username, ResetMemberPassword model);
     }
 
     [Headers(Constants.ApiMinimumVersionHeader)]
@@ -199,7 +201,7 @@ namespace Umbraco.Headless.Client.Net.Management
             string projectAlias, int id);
     }
 
-    [Headers(Constants.Headers.ApiVersion + "2.1")]
+    [Headers(Constants.Headers.ApiVersion + ":2.1")]
     interface FormManagementEndpoints
     {
         [Get("/forms")]

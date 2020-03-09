@@ -10,21 +10,21 @@
 
 namespace Umbraco.Headless.Client.Net.Tests {
     using System;
-
-
+    
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class MemberServiceJson {
-
+        
         private static System.Resources.ResourceManager resourceMan;
-
+        
         private static System.Globalization.CultureInfo resourceCulture;
-
+        
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal MemberServiceJson() {
         }
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static System.Resources.ResourceManager ResourceManager {
             get {
@@ -35,7 +35,7 @@ namespace Umbraco.Headless.Client.Net.Tests {
                 return resourceMan;
             }
         }
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static System.Globalization.CultureInfo Culture {
             get {
@@ -45,28 +45,34 @@ namespace Umbraco.Headless.Client.Net.Tests {
                 resourceCulture = value;
             }
         }
-
+        
         internal static string Create {
             get {
                 return ResourceManager.GetString("Create", resourceCulture);
             }
         }
-
+        
         internal static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
             }
         }
-
+        
         internal static string Update {
             get {
                 return ResourceManager.GetString("Update", resourceCulture);
             }
         }
-
+        
         internal static string ByUsername {
             get {
                 return ResourceManager.GetString("ByUsername", resourceCulture);
+            }
+        }
+        
+        internal static string CreatePasswordResetToken {
+            get {
+                return ResourceManager.GetString("CreatePasswordResetToken", resourceCulture);
             }
         }
     }

@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Refit;
@@ -101,43 +102,78 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         }
 
         [Fact]
-        public void AddToGroup_ReturnsOk()
+        public async Task AddToGroup_ReturnsOk()
         {
-            _mockHttp.Expect(HttpMethod.Put, "/member/test/groups/myGroup");
+            _mockHttp.Expect(HttpMethod.Put, "/member/test/groups/myGroup")
+                .Respond(HttpStatusCode.OK);
 
             var httpClient = new HttpClient(_mockHttp) {BaseAddress = new Uri(Constants.Urls.BaseApiUrl)};
             var service = CreateService(httpClient);
 
-            service.AddToGroup("test", "myGroup");
+            await service.AddToGroup("test", "myGroup");
 
             _mockHttp.VerifyNoOutstandingExpectation();
         }
 
         [Fact]
-        public void RemoveFromGroup_ReturnsOk()
+        public async Task RemoveFromGroup_ReturnsOk()
         {
-            _mockHttp.Expect(HttpMethod.Delete, "/member/test/groups/myGroup");
+            _mockHttp.Expect(HttpMethod.Delete, "/member/test/groups/myGroup")
+                .Respond(HttpStatusCode.OK);
 
             var httpClient = new HttpClient(_mockHttp) {BaseAddress = new Uri(Constants.Urls.BaseApiUrl)};
             var service = CreateService(httpClient);
 
-            service.RemoveFromGroup("test", "myGroup");
+            await service.RemoveFromGroup("test", "myGroup");
 
             _mockHttp.VerifyNoOutstandingExpectation();
         }
 
         [Fact]
-        public void ChangePassword_CallsEndpoint()
+        public async Task ChangePassword_CallsEndpoint()
         {
             _mockHttp.Expect(HttpMethod.Post, "/member/test/password")
-                .WithContent("{\"CurrentPassword\":\"myPassword\",\"NewPassword\":\"myNewPassword\"}");
+                .WithContent("{\"currentPassword\":\"myPassword\",\"newPassword\":\"myNewPassword\"}")
+                .Respond(HttpStatusCode.OK);
 
             var httpClient = new HttpClient(_mockHttp) {BaseAddress = new Uri(Constants.Urls.BaseApiUrl)};
             var service = CreateService(httpClient);
 
-            service.ChangePassword("test", "myPassword", "myNewPassword");
+            await service.ChangePassword("test", "myPassword", "myNewPassword");
 
             _mockHttp.VerifyNoOutstandingExpectation();
+        }
+
+        [Fact]
+        public async Task CreatePasswordResetToken_ReturnsToken()
+        {
+            var httpClient = GetMockedHttpClient(HttpMethod.Get, "/member/test/password/reset-token",
+                MemberServiceJson.CreatePasswordResetToken);
+
+            var service = CreateService(httpClient);
+
+            var response = await service.CreateResetPasswordToken("test");
+
+            Assert.NotNull(response);
+            Assert.NotNull(response.Token);
+            Assert.NotNull(response.Member);
+            Assert.Equal(86399, response.ExpiresIn);
+        }
+
+        [Fact]
+        public async Task ResetPassword_CallsEndpoint()
+        {
+            _mockHttp.Expect(HttpMethod.Post, "/member/test/password/reset")
+                .WithContent("{\"token\":\"some-token\",\"newPassword\":\"myNewPassword\"}")
+                .Respond(HttpStatusCode.OK);
+
+            var httpClient = new HttpClient(_mockHttp) {BaseAddress = new Uri(Constants.Urls.BaseApiUrl)};
+            var service = CreateService(httpClient);
+
+            await service.ResetPassword("test", "some-token", "myNewPassword");
+
+            _mockHttp.VerifyNoOutstandingExpectation();
+
         }
 
         private HttpClient GetMockedHttpClient(HttpMethod method, string url, string jsonResponse)
