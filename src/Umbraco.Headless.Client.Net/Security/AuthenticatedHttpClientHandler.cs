@@ -41,7 +41,7 @@ namespace Umbraco.Headless.Client.Net.Security
         {
             if (!string.IsNullOrEmpty(_token) && DateTime.UtcNow < _tokenExpirationTime)
             {
-                return await Task.FromResult(_token);
+                return await Task.FromResult(_token).ConfigureAwait(false);
             }
 
             var formData = new Dictionary<string, string>
@@ -52,7 +52,7 @@ namespace Umbraco.Headless.Client.Net.Security
             };
 
             var response = await RestService.For<OAuthEndpoints>(Constants.Urls.BaseApiUrl)
-                .GetAuthToken(_configuration.ProjectAlias, formData);
+                .GetAuthToken(_configuration.ProjectAlias, formData).ConfigureAwait(false);
 
             _token = response.AccessToken;
             _tokenExpirationTime = DateTime.UtcNow

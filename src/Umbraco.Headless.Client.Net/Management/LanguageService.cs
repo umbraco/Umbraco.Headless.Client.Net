@@ -28,20 +28,20 @@ namespace Umbraco.Headless.Client.Net.Management
 
         public async Task<IEnumerable<Language>> GetAll()
         {
-            var languages = await Service.GetRoot(_headlessConfiguration.ProjectAlias);
+            var languages = await Service.GetRoot(_headlessConfiguration.ProjectAlias).ConfigureAwait(false);
             return languages.Languages.Items;
         }
 
         public async Task<Language> GetByIsoCode(string isoCode)
-            => await Service.ByIsoCode(_headlessConfiguration.ProjectAlias, isoCode);
+            => await Service.ByIsoCode(_headlessConfiguration.ProjectAlias, isoCode).ConfigureAwait(false);
 
         public async Task<Language> Create(Language language)
-            => await Service.Create(_headlessConfiguration.ProjectAlias, language);
+            => await Service.Create(_headlessConfiguration.ProjectAlias, language).ConfigureAwait(false);
 
         public async Task<Language> Update(string isoCode, Language language)
-            => await Service.Update(_headlessConfiguration.ProjectAlias, isoCode, language);
+            => await Service.Update(_headlessConfiguration.ProjectAlias, isoCode, language).ConfigureAwait(false);
 
         public async Task<Language> Delete(string isoCode)
-            => await Service.Delete(_headlessConfiguration.ProjectAlias, isoCode);
+            => await Service.Delete(_headlessConfiguration.ProjectAlias, isoCode).ConfigureAwait(false);
     }
 }

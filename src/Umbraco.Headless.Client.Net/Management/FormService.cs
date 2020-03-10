@@ -27,7 +27,7 @@ namespace Umbraco.Headless.Client.Net.Management
 
         public async Task<IEnumerable<Form>> GetAll()
         {
-            var forms = await Service.GetRoot(_configuration.ProjectAlias);
+            var forms = await Service.GetRoot(_configuration.ProjectAlias).ConfigureAwait(false);
             return forms.Forms.Items;
         }
 

@@ -22,7 +22,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
         public async Task<IEnumerable<Content>> GetRoot(string culture)
         {
             var service = RestService.For<ContentDeliveryEndpoints>(_httpClient);
-            var root = await service.GetRoot(_configuration.ProjectAlias, culture);
+            var root = await service.GetRoot(_configuration.ProjectAlias, culture).ConfigureAwait(false);
             return root.Content.Items;
         }
 
@@ -31,14 +31,14 @@ namespace Umbraco.Headless.Client.Net.Delivery
             var contentType = GetAliasFromClassName<T>();
 
             var service = RestService.For<TypedContentRootDeliveryEndpoints<T>>(_httpClient);
-            var root = await service.GetRoot(_configuration.ProjectAlias, culture, contentType);
+            var root = await service.GetRoot(_configuration.ProjectAlias, culture, contentType).ConfigureAwait(false);
             return root.Content.Items;
         }
 
         public async Task<Content> GetById(Guid id, string culture, int depth)
         {
             var service = RestService.For<ContentDeliveryEndpoints>(_httpClient);
-            var content = await service.GetById(_configuration.ProjectAlias, culture, id, depth);
+            var content = await service.GetById(_configuration.ProjectAlias, culture, id, depth).ConfigureAwait(false);
             return content;
         }
 
@@ -47,14 +47,14 @@ namespace Umbraco.Headless.Client.Net.Delivery
             var contentType = GetAliasFromClassName<T>();
 
             var service = RestService.For<TypedContentDeliveryEndpoints<T>>(_httpClient);
-            var content = await service.GetById(_configuration.ProjectAlias, culture, id, contentType, depth);
+            var content = await service.GetById(_configuration.ProjectAlias, culture, id, contentType, depth).ConfigureAwait(false);
             return content;
         }
 
         public async Task<Content> GetByUrl(string url, string culture, int depth)
         {
             var service = RestService.For<ContentDeliveryEndpoints>(_httpClient);
-            var content = await service.GetByUrl(_configuration.ProjectAlias, culture, url, depth);
+            var content = await service.GetByUrl(_configuration.ProjectAlias, culture, url, depth).ConfigureAwait(false);
             return content;
         }
 
@@ -63,14 +63,14 @@ namespace Umbraco.Headless.Client.Net.Delivery
             var contentType = GetAliasFromClassName<T>();
 
             var service = RestService.For<TypedContentDeliveryEndpoints<T>>(_httpClient);
-            var content = await service.GetByUrl(_configuration.ProjectAlias, culture, url, contentType, depth);
+            var content = await service.GetByUrl(_configuration.ProjectAlias, culture, url, contentType, depth).ConfigureAwait(false);
             return content;
         }
 
         public async Task<PagedContent> GetChildren(Guid id, string culture, int page, int pageSize)
         {
             var service = RestService.For<ContentDeliveryEndpoints>(_httpClient);
-            var content = await service.GetChildren(_configuration.ProjectAlias, culture, id, page, pageSize);
+            var content = await service.GetChildren(_configuration.ProjectAlias, culture, id, page, pageSize).ConfigureAwait(false);
             return content;
         }
 
@@ -79,14 +79,14 @@ namespace Umbraco.Headless.Client.Net.Delivery
             var contentType = GetAliasFromClassName<T>();
 
             var service = RestService.For<TypedPagedContentDeliveryEndpoints<T>>(_httpClient);
-            var content = await service.GetChildren(_configuration.ProjectAlias, culture, id, contentType, page, pageSize);
+            var content = await service.GetChildren(_configuration.ProjectAlias, culture, id, contentType, page, pageSize).ConfigureAwait(false);
             return content;
         }
 
         public async Task<PagedContent> GetDescendants(Guid id, string culture, int page, int pageSize)
         {
             var service = RestService.For<ContentDeliveryEndpoints>(_httpClient);
-            var content = await service.GetDescendants(_configuration.ProjectAlias, culture, id, page, pageSize);
+            var content = await service.GetDescendants(_configuration.ProjectAlias, culture, id, page, pageSize).ConfigureAwait(false);
             return content;
         }
 
@@ -95,14 +95,14 @@ namespace Umbraco.Headless.Client.Net.Delivery
             var contentType = GetAliasFromClassName<T>();
 
             var service = RestService.For<TypedPagedContentDeliveryEndpoints<T>>(_httpClient);
-            var content = await service.GetDescendants(_configuration.ProjectAlias, culture, id, contentType, page, pageSize);
+            var content = await service.GetDescendants(_configuration.ProjectAlias, culture, id, contentType, page, pageSize).ConfigureAwait(false);
             return content;
         }
 
         public async Task<IEnumerable<Content>> GetAncestors(Guid id, string culture)
         {
             var service = RestService.For<ContentDeliveryEndpoints>(_httpClient);
-            var root = await service.GetAncestors(_configuration.ProjectAlias, culture, id);
+            var root = await service.GetAncestors(_configuration.ProjectAlias, culture, id).ConfigureAwait(false);
             return root.Content.Items;
         }
 
@@ -111,27 +111,27 @@ namespace Umbraco.Headless.Client.Net.Delivery
             var contentType = GetAliasFromClassName<T>();
 
             var service = RestService.For<TypedContentRootDeliveryEndpoints<T>>(_httpClient);
-            var root = await service.GetAncestors(_configuration.ProjectAlias, culture, id, contentType);
+            var root = await service.GetAncestors(_configuration.ProjectAlias, culture, id, contentType).ConfigureAwait(false);
             return root.Content.Items;
         }
 
         public async Task<PagedContent> GetByType(string contentType, string culture = null, int page = 1, int pageSize = 10)
         {
             var service = RestService.For<ContentDeliveryEndpoints>(_httpClient);
-            var content = await service.GetByType(_configuration.ProjectAlias, culture, contentType, page, pageSize);
+            var content = await service.GetByType(_configuration.ProjectAlias, culture, contentType, page, pageSize).ConfigureAwait(false);
             return content;
         }
 
         public async Task<PagedContent<T>> GetByType<T>(string culture = null, int page = 1, int pageSize = 10) where T : IContent
         {
             var contentType = GetAliasFromClassName<T>();
-            return await GetByTypeAlias<T>(contentType, culture, page, pageSize);
+            return await GetByTypeAlias<T>(contentType, culture, page, pageSize).ConfigureAwait(false);
         }
 
         public async Task<PagedContent<T>> GetByTypeAlias<T>(string contentTypeAlias, string culture = null, int page = 1, int pageSize = 10) where T : IContent
         {
             var service = RestService.For<TypedPagedContentDeliveryEndpoints<T>>(_httpClient);
-            var content = await service.GetByType(_configuration.ProjectAlias, culture, contentTypeAlias, page, pageSize);
+            var content = await service.GetByType(_configuration.ProjectAlias, culture, contentTypeAlias, page, pageSize).ConfigureAwait(false);
             return content;
         }
 
@@ -143,7 +143,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
             filter.ContentTypeAlias = filter.ContentTypeAlias ?? GetAliasFromClassName<T>();
 
             var service = RestService.For<TypedPagedContentDeliveryEndpoints<T>>(_httpClient);
-            var content = await service.Filter(_configuration.ProjectAlias, culture, filter, page, pageSize);
+            var content = await service.Filter(_configuration.ProjectAlias, culture, filter, page, pageSize).ConfigureAwait(false);
             return content;
         }
         public async Task<PagedContent> Filter(ContentFilter filter, string culture = null, int page = 1, int pageSize = 10)
@@ -152,14 +152,14 @@ namespace Umbraco.Headless.Client.Net.Delivery
                 throw new ArgumentException("ContentFilter should contain at least one property to filter on");
 
             var service = RestService.For<ContentDeliveryEndpoints>(_httpClient);
-            var content = await service.Filter(_configuration.ProjectAlias, culture, filter, page, pageSize);
+            var content = await service.Filter(_configuration.ProjectAlias, culture, filter, page, pageSize).ConfigureAwait(false);
             return content;
         }
 
         public async Task<PagedContent> Search(string term, string culture = null, int page = 1, int pageSize = 10)
         {
             var service = RestService.For<ContentDeliveryEndpoints>(_httpClient);
-            var content = await service.Search(_configuration.ProjectAlias, culture, term, page, pageSize);
+            var content = await service.Search(_configuration.ProjectAlias, culture, term, page, pageSize).ConfigureAwait(false);
             return content;
         }
 

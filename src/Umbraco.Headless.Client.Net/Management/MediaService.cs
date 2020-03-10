@@ -45,7 +45,7 @@ namespace Umbraco.Headless.Client.Net.Management
 
         public async Task<IEnumerable<Media>> GetRoot()
         {
-            var media = await Service.GetRoot(_configuration.ProjectAlias);
+            var media = await Service.GetRoot(_configuration.ProjectAlias).ConfigureAwait(false);
             return media.Media.Items;
         }
 
