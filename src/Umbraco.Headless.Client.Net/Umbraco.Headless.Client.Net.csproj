@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <PackageReference Include="refit" Version="4.7.51" />
+     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.4" PrivateAssets="all" />
   </ItemGroup>
 
 </Project>

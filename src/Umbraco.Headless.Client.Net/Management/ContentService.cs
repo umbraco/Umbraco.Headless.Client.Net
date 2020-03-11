@@ -45,7 +45,7 @@ namespace Umbraco.Headless.Client.Net.Management
 
         public async Task<IEnumerable<Content>> GetRoot()
         {
-            var content = await Service.GetRoot(_configuration.ProjectAlias);
+            var content = await Service.GetRoot(_configuration.ProjectAlias).ConfigureAwait(false);
             return content.Content.Items;
         }
 

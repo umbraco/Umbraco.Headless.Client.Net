@@ -26,28 +26,28 @@ namespace Umbraco.Headless.Client.Net.Management
             _restService ?? (_restService = RestService.For<RelationManagementEndpoints>(_httpClient, _refitSettings));
 
         public async Task<Relation> Create(Relation relation) =>
-            await Service.Create(_configuration.ProjectAlias, relation);
+            await Service.Create(_configuration.ProjectAlias, relation).ConfigureAwait(false);
 
-        public async Task<Relation> Delete(int id) => await Service.Delete(_configuration.ProjectAlias, id);
+        public async Task<Relation> Delete(int id) => await Service.Delete(_configuration.ProjectAlias, id).ConfigureAwait(false);
 
 
         public async Task<IEnumerable<Relation>> GetByAlias(string alias)
         {
-            var collection = await Service.ByAlias(_configuration.ProjectAlias, alias);
+            var collection = await Service.ByAlias(_configuration.ProjectAlias, alias).ConfigureAwait(false);
             return collection.Relations.Items;
         }
 
         public async Task<IEnumerable<Relation>> GetByChildId(Guid childId)
         {
-            var collection = await Service.ByChildId(_configuration.ProjectAlias, childId);
+            var collection = await Service.ByChildId(_configuration.ProjectAlias, childId).ConfigureAwait(false);
             return collection.Relations.Items;
         }
 
-        public async Task<Relation> GetById(int id) => await Service.ById(_configuration.ProjectAlias, id);
+        public async Task<Relation> GetById(int id) => await Service.ById(_configuration.ProjectAlias, id).ConfigureAwait(false);
 
         public async Task<IEnumerable<Relation>> ByParentId(Guid parentId)
         {
-            var collection = await Service.ByParentId(_configuration.ProjectAlias, parentId);
+            var collection = await Service.ByParentId(_configuration.ProjectAlias, parentId).ConfigureAwait(false);
             return collection.Relations.Items;
         }
     }

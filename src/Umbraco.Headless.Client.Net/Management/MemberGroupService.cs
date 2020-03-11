@@ -28,17 +28,17 @@ namespace Umbraco.Headless.Client.Net.Management
 
         public async Task<IEnumerable<MemberGroup>> GetAll()
         {
-            var result = await Service.GetAll(_headlessConfiguration.ProjectAlias);
+            var result = await Service.GetAll(_headlessConfiguration.ProjectAlias).ConfigureAwait(false);
             return result.MemberGroups.Items;
         }
 
         public async Task<MemberGroup> GetByName(string name)
-            => await Service.GetByName(_headlessConfiguration.ProjectAlias, name);
+            => await Service.GetByName(_headlessConfiguration.ProjectAlias, name).ConfigureAwait(false);
 
         public async Task<MemberGroup> Create(MemberGroup memberGroup)
-            => await Service.Create(_headlessConfiguration.ProjectAlias, memberGroup);
+            => await Service.Create(_headlessConfiguration.ProjectAlias, memberGroup).ConfigureAwait(false);
 
         public async Task<MemberGroup> Delete(string name)
-            => await Service.GetByName(_headlessConfiguration.ProjectAlias, name);
+            => await Service.GetByName(_headlessConfiguration.ProjectAlias, name).ConfigureAwait(false);
     }
 }

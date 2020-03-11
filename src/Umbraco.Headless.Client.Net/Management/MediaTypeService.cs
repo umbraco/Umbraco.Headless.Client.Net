@@ -28,11 +28,11 @@ namespace Umbraco.Headless.Client.Net.Management
 
         public async Task<IEnumerable<MediaType>> GetAll()
         {
-            var root = await Service.GetRoot(_configuration.ProjectAlias);
+            var root = await Service.GetRoot(_configuration.ProjectAlias).ConfigureAwait(false);
             return root.MediaTypes.Items;
         }
 
         public async Task<MediaType> GetByAlias(string alias) =>
-            await Service.ByAlias(_configuration.ProjectAlias, alias);
+            await Service.ByAlias(_configuration.ProjectAlias, alias).ConfigureAwait(false);
     }
 }
