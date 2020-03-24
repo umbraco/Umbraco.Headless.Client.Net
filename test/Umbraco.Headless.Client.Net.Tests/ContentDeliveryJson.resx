@@ -1953,6 +1953,10 @@
     <value>{
     "_creatorName": "Morten Christensen",
     "_url": "/home/",
+    "_urls": {
+        "en-us": "/home/",
+        "da": "/hjem/"
+    },
     "_writerName": "Administrator",
     "_hasChildren": true,
     "_level": 1,

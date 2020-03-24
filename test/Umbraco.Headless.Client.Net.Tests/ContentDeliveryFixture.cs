@@ -43,6 +43,8 @@ namespace Umbraco.Headless.Client.Net.Tests
             Assert.NotNull(content);
             Assert.NotEmpty(content.Properties);
             Assert.Equal(16, content.Properties.Count);
+            Assert.Equal("/home/", content.Urls["en-us"]);
+            Assert.Equal("/hjem/", content.Urls["da"]);
         }
 
         [Theory]

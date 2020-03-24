@@ -15,5 +15,8 @@ namespace Umbraco.Headless.Client.Net.Delivery.Models
 
         [JsonExtensionData]
         public IDictionary<string, object> Properties { get; set; }
+
+        [JsonPropertyAttribute("_urls")]
+        public IDictionary<string, string> Urls { get; set; }
     }
 }
