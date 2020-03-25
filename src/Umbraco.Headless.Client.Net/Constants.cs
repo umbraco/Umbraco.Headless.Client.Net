@@ -19,7 +19,7 @@ namespace Umbraco.Headless.Client.Net
         public const string ApiMinimumVersion = "2.0";
         public const string ApiMinimumVersionHeader = Headers.ApiVersion + ": " + ApiMinimumVersion;
         //Current version for this library
-        public const string ApiVersion = "2.1";
+        public const string ApiVersion = "2.2";
         public const string ApiVersionHeader = Headers.ApiVersion + ": " + ApiVersion;
 
         public static class Urls

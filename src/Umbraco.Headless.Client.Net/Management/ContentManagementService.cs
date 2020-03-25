@@ -33,7 +33,9 @@ namespace Umbraco.Headless.Client.Net.Management
         /// <param name="configuration">Reference to the <see cref="IPasswordBasedConfiguration"/></param>
         public ContentManagementService(IPasswordBasedConfiguration configuration)
         {
-            var httpClient = new HttpClient(new AuthenticatedHttpClientHandler(configuration))
+            var authenticationService = new AuthenticationService(configuration);
+            var tokenResolver = new UserPasswordAccessTokenResolver(configuration.Username, configuration.ProjectAlias, authenticationService);
+            var httpClient = new HttpClient(new AuthenticatedHttpClientHandler(tokenResolver))
             {
                 BaseAddress = new Uri(Constants.Urls.BaseApiUrl)
             };

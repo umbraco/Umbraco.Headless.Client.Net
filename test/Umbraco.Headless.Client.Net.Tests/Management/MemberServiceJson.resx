@@ -222,4 +222,42 @@
   "fullName": "John Smith",
 }</value>
   </data>
+  <data name="CreatePasswordResetToken" xml:space="preserve">
+ {
+  "token": "ydAcKSmv+zAdPqFeYPuBAGojmFvJeiI2B6K79x0eOGX5EMevdu/vs16eq5sZ85crk2V+/7JmxN6s/5MJFvNg2K9Iex3cFmNlI8uTmvw2HuQzCr3Zo9KyKh19Gy4iTfzx+Q3Q0z1TCuSdBxjpiI6nuQ==",
+  "expires_in": 86399,
+  "_links": {
+    "self": {
+      "href": "/api/member/test/password/reset-token"
+    },
+    "member": {
+      "href": "/api/member/test"
+    }
+  },
+  "_embedded": {
+    "member": {
+      "_failedPasswordAttempts": 0,
+      "_groups": [],
+      "_createDate": "2020-02-27T14:22:51.307Z",
+      "_id": "51070d16-67c4-46ce-9c4e-394886506f2e",
+      "_updateDate": "2020-02-27T14:22:51.637Z",
+      "_links": {
+        "self": {
+          "href": "/api/member/test"
+        },
+        "membertype": {
+          "href": "/api/member/type/Member"
+        }
+      },
+      "comments": "",
+      "email": "test@example.org",
+      "isApproved": true,
+      "isLockedOut": false,
+      "memberTypeAlias": "Member",
+      "username": "test",
+      "name": "test"
+    }
+  }
+}
+  </data>
 </root>
