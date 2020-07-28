@@ -192,7 +192,6 @@ a:hover {
   text-align: center;
   margin-bottom: 25px;
   padding: 0 20px;
-  grid-template-rows: 120px auto auto auto;
 }
 
 .usp__image {
@@ -215,7 +214,7 @@ a:hover {
 
 @media (min-width: 992px) {
   .usp-item-container {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   }
 }
 
