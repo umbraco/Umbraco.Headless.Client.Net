@@ -8,7 +8,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
     /// <summary>
     /// Service class for interacting with the Content Delivery API
     /// </summary>
-    public class ContentDeliveryService
+    public class ContentDeliveryService : IContentDeliveryService
     {
         /// <summary>
         /// Initializes a new instance of the ContentDeliveryService class
