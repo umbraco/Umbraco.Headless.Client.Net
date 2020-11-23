@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.IO;
+using Microsoft.Extensions.Hosting;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Samples.Web.Models;
 using Umbraco.Headless.Client.Samples.Web.Mvc;
@@ -33,7 +34,7 @@ namespace Umbraco.Headless.Client.Samples.Web
 
             services.AddMvc()
                 .AddMvcOptions(opt => opt.EnableEndpointRouting = false)
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             var umbracoConfig = Configuration.GetSection("umbraco");
             var projectAlias = umbracoConfig.GetValue<string>("projectAlias");
@@ -51,7 +52,7 @@ namespace Umbraco.Headless.Client.Samples.Web
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {

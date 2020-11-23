@@ -6,7 +6,7 @@
         @Model.Text
     </div>
 
-    @if(Model.Image.Url != null && Model.Image.Url.EndsWith(".gif"))
+    @if(Model.Image != null && Model.Image.Url.EndsWith(".gif"))
     {
         <img class="text-and-image__image"
              src="@Model.Image.Url"
