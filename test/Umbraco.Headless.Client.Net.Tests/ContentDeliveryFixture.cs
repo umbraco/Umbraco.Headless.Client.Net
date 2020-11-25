@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Refit;
 using RichardSzalay.MockHttp;
-using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Delivery;
 using Umbraco.Headless.Client.Net.Delivery.Models;
 using Umbraco.Headless.Client.Net.Tests.StronglyTypedModels;
@@ -168,6 +170,114 @@ namespace Umbraco.Headless.Client.Net.Tests
                 content => Assert.IsType<Blog>(content),
                 content => Assert.IsType<StarterkitHome>(content)
             );
+        }
+
+        [Theory]
+        [InlineData("ca4249ed-2b23-4337-b522-63cabe5587d1")]
+        public async Task GetById_WhenNotFound_ReturnsNull(string id)
+        {
+            var contentId = Guid.Parse(id);
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
+
+            var content = await service.Content.GetById(contentId);
+
+            Assert.Null(content);
+        }
+
+        [Theory]
+        [InlineData("/my-page/")]
+        public async Task GetByUrl_WhenNotFound_ReturnsNull(string url)
+        {
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
+
+            var content = await service.Content.GetByUrl(url);
+
+            Assert.Null(content);
+        }
+
+        [Theory]
+        [InlineData("ca4249ed-2b23-4337-b522-63cabe5587d1")]
+        public async Task GetChildren_WhenNotFound_ReturnsNull(string id)
+        {
+            var contentId = Guid.Parse(id);
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
+
+            var content = await service.Content.GetChildren(contentId);
+
+            Assert.Null(content);
+        }
+
+        [Theory]
+        [InlineData("ca4249ed-2b23-4337-b522-63cabe5587d1")]
+        public async Task GetAncestors_WhenNotFound_ReturnsNull(string id)
+        {
+            var contentId = Guid.Parse(id);
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
+
+            var content = await service.Content.GetAncestors(contentId);
+
+            Assert.Null(content);
+        }
+
+        [Theory]
+        [InlineData("ca4249ed-2b23-4337-b522-63cabe5587d1")]
+        public async Task GetDescendants_WhenNotFound_ReturnsNull(string id)
+        {
+            var contentId = Guid.Parse(id);
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
+
+            var content = await service.Content.GetDescendants(contentId);
+
+            Assert.Null(content);
+        }
+
+        [Theory]
+        [InlineData("ca4249ed-2b23-4337-b522-63cabe5587d1")]
+        public async Task Can_Override_Error_Handling(string id)
+        {
+            var contentId = Guid.Parse(id);
+            ApiException exception = null;
+
+            _mockHttp.When(HttpMethod.Get, $"{_contentBaseUrl}/{id}?depth=1")
+                .Respond(HttpStatusCode.InternalServerError);
+
+            _configuration.ApiExceptionDelegate = context =>
+            {
+                exception = context.Exception;
+            };
+
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
+
+            var thrown = await Assert.ThrowsAsync<ApiException>(() => service.Content.GetById(contentId));
+
+            Assert.NotNull(exception);
+            Assert.Equal(HttpStatusCode.InternalServerError, exception.StatusCode);
+            Assert.Same(exception, thrown);
+        }
+
+        [Theory]
+        [InlineData("ca4249ed-2b23-4337-b522-63cabe5587d1")]
+        public async Task Can_Skip_ApiExceptions(string id)
+        {
+            var contentId = Guid.Parse(id);
+
+            _mockHttp.When(HttpMethod.Get, $"{_contentBaseUrl}/{id}?depth=1")
+                .Respond(HttpStatusCode.InternalServerError);
+
+            _configuration.ApiExceptionDelegate = context =>
+            {
+                context.IsExceptionHandled = true;
+            };
+
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
+
+            await service.Content.GetById(contentId);
+        }
+
+        private HttpClient GetMockedHttpClient()
+        {
+            var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseCdnUrl) };
+            return client;
         }
 
         private HttpClient GetMockedHttpClient(string url, string jsonResponse)

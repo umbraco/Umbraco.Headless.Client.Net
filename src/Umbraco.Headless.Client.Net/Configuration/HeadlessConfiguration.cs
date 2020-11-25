@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 using Umbraco.Headless.Client.Net.Collections;
 using Umbraco.Headless.Client.Net.Delivery.Models;
 
@@ -19,9 +20,26 @@ namespace Umbraco.Headless.Client.Net.Configuration
             };
         }
 
+        /// <inheritdoc />>
         public string ProjectAlias { get; }
+
+        /// <inheritdoc />>
         public ITypeList<IElement> ElementModelTypes { get; }
+
+        /// <inheritdoc />>
         public ITypeList<IContent> ContentModelTypes { get; }
+
+        /// <inheritdoc />>
         public ITypeList<IMedia> MediaModelTypes { get; }
+
+        /// <summary>
+        /// A delegate that is called if the APIs return a non success error code.
+        /// Can be used to handle, log or modify the exception before it is thrown.
+        /// The default sets <see cref="ApiExceptionContext.IsExceptionHandled"/> to <c>true</c> for not found requests.
+        /// </summary>
+        public Action<ApiExceptionContext> ApiExceptionDelegate { get; set; } = context =>
+        {
+            context.IsExceptionHandled = context.Exception.StatusCode == HttpStatusCode.NotFound;
+        };
     }
 }

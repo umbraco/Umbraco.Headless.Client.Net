@@ -56,6 +56,30 @@ namespace Umbraco.Headless.Client.Net.Tests
             }
         }
 
+        [Theory]
+        [InlineData("6d986832-fb11-4d65-b2ae-0d7742f27a19")]
+        public async Task GetById_WhenNotFound_ReturnsNull(string id)
+        {
+            var contentId = Guid.Parse(id);
+            var service = new ContentDeliveryService(_configuration);
+
+            var content = await service.Media.GetById<Folder>(contentId);
+
+            Assert.Null(content);
+        }
+
+        [Theory]
+        [InlineData("6d986832-fb11-4d65-b2ae-0d7742f27a19")]
+        public async Task GetChildren_WhenNotFound_ReturnsNull(string id)
+        {
+            var contentId = Guid.Parse(id);
+            var service = new ContentDeliveryService(_configuration);
+
+            var content = await service.Media.GetChildren<Folder>(contentId);
+
+            Assert.Null(content);
+        }
+
         private HttpClient GetMockedHttpClient(string url, string jsonResponse)
         {
             _mockHttp.When(url).Respond("application/json", jsonResponse);

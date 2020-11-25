@@ -115,6 +115,65 @@ namespace Umbraco.Headless.Client.Net.Tests
             }
         }
 
+        [Theory]
+        [InlineData("ca4249ed-2b23-4337-b522-63cabe5587d1")]
+        public async Task GetById_WhenNotFound_ReturnsNull(string id)
+        {
+            var contentId = Guid.Parse(id);
+            var service = new ContentDeliveryService(_configuration);
+
+            var content = await service.Content.GetById<Product>(contentId);
+
+            Assert.Null(content);
+        }
+
+        [Theory]
+        [InlineData("/my-page/")]
+        public async Task GetByUrl_WhenNotFound_ReturnsNull(string url)
+        {
+            var service = new ContentDeliveryService(_configuration);
+
+            var content = await service.Content.GetByUrl<Product>(url);
+
+            Assert.Null(content);
+        }
+
+        [Theory]
+        [InlineData("ca4249ed-2b23-4337-b522-63cabe5587d1")]
+        public async Task GetChildren_WhenNotFound_ReturnsNull(string id)
+        {
+            var contentId = Guid.Parse(id);
+            var service = new ContentDeliveryService(_configuration);
+
+            var content = await service.Content.GetChildren<Product>(contentId);
+
+            Assert.Null(content);
+        }
+
+        [Theory]
+        [InlineData("ca4249ed-2b23-4337-b522-63cabe5587d1")]
+        public async Task GetAncestors_WhenNotFound_ReturnsNull(string id)
+        {
+            var contentId = Guid.Parse(id);
+            var service = new ContentDeliveryService(_configuration);
+
+            var content = await service.Content.GetAncestors<Product>(contentId);
+
+            Assert.Null(content);
+        }
+
+        [Theory]
+        [InlineData("ca4249ed-2b23-4337-b522-63cabe5587d1")]
+        public async Task GetDescendants_WhenNotFound_ReturnsNull(string id)
+        {
+            var contentId = Guid.Parse(id);
+            var service = new ContentDeliveryService(_configuration);
+
+            var content = await service.Content.GetDescendants<Product>(contentId);
+
+            Assert.Null(content);
+        }
+
         private HttpClient GetMockedHttpClient(string url, string jsonResponse)
         {
             _mockHttp.When(url).Respond("application/json", jsonResponse);
