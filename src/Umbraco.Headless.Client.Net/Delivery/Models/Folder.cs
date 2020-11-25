@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
-
-namespace Umbraco.Headless.Client.Net.Delivery.Models
+﻿namespace Umbraco.Headless.Client.Net.Delivery.Models
 {
-    public class Folder : ContentBase, IMedia
+    /// <summary>
+    /// Default model for "Folder" Media Types.
+    /// </summary>
+    [MediaModel("Folder")]
+    public class Folder : Media
     {
-        [JsonProperty("mediaTypeAlias")]
-        public string MediaTypeAlias { get; set; }
     }
 }

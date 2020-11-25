@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Net.Http;
+using Umbraco.Headless.Client.Net.Collections;
 using Umbraco.Headless.Client.Net.Configuration;
+using Umbraco.Headless.Client.Net.Delivery.Models;
 using Umbraco.Headless.Client.Net.Security;
 
 namespace Umbraco.Headless.Client.Net.Delivery
@@ -14,7 +16,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// Initializes a new instance of the ContentDeliveryService class
         /// </summary>
         /// <param name="projectAlias">Alias of the Project</param>
-        public ContentDeliveryService(string projectAlias) : this(new BasicHeadlessConfiguration(projectAlias))
+        public ContentDeliveryService(string projectAlias) : this(new HeadlessConfiguration(projectAlias))
         { }
 
         /// <summary>
@@ -42,7 +44,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// </remarks>
         /// <param name="projectAlias">Alias of the Project</param>
         /// <param name="httpClient">Reference to the <see cref="HttpClient"/></param>
-        public ContentDeliveryService(string projectAlias, HttpClient httpClient) : this(new BasicHeadlessConfiguration(projectAlias), httpClient)
+        public ContentDeliveryService(string projectAlias, HttpClient httpClient) : this(new HeadlessConfiguration(projectAlias), httpClient)
         {
         }
 
@@ -66,8 +68,10 @@ namespace Umbraco.Headless.Client.Net.Delivery
                 BaseAddress = new Uri(Constants.Urls.BaseCdnUrl)
             };
 
-            Content = new ContentDelivery(configuration, httpClient);
-            Media = new MediaDelivery(configuration, httpClient);
+            var modelNameResolver = new ModelNameResolver();
+
+            Content = new ContentDelivery(configuration, httpClient, modelNameResolver);
+            Media = new MediaDelivery(configuration, httpClient, modelNameResolver);
         }
 
         /// <summary>
@@ -82,8 +86,10 @@ namespace Umbraco.Headless.Client.Net.Delivery
                 DefaultRequestHeaders = { { Constants.Headers.ApiKey, configuration.Token } }
             };
 
-            Content = new ContentDelivery(configuration, httpClient);
-            Media = new MediaDelivery(configuration, httpClient);
+            var modelNameResolver = new ModelNameResolver();
+
+            Content = new ContentDelivery(configuration, httpClient, modelNameResolver);
+            Media = new MediaDelivery(configuration, httpClient, modelNameResolver);
         }
 
         /// <summary>
@@ -96,8 +102,10 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <param name="httpClient">Reference to the <see cref="HttpClient"/></param>
         public ContentDeliveryService(IHeadlessConfiguration configuration, HttpClient httpClient)
         {
-            Content = new ContentDelivery(configuration, httpClient);
-            Media = new MediaDelivery(configuration, httpClient);
+            var modelNameResolver = new ModelNameResolver();
+
+            Content = new ContentDelivery(configuration, httpClient, modelNameResolver);
+            Media = new MediaDelivery(configuration, httpClient, modelNameResolver);
         }
 
         /// <summary>

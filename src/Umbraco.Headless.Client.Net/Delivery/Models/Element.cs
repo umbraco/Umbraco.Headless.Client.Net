@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Umbraco.Headless.Client.Samples.Web.Models
+namespace Umbraco.Headless.Client.Net.Delivery.Models
 {
-    public class Element
+    public class Element : IElement
     {
         public Element()
         {

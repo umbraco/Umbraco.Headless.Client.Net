@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Headless.Client.Samples.Web", "Umbraco.Headless.Client.Samples.Web\Umbraco.Headless.Client.Samples.Web.csproj", "{7E351693-56E2-47B9-94FE-F7481C9674AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Headless.Client.Net", "..\..\src\Umbraco.Headless.Client.Net\Umbraco.Headless.Client.Net.csproj", "{71515FBA-2746-4AAE-B9BF-99ED4AFF60CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{7E351693-56E2-47B9-94FE-F7481C9674AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E351693-56E2-47B9-94FE-F7481C9674AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E351693-56E2-47B9-94FE-F7481C9674AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71515FBA-2746-4AAE-B9BF-99ED4AFF60CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71515FBA-2746-4AAE-B9BF-99ED4AFF60CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71515FBA-2746-4AAE-B9BF-99ED4AFF60CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71515FBA-2746-4AAE-B9BF-99ED4AFF60CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

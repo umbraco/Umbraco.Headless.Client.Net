@@ -7,7 +7,10 @@
         {
             <section class="usp">
                 <h2 class="usp__title">@usp.Title</h2>
-                <img class="usp__image" src="@usp.ImageUrl" alt="">
+                @if (usp.Image != null)
+                {
+                    <img class="usp__image" src="@usp.Image.Url" alt="">
+                }
                 <p class="usp__text">@usp.Text</p>
                 @if (usp.Link != null)
                 {

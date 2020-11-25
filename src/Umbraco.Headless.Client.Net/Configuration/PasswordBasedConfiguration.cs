@@ -1,15 +1,12 @@
 ﻿namespace Umbraco.Headless.Client.Net.Configuration
 {
-    public class PasswordBasedConfiguration : IPasswordBasedConfiguration
+    public class PasswordBasedConfiguration : HeadlessConfiguration, IPasswordBasedConfiguration
     {
-        public PasswordBasedConfiguration(string projectAlias, string username, string password)
+        public PasswordBasedConfiguration(string projectAlias, string username, string password) : base(projectAlias)
         {
-            ProjectAlias = projectAlias;
             Username = username;
             Password = password;
         }
-
-        public string ProjectAlias { get; }
 
         public string Username { get; }
 

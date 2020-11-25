@@ -2,8 +2,10 @@
 
 namespace Umbraco.Headless.Client.Net.Tests
 {
-    public class FakeHeadlessConfiguration : IHeadlessConfiguration
+    public class FakeHeadlessConfiguration : HeadlessConfiguration
     {
-        public string ProjectAlias => "headless-with-cdn";
+        public FakeHeadlessConfiguration() : base("headless-with-cdn")
+        {
+        }
     }
 }

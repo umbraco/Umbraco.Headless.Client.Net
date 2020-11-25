@@ -1,10 +1,9 @@
-@using Umbraco.Headless.Client.Net.Delivery.Models
-@model Umbraco.Headless.Client.Net.Delivery.Models.Content
+@model Textpage
 
 @await  Component.InvokeAsync("Hero", new {
-  title = Model.Value<string>("heroTitle"),
-  subTitle = Model.Value<string>("heroSubtitle"),
-  image = Model.Value<Image>("heroImage")
+  title = Model.HeroTitle,
+  subTitle = Model.HeroSubtitle,
+  image = Model.HeroImage,
 })
 
-@await Html.PartialAsync("_Elements", Model.Value<IEnumerable<Element>>("elements"))
+@await Html.PartialAsync("_Elements", Model.Elements)
