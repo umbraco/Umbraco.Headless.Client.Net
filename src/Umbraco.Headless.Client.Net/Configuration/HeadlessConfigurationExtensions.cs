@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Newtonsoft.Json;
 using Umbraco.Headless.Client.Net.Delivery;
@@ -30,7 +31,7 @@ namespace Umbraco.Headless.Client.Net.Configuration
                 };
             }
 
-            return new JsonConverter[0];
+            return Array.Empty<JsonConverter>();
         }
     }
 }

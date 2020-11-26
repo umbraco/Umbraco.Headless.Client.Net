@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Net.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Refit;
 using Umbraco.Headless.Client.Net.Configuration;
 
 namespace Umbraco.Headless.Client.Net.Delivery
@@ -31,9 +34,10 @@ namespace Umbraco.Headless.Client.Net.Delivery
             };
 
             var modelNameResolver = new ModelNameResolver();
+            var refitSettings = CreateRefitSettings(configuration, modelNameResolver);
 
-            Content = new ContentDelivery(configuration, httpClient, modelNameResolver);
-            Media = new MediaDelivery(configuration, httpClient, modelNameResolver);
+            Content = new ContentDelivery(configuration, httpClient, refitSettings, modelNameResolver);
+            Media = new MediaDelivery(configuration, httpClient, refitSettings);
         }
 
         /// <summary>
@@ -45,5 +49,18 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// Gets the Media part of the Preview API
         /// </summary>
         public IMediaDelivery Media { get; }
+
+        private static RefitSettings CreateRefitSettings(IHeadlessConfiguration configuration, ModelNameResolver modelNameResolver)
+        {
+            return new RefitSettings
+            {
+                ContentSerializer = new JsonContentSerializer(new JsonSerializerSettings
+                {
+                    Formatting = Formatting.None,
+                    ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                    Converters = configuration.GetJsonConverters(modelNameResolver)
+                })
+            };
+        }
     }
 }

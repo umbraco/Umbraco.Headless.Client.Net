@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Refit;
 using RichardSzalay.MockHttp;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Delivery;
@@ -83,10 +85,82 @@ namespace Umbraco.Headless.Client.Net.Tests
             );
         }
 
+        [Theory]
+        [InlineData("6d986832-fb11-4d65-b2ae-0d7742f27a19")]
+        public async Task GetById_WhenNotFound_ReturnsNull(string id)
+        {
+            var contentId = Guid.Parse(id);
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
+
+            var content = await service.Media.GetById(contentId);
+
+            Assert.Null(content);
+        }
+
+        [Theory]
+        [InlineData("6d986832-fb11-4d65-b2ae-0d7742f27a19")]
+        public async Task GetChildren_WhenNotFound_ReturnsNull(string id)
+        {
+            var contentId = Guid.Parse(id);
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
+
+            var content = await service.Media.GetChildren(contentId);
+
+            Assert.Null(content);
+        }
+
+        [Theory]
+        [InlineData("6d986832-fb11-4d65-b2ae-0d7742f27a19")]
+        public async Task Can_Override_Error_Handling(string id)
+        {
+            var contentId = Guid.Parse(id);
+            ApiException exception = null;
+
+            _mockHttp.When(HttpMethod.Get, $"{_mediaBaseUrl}/{id}")
+                .Respond(HttpStatusCode.InternalServerError);
+
+            _configuration.ApiExceptionDelegate = context =>
+            {
+                exception = context.Exception;
+            };
+
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
+
+            var thrown = await Assert.ThrowsAsync<ApiException>(() => service.Media.GetById(contentId));
+
+            Assert.NotNull(exception);
+            Assert.Equal(HttpStatusCode.InternalServerError, exception.StatusCode);
+            Assert.Same(exception, thrown);
+        }
+
+        [Theory]
+        [InlineData("6d986832-fb11-4d65-b2ae-0d7742f27a19")]
+        public async Task Can_Skip_ApiExceptions(string id)
+        {
+            var contentId = Guid.Parse(id);
+
+            _mockHttp.When(HttpMethod.Get, $"{_mediaBaseUrl}/{id}?depth=1")
+                .Respond(HttpStatusCode.InternalServerError);
+
+            _configuration.ApiExceptionDelegate = context =>
+            {
+                context.IsExceptionHandled = true;
+            };
+
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
+
+            await service.Media.GetById(contentId);
+        }
 
         private HttpClient GetMockedHttpClient(string url, string jsonResponse)
         {
             _mockHttp.When(url).Respond("application/json", jsonResponse);
+            var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseCdnUrl) };
+            return client;
+        }
+
+        private HttpClient GetMockedHttpClient()
+        {
             var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseCdnUrl) };
             return client;
         }
