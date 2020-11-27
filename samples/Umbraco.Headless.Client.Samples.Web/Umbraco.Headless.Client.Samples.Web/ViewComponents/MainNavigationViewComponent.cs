@@ -4,25 +4,22 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Headless.Client.Net.Delivery;
 using Umbraco.Headless.Client.Samples.Web.Models;
-using Umbraco.Headless.Client.Samples.Web.Mvc;
 
 namespace Umbraco.Headless.Client.Samples.Web.ViewComponents
 {
     public class MainNavigationViewComponent : ViewComponent
     {
-        private readonly ContentDeliveryService _contentDeliveryService;
-        private readonly UmbracoCache _umbracoCache;
+        private readonly IContentDelivery _contentDelivery;
 
-        public MainNavigationViewComponent(ContentDeliveryService contentDeliveryService, UmbracoCache umbracoCache)
+        public MainNavigationViewComponent(IContentDelivery contentDelivery)
         {
-            _contentDeliveryService = contentDeliveryService ?? throw new ArgumentNullException(nameof(contentDeliveryService));
-            _umbracoCache = umbracoCache ?? throw new ArgumentNullException(nameof(umbracoCache));
+            _contentDelivery = contentDelivery ?? throw new ArgumentNullException(nameof(contentDelivery));
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var rootContent = await _umbracoCache.GetContentByUrl("/");
-            var children = await _contentDeliveryService.Content.GetChildren(rootContent.Id);
+            var rootContent = await _contentDelivery.GetByUrl("/");
+            var children = await _contentDelivery.GetChildren(rootContent.Id);
 
             return View(from item in children.Content.Items
                 select new NavigationItem

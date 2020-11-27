@@ -8,7 +8,7 @@ using Umbraco.Headless.Client.Net.Security;
 
 namespace Umbraco.Headless.Client.Net.Management
 {
-    public class ContentManagementService
+    public class ContentManagementService : IContentManagementService
     {
         /// <summary>
         /// Initializes a new instance of the ContentManagementService class

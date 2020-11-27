@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbraco.Headless.Client.Net
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Headless.Client.Net.Tests", "test\Umbraco.Headless.Client.Net.Tests\Umbraco.Headless.Client.Net.Tests.csproj", "{8D6C2859-3CE9-4192-9F28-A01FD93CEC50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Headless.Client.Net.Web", "src\Umbraco.Headless.Client.Net.Web\Umbraco.Headless.Client.Net.Web.csproj", "{305D34D5-0B2B-429B-8ABF-60C0F114352C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8D6C2859-3CE9-4192-9F28-A01FD93CEC50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D6C2859-3CE9-4192-9F28-A01FD93CEC50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D6C2859-3CE9-4192-9F28-A01FD93CEC50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{305D34D5-0B2B-429B-8ABF-60C0F114352C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{305D34D5-0B2B-429B-8ABF-60C0F114352C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{305D34D5-0B2B-429B-8ABF-60C0F114352C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{305D34D5-0B2B-429B-8ABF-60C0F114352C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

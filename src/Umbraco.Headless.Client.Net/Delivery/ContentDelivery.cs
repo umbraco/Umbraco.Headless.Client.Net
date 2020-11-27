@@ -164,7 +164,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
 
         private async Task<T> GetTyped<T>(Func<TypedContentDeliveryEndpoints<T>, Task<ApiResponse<T>>> getResponse) where T : IContent
         {
-            var service = RestService.For<TypedContentDeliveryEndpoints<T>>(_httpClient);
+            var service = RestService.For<TypedContentDeliveryEndpoints<T>>(_httpClient, _refitSettings);
 
             using (var response = await getResponse(service).ConfigureAwait(false))
                 return GetResponse(response);
@@ -172,7 +172,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
 
         private async Task<RootContent<T>> GetTyped<T>(Func<TypedContentDeliveryEndpoints<T>, Task<ApiResponse<RootContent<T>>>> getResponse) where T : IContent
         {
-            var service = RestService.For<TypedContentDeliveryEndpoints<T>>(_httpClient);
+            var service = RestService.For<TypedContentDeliveryEndpoints<T>>(_httpClient, _refitSettings);
 
             using (var response = await getResponse(service).ConfigureAwait(false))
                 return GetResponse(response);
@@ -180,7 +180,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
 
         private async Task<PagedContent<T>> GetTyped<T>(Func<TypedContentDeliveryEndpoints<T>, Task<ApiResponse<PagedContent<T>>>> getResponse) where T : IContent
         {
-            var service = RestService.For<TypedContentDeliveryEndpoints<T>>(_httpClient);
+            var service = RestService.For<TypedContentDeliveryEndpoints<T>>(_httpClient, _refitSettings);
 
             using (var response = await getResponse(service).ConfigureAwait(false))
                 return GetResponse(response);

@@ -67,7 +67,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
 
         private async Task<T> GetTyped<T>(Func<TypedMediaDeliveryEndpoints<T>, Task<ApiResponse<T>>> getResponse) where T : IMedia
         {
-            var service = RestService.For<TypedMediaDeliveryEndpoints<T>>(_httpClient);
+            var service = RestService.For<TypedMediaDeliveryEndpoints<T>>(_httpClient, _refitSettings);
 
             using (var response = await getResponse(service).ConfigureAwait(false))
                 return GetResponse(response);
@@ -75,7 +75,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
 
         private async Task<RootMedia<T>> GetTyped<T>(Func<TypedMediaDeliveryEndpoints<T>, Task<ApiResponse<RootMedia<T>>>> getResponse) where T : IMedia
         {
-            var service = RestService.For<TypedMediaDeliveryEndpoints<T>>(_httpClient);
+            var service = RestService.For<TypedMediaDeliveryEndpoints<T>>(_httpClient, _refitSettings);
 
             using (var response = await getResponse(service).ConfigureAwait(false))
                 return GetResponse(response);
@@ -83,7 +83,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
 
         private async Task<PagedMedia<T>> GetTyped<T>(Func<TypedMediaDeliveryEndpoints<T>, Task<ApiResponse<PagedMedia<T>>>> getResponse) where T : IMedia
         {
-            var service = RestService.For<TypedMediaDeliveryEndpoints<T>>(_httpClient);
+            var service = RestService.For<TypedMediaDeliveryEndpoints<T>>(_httpClient, _refitSettings);
 
             using (var response = await getResponse(service).ConfigureAwait(false))
                 return GetResponse(response);
