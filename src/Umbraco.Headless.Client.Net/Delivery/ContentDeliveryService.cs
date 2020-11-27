@@ -98,6 +98,28 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <summary>
         /// Initializes a new instance of the ContentDeliveryService class
         /// </summary>
+        /// <param name="configuration">Reference to the <see cref="IHeadlessConfiguration"/></param>
+        /// <param name="configureHttpClient">A delegate to configure the <see cref="HttpClient"/>.</param>
+        public ContentDeliveryService(IHeadlessConfiguration configuration, Action<HttpClient> configureHttpClient)
+        {
+            var httpClient = new HttpClient {BaseAddress = new Uri(Constants.Urls.BaseCdnUrl)};
+
+            if (configuration is IApiKeyBasedConfiguration apiKeyBasedConfiguration)
+                httpClient.DefaultRequestHeaders.Add(Constants.Headers.ApiKey, apiKeyBasedConfiguration.Token);
+
+            if (configureHttpClient != null)
+                configureHttpClient(httpClient);
+
+            var modelNameResolver = new ModelNameResolver();
+
+            var refitSettings = CreateRefitSettings(configuration, modelNameResolver);
+            Content = new ContentDelivery(configuration, httpClient, refitSettings, modelNameResolver);
+            Media = new MediaDelivery(configuration, httpClient, refitSettings);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the ContentDeliveryService class
+        /// </summary>
         /// <remarks>
         /// When passing in your own HttpClient you are responsible for setting the authentication headers
         /// </remarks>

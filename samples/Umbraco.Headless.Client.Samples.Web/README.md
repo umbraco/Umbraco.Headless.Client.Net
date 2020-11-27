@@ -4,7 +4,7 @@ ASP.NET Core MVC sample site for Umbraco Headless - with custom routing and cont
 
 ## Prerequisites
 
-- [.NET Core SDK 2.2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+- [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
 ## Start the application
 
@@ -39,6 +39,6 @@ Run the application in VSCode or Visual Studio by hitting `F5`
 
 ## Routing, controllers and views
 
-By default the application will try to route the URLs to through Umbraco Headless by calling `https://cdn.umbraco.io/content/url?url={url}` and if the response is `200 OK` the `UmbracoContext.Content` is set to the response.
+By default the application will try to route the URLs to through Umbraco Headless by calling `https://cdn.umbraco.io/content/url?url={url}` and if the response is `200 OK` the `IUmbracoContext.Content` is set to the response.
 
-Then the router checks if there's a controller for the specific content type e.g. if the content type alias is `textPage` it will look for a controller, marked with the `IUmbracoController` interface, named `TextPageController`, if found the `Index` action is called, otherwise the `DefaultUmbracoController` is called, it will then render a view named `Views/DefaultUmbraco/{contentTypeAlias}.cshtml` with `Umbraco.Headless.Client.Net.Delivery.Models.Content` as the model.
+Then the router checks if there's a controller for the specific content type e.g. if the content type alias is `textPage` it will look for a controller named `TextPageController` marked with the `UmbracoControllerAttribute` attribute, if found the `Index` action is called, otherwise the `DefaultUmbracoController` is called and it will render a view named `Views/{contentTypeAlias}/Index.cshtml` with `Umbraco.Headless.Client.Net.Delivery.Models.IContent` as the model.
