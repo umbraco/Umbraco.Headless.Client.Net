@@ -12,8 +12,8 @@ namespace Umbraco.Headless.Client.Net.Web
     {
         private readonly IActionDescriptorCollectionProvider _actionDescriptorProviderContext;
         private readonly Lazy<ILookup<string, ControllerActionDescriptor>> _umbracoControllerDescriptors;
-        private ControllerActionDescriptor _defaultControllerDescriptor;
-        private UmbracoRouterOptions _options;
+        private ControllerActionDescriptor? _defaultControllerDescriptor;
+        private UmbracoRouterOptions? _options;
 
         public UmbracoControllerTypeCollection(IActionDescriptorCollectionProvider actionDescriptorProviderContext)
         {
@@ -52,13 +52,15 @@ namespace Umbraco.Headless.Client.Net.Web
             }
         }
 
-        public ActionDescriptor FindActionDescriptor(string controllerName)
+        public ActionDescriptor? FindActionDescriptor(string controllerName)
         {
             return TryFind(controllerName) ?? _defaultControllerDescriptor;
         }
 
-        private ActionDescriptor TryFind( string controllerName)
+        private ActionDescriptor? TryFind(string controllerName)
         {
+            if (_options == null) throw new InvalidOperationException();
+
             var foundDescriptors = _umbracoControllerDescriptors.Value[controllerName];
 
             return foundDescriptors.FirstOrDefault(x =>

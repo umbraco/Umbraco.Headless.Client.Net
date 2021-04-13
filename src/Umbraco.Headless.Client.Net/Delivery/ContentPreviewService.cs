@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Refit;
@@ -27,11 +28,14 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <param name="configuration">Reference to the <see cref="IApiKeyBasedConfiguration"/></param>
         public ContentPreviewService(IApiKeyBasedConfiguration configuration)
         {
+            if (configuration == null) throw new ArgumentNullException(nameof(configuration));
+
             var httpClient = new HttpClient
             {
                 BaseAddress = new Uri(Constants.Urls.BasePreviewUrl),
                 DefaultRequestHeaders = { { Constants.Headers.ApiKey, configuration.Token } }
             };
+            httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("UmbracoHeartcoreNetClient", Constants.GetVersion()));
 
             var modelNameResolver = new ModelNameResolver();
             var refitSettings = CreateRefitSettings(configuration, modelNameResolver);

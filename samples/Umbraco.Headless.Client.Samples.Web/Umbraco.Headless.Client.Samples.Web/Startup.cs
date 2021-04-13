@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -5,7 +6,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Umbraco.Headless.Client.Net.Web;
-using Umbraco.Headless.Client.Samples.Web.Models;
 
 namespace Umbraco.Headless.Client.Samples.Web
 {
@@ -23,15 +23,18 @@ namespace Umbraco.Headless.Client.Samples.Web
         {
             services.AddControllersWithViews();
 
-            var umbracoConfig = Configuration.GetSection("umbraco");
+            var umbracoConfig = Configuration.GetSection("heartcore");
             var projectAlias = umbracoConfig.GetValue<string>("projectAlias");
             var apiKey = umbracoConfig.GetValue<string>("apiKey");
 
             // Add Umbraco Headless
-            services.AddUmbracoHeadless(projectAlias, apiKey, configuration =>
-            {
-                configuration.AddModels(GetType().Assembly);
-            });
+            services
+                .AddUmbracoHeadless(Configuration, projectAlias, apiKey, configuration =>
+                {
+                    configuration.AddModels(GetType().Assembly);
+                })
+                //.AddPreview(apiKey)
+                ;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

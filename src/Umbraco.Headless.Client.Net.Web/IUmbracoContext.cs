@@ -4,11 +4,11 @@ namespace Umbraco.Headless.Client.Net.Web
 {
     public interface IUmbracoContext
     {
-        IContent CurrentContent { get; set; }
+        IContent? CurrentContent { get; set; }
     }
 
     internal class UmbracoContext : IUmbracoContext
     {
-        public IContent CurrentContent { get; set; }
+        public IContent? CurrentContent { get; set; }
     }
 }

@@ -2,13 +2,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using Umbraco.Headless.Client.Net.Web.Controllers;
 
 namespace Umbraco.Headless.Client.Net.Web
 {
     public static class UmbracoWebStartup
     {
         public static IApplicationBuilder UseUmbracoHeadlessRouter(this IApplicationBuilder app,
-            Action<UmbracoRouterOptions> configure = null)
+            Action<UmbracoRouterOptions>? configure = null)
         {
             if (app == null) throw new ArgumentNullException(nameof(app));
 
@@ -20,10 +22,26 @@ namespace Umbraco.Headless.Client.Net.Web
             return UseUmbracoHeadlessRouter(app, options);
         }
 
-        public static IApplicationBuilder UseUmbracoHeadlessRouter(this IApplicationBuilder app, UmbracoRouterOptions options)
+        public static IApplicationBuilder UseUmbracoHeadlessRouter(this IApplicationBuilder app,
+            UmbracoRouterOptions options)
         {
             if (app == null) throw new ArgumentNullException(nameof(app));
             if (options == null) throw new ArgumentNullException(nameof(options));
+
+            var previewOption = app.ApplicationServices.GetService<IOptions<PreviewOptions>>();
+            if (previewOption?.Value.Enabled == true)
+            {
+                app.UseMiddleware<PreviewMiddleware>();
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllerRoute("preview", "api/preview/{action}",
+                        new
+                        {
+                            controller = "Preview",
+                            action = "Index"
+                        });
+                });
+            }
 
             return app.UseRouter(routes =>
             {

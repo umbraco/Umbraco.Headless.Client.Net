@@ -1,10 +1,14 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Diagnostics;
+using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("Umbraco.Headless.Client.Net.Tests")]
 
 namespace Umbraco.Headless.Client.Net
 {
     public static class Constants
     {
+        internal static string GetVersion() =>
+            FileVersionInfo.GetVersionInfo(typeof(Constants).Assembly.Location).ProductVersion;
+
         /* A note on api versions and the version http header:
          * When a new version is released on Umbraco Cloud, new endpoints
          * will be available from that version forward.

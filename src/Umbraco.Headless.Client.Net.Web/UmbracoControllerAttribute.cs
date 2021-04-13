@@ -12,7 +12,7 @@ namespace Umbraco.Headless.Client.Net.Web
         /// Creates a new instance of <see cref="UmbracoControllerAttribute"/>.
         /// </summary>
         /// <param name="contentTypeAlias">An optional Content Type alias this component is for.</param>
-        public UmbracoControllerAttribute(string contentTypeAlias = null)
+        public UmbracoControllerAttribute(string? contentTypeAlias = null)
         {
             ContentTypeAlias = contentTypeAlias;
         }
@@ -21,6 +21,6 @@ namespace Umbraco.Headless.Client.Net.Web
         /// The Content Type alias this component is for.
         /// If null the controller name will be used.
         /// </summary>
-        public string ContentTypeAlias { get; set; }
+        public string? ContentTypeAlias { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace Umbraco.Headless.Client.Net.Web
             _umbracoControllers = umbracoControllers ?? throw new ArgumentNullException(nameof(umbracoControllers));
         }
 
-        public VirtualPathData GetVirtualPath(VirtualPathContext context)
+        public VirtualPathData? GetVirtualPath(VirtualPathContext context)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
             return null;
@@ -32,12 +32,12 @@ namespace Umbraco.Headless.Client.Net.Web
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
 
-            var umbracoContext = context.HttpContext.RequestServices.GetService<IUmbracoContext>();
-            var contentDeliveryService = context.HttpContext.RequestServices.GetService<IContentDeliveryService>();
+            var umbracoContext = context.HttpContext.RequestServices.GetRequiredService<IUmbracoContext>();
+            var contentDelivery = context.HttpContext.RequestServices.GetRequiredService<IContentDelivery>();
 
             try
             {
-                var content = await contentDeliveryService.Content.GetByUrl(context.HttpContext.Request.Path)
+                var content = await contentDelivery.GetByUrl(context.HttpContext.Request.Path)
                     .ConfigureAwait(false);
 
                 if (content != null)
@@ -47,7 +47,7 @@ namespace Umbraco.Headless.Client.Net.Web
                     var actionDescriptor =
                         _umbracoControllers.FindActionDescriptor(umbracoContext.CurrentContent.ContentTypeAlias);
 
-                    if (actionDescriptor == null) return;
+                    if (actionDescriptor == null) throw new InvalidOperationException();
 
                     context.Handler = httpContext =>
                     {
@@ -58,7 +58,7 @@ namespace Umbraco.Headless.Client.Net.Web
                         var actionContext = new ActionContext(context.HttpContext, routeData, actionDescriptor);
                         var invoker = _actionInvokerFactory.CreateInvoker(actionContext);
 
-                        return invoker?.InvokeAsync();
+                        return invoker.InvokeAsync();
                     };
                 }
             }

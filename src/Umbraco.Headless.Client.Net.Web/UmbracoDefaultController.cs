@@ -21,7 +21,7 @@ namespace Umbraco.Headless.Client.Net.Web
         {
             var content = _umbracoContext.CurrentContent;
 
-            return View($"../{content.ContentTypeAlias}/Index", content);
+            return View($"../{content!.ContentTypeAlias}/Index", content);
         }
     }
 }

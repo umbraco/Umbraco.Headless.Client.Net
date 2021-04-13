@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Refit;
@@ -53,46 +54,23 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// Initializes a new instance of the ContentDeliveryService class
         /// </summary>
         /// <param name="configuration">Reference to the <see cref="IHeadlessConfiguration"/></param>
-        public ContentDeliveryService(IHeadlessConfiguration configuration) : this (configuration, new HttpClient { BaseAddress = new Uri(Constants.Urls.BaseCdnUrl) })
+        public ContentDeliveryService(IHeadlessConfiguration configuration) : this (configuration, _ => {})
         { }
 
         /// <summary>
         /// Initializes a new instance of the ContentDeliveryService class
         /// </summary>
         /// <param name="configuration">Reference to the <see cref="IPasswordBasedConfiguration"/></param>
-        public ContentDeliveryService(IPasswordBasedConfiguration configuration)
+        public ContentDeliveryService(IPasswordBasedConfiguration configuration) : this(configuration, _ => {})
         {
-            var authenticationService = new AuthenticationService(configuration);
-            var tokenResolver = new UserPasswordAccessTokenResolver(configuration.Username, configuration.ProjectAlias, authenticationService);
-            var httpClient = new HttpClient(new AuthenticatedHttpClientHandler(tokenResolver))
-            {
-                BaseAddress = new Uri(Constants.Urls.BaseCdnUrl)
-            };
-
-            var modelNameResolver = new ModelNameResolver();
-            var refitSettings = CreateRefitSettings(configuration, modelNameResolver);
-
-            Content = new ContentDelivery(configuration, httpClient, refitSettings, modelNameResolver);
-            Media = new MediaDelivery(configuration, httpClient, refitSettings);
         }
 
         /// <summary>
         /// Initializes a new instance of the ContentDeliveryService class
         /// </summary>
         /// <param name="configuration">Reference to the <see cref="IApiKeyBasedConfiguration"/></param>
-        public ContentDeliveryService(IApiKeyBasedConfiguration configuration)
+        public ContentDeliveryService(IApiKeyBasedConfiguration configuration) : this(configuration, _ => {})
         {
-            var httpClient = new HttpClient
-            {
-                BaseAddress = new Uri(Constants.Urls.BaseCdnUrl),
-                DefaultRequestHeaders = { { Constants.Headers.ApiKey, configuration.Token } }
-            };
-
-            var modelNameResolver = new ModelNameResolver();
-            var refitSettings = CreateRefitSettings(configuration, modelNameResolver);
-
-            Content = new ContentDelivery(configuration, httpClient, refitSettings, modelNameResolver);
-            Media = new MediaDelivery(configuration, httpClient, refitSettings);
         }
 
         /// <summary>
@@ -102,7 +80,19 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <param name="configureHttpClient">A delegate to configure the <see cref="HttpClient"/>.</param>
         public ContentDeliveryService(IHeadlessConfiguration configuration, Action<HttpClient> configureHttpClient)
         {
-            var httpClient = new HttpClient {BaseAddress = new Uri(Constants.Urls.BaseCdnUrl)};
+            HttpMessageHandler httpMessageHandler = null;
+            if (configuration is IPasswordBasedConfiguration passwordBasedConfiguration)
+            {
+                var authenticationService = new AuthenticationService(configuration);
+                var tokenResolver = new UserPasswordAccessTokenResolver(passwordBasedConfiguration.Username,
+                    passwordBasedConfiguration.ProjectAlias, authenticationService);
+                httpMessageHandler = new AuthenticatedHttpClientHandler(tokenResolver);
+            }
+
+            var httpClient = httpMessageHandler == null ? new HttpClient() : new HttpClient(httpMessageHandler, true);
+
+            httpClient.BaseAddress = new Uri(Constants.Urls.BaseCdnUrl);
+            httpClient.DefaultRequestHeaders.UserAgent.Add(GetProductInfoHeader());
 
             if (configuration is IApiKeyBasedConfiguration apiKeyBasedConfiguration)
                 httpClient.DefaultRequestHeaders.Add(Constants.Headers.ApiKey, apiKeyBasedConfiguration.Token);
@@ -156,5 +146,8 @@ namespace Umbraco.Headless.Client.Net.Delivery
                 })
             };
         }
+
+        private static ProductInfoHeaderValue GetProductInfoHeader() =>
+            new ProductInfoHeaderValue("UmbracoHeartcoreNetClient", Constants.GetVersion());
     }
 }
