@@ -15,6 +15,8 @@ namespace Umbraco.Headless.Client.Net.Web
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
             if (projectAlias == null) throw new ArgumentNullException(nameof(projectAlias));
+            if (string.IsNullOrWhiteSpace(projectAlias))
+                throw new ArgumentException("Value cannot be null or whitespace.", nameof(projectAlias));
 
             var configuration = new HeadlessConfiguration(projectAlias);
 
@@ -29,7 +31,8 @@ namespace Umbraco.Headless.Client.Net.Web
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
             if (projectAlias == null) throw new ArgumentNullException(nameof(projectAlias));
-            if (apiKey == null) throw new ArgumentNullException(nameof(apiKey));
+            if (string.IsNullOrWhiteSpace(projectAlias))
+                throw new ArgumentException("Value cannot be null or whitespace.", nameof(projectAlias));
 
             var configuration = new ApiKeyBasedConfiguration(projectAlias, apiKey);
 
@@ -47,15 +50,16 @@ namespace Umbraco.Headless.Client.Net.Web
 
             var contentDeliveryService = new ContentDeliveryService(configuration, client => { });
 
-            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped<IUmbracoContext, UmbracoContext>();
-            services.AddSingleton<UmbracoControllerTypeCollection>();
+            services
+                .AddHttpContextAccessor()
+                .AddScoped<IUmbracoContext, UmbracoContext>()
+                .AddSingleton<UmbracoControllerTypeCollection>()
+                .AddSingleton<IContentDeliveryService>(contentDeliveryService)
+                .AddSingleton(contentDeliveryService)
+                .AddSingleton(contentDeliveryService.Content)
+                .AddSingleton(contentDeliveryService.Media);
 
-            services.AddSingleton<IContentDeliveryService>(contentDeliveryService);
-            services.AddSingleton(contentDeliveryService.Content);
-            services.AddSingleton(contentDeliveryService.Media);
-
-            return new UmbracoHeadlessBuilder(services, configuration.ProjectAlias);
+            return new UmbracoHeadlessBuilder(services, configuration);
         }
     }
 }

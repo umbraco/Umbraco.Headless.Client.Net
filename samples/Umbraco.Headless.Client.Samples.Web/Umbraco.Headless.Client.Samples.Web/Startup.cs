@@ -30,10 +30,7 @@ namespace Umbraco.Headless.Client.Samples.Web
             // Add Umbraco Headless
             services.AddUmbracoHeadless(projectAlias, apiKey, configuration =>
             {
-                configuration.ContentModelTypes.Add<Frontpage>();
-                configuration.ContentModelTypes.Add<Textpage>();
-
-                configuration.ElementModelTypes.Add<TextAndImage>();
+                configuration.AddModels(GetType().Assembly);
             });
         }
 
