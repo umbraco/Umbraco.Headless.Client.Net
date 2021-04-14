@@ -2,5 +2,5 @@
 
 @foreach (var element in Model)
 {
-    await Html.RenderPartialAsync($"Elements/_{element.ContentTypeAlias}", element);
+    <partial name="Elements/_@element.ContentTypeAlias" model="element" />
 }

@@ -1,9 +1,9 @@
 @model Textpage
 
-@await  Component.InvokeAsync("Hero", new {
+@await  Component.InvokeAsync("Hero", new
+{
   title = Model.HeroTitle,
   subTitle = Model.HeroSubtitle,
-  image = Model.HeroImage,
+  image = Model.HeroImage
 })
-
-@await Html.PartialAsync("_Elements", Model.Elements)
+<partial name="_Elements" model="Model.Elements"/>

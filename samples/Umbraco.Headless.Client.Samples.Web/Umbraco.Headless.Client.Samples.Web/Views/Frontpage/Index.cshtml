@@ -7,10 +7,5 @@
   image = Model.HeroImage
 })
 
-@await Html.PartialAsync("_UniqueSellingPoints", new UniqueSellingPointsViewModel
-{
-    Title = Model.UniqueSellingPointsTitle,
-    UniqueSellingPoints = Model.UniqueSellingPoints
-})
-
-@await Html.PartialAsync("_Elements", Model.Elements)
+<partial name="_UniqueSellingPoints" model="new UniqueSellingPointsViewModel{ Title = Model.UniqueSellingPointsTitle, UniqueSellingPoints = Model.UniqueSellingPoints}"/>
+<partial name="_Elements" model="Model.Elements"/>
