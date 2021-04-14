@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Umbraco.Headless.Client.Net.Delivery;
+using Umbraco.Headless.Client.Net.Web.Options;
 
 namespace Umbraco.Headless.Client.Net.Web.Controllers
 {
@@ -11,7 +12,7 @@ namespace Umbraco.Headless.Client.Net.Web.Controllers
         private readonly IOptions<PreviewOptions> _previewOptions;
         private readonly ContentPreviewService _previewService;
 
-        public PreviewController(IOptions<PreviewOptions> previewOptions, ContentPreviewService previewService)
+        public PreviewController(IOptionsSnapshot<PreviewOptions> previewOptions, ContentPreviewService previewService)
         {
             _previewOptions = previewOptions ?? throw new ArgumentNullException(nameof(previewOptions));
             _previewService = previewService ?? throw new ArgumentNullException(nameof(previewService));
@@ -22,7 +23,7 @@ namespace Umbraco.Headless.Client.Net.Web.Controllers
             if (_previewOptions.Value.Secret != secret)
                 return Unauthorized("Invalid token");
 
-            var content = await _previewService.Content.GetByUrl(slug);
+            var content = await _previewService.Content.GetByUrl(slug).ConfigureAwait(false);
 
             if (content == null)
                 return Unauthorized("Invalid slug");

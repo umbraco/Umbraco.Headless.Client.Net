@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
+using Umbraco.Headless.Client.Net.Web.Options;
 
 namespace Umbraco.Headless.Client.Net.Web
 {
@@ -21,7 +22,7 @@ namespace Umbraco.Headless.Client.Net.Web
                 Expires = options.MaxAge.HasValue ? DateTime.UtcNow.Add(options.MaxAge.Value) : null,
                 IssuedAt = DateTime.UtcNow,
                 NotBefore = DateTime.UtcNow,
-                SigningCredentials = new SigningCredentials(options.SigningKey, options.SecurityAlgorithms),
+                SigningCredentials = options.SigningCredentials,
             };
 
             var handler = new JsonWebTokenHandler();

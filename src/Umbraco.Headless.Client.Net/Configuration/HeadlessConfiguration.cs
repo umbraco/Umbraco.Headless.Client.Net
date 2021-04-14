@@ -1,6 +1,5 @@
 using System;
 using System.Net;
-using System.Reflection;
 using Umbraco.Headless.Client.Net.Collections;
 using Umbraco.Headless.Client.Net.Delivery.Models;
 
@@ -32,24 +31,6 @@ namespace Umbraco.Headless.Client.Net.Configuration
 
         /// <inheritdoc />
         public ITypeList<IMedia> MediaModelTypes { get; }
-
-        /// <inheritdoc />
-        public void AddModels(Assembly assembly)
-        {
-            if (assembly == null) throw new ArgumentNullException(nameof(assembly));
-
-            foreach (var type in assembly.GetExportedTypes())
-            {
-                if (typeof(IElement).IsAssignableFrom(type))
-                    ElementModelTypes.Add(type);
-
-                if (typeof(IContent).IsAssignableFrom(type))
-                    ContentModelTypes.Add(type);
-
-                if(typeof(IMedia).IsAssignableFrom(type))
-                    MediaModelTypes.Add(type);
-            }
-        }
 
         /// <summary>
         /// A delegate that is called if the APIs return a non success error code.

@@ -1,11 +1,11 @@
-using System;
+using System.Security.Cryptography;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Umbraco.Headless.Client.Net.Web;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Umbraco.Headless.Client.Samples.Web
 {
@@ -23,17 +23,15 @@ namespace Umbraco.Headless.Client.Samples.Web
         {
             services.AddControllersWithViews();
 
-            var umbracoConfig = Configuration.GetSection("heartcore");
-            var projectAlias = umbracoConfig.GetValue<string>("projectAlias");
-            var apiKey = umbracoConfig.GetValue<string>("apiKey");
-
-            // Add Umbraco Headless
+            // Add Umbraco Heartcore.
             services
-                .AddUmbracoHeadless(Configuration, projectAlias, apiKey, configuration =>
+                .AddUmbracoHeartcore(options =>
                 {
-                    configuration.AddModels(GetType().Assembly);
+                    // register all strongly typed models from the current assembly.
+                    options.AddModels(GetType().Assembly);
                 })
-                //.AddPreview(apiKey)
+                // uncomment to enable preview
+                // .AddPreview()
                 ;
         }
 
@@ -72,10 +70,8 @@ namespace Umbraco.Headless.Client.Samples.Web
 
             app.UseAuthorization();
 
-            // Register Headless router
-            app.UseUmbracoHeadlessRouter(options =>
-            {
-            });
+            // Enable Heartcore routing,
+            app.UseUmbracoHeartcoreRouting();
 
             app.UseEndpoints(endpoints =>
             {

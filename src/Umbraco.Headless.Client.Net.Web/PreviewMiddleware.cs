@@ -4,20 +4,20 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
-using Umbraco.Headless.Client.Net.Web.Builders;
+using Umbraco.Headless.Client.Net.Web.Options;
 
 namespace Umbraco.Headless.Client.Net.Web
 {
     public class PreviewMiddleware : IMiddleware
     {
         private readonly IOptions<PreviewOptions> _options;
-        private readonly IPreviewAccessor _previewAccessor;
+        private readonly IUmbracoContext _umbracoContext;
         internal const string CookieName = "__umbraco_preview";
 
-        public PreviewMiddleware(IOptions<PreviewOptions> options, IPreviewAccessor previewAccessor)
+        public PreviewMiddleware(IOptions<PreviewOptions> options, IUmbracoContext umbracoContext)
         {
             _options = options ?? throw new ArgumentNullException(nameof(options));
-            _previewAccessor = previewAccessor ?? throw new ArgumentNullException(nameof(previewAccessor));
+            _umbracoContext = umbracoContext ?? throw new ArgumentNullException(nameof(umbracoContext));
         }
 
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
@@ -28,7 +28,7 @@ namespace Umbraco.Headless.Client.Net.Web
             var jwt = context.Request.Cookies[CookieName];
             if (jwt != null)
             {
-                var key = _options.Value.SigningKey;
+                var key = _options.Value.SigningCredentials.Key;
                 var handler = new JsonWebTokenHandler();
 
                 TokenValidationResult result =
@@ -41,7 +41,7 @@ namespace Umbraco.Headless.Client.Net.Web
 
                 if (result.IsValid)
                 {
-                    _previewAccessor.IsPreview = true;
+                    _umbracoContext.IsInPreviewMode = true;
                 }
                 else
                 {

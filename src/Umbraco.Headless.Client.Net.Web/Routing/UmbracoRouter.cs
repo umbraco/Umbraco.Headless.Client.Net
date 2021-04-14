@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Refit;
 using Umbraco.Headless.Client.Net.Delivery;
 
-namespace Umbraco.Headless.Client.Net.Web
+namespace Umbraco.Headless.Client.Net.Web.Routing
 {
     internal class UmbracoRouter : IRouter
     {
@@ -47,7 +47,7 @@ namespace Umbraco.Headless.Client.Net.Web
                     var actionDescriptor =
                         _umbracoControllers.FindActionDescriptor(umbracoContext.CurrentContent.ContentTypeAlias);
 
-                    if (actionDescriptor == null) throw new InvalidOperationException();
+                    if (actionDescriptor == null) return;
 
                     context.Handler = httpContext =>
                     {
