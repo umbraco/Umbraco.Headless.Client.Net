@@ -1,6 +1,7 @@
 ﻿:root {
   --content-width: 1360px;
   --grey: #F9F7F4;
+  --blue: #3544b1;
 }
 
 *, ::after, ::before {
@@ -31,20 +32,33 @@ h1, h2, h3, h4, h5 {
 ul {
   margin: 0;
 }
-a {
-  color: #3544b1;
-  text-decoration: none;
-}
 
-a:hover {
+a {
+  color: var(--blue);
   text-decoration: underline;
 }
 
-/* Header */
+a:hover {
+  filter: brightness(0.7);
+}
 
+/* Preview */
+
+.preview {
+  background: var(--blue);
+  color: var(--grey);
+  padding: 10px;
+  text-align: center;
+}
+
+.preview a {
+  color: var(--grey);
+}
+
+/* Header */
 .page-header {
   background: white;
-  position: absolute;
+  position: relative;
   max-width: var(--content-width);
   width: 100%;
   top: 0;
@@ -78,7 +92,12 @@ a:hover {
 }
 
 @media (min-width: 992px) {
+  .preview ~ .page-header {
+    top: 40px;
+    color: #000;
+  }
   .page-header {
+    position: absolute;
     background: transparent;
     top: 20px;
   }
