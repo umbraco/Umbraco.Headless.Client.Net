@@ -1,13 +1,12 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Umbraco.Headless.Client.Net.Web
+namespace Umbraco.Headless.Client.Net.Web.Controllers
 {
     /// <summary>
     /// The default Umbraco Headless controller.
     /// Used when no custom controller can be found for a request.
     /// </summary>
-    [UmbracoController]
     public sealed class UmbracoDefaultController : Controller
     {
         private readonly IUmbracoContext _umbracoContext;
@@ -21,7 +20,7 @@ namespace Umbraco.Headless.Client.Net.Web
         {
             var content = _umbracoContext.CurrentContent;
 
-            return View($"../{content.ContentTypeAlias}/Index", content);
+            return View($"../{content!.ContentTypeAlias}/Index", content);
         }
     }
 }

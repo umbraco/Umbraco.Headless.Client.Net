@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Refit;
@@ -25,13 +26,26 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// Initializes a new instance of the ContentPreviewService class
         /// </summary>
         /// <param name="configuration">Reference to the <see cref="IApiKeyBasedConfiguration"/></param>
-        public ContentPreviewService(IApiKeyBasedConfiguration configuration)
+        public ContentPreviewService(IApiKeyBasedConfiguration configuration) : this(configuration, _ => { })
+        { }
+
+        /// <summary>
+        /// Initializes a new instance of the ContentPreviewService class
+        /// </summary>
+        /// <param name="configuration">Reference to the <see cref="IApiKeyBasedConfiguration"/></param>
+        /// <param name="configureHttpClient">A delegate to configure the <see cref="HttpClient"/>.</param>
+        public ContentPreviewService(IApiKeyBasedConfiguration configuration, Action<HttpClient> configureHttpClient = null)
         {
+            if (configuration == null) throw new ArgumentNullException(nameof(configuration));
+
             var httpClient = new HttpClient
             {
                 BaseAddress = new Uri(Constants.Urls.BasePreviewUrl),
                 DefaultRequestHeaders = { { Constants.Headers.ApiKey, configuration.Token } }
             };
+            httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("UmbracoHeartcoreNetClient", Constants.GetVersion()));
+
+            if (configureHttpClient != null) configureHttpClient(httpClient);
 
             var modelNameResolver = new ModelNameResolver();
             var refitSettings = CreateRefitSettings(configuration, modelNameResolver);

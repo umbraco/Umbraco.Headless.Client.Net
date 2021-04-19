@@ -20,6 +20,5 @@ namespace Umbraco.Headless.Client.Samples.Web.Serialization
         }
 
         public override bool CanConvert(Type objectType) => typeof(IHtmlContent).IsAssignableFrom(objectType);
-
     }
 }

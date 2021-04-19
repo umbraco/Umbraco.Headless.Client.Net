@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Refit;
@@ -31,7 +32,15 @@ namespace Umbraco.Headless.Client.Net.Management
         /// Initializes a new instance of the ContentManagementService class
         /// </summary>
         /// <param name="configuration">Reference to the <see cref="IPasswordBasedConfiguration"/></param>
-        public ContentManagementService(IPasswordBasedConfiguration configuration)
+        public ContentManagementService(IPasswordBasedConfiguration configuration) : this(configuration, _ => { })
+        { }
+
+        /// <summary>
+        /// Initializes a new instance of the ContentManagementService class
+        /// </summary>
+        /// <param name="configuration">Reference to the <see cref="IPasswordBasedConfiguration"/></param>
+        /// <param name="configureHttpClient">A delegate to configure the <see cref="HttpClient"/>.</param>
+        public ContentManagementService(IPasswordBasedConfiguration configuration, Action<HttpClient> configureHttpClient = null)
         {
             var authenticationService = new AuthenticationService(configuration);
             var tokenResolver = new UserPasswordAccessTokenResolver(configuration.Username, configuration.ProjectAlias, authenticationService);
@@ -39,6 +48,9 @@ namespace Umbraco.Headless.Client.Net.Management
             {
                 BaseAddress = new Uri(Constants.Urls.BaseApiUrl)
             };
+            httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("UmbracoHeartcoreNetClient", Constants.GetVersion()));
+
+            if (configureHttpClient != null) configureHttpClient(httpClient);
 
             var refitSettings = CreateRefitSettings();
 
@@ -59,13 +71,17 @@ namespace Umbraco.Headless.Client.Net.Management
         /// Initializes a new instance of the ContentManagementService class
         /// </summary>
         /// <param name="configuration">Reference to the <see cref="IApiKeyBasedConfiguration"/></param>
-        public ContentManagementService(IApiKeyBasedConfiguration configuration)
+        /// <param name="configureHttpClient">A delegate to configure the <see cref="HttpClient"/>.</param>
+        public ContentManagementService(IApiKeyBasedConfiguration configuration, Action<HttpClient> configureHttpClient = null)
         {
             var httpClient = new HttpClient
             {
                 BaseAddress = new Uri(Constants.Urls.BaseApiUrl),
                 DefaultRequestHeaders = {{Constants.Headers.ApiKey, configuration.Token}}
             };
+            httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("UmbracoHeartcoreNetClient", Constants.GetVersion()));
+
+            if (configureHttpClient != null) configureHttpClient(httpClient);
 
             var refitSettings = CreateRefitSettings();
 

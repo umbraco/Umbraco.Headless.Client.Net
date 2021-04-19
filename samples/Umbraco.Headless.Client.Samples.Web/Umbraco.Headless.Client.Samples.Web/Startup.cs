@@ -1,11 +1,11 @@
+using System.Security.Cryptography;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Umbraco.Headless.Client.Net.Web;
-using Umbraco.Headless.Client.Samples.Web.Models;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Umbraco.Headless.Client.Samples.Web
 {
@@ -23,18 +23,16 @@ namespace Umbraco.Headless.Client.Samples.Web
         {
             services.AddControllersWithViews();
 
-            var umbracoConfig = Configuration.GetSection("umbraco");
-            var projectAlias = umbracoConfig.GetValue<string>("projectAlias");
-            var apiKey = umbracoConfig.GetValue<string>("apiKey");
-
-            // Add Umbraco Headless
-            services.AddUmbracoHeadless(projectAlias, apiKey, configuration =>
-            {
-                configuration.ContentModelTypes.Add<Frontpage>();
-                configuration.ContentModelTypes.Add<Textpage>();
-
-                configuration.ElementModelTypes.Add<TextAndImage>();
-            });
+            // Add Umbraco Heartcore.
+            services
+                .AddUmbracoHeartcore(options =>
+                {
+                    // register all strongly typed models from the current assembly.
+                    options.AddModels(GetType().Assembly);
+                })
+                // uncomment to enable preview
+                // .AddPreview()
+                ;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,10 +70,8 @@ namespace Umbraco.Headless.Client.Samples.Web
 
             app.UseAuthorization();
 
-            // Register Headless router
-            app.UseUmbracoHeadlessRouter(options =>
-            {
-            });
+            // Enable Heartcore routing,
+            app.UseUmbracoHeartcoreRouting();
 
             app.UseEndpoints(endpoints =>
             {

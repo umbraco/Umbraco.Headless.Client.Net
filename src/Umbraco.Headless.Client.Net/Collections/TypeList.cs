@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Umbraco.Headless.Client.Net.Collections
 {
-    internal class TypeList<TBaseType> : ITypeList<TBaseType>
+    public class TypeList<TBaseType> : ITypeList<TBaseType>
     {
         private readonly HashSet<Type> _types = new HashSet<Type>();
 
@@ -20,6 +20,14 @@ namespace Umbraco.Headless.Client.Net.Collections
                 throw new ArgumentException($"type must inherit from {typeof(TBaseType)}", nameof(type));
 
             _types.Add(type);
+        }
+
+        public void Add(IEnumerable<Type> types)
+        {
+            if (types == null) throw new ArgumentNullException(nameof(types));
+
+            foreach (var type in types)
+                Add(type);
         }
 
         public void Remove<TImplementation>() where TImplementation : TBaseType =>

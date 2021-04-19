@@ -23,7 +23,7 @@ namespace Umbraco.Headless.Client.Net.Delivery.Models
         string CreatorName { get; set; }
         string WriterName { get; set; }
         string Name { get; set; }
-        Guid ParentId { get; set; }
+        Guid? ParentId { get; set; }
         int SortOrder { get; set; }
     }
 }

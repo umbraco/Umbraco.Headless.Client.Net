@@ -37,7 +37,7 @@ namespace Umbraco.Headless.Client.Net.Delivery.Models
         public string Name { get; set; }
 
         [JsonProperty("parentId")]
-        public Guid ParentId { get; set; }
+        public Guid? ParentId { get; set; }
 
         [JsonProperty("sortOrder")]
         public int SortOrder { get; set; }

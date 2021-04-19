@@ -20,16 +20,16 @@ namespace Umbraco.Headless.Client.Net.Configuration
             };
         }
 
-        /// <inheritdoc />>
+        /// <inheritdoc />
         public string ProjectAlias { get; }
 
-        /// <inheritdoc />>
+        /// <inheritdoc />
         public ITypeList<IElement> ElementModelTypes { get; }
 
-        /// <inheritdoc />>
+        /// <inheritdoc />
         public ITypeList<IContent> ContentModelTypes { get; }
 
-        /// <inheritdoc />>
+        /// <inheritdoc />
         public ITypeList<IMedia> MediaModelTypes { get; }
 
         /// <summary>

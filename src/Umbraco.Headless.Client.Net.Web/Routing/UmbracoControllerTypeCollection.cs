@@ -5,24 +5,28 @@ using System.Reflection;
 using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.Extensions.Options;
+using Umbraco.Headless.Client.Net.Web.Options;
 
-namespace Umbraco.Headless.Client.Net.Web
+namespace Umbraco.Headless.Client.Net.Web.Routing
 {
     internal sealed class UmbracoControllerTypeCollection
     {
-        private readonly IActionDescriptorCollectionProvider _actionDescriptorProviderContext;
         private readonly Lazy<ILookup<string, ControllerActionDescriptor>> _umbracoControllerDescriptors;
-        private ControllerActionDescriptor _defaultControllerDescriptor;
-        private UmbracoRouterOptions _options;
+        private ControllerActionDescriptor? _defaultControllerDescriptor;
+        private readonly IOptions<UmbracoRouterOptions>? _options;
 
-        public UmbracoControllerTypeCollection(IActionDescriptorCollectionProvider actionDescriptorProviderContext)
+        public UmbracoControllerTypeCollection(IActionDescriptorCollectionProvider actionDescriptorProviderContext, IOptions<UmbracoRouterOptions> options)
         {
-            _actionDescriptorProviderContext = actionDescriptorProviderContext ?? throw new ArgumentNullException(nameof(actionDescriptorProviderContext));
+            if (actionDescriptorProviderContext == null) throw new ArgumentNullException(nameof(actionDescriptorProviderContext));
+
+            _options = options ?? throw new ArgumentNullException(nameof(options));
 
             _umbracoControllerDescriptors = new Lazy<ILookup<string, ControllerActionDescriptor>>(() =>
             {
                 var umbracoControllerDescriptors = new List<ControllerActionDescriptor>();
-                var descriptors = actionDescriptorProviderContext.ActionDescriptors.Items.OfType<ControllerActionDescriptor>();
+                var descriptors = actionDescriptorProviderContext.ActionDescriptors
+                    .Items.OfType<ControllerActionDescriptor>();
 
                 foreach (var descriptor in descriptors)
                 {
@@ -35,34 +39,28 @@ namespace Umbraco.Headless.Client.Net.Web
                     umbracoControllerDescriptors.Add(descriptor);
                 }
 
+                _defaultControllerDescriptor = actionDescriptorProviderContext.ActionDescriptors
+                    .Items.OfType<ControllerActionDescriptor>()
+                    .FirstOrDefault(x => x.ControllerTypeInfo == options.Value.DefaultController);
+
                 return umbracoControllerDescriptors.ToLookup(x => x.ControllerName,
                     StringComparer.InvariantCultureIgnoreCase);
             });
         }
 
-        public void Initialize(UmbracoRouterOptions options)
-        {
-            _options = options ?? throw new ArgumentNullException(nameof(options));
-
-            if (_defaultControllerDescriptor == null)
-            {
-                _defaultControllerDescriptor = _actionDescriptorProviderContext.ActionDescriptors
-                    .Items.OfType<ControllerActionDescriptor>()
-                    .FirstOrDefault(x => x.ControllerTypeInfo == options.DefaultController);
-            }
-        }
-
-        public ActionDescriptor FindActionDescriptor(string controllerName)
+        public ActionDescriptor? FindActionDescriptor(string controllerName)
         {
             return TryFind(controllerName) ?? _defaultControllerDescriptor;
         }
 
-        private ActionDescriptor TryFind( string controllerName)
+        private ActionDescriptor? TryFind(string controllerName)
         {
+            if (_options == null) throw new InvalidOperationException();
+
             var foundDescriptors = _umbracoControllerDescriptors.Value[controllerName];
 
             return foundDescriptors.FirstOrDefault(x =>
-                x.ActionName.Equals(_options.DefaultActionName, StringComparison.InvariantCultureIgnoreCase));
+                x.ActionName.Equals(_options.Value.DefaultActionName, StringComparison.OrdinalIgnoreCase));
         }
     }
 }
