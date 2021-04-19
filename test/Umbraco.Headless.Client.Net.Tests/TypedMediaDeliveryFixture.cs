@@ -61,7 +61,7 @@ namespace Umbraco.Headless.Client.Net.Tests
         public async Task GetById_WhenNotFound_ReturnsNull(string id)
         {
             var contentId = Guid.Parse(id);
-            var service = new ContentDeliveryService(_configuration);
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
 
             var content = await service.Media.GetById<Folder>(contentId);
 
@@ -73,11 +73,17 @@ namespace Umbraco.Headless.Client.Net.Tests
         public async Task GetChildren_WhenNotFound_ReturnsNull(string id)
         {
             var contentId = Guid.Parse(id);
-            var service = new ContentDeliveryService(_configuration);
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
 
             var content = await service.Media.GetChildren<Folder>(contentId);
 
             Assert.Null(content);
+        }
+
+        private HttpClient GetMockedHttpClient()
+        {
+            var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseCdnUrl) };
+            return client;
         }
 
         private HttpClient GetMockedHttpClient(string url, string jsonResponse)

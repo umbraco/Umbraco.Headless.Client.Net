@@ -54,7 +54,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// Initializes a new instance of the ContentDeliveryService class
         /// </summary>
         /// <param name="configuration">Reference to the <see cref="IHeadlessConfiguration"/></param>
-        public ContentDeliveryService(IHeadlessConfiguration configuration) : this (configuration, _ => {})
+        public ContentDeliveryService(IHeadlessConfiguration configuration) : this(configuration, _ => {})
         { }
 
         /// <summary>

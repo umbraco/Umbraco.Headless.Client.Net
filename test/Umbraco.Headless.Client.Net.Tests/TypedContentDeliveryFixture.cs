@@ -120,7 +120,7 @@ namespace Umbraco.Headless.Client.Net.Tests
         public async Task GetById_WhenNotFound_ReturnsNull(string id)
         {
             var contentId = Guid.Parse(id);
-            var service = new ContentDeliveryService(_configuration);
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
 
             var content = await service.Content.GetById<Product>(contentId);
 
@@ -131,7 +131,7 @@ namespace Umbraco.Headless.Client.Net.Tests
         [InlineData("/my-page/")]
         public async Task GetByUrl_WhenNotFound_ReturnsNull(string url)
         {
-            var service = new ContentDeliveryService(_configuration);
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
 
             var content = await service.Content.GetByUrl<Product>(url);
 
@@ -143,7 +143,7 @@ namespace Umbraco.Headless.Client.Net.Tests
         public async Task GetChildren_WhenNotFound_ReturnsNull(string id)
         {
             var contentId = Guid.Parse(id);
-            var service = new ContentDeliveryService(_configuration);
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
 
             var content = await service.Content.GetChildren<Product>(contentId);
 
@@ -155,7 +155,7 @@ namespace Umbraco.Headless.Client.Net.Tests
         public async Task GetAncestors_WhenNotFound_ReturnsNull(string id)
         {
             var contentId = Guid.Parse(id);
-            var service = new ContentDeliveryService(_configuration);
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
 
             var content = await service.Content.GetAncestors<Product>(contentId);
 
@@ -167,11 +167,17 @@ namespace Umbraco.Headless.Client.Net.Tests
         public async Task GetDescendants_WhenNotFound_ReturnsNull(string id)
         {
             var contentId = Guid.Parse(id);
-            var service = new ContentDeliveryService(_configuration);
+            var service = new ContentDeliveryService(_configuration, GetMockedHttpClient());
 
             var content = await service.Content.GetDescendants<Product>(contentId);
 
             Assert.Null(content);
+        }
+
+        private HttpClient GetMockedHttpClient()
+        {
+            var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseCdnUrl) };
+            return client;
         }
 
         private HttpClient GetMockedHttpClient(string url, string jsonResponse)
