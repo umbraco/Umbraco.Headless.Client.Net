@@ -1,0 +1,22 @@
+﻿@page "/"
+
+@using Umbraco.Headless.Client.Net.Delivery;
+
+        <h1>@content.Name</h1>
+        <h2>@content.Properties.Where(x => x.Key == "heroSubtitle").FirstOrDefault().Value</h2>
+  
+
+
+
+@code {
+    Umbraco.Headless.Client.Net.Delivery.Models.Content content = new Umbraco.Headless.Client.Net.Delivery.Models.Content();
+    protected override async Task OnInitializedAsync()
+    {
+
+
+        var projectAlias = "demo-headless";
+        var service = new ContentDeliveryService(projectAlias);
+        var rootContentItems = await service.Content.GetRoot("en-US");
+        content = rootContentItems.FirstOrDefault();
+    }
+}
