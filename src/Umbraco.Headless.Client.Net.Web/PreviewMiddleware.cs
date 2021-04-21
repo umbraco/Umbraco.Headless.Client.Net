@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
@@ -10,12 +11,15 @@ namespace Umbraco.Headless.Client.Net.Web
 {
     public class PreviewMiddleware : IMiddleware
     {
+        private readonly ILogger<PreviewMiddleware> _logger;
         private readonly IOptions<PreviewOptions> _options;
         private readonly IUmbracoContext _umbracoContext;
         internal const string CookieName = "__umbraco_preview";
 
-        public PreviewMiddleware(IOptions<PreviewOptions> options, IUmbracoContext umbracoContext)
+        public PreviewMiddleware(ILogger<PreviewMiddleware> logger, IOptions<PreviewOptions> options,
+            IUmbracoContext umbracoContext)
         {
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _options = options ?? throw new ArgumentNullException(nameof(options));
             _umbracoContext = umbracoContext ?? throw new ArgumentNullException(nameof(umbracoContext));
         }
@@ -45,6 +49,7 @@ namespace Umbraco.Headless.Client.Net.Web
                 }
                 else
                 {
+                    _logger.LogDebug(result.Exception, "Preview cookie was not valid, exiting preview");
                     context.Response.ExitPreview();
                 }
             }

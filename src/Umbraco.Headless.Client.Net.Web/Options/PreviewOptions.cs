@@ -6,8 +6,6 @@ namespace Umbraco.Headless.Client.Net.Web.Options
 {
     public class PreviewOptions
     {
-        private SigningCredentials? _signingCredentials;
-
         internal bool Enabled { get; set; }
 
         /// <summary>
@@ -33,21 +31,7 @@ namespace Umbraco.Headless.Client.Net.Web.Options
         /// Get or set the <see cref="SigningCredentials"/> used to sign the preview cookie.
         /// The default is a random symmetric key that is generated each time the application starts.
         /// </summary>
-        public SigningCredentials SigningCredentials
-        {
-            get
-            {
-                if (_signingCredentials == null)
-                {
-                    var random = new Random();
-                    byte[] bytes = new byte[32];
-                    random.NextBytes(bytes);
-                    _signingCredentials = new SigningCredentials(new SymmetricSecurityKey(bytes), SecurityAlgorithms.HmacSha256Signature);
-                }
-
-                return _signingCredentials;
-            }
-            set => _signingCredentials = value;
-        }
+        [Required]
+        public SigningCredentials? SigningCredentials { get; set; }
     }
 }

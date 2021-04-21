@@ -33,7 +33,7 @@ namespace Umbraco.Headless.Client.Net.Web
                 HttpOnly = true,
                 Secure = isDevelopment == false,
                 Path = "/",
-                SameSite = isDevelopment ? SameSiteMode.None : SameSiteMode.Lax,
+                SameSite = isDevelopment ? SameSiteMode.Unspecified : SameSiteMode.Lax,
                 MaxAge = options.MaxAge
             });
         }

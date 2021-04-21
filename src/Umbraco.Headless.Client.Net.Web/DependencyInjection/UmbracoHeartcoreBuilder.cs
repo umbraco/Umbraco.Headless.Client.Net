@@ -2,6 +2,7 @@ using System;
 using System.Net.Http;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Umbraco.Headless.Client.Net.Configuration;
 using Umbraco.Headless.Client.Net.Delivery;
 using Umbraco.Headless.Client.Net.Management;
@@ -66,12 +67,19 @@ namespace Microsoft.Extensions.DependencyInjection
 
             if (configure != null) builder.Configure(configure);
 
+            var random = new Random();
+            byte[] bytes = new byte[32];
+            random.NextBytes(bytes);
+            var defaultSigningCredentials = new SigningCredentials(new SymmetricSecurityKey(bytes), SecurityAlgorithms.HmacSha256Signature);
+
             builder.Configure<IOptions<HeartcoreOptions>>((opts, config) =>
             {
                 opts.Enabled = true;
 
                 if (string.IsNullOrEmpty(opts.ApiKey) && config.Value.ApiKey != null)
                     opts.ApiKey = config.Value.ApiKey;
+
+                opts.SigningCredentials ??= defaultSigningCredentials;
             });
 
 
