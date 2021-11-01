@@ -152,7 +152,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
 
         public async Task<PagedContent> Search(string term, string culture = null, int page = 1, int pageSize = 10)
         {
-            var result = await Get(x => x.Search(Configuration.ProjectAlias, culture, term, page, page)).ConfigureAwait(false);
+            var result = await Get(x => x.Search(Configuration.ProjectAlias, culture, term, page, pageSize)).ConfigureAwait(false);
             return result;
         }
 
