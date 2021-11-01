@@ -11,8 +11,8 @@ namespace Umbraco.Headless.Client.Net.Management
             string url, string projectAlias, object data, IDictionary<string, MultipartItem> files)
         {
             using (var content = await CreateContent<T>(contentSerializer, projectAlias, data, files).ConfigureAwait(false))
+            using (var response = await client.PostAsync(url, content).ConfigureAwait(false))
             {
-                var response = await client.PostAsync(url, content).ConfigureAwait(false);
                 return await contentSerializer.DeserializeAsync<T>(response.Content).ConfigureAwait(false);
             }
         }
@@ -21,8 +21,8 @@ namespace Umbraco.Headless.Client.Net.Management
             string url, string projectAlias, object data, IDictionary<string, MultipartItem> files)
         {
             using (var content = await CreateContent<T>(contentSerializer, projectAlias, data, files).ConfigureAwait(false))
+            using (var response = await client.PutAsync(url, content).ConfigureAwait(false))
             {
-                var response = await client.PutAsync(url, content).ConfigureAwait(false);
                 return await contentSerializer.DeserializeAsync<T>(response.Content).ConfigureAwait(false);
             }
         }
