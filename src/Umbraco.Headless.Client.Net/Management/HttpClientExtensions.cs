@@ -10,19 +10,21 @@ namespace Umbraco.Headless.Client.Net.Management
         public static async Task<T> PostMultipartAsync<T>(this HttpClient client, IContentSerializer contentSerializer,
             string url, string projectAlias, object data, IDictionary<string, MultipartItem> files)
         {
-            var content = await CreateContent<T>(contentSerializer, projectAlias, data, files).ConfigureAwait(false);
-
-            var response = await client.PostAsync(url, content).ConfigureAwait(false);
-            return await contentSerializer.DeserializeAsync<T>(response.Content).ConfigureAwait(false);
+            using (var content = await CreateContent<T>(contentSerializer, projectAlias, data, files).ConfigureAwait(false))
+            using (var response = await client.PostAsync(url, content).ConfigureAwait(false))
+            {
+                return await contentSerializer.DeserializeAsync<T>(response.Content).ConfigureAwait(false);
+            }
         }
 
         public static async Task<T> PutMultipartAsync<T>(this HttpClient client, IContentSerializer contentSerializer,
             string url, string projectAlias, object data, IDictionary<string, MultipartItem> files)
         {
-            var content = await CreateContent<T>(contentSerializer, projectAlias, data, files).ConfigureAwait(false);
-
-            var response = await client.PutAsync(url, content).ConfigureAwait(false);
-            return await contentSerializer.DeserializeAsync<T>(response.Content).ConfigureAwait(false);
+            using (var content = await CreateContent<T>(contentSerializer, projectAlias, data, files).ConfigureAwait(false))
+            using (var response = await client.PutAsync(url, content).ConfigureAwait(false))
+            {
+                return await contentSerializer.DeserializeAsync<T>(response.Content).ConfigureAwait(false);
+            }
         }
 
         private static async Task<MultipartFormDataContent> CreateContent<T>(IContentSerializer contentSerializer, string projectAlias, object data,
