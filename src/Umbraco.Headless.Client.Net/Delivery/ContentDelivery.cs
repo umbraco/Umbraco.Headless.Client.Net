@@ -112,7 +112,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
 
         public async Task<PagedContent> GetByType(string contentType, string culture = null, int page = 1, int pageSize = 10)
         {
-            var result = await Get(x => x.GetByType(Configuration.ProjectAlias, culture, contentType, page, page)).ConfigureAwait(false);
+            var result = await Get(x => x.GetByType(Configuration.ProjectAlias, culture, contentType, page, pageSize)).ConfigureAwait(false);
             return result;
         }
 
@@ -146,7 +146,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
             if(filter == null || filter.Properties.Length == 0)
                 throw new ArgumentException("ContentFilter should contain at least one property to filter on");
 
-            var result = await Get(x => x.Filter(Configuration.ProjectAlias, culture, filter, page, page)).ConfigureAwait(false);
+            var result = await Get(x => x.Filter(Configuration.ProjectAlias, culture, filter, page, pageSize)).ConfigureAwait(false);
             return result;
         }
 
