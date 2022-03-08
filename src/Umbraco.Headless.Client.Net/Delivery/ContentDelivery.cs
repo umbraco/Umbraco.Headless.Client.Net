@@ -124,9 +124,10 @@ namespace Umbraco.Headless.Client.Net.Delivery
 
         public async Task<PagedContent<T>> GetByTypeAlias<T>(string contentTypeAlias, string culture = null, int page = 1, int pageSize = 10) where T : IContent
         {
-            var contentType = GetAliasFromClassName<T>();
+            if (string.IsNullOrWhiteSpace(contentTypeAlias))
+                throw new ArgumentException($"{nameof(contentTypeAlias)} cannot be null, empty or white space", nameof(contentTypeAlias));
 
-            var result = await GetTyped<T>(x => x.GetByType(Configuration.ProjectAlias, culture, contentType, page, pageSize)).ConfigureAwait(false);
+            var result = await GetTyped<T>(x => x.GetByType(Configuration.ProjectAlias, culture, contentTypeAlias, page, pageSize)).ConfigureAwait(false);
             return result;
         }
 
