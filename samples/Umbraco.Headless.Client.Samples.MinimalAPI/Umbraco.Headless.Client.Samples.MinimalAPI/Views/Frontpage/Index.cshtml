@@ -1,0 +1,11 @@
+@model Frontpage
+
+@await  Component.InvokeAsync("Hero", new
+{
+  title = Model.HeroTitle,
+  subTitle = Model.HeroSubtitle,
+  image = Model.HeroImage
+})
+
+<partial name="_UniqueSellingPoints" model="new UniqueSellingPointsViewModel{ Title = Model.UniqueSellingPointsTitle, UniqueSellingPoints = Model.UniqueSellingPoints}"/>
+<partial name="_Elements" model="Model.Elements"/>

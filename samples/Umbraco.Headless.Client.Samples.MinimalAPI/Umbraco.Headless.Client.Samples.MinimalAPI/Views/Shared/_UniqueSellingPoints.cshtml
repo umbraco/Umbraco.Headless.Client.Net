@@ -1,0 +1,22 @@
+@model UniqueSellingPointsViewModel
+
+<article class="usp-container">
+  <h1 class="usp-container__title">@Model.Title</h1>
+    <div class="usp-item-container">
+        @foreach (var usp in Model.UniqueSellingPoints)
+        {
+            <section class="usp">
+                <h2 class="usp__title">@usp.Title</h2>
+                @if (usp.Image != null)
+                {
+                    <img class="usp__image" src="@usp.Image.Url" alt="">
+                }
+                <p class="usp__text">@usp.Text</p>
+                @if (usp.Link != null)
+                {
+                    <a href="@usp.Link.Url" target="@usp.Link.Target" rel="noopener" class="usp__link">@usp.Link.Name</a>
+                }
+            </section>
+        }
+    </div>
+</article>

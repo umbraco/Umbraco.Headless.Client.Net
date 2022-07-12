@@ -1,0 +1,42 @@
+@model TextAndImage
+
+<article class="text-and-image @(Model.ShowLargeImage ? "text-and-image--image-left" : "")">
+    <h1 class="text-and-image__title">@Model.Title</h1>
+    <div class="text-and-image__text">
+        @Model.Text
+    </div>
+
+    @if(Model.Image != null && Model.Image.Url.EndsWith(".gif"))
+    {
+        <img class="text-and-image__image"
+             src="@Model.Image.Url"
+             loading="lazy"
+             alt="">
+    }
+    else if (Model.ShowLargeImage && Model.Image != null)
+    {
+        <img class="text-and-image__image" srcset="
+                @Model.Image.Url?width=320&height=240&mode=crop 320w,
+                @Model.Image.Url?width=480&height=360&mode=crop 480w,
+                @Model.Image.Url?width=1024px&height=768&mode=crop 1024w"
+             sizes="(max-width: 320px) 320px,
+                    (max-width: 480px) 480px
+                    (max-width: 1024px) 1024px"
+             src="@Model.Image.Url?width750&height=515&mode=crop"
+             loading="lazy"
+             alt="">
+    }
+    else if(Model.Image != null)
+    {
+        <img class="text-and-image__image" srcset="
+                 @Model.Image.Url?width=320&height=240&mode=crop 320w,
+                 @Model.Image.Url?width=480&height=360&mode=crop 480w,
+                 @Model.Image.Url?width=1024px&height=768&mode=crop 1024w"
+             sizes="(max-width: 320px) 320px,
+                     (max-width: 480px) 480px
+                     (max-width: 1024px) 1024px"
+             src="@Model.Image.Url?width=320&height=240&mode=crop"
+             loading="lazy"
+             alt="">
+    }
+</article>
