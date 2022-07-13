@@ -42,7 +42,7 @@ namespace Umbraco.Headless.Client.Samples.MVC
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            
             //Configures route to wwwroot/robots.txt to tell search engine crawlers which URLs the crawler can access.
             app.UseRobotsTxt();
 
@@ -53,9 +53,12 @@ namespace Umbraco.Headless.Client.Samples.MVC
             // Enable Heartcore routing,
             app.UseUmbracoHeartcoreRouting();
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+            app.UseEndpoints(endpoints =>
+            {
+                app.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }
