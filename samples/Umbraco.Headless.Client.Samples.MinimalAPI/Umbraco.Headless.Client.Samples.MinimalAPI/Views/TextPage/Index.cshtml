@@ -1,9 +1,0 @@
-@model Textpage
-
-@await  Component.InvokeAsync("Hero", new
-{
-  title = Model.HeroTitle,
-  subTitle = Model.HeroSubtitle,
-  image = Model.HeroImage
-})
-<partial name="_Elements" model="Model.Elements"/>

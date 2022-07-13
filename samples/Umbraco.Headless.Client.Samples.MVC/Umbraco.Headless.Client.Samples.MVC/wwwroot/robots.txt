@@ -1,3 +1,0 @@
-﻿# /robots.txt file for https://demo.heartcore.dev
-User-agent: *
-Disallow: /
