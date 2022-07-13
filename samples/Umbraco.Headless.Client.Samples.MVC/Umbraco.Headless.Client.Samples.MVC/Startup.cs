@@ -43,19 +43,8 @@ namespace Umbraco.Headless.Client.Samples.MVC
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.Use(async (context, next) =>
-            {
-                if (context.Request.Path.StartsWithSegments("/robots.txt"))
-                {
-                    const string output = "User-agent: *  \nDisallow: /";
-                    context.Response.ContentType = "text/plain";
-                    await context.Response.WriteAsync(output);
-                }
-                else
-                {
-                    await next();
-                }
-            });
+            //Configures route to wwwroot/robots.txt to tell search engine crawlers which URLs the crawler can access.
+            app.UseRobotsTxt();
 
             app.UseRouting();
 
@@ -64,12 +53,9 @@ namespace Umbraco.Headless.Client.Samples.MVC
             // Enable Heartcore routing,
             app.UseUmbracoHeartcoreRouting();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-            });
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
         }
     }
 }

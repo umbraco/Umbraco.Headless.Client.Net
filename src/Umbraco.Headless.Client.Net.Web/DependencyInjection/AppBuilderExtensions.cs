@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -60,6 +61,23 @@ namespace Microsoft.Extensions.DependencyInjection
                     Options.Options.Create(options));
 
                 routes.Routes.Add(new UmbracoRouter(actionInvokerFactory, umbracoControllers));
+            });
+        }
+
+        public static void UseRobotsTxt(this IApplicationBuilder app)
+        {
+            _ = app.Use(async (context, next) =>
+            {
+                if (context.Request.Path.StartsWithSegments("/robots.txt", StringComparison.OrdinalIgnoreCase))
+                {
+                    const string output = "User-agent: *  \nDisallow: /";
+                    context.Response.ContentType = "text/plain";
+                    await context.Response.WriteAsync(output).ConfigureAwait(false);
+                }
+                else
+                {
+                    await next().ConfigureAwait(false);
+                }
             });
         }
     }

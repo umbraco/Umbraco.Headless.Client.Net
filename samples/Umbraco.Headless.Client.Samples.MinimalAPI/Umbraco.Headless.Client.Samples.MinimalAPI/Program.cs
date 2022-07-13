@@ -23,19 +23,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.Use(async (context, next) =>
-{
-    if (context.Request.Path.StartsWithSegments("/robots.txt"))
-    {
-        const string output = "User-agent: *  \nDisallow: /";
-        context.Response.ContentType = "text/plain";
-        await context.Response.WriteAsync(output);
-    }
-    else
-    {
-        await next();
-    }
-});
+//Configures route to wwwroot/robots.txt to tell search engine crawlers which URLs the crawler can access.
+app.UseRobotsTxt();
 
 app.UseRouting();
 
