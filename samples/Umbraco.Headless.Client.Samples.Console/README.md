@@ -4,7 +4,7 @@ Console application sample for Umbraco Headless - with options using the Content
 
 ## Prerequisites
 
-- [.NET Core SDK 2.2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+- [.NET SDK 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
 ## Start the application
 
@@ -21,7 +21,7 @@ In the `Umbraco.Headless.Client.Samples.Console` folder run the following comman
 
 ### 2. Running the Console application
 
-When the Console application is running you will first be prompted to "Enter the Project Alias of your Headless Project". In order to fully utilize the sample you will need an Umbraco Headless project with content and media. If you don't have one you can use `demo-headless` as the project alias for the options, which doesn't require an API Key.
+When the Console application is running you will first be prompted to "Enter the Project Alias of your Headless Project". To fully use the sample you will need an Umbraco Headless project with content and media. If you don't have one you can use `demo-headless` as the project alias for the options, which doesn't require an API Key.
 
 In the list below you will find the options available in the Console application. Option A-E use the Umbraco Headless Content Delivery API and can be used for any Headless Project, which has public content. Option F uses the Content Management API, so an API-Key is required to run this part of the sample, as it will create a new folder in the Media Library and upload an image to a new Media item.
 
