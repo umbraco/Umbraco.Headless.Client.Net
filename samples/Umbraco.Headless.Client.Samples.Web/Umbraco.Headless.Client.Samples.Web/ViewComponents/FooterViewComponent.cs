@@ -1,5 +1,3 @@
-using System;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Headless.Client.Net.Delivery;
 using Umbraco.Headless.Client.Samples.Web.Models;

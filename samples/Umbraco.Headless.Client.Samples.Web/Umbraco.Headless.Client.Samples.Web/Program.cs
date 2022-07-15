@@ -1,17 +1,37 @@
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
+var builder = WebApplication.CreateBuilder(args);
 
-namespace Umbraco.Headless.Client.Samples.Web
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+
+// Add Umbraco Heartcore.
+builder.Services.AddUmbracoHeartcore(options =>
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateWebHostBuilder(args).Build().Run();
-        }
+    // register all strongly typed models from the current assembly.
+    options.AddModels(typeof(Program).Assembly);
+});//.AddPreview(); // uncomment to enable preview
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
-    }
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
 }
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthorization();
+
+// Enable Heartcore routing,
+app.UseUmbracoHeartcoreRouting();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.Run();
