@@ -105,6 +105,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
             var refitSettings = CreateRefitSettings(configuration, modelNameResolver);
             Content = new ContentDelivery(configuration, httpClient, refitSettings, modelNameResolver);
             Media = new MediaDelivery(configuration, httpClient, refitSettings);
+            Redirect = new RedirectDelivery(configuration, httpClient, refitSettings);
         }
 
         /// <summary>
@@ -122,6 +123,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
 
             Content = new ContentDelivery(configuration, httpClient, refitSettings, modelNameResolver);
             Media = new MediaDelivery(configuration, httpClient, refitSettings);
+            Redirect = new RedirectDelivery(configuration, httpClient, refitSettings);
         }
 
         /// <summary>
@@ -133,6 +135,9 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// Gets the Media part of the Content Delivery API
         /// </summary>
         public IMediaDelivery Media { get; }
+
+        /// <inheritdoc/>
+        public IRedirectDelivery Redirect { get; }
 
         private static RefitSettings CreateRefitSettings(IHeadlessConfiguration configuration, ModelNameResolver modelNameResolver)
         {

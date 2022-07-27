@@ -52,6 +52,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
 
             Content = new ContentDelivery(configuration, httpClient, refitSettings, modelNameResolver);
             Media = new MediaDelivery(configuration, httpClient, refitSettings);
+            Redirect = new RedirectDelivery(configuration, httpClient, refitSettings);
         }
 
         /// <summary>
@@ -63,6 +64,8 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// Gets the Media part of the Preview API
         /// </summary>
         public IMediaDelivery Media { get; }
+
+        public IRedirectDelivery Redirect { get; }
 
         private static RefitSettings CreateRefitSettings(IHeadlessConfiguration configuration, ModelNameResolver modelNameResolver)
         {
