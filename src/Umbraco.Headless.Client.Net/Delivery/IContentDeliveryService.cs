@@ -11,5 +11,10 @@
         /// Gets the Media part of the Content Delivery API
         /// </summary>
         IMediaDelivery Media { get; }
+
+        /// <summary>
+        /// Gets the Redirect part of the Content Delivery API
+        /// </summary>
+        IRedirectDelivery Redirect { get; }
     }
 }

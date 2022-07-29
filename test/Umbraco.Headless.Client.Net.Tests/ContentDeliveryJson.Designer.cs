@@ -10,8 +10,8 @@
 
 namespace Umbraco.Headless.Client.Net.Tests {
     using System;
-
-
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -19,19 +19,19 @@ namespace Umbraco.Headless.Client.Net.Tests {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class ContentDeliveryJson {
-
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal ContentDeliveryJson() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -45,7 +45,7 @@ namespace Umbraco.Headless.Client.Net.Tests {
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
@@ -59,7 +59,64 @@ namespace Umbraco.Headless.Client.Net.Tests {
                 resourceCulture = value;
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;_totalItems&quot;: 1,
+        ///  &quot;_totalPages&quot;: 1,
+        ///  &quot;_page&quot;: 1,
+        ///  &quot;_pageSize&quot;: 10,
+        ///  &quot;_links&quot;: {
+        ///    &quot;self&quot;: {
+        ///        &quot;href&quot;: &quot;https://cdn.umbraco.io/content/filter?page=1&amp;pageSize=10&quot;
+        ///    },
+        ///    &quot;page&quot;: {
+        ///        &quot;href&quot;: &quot;https://cdn.umbraco.io/content/filter{?page,pageSize}&quot;,
+        ///        &quot;templated&quot;: true
+        ///    },
+        ///    &quot;root&quot;: {
+        ///        &quot;href&quot;: &quot;https://cdn.umbraco.io/content{?contentType}&quot;,
+        ///        &quot;templated&quot;: true
+        ///    },
+        ///  },
+        ///  &quot;_embedded&quot;: {
+        ///    &quot;content&quot;: [
+        ///      {
+        ///        &quot;_creatorName&quot;: &quot;Ras [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Filter {
+            get {
+                return ResourceManager.GetString("Filter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;redirects&quot;: {
+        ///        &quot;/root-new/&quot;: [
+        ///            &quot;/root&quot;
+        ///        ],
+        ///        &quot;/root-new/child-01/&quot;: [
+        ///            &quot;/root/child-01&quot;
+        ///        ]
+        ///    },
+        ///    &quot;_totalItems&quot;: 2,
+        ///    &quot;_totalPages&quot;: 1,
+        ///    &quot;_page&quot;: 1,
+        ///    &quot;_pageSize&quot;: 10,
+        ///    &quot;_links&quot;: {
+        ///        &quot;self&quot;: {
+        ///            &quot;href&quot;: &quot;https://cdn.rainbowsrock.net/redirect?page=1&amp;pageSize=10&quot;
+        ///        }
+        ///    }
+        ///}.
+        /// </summary>
+        internal static string GetAllRedirect {
+            get {
+                return ResourceManager.GetString("GetAllRedirect", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_links&quot;: {
@@ -78,14 +135,45 @@ namespace Umbraco.Headless.Client.Net.Tests {
         ///    &quot;_embedded&quot;: {
         ///        &quot;content&quot;: [
         ///            {
-        ///                &quot;_creatorNam [rest of string was truncated]&quot;;.
+        ///            [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string GetAncestors {
             get {
                 return ResourceManager.GetString("GetAncestors", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;_totalItems&quot;: 8,
+        ///  &quot;_totalPages&quot;: 1,
+        ///  &quot;_page&quot;: 1,
+        ///  &quot;_pageSize&quot;: 10,
+        ///  &quot;_links&quot;: {
+        ///    &quot;self&quot;: {
+        ///      &quot;href&quot;: &quot;/cdn/content/type?contentType=product&amp;page=1&amp;pageSize=10&quot;
+        ///    },
+        ///    &quot;page&quot;: {
+        ///      &quot;href&quot;: &quot;/cdn/content/type{?contentType,page,pageSize}&quot;,
+        ///      &quot;templated&quot;: true
+        ///    },
+        ///    &quot;root&quot;: {
+        ///      &quot;href&quot;: &quot;/cdn/content{?contentType}&quot;,
+        ///      &quot;templated&quot;: true
+        ///    },
+        ///    &quot;content&quot;: [
+        ///      {
+        ///        &quot;href&quot;: &quot;/cdn/content/df1eb830-411b-4d41-a343-3917b76d533c&quot;
+        ///      },
+        ///      {
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string GetByType {
+            get {
+                return ResourceManager.GetString("GetByType", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_creatorName&quot;: &quot;Morten Christensen&quot;,
@@ -101,14 +189,14 @@ namespace Umbraco.Headless.Client.Net.Tests {
         ///            &quot;href&quot;: &quot;https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2&quot;
         ///        },
         ///        &quot;photos&quot;: {
-        ///            &quot;href&quot;: &quot;https://cdn.umbraco.io/media [rest of string was truncated]&quot;;.
+        ///            &quot;href&quot;: &quot;https://cdn.um [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string GetByUrlHomeProductsUnicorn {
             get {
                 return ResourceManager.GetString("GetByUrlHomeProductsUnicorn", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_totalItems&quot;: 5,
@@ -128,14 +216,14 @@ namespace Umbraco.Headless.Client.Net.Tests {
         ///        },
         ///        &quot;content&quot;: [
         ///            {
-        ///                &quot;h [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string GetChildrenByParentId {
             get {
                 return ResourceManager.GetString("GetChildrenByParentId", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_totalItems&quot;: 8,
@@ -155,18 +243,22 @@ namespace Umbraco.Headless.Client.Net.Tests {
         ///        },
         ///        &quot;content&quot;: [
         ///            {
-        ///                &quot;h [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string GetChildrenOfProducts {
             get {
                 return ResourceManager.GetString("GetChildrenOfProducts", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_creatorName&quot;: &quot;Morten Christensen&quot;,
         ///    &quot;_url&quot;: &quot;/home/&quot;,
+        ///    &quot;_urls&quot;: {
+        ///        &quot;en-us&quot;: &quot;/home/&quot;,
+        ///        &quot;da&quot;: &quot;/hjem/&quot;
+        ///    },
         ///    &quot;_writerName&quot;: &quot;Administrator&quot;,
         ///    &quot;_hasChildren&quot;: true,
         ///    &quot;_level&quot;: 1,
@@ -176,16 +268,14 @@ namespace Umbraco.Headless.Client.Net.Tests {
         ///    &quot;_links&quot;: {
         ///        &quot;self&quot;: {
         ///            &quot;href&quot;: &quot;https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1&quot;
-        ///        },
-        ///        &quot;heroctalink&quot;: {
-        ///            &quot;href&quot;: &quot;https://cdn.umbraco.io/cont [rest of string was truncated]&quot;;.
+        ///        }, [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string GetContentById {
             get {
                 return ResourceManager.GetString("GetContentById", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_totalItems&quot;: 23,
@@ -201,15 +291,14 @@ namespace Umbraco.Headless.Client.Net.Tests {
         ///        },
         ///        &quot;page&quot;: {
         ///            &quot;href&quot;: &quot;https://cdn.umbraco.io/content/{id}/descendants{?page,pageSize}&quot;,
-        ///            &quot;templated&quot;: true
-        ///  [rest of string was truncated]&quot;;.
+        ///            &quot;temp [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string GetDescendantsPageOne {
             get {
                 return ResourceManager.GetString("GetDescendantsPageOne", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_totalItems&quot;: 23,
@@ -225,15 +314,14 @@ namespace Umbraco.Headless.Client.Net.Tests {
         ///        },
         ///        &quot;page&quot;: {
         ///            &quot;href&quot;: &quot;https://cdn.umbraco.io/content/{id}/descendants{?page,pageSize}&quot;,
-        ///            &quot;templated&quot;: true
-        ///  [rest of string was truncated]&quot;;.
+        ///            &quot;temp [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string GetDescendantsPageThree {
             get {
                 return ResourceManager.GetString("GetDescendantsPageThree", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_totalItems&quot;: 23,
@@ -248,15 +336,14 @@ namespace Umbraco.Headless.Client.Net.Tests {
         ///            &quot;href&quot;: &quot;https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/descendants?page=1&quot;
         ///        },
         ///        &quot;next&quot;: {
-        ///            &quot;href&quot;: &quot;https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/descendants?page=3&quot;
-        ///        } [rest of string was truncated]&quot;;.
+        ///            &quot;href&quot;: &quot;https://cdn.umbraco.io/content/ca4249ed-2b23-4337-b522-63cabe5587d1/descendants?page [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string GetDescendantsPageTwo {
             get {
                 return ResourceManager.GetString("GetDescendantsPageTwo", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;_links&quot;: {
@@ -274,26 +361,40 @@ namespace Umbraco.Headless.Client.Net.Tests {
         ///        &quot;content&quot;: [
         ///            {
         ///                &quot;href&quot;: &quot;https://cdn.umbraco.io/content/{id}{?depth}&quot;,
-        ///                &quot;templated [rest of string was truncated]&quot;;.
+        ///           [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string GetRoot {
             get {
                 return ResourceManager.GetString("GetRoot", resourceCulture);
             }
         }
-
-        internal static string GetByType {
-            get {
-                return ResourceManager.GetString("GetByType", resourceCulture);
-            }
-        }
-
-        internal static string Filter {
-            get {
-                return ResourceManager.GetString("Filter", resourceCulture);
-            }
-        }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;_totalItems&quot;: 1,
+        ///  &quot;_totalPages&quot;: 1,
+        ///  &quot;_page&quot;: 1,
+        ///  &quot;_pageSize&quot;: 10,
+        ///  &quot;_links&quot;: {
+        ///    &quot;self&quot;: {
+        ///      &quot;href&quot;: &quot;/cdn/content/search?term=jacket&amp;page=1&amp;pageSize=10&quot;
+        ///    },
+        ///    &quot;page&quot;: {
+        ///      &quot;href&quot;: &quot;/cdn/content/search{?term,page,pageSize}&quot;,
+        ///      &quot;templated&quot;: true
+        ///    },
+        ///    &quot;root&quot;: {
+        ///      &quot;href&quot;: &quot;/cdn/content&quot;
+        ///    },
+        ///    &quot;content&quot;: {
+        ///      &quot;href&quot;: &quot;/cdn/content/262beb70-53a6-49b8-9e98-cfde2e85a78e&quot;
+        ///    }
+        ///  },
+        ///  &quot;_embedded&quot;: {
+        ///    &quot;content&quot;: [
+        ///      {
+        ///        &quot;_creatorName&quot;: [rest of string was truncated]&quot;;.
+        /// </summary>
         internal static string Search {
             get {
                 return ResourceManager.GetString("Search", resourceCulture);

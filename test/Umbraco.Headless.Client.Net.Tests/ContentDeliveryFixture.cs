@@ -274,6 +274,21 @@ namespace Umbraco.Headless.Client.Net.Tests
             await service.Content.GetById(contentId);
         }
 
+        [Fact]
+        public async Task Can_Get_AllRedirects()
+        {
+            var service = new ContentDeliveryService(_configuration,
+                GetMockedHttpClient($"{Constants.Urls.BaseCdnUrl}/redirect", ContentDeliveryJson.GetAllRedirect));
+
+            var redirect = await service.Redirect.GetAll();
+
+            Assert.NotNull(redirect);
+
+            Assert.Equal(redirect.Redirects["/root-new/"], new[] { "/root" });
+        }
+
+
+
         private HttpClient GetMockedHttpClient()
         {
             var client = new HttpClient(_mockHttp) { BaseAddress = new Uri(Constants.Urls.BaseCdnUrl) };

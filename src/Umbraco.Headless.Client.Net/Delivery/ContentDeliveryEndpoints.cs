@@ -65,6 +65,12 @@ namespace Umbraco.Headless.Client.Net.Delivery
         [Get("/content/url?url={url}&depth={depth}&contentType={contentType}&hyperlinks=false")]
         Task<ApiResponse<T>> GetByUrl([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, string url, string contentType, int depth);
     }
+    [Headers(Constants.Headers.ApiVersion + ":2.3")]
+    interface RedirectDeliveryEndpoints
+    {
+        [Get("/redirect?hyperlinks=false&page={page}&pageSize={pageSize}")]
+        Task<ApiResponse<PagedRedirect>> GetAll([Header(Constants.Headers.ProjectAlias)] string projectAlias, [Header(Constants.Headers.AcceptLanguage)] string culture, int page, int pageSize);
+    }
 
     [Headers(Constants.ApiMinimumVersionHeader)]
     interface MediaDeliveryEndpoints
