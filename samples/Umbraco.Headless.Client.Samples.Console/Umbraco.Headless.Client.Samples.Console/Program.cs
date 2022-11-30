@@ -276,7 +276,7 @@ async Task PageAndRenderDescendants(IContentDelivery contentDelivery, PagedConte
 
 void RenderContentWithUrl(Content content)
 {
-    Console.WriteLine("'" + content.Name + "' on " + content.Url);
+    Console.WriteLine($"'{content.Name}' on {content.Url}");
 }
 
 void RenderMediaWithUrl(Media media)
