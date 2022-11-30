@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
 using Refit;
 using Umbraco.Headless.Client.Net.Delivery;
 using Umbraco.Headless.Client.Net.Delivery.Models;
@@ -154,60 +155,61 @@ async Task UploadImageToMedia(ContentDeliveryService contentDeliveryService, str
 
     var managementService = new ContentManagementService(projectAlias, apiKey);
 
+
     Console.WriteLine(" ");
     Console.WriteLine("Enter path to an image (png, jpg)");
     var imagePath = Console.ReadLine();
 
     Console.WriteLine("Enter a name for the Media item to create");
     var mediaName = Console.ReadLine();
-
-    if (File.Exists(imagePath) && !string.IsNullOrEmpty(mediaName))
+    if (!File.Exists(imagePath) || string.IsNullOrEmpty(mediaName))
     {
-        var fileName = Path.GetFileName(imagePath);
-        var extension = Path.GetExtension(imagePath).Trim('.');
         Console.WriteLine(" ");
-        Console.WriteLine("Uploading '{0}' to a new Console folder in the Media Library", fileName);
+        if (!File.Exists(imagePath))
+            Console.WriteLine("Path to image not found '{0}'", imagePath);
+        if (string.IsNullOrEmpty(mediaName))
+            Console.WriteLine("Media name is required");
+        return;
+    }
 
-        var rootMediaItems = await contentDeliveryService.Media.GetRoot();
-        var folder = rootMediaItems?.FirstOrDefault(x => x.Name.Equals("Console"));
-        Guid folderId;
-        if (folder == null)
-        {
-            var createdFolder = await managementService.Media.Create(new Umbraco.Headless.Client.Net.Management.Models.Media { MediaTypeAlias = "Folder", Name = "Console" });
-            folderId = createdFolder.Id;
-        }
-        else
-        {
-            folderId = folder.Id;
-        }
+    var fileName = Path.GetFileName(imagePath);
+    var extension = Path.GetExtension(imagePath).Trim('.');
+    Console.WriteLine(" ");
+    Console.WriteLine("Uploading '{0}' to a new Console folder in the Media Library", fileName);
 
-        var isImageCropperUpload = false;
-        var isFileUpload = false;
-        while (!isImageCropperUpload && !isFileUpload)
-        {
-            Console.WriteLine("Should the image be uploaded as an Image Cropper or a File? (image-cropper/file)");
-            var uploadType = Console.ReadLine()?.ToLower();
-            isImageCropperUpload = uploadType.Equals("image-cropper");
-            isFileUpload = uploadType.Equals("file");
-        }
-
-        var mediaTypeAlias = isImageCropperUpload ? "Image" : isFileUpload ? "File" : string.Empty;
-        var media = new Umbraco.Headless.Client.Net.Management.Models.Media { Name = mediaName, MediaTypeAlias = mediaTypeAlias, ParentId = folderId };
-
-        object? rawPropertyValue = isImageCropperUpload ? new { src = fileName } : isFileUpload ? fileName : null;
-
-        media.SetValue("umbracoFile", rawPropertyValue, new FileInfoPart(new FileInfo(imagePath), fileName, $"image/{extension}"));
-        var image = await managementService.Media.Create(media);
-
-        //var newlyCreatedImage = await contentDeliveryService.Media.GetById(image.Id);
-        //RenderMediaWithUrl(newlyCreatedImage);
+    var rootMediaItems = await contentDeliveryService.Media.GetRoot();
+    var folder = rootMediaItems?.FirstOrDefault(x => x.Name.Equals("Console"));
+    Guid folderId;
+    if (folder == null)
+    {
+        var createdFolder = await managementService.Media.Create(new Umbraco.Headless.Client.Net.Management.Models.Media { MediaTypeAlias = "Folder", Name = "Console" });
+        folderId = createdFolder.Id;
     }
     else
     {
-        Console.WriteLine(" ");
-        Console.WriteLine("Path to image not found '{0}'", imagePath);
+        folderId = folder.Id;
     }
 
+    var isImageCropperUpload = false;
+    var isFileUpload = false;
+    while (!isImageCropperUpload && !isFileUpload)
+    {
+        Console.WriteLine("Should the image be uploaded as an Image Cropper or a File? (image-cropper/file)");
+        var uploadType = Console.ReadLine()?.ToLower();
+        isImageCropperUpload = uploadType.Equals("image-cropper");
+        isFileUpload = uploadType.Equals("file");
+    }
+
+    var mediaTypeAlias = isImageCropperUpload ? "Image" : isFileUpload ? "File" : string.Empty;
+    var media = new Umbraco.Headless.Client.Net.Management.Models.Media { Name = mediaName, MediaTypeAlias = mediaTypeAlias, ParentId = folderId };
+
+    object? rawPropertyValue = isImageCropperUpload ? new { src = fileName } : isFileUpload ? fileName : null;
+
+    media.SetValue("umbracoFile", rawPropertyValue, new FileInfoPart(new FileInfo(imagePath), fileName, $"image/{extension}"));
+    var image = await managementService.Media.Create(media);
+
+    var newlyCreatedImage = await contentDeliveryService.Media.GetById(image.Id);
+    RenderMediaWithUrl(newlyCreatedImage);
     Console.WriteLine(" ");
 }
 
