@@ -205,7 +205,7 @@ async Task UploadImageToMedia(ContentDeliveryService contentDeliveryService, str
 
     var media = new Umbraco.Headless.Client.Net.Management.Models.Media { Name = mediaName, MediaTypeAlias = mediaTypeAlias, ParentId = folderId };
 
-    object? rawPropertyValue;
+    object? rawPropertyValue = null;
 
     if (mediaTypeAlias == "Image")
         rawPropertyValue = new { src = fileName };
