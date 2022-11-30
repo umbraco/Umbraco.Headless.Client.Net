@@ -190,17 +190,19 @@ async Task UploadImageToMedia(ContentDeliveryService contentDeliveryService, str
         folderId = folder.Id;
     }
 
-    var isImageCropperUpload = false;
-    var isFileUpload = false;
-    while (!isImageCropperUpload && !isFileUpload)
+    var mediaTypeAlias = "";
+    while (string.IsNullOrEmpty(mediaTypeAlias))
     {
         Console.WriteLine("Should the image be uploaded as an Image Cropper or a File? (image-cropper/file)");
         var uploadType = Console.ReadLine()?.ToLower();
-        isImageCropperUpload = uploadType.Equals("image-cropper");
-        isFileUpload = uploadType.Equals("file");
+        mediaTypeAlias = uploadType switch
+        {
+            "image-cropper" => "Image",
+            "file" => "File",
+            _ => ""
+        };
     }
 
-    var mediaTypeAlias = isImageCropperUpload ? "Image" : isFileUpload ? "File" : string.Empty;
     var media = new Umbraco.Headless.Client.Net.Management.Models.Media { Name = mediaName, MediaTypeAlias = mediaTypeAlias, ParentId = folderId };
 
     object? rawPropertyValue = isImageCropperUpload ? new { src = fileName } : isFileUpload ? fileName : null;
