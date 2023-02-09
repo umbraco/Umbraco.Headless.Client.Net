@@ -31,4 +31,7 @@ In the list below you will find the options available in the Console application
 - [ D ] Show root Media
 - [ E ] List Content URLs
 - [ F ] Upload image to Media Library
+- [ G ] Create content that references media
+  - This case assumes that you have created a Document Type with a Media Picker property,
+  - This case assumes that you have created a Media item (u can use case F before this case, to create a Media item).
 - [ X ] Exit
