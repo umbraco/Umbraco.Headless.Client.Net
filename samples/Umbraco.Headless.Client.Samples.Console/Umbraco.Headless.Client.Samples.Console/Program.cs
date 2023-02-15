@@ -352,7 +352,7 @@ void RenderMediaWithUrl(Media media)
     }
     else
     {
-        Console.WriteLine("'" + media.Name + "' can be seen on: " + media.Url);
+        Console.WriteLine($"'{media.Name}' with id '{media.Id}' can be seen on: {media.Url}");
     }
 }
 
