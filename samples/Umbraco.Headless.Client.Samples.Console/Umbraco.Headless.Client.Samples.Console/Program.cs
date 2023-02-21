@@ -1,5 +1,4 @@
-﻿using System.IO;
-using System.Text;
+﻿using System.Text;
 using Refit;
 using Umbraco.Headless.Client.Net.Delivery;
 using Umbraco.Headless.Client.Net.Delivery.Models;
@@ -14,8 +13,9 @@ IDictionary<string, Func<ContentDeliveryService, string, Task>> CmdOptions =
     { "C", async (service, _) =>  await ShowRootContent(service)},
     { "D", async (service, _) =>  await ShowRootMedia(service)},
     { "E", async (service, _) =>  await ListAllContentUrls(service)},
-    { "F", async (service, projectAlias) =>  await UploadImageToMedia(service, projectAlias)},
-    { "X", async (_, projectAlias) =>  await ExitOptions(projectAlias)}
+    { "F", async (service, projectAlias) => await UploadImageToMedia(service, projectAlias)},
+    { "G", async (service, projectAlias) => await CreateContentWithMediaReference(service, projectAlias)},
+    { "X", async (_, projectAlias) => await ExitOptions(projectAlias)}
 };
 
 Console.Write(Bootloader.Load());
@@ -25,7 +25,8 @@ Console.WriteLine(" ");
 
 //Enter Project Alias
 Console.WriteLine("Enter the Project Alias of your Headless Project");
-var projectAlias = Console.ReadLine();
+var projectAlias = PromptUser("Project Alias");
+if (projectAlias.Equals("exit", StringComparison.OrdinalIgnoreCase)) return;
 
 //New up service with the entered Headless Project Alias
 var service = new ContentDeliveryService(projectAlias);
@@ -47,15 +48,17 @@ async Task RenderOptions(ContentDeliveryService service, string projectAlias)
     Console.WriteLine("[D] Show root Media");
     Console.WriteLine("[E] List Content URLs");
     Console.WriteLine("[F] Upload image to Media Library");
+    Console.WriteLine("[G] Create content that references media"); //
     Console.WriteLine("[X] Exit");
     Console.WriteLine(" ");
 
     Console.WriteLine("Enter your choice:");
     var choice = Console.ReadLine()?.ToUpper();
-    if (string.IsNullOrEmpty(choice))
+    while (string.IsNullOrEmpty(choice))
     {
-        Console.WriteLine("Please enter option A, B, C, D or E");
+        Console.WriteLine("Please enter option A, B, C, D, E, F, G or X");
         choice = Console.ReadLine()?.ToUpper();
+        if (choice?.Equals("X", StringComparison.OrdinalIgnoreCase) == true) return;
     }
 
     // Retrieve and show based on choice
@@ -145,6 +148,69 @@ async Task ListAllContentUrls(ContentDeliveryService service)
     Console.WriteLine(" ");
 }
 
+async Task CreateContentWithMediaReference(ContentDeliveryService contentDeliveryService, string projectAlias)
+{
+    Console.WriteLine(" ");
+    Console.WriteLine("In order to create content you need to authenticate against the Umbraco Headless Backoffice");
+
+    Console.WriteLine(" ");
+    Console.WriteLine("Enter your api key:");
+    var apiKey = PromptUser("API Key", true);
+    if (apiKey.Equals("exit", StringComparison.OrdinalIgnoreCase)) return;
+
+    var managementService = new ContentManagementService(projectAlias, apiKey);
+
+    Console.WriteLine(" ");
+    Console.WriteLine("Enter the content type alias of the content you want to create:");
+    var contentTypeAlias = PromptUser("content type alias");
+    if (contentTypeAlias.Equals("exit", StringComparison.OrdinalIgnoreCase)) return;
+
+    Console.WriteLine(" ");
+    Console.WriteLine("Enter the property alias of the media picker property you want add an image to:");
+    var mediaPickerPropertyAlias = PromptUser("media picker property alias");
+    if (mediaPickerPropertyAlias.Equals("exit", StringComparison.OrdinalIgnoreCase)) return;
+
+    Console.WriteLine(" ");
+    Console.WriteLine("Enter the ID of the media item you want to reference:");
+    var mediaId = PromptUser("media ID");
+    if (mediaId.Equals("exit", StringComparison.OrdinalIgnoreCase)) return;
+
+    var content = new Umbraco.Headless.Client.Net.Management.Models.Content
+    {
+        ContentTypeAlias = contentTypeAlias,
+    };
+    content.Name.Add("$invariant", "Sample Content With Media Reference");
+    content.Properties.Add(mediaPickerPropertyAlias, new Dictionary<string, object>(){
+        {
+            "$invariant", new List<object>() {
+                new {
+                    mediaKey = mediaId
+                }
+            }
+        }
+    });
+
+    Console.WriteLine(" ");
+    Console.WriteLine($"Creating content {content.Name.First().Value} with media reference to {mediaId}");
+    var contentWithMedia = await managementService.Content.Create(content);
+    await managementService.Content.Publish(contentWithMedia.Id);
+
+    // Wait for the content to reach the CDN cache
+    Thread.Sleep(1000);
+
+    var newlyCreatedContentWithMedia = await contentDeliveryService.Content.GetById(contentWithMedia.Id);
+
+    Console.WriteLine(" ");
+    RenderContentWithUrl(newlyCreatedContentWithMedia);
+    // Console.WriteLine("Paste in the JSON for the content you want to create (see https://docs.umbraco.com/umbraco-heartcore/tutorials/creating-content-with-media)");
+
+    // //create a loop that asks for json input until it is valid
+    // var json
+    // do {
+    //     var json = Console.ReadLine();
+    // } while(!IsValidJson(json));
+}
+
 async Task UploadImageToMedia(ContentDeliveryService contentDeliveryService, string projectAlias)
 {
     Console.WriteLine(" ");
@@ -154,7 +220,6 @@ async Task UploadImageToMedia(ContentDeliveryService contentDeliveryService, str
     var apiKey = GetConsolePassword();
 
     var managementService = new ContentManagementService(projectAlias, apiKey);
-
 
     Console.WriteLine(" ");
     Console.WriteLine("Enter path to an image (png, jpg)");
@@ -287,8 +352,22 @@ void RenderMediaWithUrl(Media media)
     }
     else
     {
-        Console.WriteLine("'" + media.Name + "' can be seen on: " + media.Url);
+        Console.WriteLine($"'{media.Name}' with id '{media.Id}' can be seen on: {media.Url}");
     }
+}
+
+string PromptUser(string elementPromptedFor, bool isSecure = false)
+{
+    var value = isSecure ? GetConsolePassword() : Console.ReadLine();
+    while (string.IsNullOrEmpty(value))
+    {
+        Console.WriteLine(" ");
+        Console.WriteLine("[Press X to exit]");
+        Console.WriteLine($"Please enter a valid {elementPromptedFor}:");
+        value = isSecure ? GetConsolePassword() : Console.ReadLine();
+        if (value?.Equals("X", StringComparison.OrdinalIgnoreCase) == true) return "exit";
+    }
+    return value;
 }
 
 string GetConsolePassword()
