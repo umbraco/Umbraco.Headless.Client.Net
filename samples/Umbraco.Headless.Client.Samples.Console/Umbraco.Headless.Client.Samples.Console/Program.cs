@@ -227,10 +227,10 @@ async Task UploadImageToMedia(ContentDeliveryService contentDeliveryService, str
 
     Console.WriteLine("Enter a name for the Media item to create");
     var mediaName = Console.ReadLine();
-    if (!File.Exists(imagePath) || string.IsNullOrEmpty(mediaName))
+    if (!System.IO.File.Exists(imagePath) || string.IsNullOrEmpty(mediaName))
     {
         Console.WriteLine(" ");
-        if (!File.Exists(imagePath))
+        if (!System.IO.File.Exists(imagePath))
             Console.WriteLine("Path to image not found '{0}'", imagePath);
         if (string.IsNullOrEmpty(mediaName))
             Console.WriteLine("Media name is required");
