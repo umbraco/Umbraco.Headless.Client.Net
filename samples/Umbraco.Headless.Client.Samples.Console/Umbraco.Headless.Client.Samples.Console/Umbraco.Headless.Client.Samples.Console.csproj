@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Umbraco.Headless.Client.Net" Version="1.0.0.29753" />
+    <ProjectReference Include="..\..\..\src\Umbraco.Headless.Client.Net\Umbraco.Headless.Client.Net.csproj" />
   </ItemGroup>
 
 </Project>
