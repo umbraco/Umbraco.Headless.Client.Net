@@ -1,6 +1,6 @@
 ---
 name: 🔆 Umbraco Heartcore Client Issue
-description: "Create issues/feature requests for our Umbraco Heartcore Client"
+description: "Create issues/feature requests for our Umbraco Heartcore .NET Client Library"
 body:
 - type: textarea
   id: "description"
