@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: ⁉ Umbraco Heartcore Support Question
+    url: https://www.umbraco.io
+    about: For support questions please log into your umbraco.io account and use the chat in the bottom right corner to talk to our support team.
+  - name: 🔒 Security Issue
+    url: https://umbraco.com/about-us/trust-center/security-and-umbraco/how-to-report-a-vulnerability-in-umbraco/
+    about: Please visit our security center to report any possible security issues
+  - name: 🚀 Umbraco Heartcore Issues
+    url: https://github.com/umbraco/Umbraco.Heartcore.Issues/issues
+    about: For issues regarding Umbraco Heartcore please visit the corresponding issue tracker.
+  - name: 💻 Umbraco Heartcore NodeJs Client Issues
+    url: https://github.com/umbraco/Umbraco.Headless.Client.NodeJs/issues
+    about: For issues regarding the NodeJs client library for Heartcore please visit the corresponding issue tracker.
+  - name: 📝 Umbraco Heartcore Forms Presentation
+    url: https://github.com/umbraco/Umbraco.Headless.Forms.Presentation/issues
+    about: For issues regarding the Umbraco Forms libraries please visit the corresponding issue tracker.
