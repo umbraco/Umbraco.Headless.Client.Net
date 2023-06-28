@@ -1,0 +1,7 @@
+@model Umbraco.Headless.Client.Net.Delivery.Models.GridRow
+<div class="grid-row">
+    @foreach (var area in Model.Areas)
+    {
+        <partial name="Grid/_Area" model="@(area)" />
+    }
+</div>

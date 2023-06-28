@@ -1,0 +1,10 @@
+@using Newtonsoft.Json.Linq;
+@using Newtonsoft.Json;
+@using Umbraco.Headless.Client.Net.Delivery.Models;
+@model JObject
+@{
+    string url = Model.Property("url").Value.ToString();
+    string altText = Model.Property("altText").Value.ToString();
+}
+
+<img src="@url" alt="@altText">
