@@ -1,0 +1,6 @@
+@model Umbraco.Headless.Client.Net.Delivery.Models.GridSection
+<div style="--span-columns: @(Model.Grid)" class="grid-section">
+    @foreach (var row in Model.Rows) {
+        <partial name="Grid/_Row" model="@(row)" />
+    }
+</div>

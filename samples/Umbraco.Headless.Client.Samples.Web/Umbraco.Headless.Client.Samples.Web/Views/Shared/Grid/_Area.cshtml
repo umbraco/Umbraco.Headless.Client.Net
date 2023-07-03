@@ -1,0 +1,7 @@
+@model Umbraco.Headless.Client.Net.Delivery.Models.GridArea
+<div class="grid-area" style="--span-columns: @(Model.Grid)">
+    @foreach (var control in Model.Controls)
+    {
+        <partial name="Content/_@control.Editor.Alias" model="@(control.Value)" />
+    }
+</div>

@@ -269,6 +269,17 @@ a:hover {
   grid-column: 1;
 }
 
+/* Grid */
+.grid, .grid-row {
+  display: grid;
+  grid-template-columns: repeat(12,minmax(0,1fr));
+  column-gap: 20px;
+}
+
+.grid-section, .grid-area { 
+  grid-column-end: span var(--span-columns);
+}
+
 @media (min-width: 992px) {
   .text-and-image {
     margin: 40px;
