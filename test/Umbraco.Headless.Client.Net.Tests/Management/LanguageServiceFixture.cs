@@ -116,6 +116,6 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         }
 
         private LanguageService CreateService(HttpClient client) =>
-            new LanguageService(_configuration, client, new RefitSettings());
+            new LanguageService(_configuration, client, RefitSettingsProvider.GetSettings());
     }
 }

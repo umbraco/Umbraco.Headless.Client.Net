@@ -114,6 +114,6 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         }
 
         private DocumentTypeService CreateService(HttpClient client) =>
-            new DocumentTypeService(_configuration, client, new RefitSettings());
+            new DocumentTypeService(_configuration, client, RefitSettingsProvider.GetSettings());
     }
 }

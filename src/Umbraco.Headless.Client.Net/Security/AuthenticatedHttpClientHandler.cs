@@ -17,14 +17,6 @@ namespace Umbraco.Headless.Client.Net.Security
     {
         private readonly IAccessTokenResolver _accessTokenResolver;
 
-        [Obsolete("Use the overload that takes an ITokenResolver")]
-        public AuthenticatedHttpClientHandler(IPasswordBasedConfiguration configuration)
-        {
-            var authenticationService = new AuthenticationService(configuration);
-            _accessTokenResolver = new UserPasswordAccessTokenResolver(configuration.Username, configuration.Password, authenticationService);
-
-        }
-
         public AuthenticatedHttpClientHandler(IAccessTokenResolver accessTokenResolver, HttpMessageHandler handler = null) : base(handler)
         {
             _accessTokenResolver = accessTokenResolver ?? throw new ArgumentNullException(nameof(accessTokenResolver));

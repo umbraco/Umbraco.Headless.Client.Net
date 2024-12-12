@@ -42,7 +42,8 @@ namespace Umbraco.Headless.Client.Net.Management
         /// <param name="configureHttpClient">A delegate to configure the <see cref="HttpClient"/>.</param>
         public ContentManagementService(IPasswordBasedConfiguration configuration, Action<HttpClient> configureHttpClient = null)
         {
-            var authenticationService = new AuthenticationService(configuration);
+            var refitSettings = CreateRefitSettings();
+            var authenticationService = new AuthenticationService(configuration, CreateRefitSettings());
             var tokenResolver = new UserPasswordAccessTokenResolver(configuration.Username, configuration.ProjectAlias, authenticationService);
             var httpClient = new HttpClient(new AuthenticatedHttpClientHandler(tokenResolver))
             {
@@ -52,7 +53,6 @@ namespace Umbraco.Headless.Client.Net.Management
 
             if (configureHttpClient != null) configureHttpClient(httpClient);
 
-            var refitSettings = CreateRefitSettings();
 
             Content = new ContentService(configuration, httpClient, refitSettings);
             DocumentType = new DocumentTypeService(configuration, httpClient, refitSettings);
@@ -115,7 +115,7 @@ namespace Umbraco.Headless.Client.Net.Management
         {
             return new RefitSettings
             {
-                ContentSerializer = new JsonContentSerializer(new JsonSerializerSettings
+                ContentSerializer = new NewtonsoftJsonContentSerializer(new JsonSerializerSettings
                 {
                     Formatting = Formatting.None,
                     ContractResolver = new CamelCasePropertyNamesContractResolver()

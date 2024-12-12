@@ -83,7 +83,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
             HttpMessageHandler httpMessageHandler = null;
             if (configuration is IPasswordBasedConfiguration passwordBasedConfiguration)
             {
-                var authenticationService = new AuthenticationService(configuration);
+                var authenticationService = new AuthenticationService(configuration, CreateRefitSettings());
                 var tokenResolver = new UserPasswordAccessTokenResolver(passwordBasedConfiguration.Username,
                     passwordBasedConfiguration.ProjectAlias, authenticationService);
                 httpMessageHandler = new AuthenticatedHttpClientHandler(tokenResolver);
@@ -139,11 +139,19 @@ namespace Umbraco.Headless.Client.Net.Delivery
         /// <inheritdoc/>
         public IRedirectDelivery Redirect { get; }
 
+        private static RefitSettings CreateRefitSettings()
+        {
+            return new RefitSettings
+            {
+                ContentSerializer = new NewtonsoftJsonContentSerializer()
+            };
+        }
+
         private static RefitSettings CreateRefitSettings(IHeadlessConfiguration configuration, ModelNameResolver modelNameResolver)
         {
             return new RefitSettings
             {
-                ContentSerializer = new JsonContentSerializer(new JsonSerializerSettings
+                ContentSerializer = new NewtonsoftJsonContentSerializer(new JsonSerializerSettings
                 {
                     Formatting = Formatting.None,
                     ContractResolver = new CamelCasePropertyNamesContractResolver(),

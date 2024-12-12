@@ -14,15 +14,17 @@ namespace Umbraco.Headless.Client.Net.Security
         private HttpClient _apiHttpClient;
         private UserOAuthEndpoints _apiEndpoints;
         private MemberOAuthEndpoints _cdnEndpoints;
+        private readonly RefitSettings _refitSettings;
 
-        public AuthenticationService(string projectAlias, HttpClient cdnHttpClient = null,
-            HttpClient apiHttpClient = null) : this(new HeadlessConfiguration(projectAlias), cdnHttpClient, apiHttpClient)
+        public AuthenticationService(string projectAlias, RefitSettings refitSettings, HttpClient cdnHttpClient = null,
+            HttpClient apiHttpClient = null) : this(new HeadlessConfiguration(projectAlias), refitSettings, cdnHttpClient, apiHttpClient)
         {
         }
 
-        public AuthenticationService(IHeadlessConfiguration configuration, HttpClient cdnHttpClient = null, HttpClient apiHttpClient = null)
+        public AuthenticationService(IHeadlessConfiguration configuration, RefitSettings refitSettings, HttpClient cdnHttpClient = null, HttpClient apiHttpClient = null)
         {
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+            _refitSettings = refitSettings;
             _cdnHttpClient = cdnHttpClient;
             _apiHttpClient = apiHttpClient;
         }
@@ -30,14 +32,16 @@ namespace Umbraco.Headless.Client.Net.Security
         private HttpClient ApiHttpClient => _apiHttpClient ?? (_apiHttpClient = new HttpClient {BaseAddress = new Uri(Constants.Urls.BaseApiUrl)});
         private HttpClient CdnHttpClient => _cdnHttpClient ?? (_cdnHttpClient = new HttpClient {BaseAddress = new Uri(Constants.Urls.BaseCdnUrl)});
 
-        private UserOAuthEndpoints ApiEndpoints => _apiEndpoints ?? (_apiEndpoints = RestService.For<UserOAuthEndpoints>(ApiHttpClient));
-        private MemberOAuthEndpoints CdnEndpoints => _cdnEndpoints ?? (_cdnEndpoints = RestService.For<MemberOAuthEndpoints>(CdnHttpClient));
+        private UserOAuthEndpoints ApiEndpoints => _apiEndpoints ?? (_apiEndpoints = RestService.For<UserOAuthEndpoints>(ApiHttpClient, _refitSettings));
+        private MemberOAuthEndpoints CdnEndpoints => _cdnEndpoints ?? (_cdnEndpoints = RestService.For<MemberOAuthEndpoints>(CdnHttpClient, _refitSettings));
 
         public async Task<OAuthResponse> AuthenticateUser(string username, string password)
         {
             var formData = GetFormData(username, password);
 
-            return await ApiEndpoints.GetAuthToken(_configuration.ProjectAlias, formData).ConfigureAwait(false);
+            var thing = await ApiEndpoints.GetAuthToken(_configuration.ProjectAlias, formData).ConfigureAwait(false);
+
+            return thing;
         }
 
         public async Task<OAuthResponse> AuthenticateMember(string username, string password)

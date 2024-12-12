@@ -318,6 +318,6 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         }
 
         private ContentService CreateService(HttpClient client) =>
-            new ContentService(_configuration, client, new RefitSettings());
+            new ContentService(_configuration, client, RefitSettingsProvider.GetSettings());
     }
 }
