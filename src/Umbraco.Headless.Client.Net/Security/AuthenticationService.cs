@@ -39,9 +39,7 @@ namespace Umbraco.Headless.Client.Net.Security
         {
             var formData = GetFormData(username, password);
 
-            var thing = await ApiEndpoints.GetAuthToken(_configuration.ProjectAlias, formData).ConfigureAwait(false);
-
-            return thing;
+            return await ApiEndpoints.GetAuthToken(_configuration.ProjectAlias, formData).ConfigureAwait(false);
         }
 
         public async Task<OAuthResponse> AuthenticateMember(string username, string password)
