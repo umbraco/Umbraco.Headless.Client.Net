@@ -90,6 +90,6 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         }
 
         private MemberGroupService CreateService(HttpClient client) =>
-            new MemberGroupService(_configuration, client, new RefitSettings());
+            new MemberGroupService(_configuration, client, RefitSettingsProvider.GetSettings());
     }
 }

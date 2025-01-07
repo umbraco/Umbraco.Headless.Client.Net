@@ -71,7 +71,7 @@ namespace Umbraco.Headless.Client.Net.Delivery
         {
             return new RefitSettings
             {
-                ContentSerializer = new JsonContentSerializer(new JsonSerializerSettings
+                ContentSerializer = new NewtonsoftJsonContentSerializer(new JsonSerializerSettings
                 {
                     Formatting = Formatting.None,
                     ContractResolver = new CamelCasePropertyNamesContractResolver(),

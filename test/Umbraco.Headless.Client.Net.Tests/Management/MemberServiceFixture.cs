@@ -184,7 +184,7 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         }
 
         private MemberService CreateService(HttpClient client) =>
-            new MemberService(_configuration, client, new RefitSettings());
+            new MemberService(_configuration, client, RefitSettingsProvider.GetSettings());
     }
 
 }

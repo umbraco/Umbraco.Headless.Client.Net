@@ -28,8 +28,8 @@ namespace Umbraco.Headless.Client.Net.Tests
                 .Respond("application/json", OAuthJson.GetToken);
 
             var configuration = new PasswordBasedConfiguration("myProject", "test@test.com", "}8N7aOE8#@");
-            var apiClient = new HttpClient(authMockHttp) {BaseAddress = new Uri(Constants.Urls.BaseApiUrl)};
-            var authenticationService = new AuthenticationService(configuration, apiHttpClient: apiClient);
+            var apiClient = new HttpClient(authMockHttp) {BaseAddress = new Uri(Constants.Urls.BaseApiUrl) };
+            var authenticationService = new AuthenticationService(configuration, RefitSettingsProvider.GetSettings(), apiHttpClient: apiClient);
 
             var handler = new AuthenticatedHttpClientHandler(
                 new UserPasswordAccessTokenResolver(configuration.Username, configuration.Password, authenticationService),
@@ -60,7 +60,7 @@ namespace Umbraco.Headless.Client.Net.Tests
                 .Respond("application/json", OAuthJson.GetToken);
 
             var cdnClient = new HttpClient(authMockHttp) {BaseAddress = new Uri(Constants.Urls.BaseCdnUrl)};
-            var authenticationService = new AuthenticationService("myProject", cdnHttpClient: cdnClient);
+            var authenticationService = new AuthenticationService("myProject", RefitSettingsProvider.GetSettings(), cdnHttpClient: cdnClient);
 
             var handler = new AuthenticatedHttpClientHandler(
                 new FuncAccessTokenResolver(async (_, __) => (await authenticationService.AuthenticateMember("janedoe", "g908&fgou#Pu9{@e")).AccessToken),

@@ -148,6 +148,6 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
          }
 
          private FormService CreateService(HttpClient client) =>
-             new FormService(_configuration, client, new RefitSettings());
+             new FormService(_configuration, client, RefitSettingsProvider.GetSettings());
     }
 }

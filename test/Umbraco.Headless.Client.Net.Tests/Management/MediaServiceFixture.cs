@@ -241,6 +241,6 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         }
 
         private MediaService CreateService(HttpClient client) =>
-            new MediaService(_configuration, client, new RefitSettings());
+            new MediaService(_configuration, client, RefitSettingsProvider.GetSettings());
     }
 }

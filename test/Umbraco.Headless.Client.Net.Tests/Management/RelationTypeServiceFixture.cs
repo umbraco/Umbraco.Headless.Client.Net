@@ -59,6 +59,6 @@ namespace Umbraco.Headless.Client.Net.Tests.Management
         }
 
         private RelationTypeService CreateService(HttpClient client) =>
-            new RelationTypeService(_configuration, client, new RefitSettings());
+            new RelationTypeService(_configuration, client, RefitSettingsProvider.GetSettings());
     }
 }
